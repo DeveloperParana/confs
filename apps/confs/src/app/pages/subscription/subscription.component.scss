@@ -89,4 +89,80 @@
     line-height: 19px;
     color: #ffffff;
   }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 40px auto 0;
+    align-items: center;
+  }
+
+  .buttoGithub {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px 39px 56px -36px #4a5963,
+      inset 0px 7px 11px -4px #4a5963,
+      inset 0px -82px 68px -64px rgba(96, 68, 145, 0.3),
+      inset 0px 98px 100px -48px #4a5963, inset 0px 4px 18px #4a5963,
+      inset 0px 1px 40px rgba(227, 222, 255, 0.2);
+    backdrop-filter: blur(100px);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: rgba(107, 107, 107, 0.548);
+    }
+
+    svg {
+      width: clamp(15px, 2vw, 24px);
+      height: clamp(15px, 2vw, 24px);
+    }
+  }
+
+  .buttonTwitter {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px 39px 56px -36px #1da1f2,
+      inset 0px 7px 11px -4px #1da1f2,
+      inset 0px -82px 68px -64px rgba(96, 68, 145, 0.3),
+      inset 0px 98px 100px -48px #1da1f2, inset 0px 4px 18px #1da1f2,
+      inset 0px 1px 40px rgba(227, 222, 255, 0.2);
+    backdrop-filter: blur(100px);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: rgba(107, 107, 107, 0.548);
+    }
+
+    svg {
+      width: clamp(15px, 2vw, 24px);
+      height: clamp(15px, 2vw, 24px);
+    }
+  }
+
+  .divider {
+    margin: 0 12px;
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .font-button {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: clamp(0.6rem, 1.3vw, 1rem);
+    color: #ffffff;
+  }
 }

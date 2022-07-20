@@ -7,14 +7,30 @@
   margin: 0;
 }
 
+html {
+  width: 100%;
+  background-image: url('./assets/images/top.webp');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #111121;
+  position: fixed;
+}
+
 html,
 body {
-  background: #111121;
   height: 100%;
 }
 
 body {
+  width: 100%;
+  background-image: url('./assets/images/bottom.webp');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  margin: 0 auto;
 }

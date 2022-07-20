@@ -51,7 +51,8 @@
   }
 
   .githubName svg {
-    color: #ffffff;
+    width: clamp(15px, 2vw, 22px);
+    height: clamp(15px, 2vw, 22px);
     margin: 0 12px 0 0;
   }
 
@@ -81,7 +82,7 @@
       writing-mode: vertical-rl;
       font-family: 'Poppins';
       font-weight: 700;
-      font-size: clamp(2rem, 3vw, 2.5rem);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
       letter-spacing: 0.105em;
       color: #ffffff;
     }
