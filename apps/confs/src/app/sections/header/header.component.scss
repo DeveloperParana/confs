@@ -1,0 +1,30 @@
+:host {
+  height: 70px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+
+  img {
+    height: 70px;
+    width: 300px;
+  }
+
+  p {
+    height: 35px;
+    width: 250px;
+    color: #fff;
+    font: 700 20px/35px 'poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(
+      347.16deg,
+      #8c4bff 8.18%,
+      rgba(197, 75, 255, 0.79) 114.87%
+    );
+    position: absolute;
+    right: 0;
+    bottom: -17px;
+    transform: skew(-10deg);
+  }
+}

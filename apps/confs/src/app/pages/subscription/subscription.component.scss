@@ -1,0 +1,92 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 130px auto 0;
+  align-items: center;
+
+  .description {
+    width: clamp(300px, 35vw, 500px);
+  }
+
+  .description h1 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: clamp(2rem, 3.1vw, 2.7rem);
+    color: #ffffff;
+  }
+
+  .description h2 {
+    margin: 24px 0 50px 0;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 17px;
+    color: #a5a5ba;
+  }
+
+  .description form {
+    position: relative;
+    width: clamp(300px, 35vw, 500px);
+  }
+
+  .description form input {
+    width: 100%;
+    height: 60px;
+    background: #111121;
+    border: 1px solid #ad78ff;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-family: 'inter', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.6rem, 1.3vw, 1rem);
+    color: #8e8ea9;
+    transition: 0.1s ease;
+
+    &:focus {
+      outline: 2px solid #ad78ff;
+    }
+  }
+
+  .description form button {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    height: 42px;
+    background: linear-gradient(
+      55.61deg,
+      #8c4bff 5.66%,
+      rgba(197, 75, 255, 0.79) 101.01%
+    );
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: clamp(0.6rem, 1.3vw, 1rem);
+    cursor: pointer;
+    padding: 0 1.2rem;
+    transition: all 0.1s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .description p {
+    margin: 23px 0;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    color: #8a8e96;
+  }
+
+  .description a {
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+}
