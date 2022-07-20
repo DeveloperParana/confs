@@ -166,3 +166,50 @@
     color: #ffffff;
   }
 }
+
+@media screen and (max-width: 1023px) {
+  :host {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 70px auto 0;
+
+    .description {
+      width: 80%;
+    }
+
+    .description h1 {
+      font-size: clamp(2rem, 6vw, 2.7rem);
+    }
+
+    .description form {
+      width: clamp(445px, 70vw, 520px);
+    }
+
+    .description form input {
+      font-size: 1rem;
+    }
+
+    .description form button {
+      font-size: 1rem;
+    }
+
+    .ticket-container {
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+
+    .buttonsContainer {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .buttonsContainer {
+      width: fit-content;
+    }
+  }
+}

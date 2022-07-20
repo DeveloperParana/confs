@@ -87,4 +87,9 @@
       color: #ffffff;
     }
   }
+
+  @media screen and (max-width: 1023px) {
+    width: clamp(400px, 50vw, 520px);
+    margin: 70px 0 0 0;
+  }
 }
