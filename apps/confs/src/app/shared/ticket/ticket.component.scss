@@ -1,0 +1,15 @@
+:host {
+  svg {
+    width: clamp(450px, 50vw, 650px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :host {
+    svg {
+      width: 100%;
+      aspect-ratio: 16/9;
+      height: fit-content;
+    }
+  }
+}

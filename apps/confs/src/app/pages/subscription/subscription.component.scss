@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 1300px;
   margin: 130px auto 0;
   align-items: center;
 
@@ -174,7 +175,7 @@
     margin: 70px auto 0;
 
     .description {
-      width: 80%;
+      width: min-content;
     }
 
     .description h1 {
@@ -205,11 +206,79 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 30px;
-      padding: 30px;
+      padding: 30px 0 30px 30px;
     }
 
     .buttonsContainer {
       width: fit-content;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :host {
+    .ticket-container {
+      flex-direction: column-reverse;
+    }
+
+    .buttonsContainer {
+      flex-direction: row;
+      margin: 30px 0;
+      padding: 0;
+    }
+
+    .font-button {
+      font-size: clamp(0.64rem, 2vw, 1rem);
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :host {
+    margin: 50px auto 0;
+
+    .description {
+      width: 100%;
+    }
+    .description form {
+      width: 100%;
+    }
+
+    .description form input {
+      font-size: clamp(0.7rem, 3.5vw, 1rem);
+    }
+
+    .description form button {
+      font-size: clamp(0.8rem, 1.7vw, 1rem);
+      padding: 10px;
+    }
+
+    .description h1 {
+      font-size: clamp(1.5rem, 7vw, 2.7rem);
+    }
+
+    .description h2,
+    .description p {
+      font-size: clamp(0.8rem, 4.2vw, 1rem);
+    }
+
+    .description h2 {
+      margin: 24px 0 24px 0;
+    }
+
+    .buttonsContainer {
+      width: 100%;
+      flex-direction: column;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .buttoGithub,
+    .buttonTwitter {
+      width: 100%;
+      padding: 16px;
+      font-size: 0.8rem;
+      justify-content: center;
     }
   }
 }

@@ -5,6 +5,7 @@
   margin: 0 auto;
   display: flex;
   position: relative;
+  padding: 0 1rem;
 
   img {
     height: 70px;
@@ -23,8 +24,16 @@
       rgba(197, 75, 255, 0.79) 114.87%
     );
     position: absolute;
-    right: 0;
+    right: 16px;
     bottom: -17px;
     transform: skew(-10deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    p {
+      bottom: -30px;
+    }
   }
 }
