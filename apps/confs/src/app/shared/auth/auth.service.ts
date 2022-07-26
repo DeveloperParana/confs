@@ -1,7 +1,7 @@
 import { GithubOAuthResponse, GithubUserConf } from './auth.interface';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
-import { map, BehaviorSubject } from 'rxjs';
+import { map, BehaviorSubject, switchMap, from } from 'rxjs';
 import { Injectable } from '@angular/core';
 import firebase from 'firebase/compat/app';
 import { AuthMapper } from './auth.mapper';
@@ -42,10 +42,22 @@ export class AuthService {
         const $user = user$.subscribe((user) => {
           $user.unsubscribe();
 
-          this._githubUser.next(user);
+          const avatar$ = this.getAvatar(user.avatar_url);
+          const $avatar = avatar$.subscribe((avatar) => {
+            $avatar.unsubscribe();
+
+            user.avatar_url = avatar;
+            this._githubUser.next(user);
+          });
         });
       }
     });
+  }
+
+  getAvatar(url: string) {
+    return this.http.get(url, { responseType: 'blob' }).pipe(
+      switchMap((image) => from(this._mapper.mapToBase64(image)))
+    );
   }
 
   findGithubApi(id: number) {
