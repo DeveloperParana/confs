@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { RouteRoutes } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
     PagesModule,
     SectionsModule,
+    RouteRoutes,
   ],
   providers: [],
   bootstrap: [AppComponent],
