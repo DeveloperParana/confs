@@ -16,6 +16,5 @@ export class TicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.loadUser();
-    console.log(this.userId);
   }
 }

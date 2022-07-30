@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,20 +7,30 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './subscription.component.html',
   styleUrls: ['./subscription.component.scss'],
 })
-export class SubscriptionComponent {
-  constructor(public authService: AuthService, private route: ActivatedRoute) {}
-  public userId: any = this.route.snapshot.params['id'];
-  public text =
-    'Fala, dev! participarei de um evento presencial organizado pelo DevPr, vamos fazer network e aprender novas tecnologias.\n\nJunte-se a mim pelo link:';
-  public eventUrl = `https://github.com/${this.userId}`;
-  public url = `http://twitter.com/share?text=${this.text}&url=${this.eventUrl}&hashtags=DevPrConf&via=DevPr`;
+export class SubscriptionComponent implements OnInit {
+  url!: string;
+  constructor(public authService: AuthService, private route: ActivatedRoute) {
+    if ('id' in this.route.snapshot.params) {
+      const { id } = this.route.snapshot.params;
+      const eventUrl = `https://github.com/${id}`;
+      const text =
+        'Fala, dev! participarei de um evento presencial organizado pelo DevPr, vamos fazer network e aprender novas tecnologias.\n\nJunte-se a mim pelo link:';
+      this.url = `http://twitter.com/share?text=${text}&url=${eventUrl}&hashtags=DevPrConf&via=DevPr`;
+      this.authService.loadUserUrl(id);
+
+      this.authService.githubUser$.subscribe((user) => {
+        if (user.login) {
+          this.url = `http://twitter.com/share?text=${text}&url=https://github.com/${user.login}&hashtags=DevPrConf&via=devpr`;
+        }
+      });
+    }
+  }
 
   login() {
     this.authService.signInGithub();
-    this.authService.auth.user.subscribe(console.log);
-    // this.authService.auth.currentUser.then(user => {
-    //   console.log(user);
+  }
 
-    // })
+  async ngOnInit() {
+    const user = await this.authService.auth.currentUser;
   }
 }

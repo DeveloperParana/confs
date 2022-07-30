@@ -54,10 +54,31 @@ export class AuthService {
     });
   }
 
+  loadUserUrl(username: string) {
+    const user$ = this.findGithubByUser(username);
+    const $user = user$.subscribe((user) => {
+      $user.unsubscribe();
+
+      const avatar$ = this.getAvatar(user.avatar_url);
+      const $avatar = avatar$.subscribe((avatar) => {
+        $avatar.unsubscribe();
+
+        user.avatar_url = avatar;
+        this._githubUser.next(user);
+      });
+    });
+  }
+
   getAvatar(url: string) {
-    return this.http.get(url, { responseType: 'blob' }).pipe(
-      switchMap((image) => from(this._mapper.mapToBase64(image)))
-    );
+    return this.http
+      .get(url, { responseType: 'blob' })
+      .pipe(switchMap((image) => from(this._mapper.mapToBase64(image))));
+  }
+
+  findGithubByUser(username: string) {
+    return this.http
+      .get<GithubOAuthResponse>(`https://api.github.com/users/${username}`)
+      .pipe(map((user) => this._mapper.mapTo(user)));
   }
 
   findGithubApi(id: number) {
