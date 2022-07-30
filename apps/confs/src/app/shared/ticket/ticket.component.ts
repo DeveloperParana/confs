@@ -8,11 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./ticket.component.scss'],
 })
 export class TicketComponent implements OnInit {
-  public userId!: number;
-
-  constructor(readonly auth: AuthService, private route: ActivatedRoute) {
-    this.route.params.subscribe((params) => (this.userId = params['id']));
-  }
+  constructor(readonly auth: AuthService) {}
 
   ngOnInit(): void {
     this.auth.loadUser();

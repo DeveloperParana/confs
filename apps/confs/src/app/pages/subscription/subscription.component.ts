@@ -17,13 +17,13 @@ export class SubscriptionComponent implements OnInit {
         'Fala, dev! participarei de um evento presencial organizado pelo DevPr, vamos fazer network e aprender novas tecnologias.\n\nJunte-se a mim pelo link:';
       this.url = `http://twitter.com/share?text=${text}&url=${eventUrl}&hashtags=DevPrConf&via=DevPr`;
       this.authService.loadUserUrl(id);
-
-      this.authService.githubUser$.subscribe((user) => {
-        if (user.login) {
-          this.url = `http://twitter.com/share?text=${text}&url=https://github.com/${user.login}&hashtags=DevPrConf&via=devpr`;
-        }
-      });
     }
+
+    this.authService.githubUser$.subscribe((user) => {
+      if (user.login) {
+        this.url = `http://twitter.com/share?text=Testando o compartilhamento&url=https://github.com/${user.login}&hashtags=DevPrConf&via=devpr`;
+      }
+    });
   }
 
   login() {
