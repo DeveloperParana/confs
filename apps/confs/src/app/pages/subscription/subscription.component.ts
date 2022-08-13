@@ -22,7 +22,7 @@ export class SubscriptionComponent implements OnInit {
 
     this.authService.githubUser$.subscribe((user) => {
       if (user.login) {
-        this.url = `http://twitter.com/share?text=${text}&url=devpr.org/${user.login}&hashtags=DevPrConf&via=DevPr`;
+        this.url = `http://twitter.com/share?text=${text}&url=devpr.org/#/${user.login}&hashtags=DevPrConf&via=DevPr`;
       }
     });
   }

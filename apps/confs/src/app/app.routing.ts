@@ -6,4 +6,7 @@ const routes: Routes = [
   { path: ':id', component: SubscriptionComponent },
 ];
 
-export const RouteRoutes = RouterModule.forChild(routes);
+export const AppRoutes = RouterModule.forRoot(routes, {
+  initialNavigation: 'enabledBlocking',
+  useHash: true,
+});
