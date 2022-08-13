@@ -37,7 +37,8 @@
               "with": "apps/confs/src/environments/environment.prod.ts"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "baseHref": "./"
         },
         "development": {
           "buildOptimizer": false,
