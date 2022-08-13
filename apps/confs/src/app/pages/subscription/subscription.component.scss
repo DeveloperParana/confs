@@ -11,18 +11,14 @@
   }
 
   .description h1 {
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: clamp(2rem, 3.1vw, 2.7rem);
-    color: #ffffff;
+    font: var(--font-poppins-700);
+    color: var(--color-white);
   }
 
   .description h2 {
     margin: 24px 0 50px 0;
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 17px;
-    color: #a5a5ba;
+    font: var(--font-poppins-400);
+    color: var(--color-gray-100);
   }
 
   .description form {
@@ -33,18 +29,16 @@
   .description form input {
     width: 100%;
     height: 60px;
-    background: #111121;
-    border: 1px solid #ad78ff;
+    background: var(--color-darkBlue);
+    border: 1px solid var(--color-purple);
     border-radius: 8px;
     padding: 0 20px;
-    font-family: 'inter', sans-serif;
-    font-weight: 400;
-    font-size: clamp(0.6rem, 1.3vw, 1rem);
-    color: #8e8ea9;
+    font: var(--font-inter-500);
+    color: var(--color-gray-200);
     transition: 0.1s ease;
 
     &:focus {
-      outline: 2px solid #ad78ff;
+      outline: 2px solid var(--color-purple);
     }
   }
 
@@ -60,10 +54,8 @@
     );
     border-radius: 4px;
     border: none;
-    color: #ffffff;
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: clamp(0.6rem, 1.3vw, 1rem);
+    color: var(--color-white);
+    font: var(--font-inter-500);
     cursor: pointer;
     padding: 0 1.2rem;
     transition: all 0.1s ease;
@@ -75,20 +67,14 @@
 
   .description p {
     margin: 23px 0;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 16px;
-    color: #8a8e96;
+    font: var(--font-inter-400);
+    color: var(--color-gray-200);
   }
 
   .description a {
     text-decoration: none;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #ffffff;
+    font: var(--font-inter-400);
+    color: var(--color-white);
   }
 
   .buttonsContainer {
@@ -99,22 +85,22 @@
     align-items: center;
   }
 
-  .buttoGithub {
+  .button {
     border: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background: rgba(196, 196, 196, 0.01);
-    box-shadow: inset 0px 39px 56px -36px #4a5963,
-      inset 0px 7px 11px -4px #4a5963,
-      inset 0px -82px 68px -64px rgba(96, 68, 145, 0.3),
-      inset 0px 98px 100px -48px #4a5963, inset 0px 4px 18px #4a5963,
-      inset 0px 1px 40px rgba(227, 222, 255, 0.2);
     backdrop-filter: blur(100px);
     border-radius: 8px;
     cursor: pointer;
     transition: 0.2s ease;
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px -82px 68px -64px rgba(96, 68, 145, 0.3),
+      inset 0px 1px 40px rgba(227, 222, 255, 0.2);
+    font: var(--font-inter-500);
+    color: var(--color-white);
+    text-decoration: none;
 
     &:hover {
       background: rgba(107, 107, 107, 0.548);
@@ -126,32 +112,16 @@
     }
   }
 
+  .buttoGithub {
+    box-shadow: inset 0px 39px 56px -36px #4a5963,
+      inset 0px 7px 11px -4px #4a5963, inset 0px 98px 100px -48px #4a5963,
+      inset 0px 4px 18px #4a5963;
+  }
+
   .buttonTwitter {
-    text-decoration: none;
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    background: rgba(196, 196, 196, 0.01);
     box-shadow: inset 0px 39px 56px -36px #1da1f2,
-      inset 0px 7px 11px -4px #1da1f2,
-      inset 0px -82px 68px -64px rgba(96, 68, 145, 0.3),
-      inset 0px 98px 100px -48px #1da1f2, inset 0px 4px 18px #1da1f2,
-      inset 0px 1px 40px rgba(227, 222, 255, 0.2);
-    backdrop-filter: blur(100px);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s ease;
-
-    &:hover {
-      background: rgba(107, 107, 107, 0.548);
-    }
-
-    svg {
-      width: clamp(15px, 2vw, 24px);
-      height: clamp(15px, 2vw, 24px);
-    }
+      inset 0px 7px 11px -4px #1da1f2, inset 0px 98px 100px -48px #1da1f2,
+      inset 0px 4px 18px #1da1f2;
   }
 
   .divider {
@@ -159,13 +129,6 @@
     width: 1px;
     height: 16px;
     background: rgba(255, 255, 255, 0.2);
-  }
-
-  .font-button {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: clamp(0.6rem, 1.3vw, 1rem);
-    color: #ffffff;
   }
 }
 
@@ -176,7 +139,13 @@
     margin: 70px auto 0;
 
     .description {
-      width: min-content;
+      margin: 0 auto;
+      max-width: 768px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .description h1 {
@@ -187,31 +156,28 @@
       width: clamp(445px, 70vw, 520px);
     }
 
-    .description form input {
-      font-size: 1rem;
-    }
-
+    .description form input,
     .description form button {
       font-size: 1rem;
     }
 
     .ticket-container {
       display: flex;
+      flex-direction: column-reverse;
       margin: 0 auto;
       width: 100%;
       flex: 1;
     }
 
     .buttonsContainer {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
       gap: 30px;
       padding: 30px 0 30px 30px;
     }
 
     .buttonsContainer {
-      width: fit-content;
+      width: 100%;
     }
   }
 }
@@ -228,8 +194,8 @@
       padding: 0;
     }
 
-    .font-button {
-      font-size: clamp(0.64rem, 2vw, 1rem);
+    .button {
+      font-size: clamp(0.69rem, 2vw, 1rem);
     }
   }
 }
@@ -238,10 +204,10 @@
   :host {
     margin: 50px auto 0;
 
-    .description {
-      width: 100%;
-    }
-    .description form {
+    .description,
+    .description form,
+    .buttonsContainer,
+    .button {
       width: 100%;
     }
 
@@ -268,15 +234,12 @@
     }
 
     .buttonsContainer {
-      width: 100%;
       flex-direction: column;
       gap: 30px;
       margin: 30px 0;
     }
 
-    .buttoGithub,
-    .buttonTwitter {
-      width: 100%;
+    .button {
       padding: 16px;
       font-size: 0.8rem;
       justify-content: center;

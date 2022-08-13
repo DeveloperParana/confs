@@ -12,7 +12,7 @@ export class SubscriptionComponent implements OnInit {
   constructor(public authService: AuthService, private route: ActivatedRoute) {
     const { id } = this.route.snapshot.params;
     const text =
-      'Fala, dev! participarei de um evento presencial organizado pelo DevPr, vamos fazer network e aprender novas tecnologias.\n\nJunte-se a mim pelo link:';
+      'Fala, dev! participarei de um evento presencial organizado pelo DevPr, vamos fazer network e aprender novas tecnologias.%0D%0DJunte-se a mim pelo link:';
     const eventUrl = `devpr.org/${id}`;
 
     if ('id' in this.route.snapshot.params) {
