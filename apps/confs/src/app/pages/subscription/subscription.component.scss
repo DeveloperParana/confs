@@ -21,50 +21,6 @@
     color: var(--color-gray-100);
   }
 
-  .description form {
-    position: relative;
-    width: clamp(300px, 35vw, 500px);
-  }
-
-  .description form input {
-    width: 100%;
-    height: 60px;
-    background: var(--color-darkBlue);
-    border: 1px solid var(--color-purple);
-    border-radius: 8px;
-    padding: 0 20px;
-    font: var(--font-inter-500);
-    color: var(--color-gray-200);
-    transition: 0.1s ease;
-
-    &:focus {
-      outline: 2px solid var(--color-purple);
-    }
-  }
-
-  .description form button {
-    position: absolute;
-    right: 9px;
-    top: 9px;
-    height: 42px;
-    background: linear-gradient(
-      55.61deg,
-      #8c4bff 5.66%,
-      rgba(197, 75, 255, 0.79) 101.01%
-    );
-    border-radius: 4px;
-    border: none;
-    color: var(--color-white);
-    font: var(--font-inter-500);
-    cursor: pointer;
-    padding: 0 1.2rem;
-    transition: all 0.1s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
   .description p {
     margin: 23px 0;
     font: var(--font-inter-400);
@@ -152,15 +108,6 @@
       font-size: clamp(2rem, 6vw, 2.7rem);
     }
 
-    .description form {
-      width: clamp(445px, 70vw, 520px);
-    }
-
-    .description form input,
-    .description form button {
-      font-size: 1rem;
-    }
-
     .ticket-container {
       display: flex;
       flex-direction: column-reverse;
@@ -205,19 +152,9 @@
     margin: 50px auto 0;
 
     .description,
-    .description form,
     .buttonsContainer,
     .button {
       width: 100%;
-    }
-
-    .description form input {
-      font-size: clamp(0.7rem, 3.5vw, 1rem);
-    }
-
-    .description form button {
-      font-size: clamp(0.8rem, 1.7vw, 1rem);
-      padding: 10px;
     }
 
     .description h1 {

@@ -1,8 +1,7 @@
 :host {
-  // height: 70px;
   max-width: 1300px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   display: flex;
   position: relative;
   padding: 0 1rem;
@@ -34,7 +33,7 @@
 @media screen and (max-width: 768px) {
   :host {
     p {
-      bottom: -30px;
+      bottom: -40px;
     }
   }
 }
