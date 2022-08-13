@@ -13,7 +13,7 @@
         "polyfills": "apps/confs/src/polyfills.ts",
         "tsConfig": "apps/confs/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/confs/src/favicon.ico", "apps/confs/src/assets"],
+        "assets": ["apps/confs/src/favicon.ico", "apps/confs/src/CNAME", "apps/confs/src/assets"],
         "styles": ["apps/confs/src/styles.scss"],
         "scripts": []
       },
