@@ -25,6 +25,7 @@
     "@nrwl/jest": "14.5.6",
     "@nrwl/linter": "14.5.6",
     "@nrwl/nx-cloud": "14.4.1",
+    "@nrwl/web": "^14.5.6",
     "@nrwl/workspace": "14.5.6",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",

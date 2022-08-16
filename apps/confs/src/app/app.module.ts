@@ -1,10 +1,9 @@
 import { SectionsModule } from './sections/sections.module';
 import { PagesModule } from './pages/pages.module';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routing';
 
 @NgModule({
@@ -15,6 +14,9 @@ import { AppRoutes } from './app.routing';
     PagesModule,
     SectionsModule,
     AppRoutes,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,12 @@
 <header confs-header></header>
+
+<event-ticket
+  [attr.user-id]="user.id"
+  [attr.user-name]="user.name"
+  [attr.user-login]="user.login"
+  [attr.user-avatar]="user.avatar"
+> </event-ticket>
+
 <main>
   <router-outlet> </router-outlet>
 </main>
