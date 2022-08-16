@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@confs/auth/data-access": ["libs/auth/data-access/src/index.ts"],
+      "@confs/auth/data-state": ["libs/auth/data-state/src/index.ts"],
+      "@confs/event/data-state": ["libs/event/data-state/src/index.ts"],
+      "@confs/event/feature-subscribe": [
+        "libs/event/feature-subscribe/src/index.ts"
+      ],
       "@confs/event/ui-ticket": ["libs/event/ui-ticket/src/index.ts"],
       "@confs/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@confs/shared/data-state": ["libs/shared/data-state/src/index.ts"]
