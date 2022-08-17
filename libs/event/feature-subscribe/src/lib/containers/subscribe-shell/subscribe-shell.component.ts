@@ -17,7 +17,9 @@ export class SubscribeShellComponent {
   };
 
   constructor(
-    readonly authFacade: AuthFacade,
-    readonly ticketFacade: TicketFacade
-  ) {}
+    readonly authFacade: AuthFacade
+  ) // readonly ticketFacade: TicketFacade
+  {
+    this.authFacade.loadAuthorizeParams();
+  }
 }

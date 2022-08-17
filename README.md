@@ -1,94 +1,57 @@
+# **DevPR** _Confs_
+
+_Projeto aberto para sites de conferências de programação._
+
+---
+
+## Arquitetura
+
+O projeto foi construído usando conceitos de diretórios agrupadores e separações de responsabilidades da base de código divididas entre bibliotecas com nomeclaturas sugestivas.
+
+### Exemplo
 
 
-# Confs
+```
+libs
+├── auth
+│   ├── data-access
+│   └── data-state
+├── event
+│   ├── data-state
+│   ├── feature-subscribe
+│   └── ui-ticket
+└── shared
+    ├── data-access
+    └── data-state
+```
 
-This project was generated using [Nx](https://nx.dev).
+### Diretórios agrupadores
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+- **auth** - Diretório agrupador para suas respectivas bibliotecas.
+- **event** - Diretório agrupador para suas respectivas bibliotecas.
+- **shahred** - Diretório agrupador para respectivas compartilhadas.
 
-🔎 **Smart, Fast and Extensible Build System**
+### Tipos de bibliotecas
 
-## Adding capabilities to your workspace
+- **data-state** - Biblioteca para lidar com o estado dos dados.
+- **data-access** - Biblioteca para lidar com acesso aos dados.
+- **feature-*** - Biblioteca para componentes com funcionalidades.
+- **ui-*** - Biblioteca para componentes de apresentção (inpit | output).
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+---
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+## Tecnologias
 
-Below are our core plugins:
+Todo desenvolvimento está até então baseado em [TypeScript](https://www.typescriptlang.org/), nos esforçamos para manter bibliotecas de acesso e estado de dados, independentes de frameworks.
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+Alguns componentes de _apresentação_ são desenvolvidos usando [componentes da web](https://html.spec.whatwg.org/dev/custom-elements.html#custom-elements) na sua forma nativa, outros usamos [angular](https://angular.io/).
 
-There are also many [community plugins](https://nx.dev/community) you could add.
-
-## Generate an application
-
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@confs/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+Até o presente momento, para componentes de funcionalidades, foi adotado [angular](https://angular.io/) como padrão.
 
 
+---
 
-## ☁ Nx Cloud
+## Repositório
 
-### Distributed Computation Caching & Distributed Task Execution
+Esse repositório utiliza [Nx](https://nx.dev) para gerenciar projetos, seus relacionamentos e execução de tarefas, tanto em desenvolvimento como pipelines de _integração contínua_. Em conjunto temos também bibliotecas como [Jest](https://jestjs.io/) para testes unitários, [Cypress](https://www.cypress.io/) para testes de integração e [ESLint](https://eslint.org/) para linting da base de código e checagem de relacionamentos entre os projetos devido algumas boas práticas utilizadas.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.

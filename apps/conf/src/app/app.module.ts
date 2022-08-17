@@ -2,26 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { APP_PROVIDERS } from './app.providers';
+import { AppRouting } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-      [
-        {
-          path: '',
-          loadChildren: () =>
-            import('@confs/event/feature-subscribe').then(
-              (module) => module.EventFeatureSubscribeModule
-            ),
-        },
-      ],
-      { initialNavigation: 'enabledBlocking' }
-    ),
-  ],
-  providers: [],
+  imports: [BrowserModule, AppRouting],
+  providers: [...APP_PROVIDERS],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

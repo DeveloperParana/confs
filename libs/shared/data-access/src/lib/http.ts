@@ -1,9 +1,7 @@
-import { ajax, AjaxResponse } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
+import { ajax } from 'rxjs/ajax';
 
-function extractAjaxResponse<T>() {
-  return ({ response }: AjaxResponse<T>) => response;
-}
+import { extractAjaxResponse } from './utilities/extract-ajax-response';
 
 export class Http {
   get<T>(url: string, headers?: Record<string, string>) {

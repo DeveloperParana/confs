@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@confs/auth/api-interfaces": ["libs/auth/api-interfaces/src/index.ts"],
       "@confs/auth/data-access": ["libs/auth/data-access/src/index.ts"],
       "@confs/auth/data-state": ["libs/auth/data-state/src/index.ts"],
       "@confs/event/data-state": ["libs/event/data-state/src/index.ts"],
