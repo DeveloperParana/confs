@@ -11,7 +11,9 @@
     "event-data-state": "libs/event/data-state",
     "event-feature-subscribe": "libs/event/feature-subscribe",
     "event-ui-ticket": "libs/event/ui-ticket",
+    "server": "apps/server",
     "shared-data-access": "libs/shared/data-access",
-    "shared-data-state": "libs/shared/data-state"
+    "shared-data-state": "libs/shared/data-state",
+    "shared-util-format": "libs/shared/util-format"
   }
 }

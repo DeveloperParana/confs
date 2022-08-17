@@ -24,7 +24,8 @@
       ],
       "@confs/event/ui-ticket": ["libs/event/ui-ticket/src/index.ts"],
       "@confs/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@confs/shared/data-state": ["libs/shared/data-state/src/index.ts"]
+      "@confs/shared/data-state": ["libs/shared/data-state/src/index.ts"],
+      "@confs/shared/util-format": ["libs/shared/util-format/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

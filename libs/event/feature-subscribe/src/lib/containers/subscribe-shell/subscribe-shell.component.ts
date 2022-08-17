@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthFacade } from '@confs/auth/data-state';
-import { TicketFacade } from '@confs/event/data-state';
 
 import '@confs/event/ui-ticket';
 
@@ -9,6 +8,8 @@ import '@confs/event/ui-ticket';
   styleUrls: ['./subscribe-shell.component.scss'],
 })
 export class SubscribeShellComponent {
+  date = new Date('05/11/2022').toLocaleDateString();
+
   user = {
     id: '5638096',
     login: 'guiseek',
@@ -17,9 +18,8 @@ export class SubscribeShellComponent {
   };
 
   constructor(
-    readonly authFacade: AuthFacade
-  ) // readonly ticketFacade: TicketFacade
-  {
+    readonly authFacade: AuthFacade // readonly ticketFacade: TicketFacade
+  ) {
     this.authFacade.loadAuthorizeParams();
   }
 }

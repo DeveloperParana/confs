@@ -2,10 +2,7 @@ const template = document.createElement('template');
 
 template.innerHTML = `
 <svg
-  width="666"
-  height="363"
   viewBox="0 0 666 363"
-  fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
   <g id="Ticket">

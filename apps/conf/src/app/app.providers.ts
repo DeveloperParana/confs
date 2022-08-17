@@ -1,10 +1,11 @@
 import { Provider } from '@angular/core';
 
+import { environment } from '../environments/environment';
+
 import { GithubOAuthOptions } from '@confs/auth/api-interfaces';
-import { GithubOAuthService } from '@confs/auth/data-access';
+import { OAuthService } from '@confs/auth/data-access';
 import { AuthFacade } from '@confs/auth/data-state';
 
-import { environment } from '../environments/environment';
 
 export const APP_PROVIDERS: Provider[] = [
   {
@@ -12,15 +13,15 @@ export const APP_PROVIDERS: Provider[] = [
     useValue: environment['github.oauth.options'],
   },
   {
-    provide: GithubOAuthService,
+    provide: OAuthService,
     useFactory: (options: GithubOAuthOptions) =>
-      new GithubOAuthService(options),
+      new OAuthService(options),
     deps: ['github.oauth.options'],
   },
   {
     provide: AuthFacade,
-    useFactory: (authService: GithubOAuthService) =>
+    useFactory: (authService: OAuthService) =>
       new AuthFacade(authService),
-    deps: [GithubOAuthService],
+    deps: [OAuthService],
   },
 ];

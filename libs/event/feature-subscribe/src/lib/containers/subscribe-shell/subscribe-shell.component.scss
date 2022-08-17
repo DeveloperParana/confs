@@ -1,0 +1,118 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 1400px;
+  max-width: 100%;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+
+    flex-direction: column;
+    row-gap: 12px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    img {
+      max-width: 200px;
+      filter: drop-shadow(1px 2px 2px rgb(0 0 0 / 0.9));
+    }
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    row-gap: 64px;
+    column-gap: 64px;
+    padding: 2rem 0;
+    flex: 1;
+
+    > form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    flex-direction: column;
+    align-items: center;
+
+    > section nav {
+      margin: 6px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      > form {
+        width: 40%;
+      }
+      > section {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      h1 {
+        text-align: center;
+        line-height: 48px;
+        font-size: 32px;
+      }
+      h2 {
+        text-align: center;
+      }
+      > form {
+        margin: 12px;
+      }
+      > section nav {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+
+      }
+    }
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 57px;
+    font-size: 43px;
+    color: #ffffff;
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    font-size: 17px;
+    color: #a5a5ba;
+  }
+
+  time {
+    display: inline-flex;
+    transform: skew(-8deg);
+    padding: 6px 24px;
+    margin-right: 12px;
+
+    font-style: italic;
+    text-align: center;
+    text-transform: capitalize;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.07em;
+
+    color: #ffffff;
+    background: linear-gradient(
+      347.16deg,
+      #8c4bff 8.18%,
+      rgba(197, 75, 255, 0.79) 114.87%
+    );
+  }
+}

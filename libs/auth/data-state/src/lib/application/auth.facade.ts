@@ -1,4 +1,4 @@
-import { GithubOAuthService } from '@confs/auth/data-access';
+import { OAuthService } from '@confs/auth/data-access';
 import { State } from '@confs/shared/data-state';
 
 interface AuthState {
@@ -14,7 +14,7 @@ export class AuthFacade extends State<AuthState> {
 
   authorize$ = this.select((state) => state.authorize);
 
-  constructor(readonly authService: GithubOAuthService) {
+  constructor(readonly authService: OAuthService) {
     super({
       loading: false,
       authorize: '',
@@ -22,10 +22,10 @@ export class AuthFacade extends State<AuthState> {
     });
   }
 
-  loadGithubAuthentication() {
+  loadGithubAuthentication(code: string) {
     this.setState({ loading: true });
 
-    this.authService.getAccessToken('code').subscribe(({ accessToken }) => {
+    this.authService.getAccessToken(code).subscribe(({ accessToken }) => {
       this.authService.getUserInfo(accessToken).subscribe((user) => {
         this.setState({
           loading: false,

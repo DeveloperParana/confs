@@ -1,0 +1,38 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  column-gap: 6px;
+  padding: 6px;
+
+  background: var(--fieldset-background-color);
+  border: var(--fieldset-border-width) solid var(--fieldset-border-color);
+
+  input {
+    transition: outline-color 0.2s ease-in-out;
+    background-color: var(--form-control-background-color);
+    min-width: 200px;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 1px 0 0;
+    border: 0;
+    flex: 1;
+    color: white;
+
+    &::placeholder {
+      color: #8e8ea9;
+    }
+
+    &,
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &:focus {
+      outline-color: var(--form-control-outline-color);
+      outline-style: dashed;
+    }
+  }
+}

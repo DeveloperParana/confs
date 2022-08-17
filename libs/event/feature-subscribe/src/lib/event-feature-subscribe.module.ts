@@ -1,23 +1,23 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-import { SubscribeFormComponent } from './components';
+import { EventFeatureSubscribeRouting } from './event-feature-subscribe.routing';
 import { SubscribeShellComponent } from './containers';
+import {
+  SubscribeFormComponent,
+  GithubButtonComponent,
+  TwitterButtonComponent,
+} from './components';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: SubscribeShellComponent,
-      },
-    ]),
+  declarations: [
+    SubscribeFormComponent,
+    SubscribeShellComponent,
+    GithubButtonComponent,
+    TwitterButtonComponent,
   ],
+  imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [SubscribeFormComponent, SubscribeShellComponent],
 })
 export class EventFeatureSubscribeModule {}

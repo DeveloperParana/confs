@@ -19,16 +19,7 @@ import {
     />
     <button type="button" (click)="submit()">Registrar</button>
   `,
-  styles: [
-    `
-      :host {
-        display: flex;
-      }
-      :host input {
-        flex: 1;
-      }
-    `,
-  ],
+  styleUrls: ['./subscribe-form.component.scss'],
 })
 export class SubscribeFormComponent implements OnInit, OnDestroy {
   private _subject = new Subject<void>();
