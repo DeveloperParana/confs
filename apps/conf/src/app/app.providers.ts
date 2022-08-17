@@ -4,8 +4,8 @@ import { environment } from '../environments/environment';
 
 import { GithubOAuthOptions } from '@confs/auth/api-interfaces';
 import { ServerApiService } from '@confs/shared/data-access';
-import { SubscribeFacade } from '@confs/event/data-state';
-import { OAuthService } from '@confs/auth/data-access';
+import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
+import { GithubApiService, OAuthService } from '@confs/auth/data-access';
 import { AuthFacade } from '@confs/auth/data-state';
 
 export const APP_PROVIDERS: Provider[] = [
@@ -26,6 +26,17 @@ export const APP_PROVIDERS: Provider[] = [
     provide: AuthFacade,
     useFactory: (authService: OAuthService) => new AuthFacade(authService),
     deps: [OAuthService],
+  },
+  {
+    provide: GithubApiService,
+    useClass: GithubApiService,
+  },
+  {
+    provide: TicketFacade,
+    useFactory: (githubApiService: GithubApiService) => {
+      return new TicketFacade(githubApiService);
+    },
+    deps: [GithubApiService],
   },
   {
     provide: ServerApiService,

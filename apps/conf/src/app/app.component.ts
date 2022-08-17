@@ -2,18 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'conf-root',
-  template: `<router-outlet></router-outlet>`,
-  styles: [
-    `
-      :host {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-      }
-    `,
-  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'conf';
+
+  date = new Date('05/11/2022').toLocaleDateString();
 }

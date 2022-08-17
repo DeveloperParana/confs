@@ -1,13 +1,6 @@
-<header>
-  <img src="/assets/devpr-logo.svg" alt="DevPR Conf 2022" />
-  <time>
-    {{ date | date: 'MMMM d, yyyy' }}
-  </time>
-</header>
-
 <main>
   <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
-    <h1>Conferência anual dos desenvolvedores</h1>
+    <h1>Conferência anual de e para pessoas desenvolvedoras</h1>
     <h2>Faça porte da comunidade neste evento</h2>
 
     <p>{{ subscribeFacade.message$ | async }}</p>
@@ -17,7 +10,11 @@
         #email
         type="email"
         formControlName="email"
-        placeholder="Acompanhe a programação"
+        [placeholder]="
+          (formFocused$ | async)
+            ? 'Digite seu email'
+            : 'Acompanhe a programação'
+        "
       />
       <button type="submit" [disabled]="subscribeFacade.loading$ | async">
         <code>query</code>
@@ -26,13 +23,18 @@
   </form>
 
   <section>
-    <event-ticket
-      [attr.user-id]="user.id"
-      [attr.user-name]="user.name"
-      [attr.user-login]="user.login"
-      [attr.user-avatar]="user.avatar"
-    >
-    </event-ticket>
+    <ng-container *ngIf="ticketFacade.user$ | async as user; else loading">
+      <event-ticket
+        [attr.user-id]="user.id"
+        [attr.user-name]="user.name"
+        [attr.user-login]="user.login"
+        [attr.user-avatar]="user.avatarUrl"
+      >
+      </event-ticket>
+    </ng-container>
+    <ng-template #loading>
+      <object data="/assets/loading.svg"></object>
+    </ng-template>
 
     <nav>
       <a confs-github-button [href]="authFacade.authorize$ | async">

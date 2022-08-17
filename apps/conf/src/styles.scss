@@ -13,6 +13,10 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   background-image: linear-gradient(
     180deg,
     #191c3a 0%,
@@ -74,7 +78,6 @@ button {
   &:hover {
     cursor: pointer;
   }
-
 }
 
 a svg,

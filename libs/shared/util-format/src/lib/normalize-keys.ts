@@ -1,11 +1,15 @@
 import { toCamelCase } from './format-case';
 
-export const normalizeKeys = <T extends Record<string, string>>(obj: T) => {
-  const normalized = {} as Record<string, string>;
+type RecordObject<T> = {
+  [P in keyof T]?: T[P];
+};
+
+export const normalizeKeys = <T, R>(obj: RecordObject<T>) => {
+  const normalized = {} as Record<string, unknown>;
 
   Object.keys(obj).forEach((key) => {
-    normalized[toCamelCase(key)] = obj[key];
+    normalized[toCamelCase(key)] = obj[key as keyof T];
   });
 
-  return normalized as T;
+  return normalized as R;
 };

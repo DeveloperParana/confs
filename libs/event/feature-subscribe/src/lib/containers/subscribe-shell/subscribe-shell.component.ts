@@ -1,34 +1,50 @@
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
 
-import { SubscribeFacade } from '@confs/event/data-state';
+import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
 import { AuthFacade } from '@confs/auth/data-state';
+import { BehaviorSubject } from 'rxjs';
 
 import '@confs/event/ui-ticket';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './subscribe-shell.component.html',
   styleUrls: ['./subscribe-shell.component.scss'],
 })
-export class SubscribeShellComponent {
-  date = new Date('05/11/2022').toLocaleDateString();
+export class SubscribeShellComponent implements AfterViewInit {
+  @ViewChild('email')
+  readonly _emailRef!: ElementRef<HTMLInputElement>;
 
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  user = {
-    id: '5638096',
-    login: 'guiseek',
-    name: 'Guilherme Siquinelli',
-    avatar: 'https://avatars.githubusercontent.com/u/5638096?v=4',
-  };
+  private _formFocused = new BehaviorSubject<boolean>(false);
+  readonly formFocused$ = this._formFocused.asObservable();
 
   constructor(
     readonly subscribeFacade: SubscribeFacade,
-    readonly authFacade: AuthFacade // readonly ticketFacade: TicketFacade
+    readonly ticketFacade: TicketFacade,
+    readonly authFacade: AuthFacade,
+    readonly route: ActivatedRoute
   ) {
+    route.data.subscribe(({ ticketUser }) => {
+      console.log(ticketUser);
+    });
+
     this.authFacade.loadAuthorizeParams();
+  }
+
+  ngAfterViewInit() {
+    const emailElement = this._emailRef.nativeElement;
+    emailElement.onfocus = () => this.changeFocus();
+    emailElement.onblur = () => this.changeFocus();
+  }
+
+  changeFocus() {
+    const current = this._formFocused.value;
+    this._formFocused.next(!current);
   }
 
   onSubmit(input?: HTMLInputElement) {

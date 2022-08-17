@@ -46,23 +46,20 @@ export class OAuthService extends Http {
   getAccessToken(code: string) {
     const { clientId, redirectUri, scope } = this._options;
 
-    return this.post<AccessTokenResponse, AccessToken>(
-      '/api/oauth/access-token',
-      { clientId, redirectUri, scope, code }
-    ).pipe(
+    const url = '/api/oauth/access-token';
+    const data = { clientId, redirectUri, scope, code };
+
+    return this.post<AccessTokenResponse, AccessToken>(url, data).pipe(
       map((response) => {
-        const { accessToken } = response;
-        console.log(accessToken);
-        this.storage.set('accessToken', accessToken);
+        console.log(response.accessToken);
+        this.storage.set('accessToken', response.accessToken);
         return response;
       })
     );
   }
 
   getUserInfo(accessToken: string) {
-    const headers = {
-      Authorization: `Bearer ${accessToken}`,
-    };
+    const headers = { Authorization: `Bearer ${accessToken}` };
     return this.get('https://api.github.com/user', headers);
   }
 }
