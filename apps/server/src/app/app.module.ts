@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OAuthModule } from './oauth/oauth.module';
 import { SubscribeModule } from './subscribe/subscribe.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { SubscribeModule } from './subscribe/subscribe.module';
     SubscribeModule,
     ConfigModule.forRoot({
       isGlobal: true,
-    })
+    }),
+    DatabaseModule,
   ],
   controllers: [AppController],
   providers: [AppService],

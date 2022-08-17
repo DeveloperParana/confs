@@ -1,6 +1,8 @@
 export class Subscribe {
-  id: number;
   email: string;
+  id?: number;
+  name?: string;
+  username?: string;
   createdAt: Date;
   updatedAt: Date;
 }

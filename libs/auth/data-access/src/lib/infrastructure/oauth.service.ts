@@ -51,7 +51,6 @@ export class OAuthService extends Http {
 
     return this.post<AccessTokenResponse, AccessToken>(url, data).pipe(
       map((response) => {
-        console.log(response.accessToken);
         this.storage.set('accessToken', response.accessToken);
         return response;
       })

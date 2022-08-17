@@ -1,14 +1,7 @@
-import {
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Controller,
-} from '@nestjs/common';
+import { Get, Post, Body, Param, Controller } from '@nestjs/common';
+
 import { SubscribeService } from './subscribe.service';
-import { CreateSubscribeDto, UpdateSubscribeDto } from './dto';
+import { CreateSubscribeDto } from './dto';
 
 @Controller('subscribe')
 export class SubscribeController {
@@ -16,26 +9,16 @@ export class SubscribeController {
 
   @Post()
   create(@Body() createSubscribeDto: CreateSubscribeDto) {
-    console.log(createSubscribeDto);
-
     return this.subscribeService.create(createSubscribeDto);
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    this.subscribeService.findOne(id)
+    return this.subscribeService.findOne(id);
   }
 
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateSubscribeDto: UpdateSubscribeDto
-  ) {
-    return this.subscribeService.update(id, updateSubscribeDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.subscribeService.remove(id);
+  @Get()
+  findAll() {
+    return this.subscribeService.findAll();
   }
 }

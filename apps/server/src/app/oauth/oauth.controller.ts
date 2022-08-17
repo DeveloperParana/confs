@@ -8,7 +8,6 @@ export class OAuthController {
 
   @Post('access-token')
   accessToken(@Body() body: AccessToken) {
-    console.log(body);
     return this.oauthService.getAccessToken(body);
   }
 }

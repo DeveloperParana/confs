@@ -1,25 +1,40 @@
-import { Injectable } from '@nestjs/common';
-import { CreateSubscribeDto, UpdateSubscribeDto } from './dto';
+import { Injectable, Inject } from '@nestjs/common';
+import { Model } from 'mongoose';
+
+import { Subscribe } from './entities/subscribe.entity';
+import { CreateSubscribeDto } from './dto';
+import { normalizeKeys } from '@confs/shared/util-format';
 
 @Injectable()
 export class SubscribeService {
-  create(createSubscribeDto: CreateSubscribeDto) {
-    return 'This action adds a new subscribe';
+  constructor(
+    @Inject('subscribe.model')
+    private readonly _model: Model<Subscribe>
+  ) {}
+
+  async create(createSubscribeDto: CreateSubscribeDto): Promise<Subscribe> {
+    const promise = new this._model(createSubscribeDto).save();
+
+    return promise.then((subscribe) =>
+      normalizeKeys<unknown, Subscribe>(subscribe.toJSON())
+    );
   }
 
-  findAll() {
-    return `This action returns all subscribe`;
+  async findAll(): Promise<Subscribe[]> {
+    const promise = this._model.find().exec();
+
+    return promise.then((subscribes) =>
+      subscribes.map((subscribe) =>
+        normalizeKeys<unknown, Subscribe>(subscribe.toJSON())
+      )
+    );
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} subscribe`;
-  }
+  async findOne(id: string): Promise<Subscribe> {
+    const promise = this._model.findOne({ id }).exec();
 
-  update(id: string, updateSubscribeDto: UpdateSubscribeDto) {
-    return `This action updates a #${id} subscribe`;
-  }
-
-  remove(id: string) {
-    return `This action removes a #${id} subscribe`;
+    return promise.then((subscribe) =>
+      normalizeKeys<unknown, Subscribe>(subscribe.toJSON())
+    );
   }
 }
