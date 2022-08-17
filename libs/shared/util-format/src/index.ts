@@ -1,1 +1,1 @@
-export * from './lib/shared-util-format';
+export * from './public-api';

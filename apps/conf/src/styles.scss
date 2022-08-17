@@ -1,6 +1,7 @@
 :root {
   --fieldset-border-width: 2px;
   --fieldset-border-color: rgb(173, 120, 255);
+  --fieldset-border-color-error: rgb(236, 63, 63);
   --fieldset-background-color: rgba(0, 0, 0, 0.8);
   --form-control-background-color: rgba(255, 255, 255, 0.08);
   --form-control-outline-color: rgba(173, 120, 255, 0.4);
@@ -77,8 +78,10 @@ button {
 }
 
 a svg,
-button svg {
+button svg,
+button .svg-icon {
   width: 24px;
+  height: 24px;
 }
 
 .shine-effect {

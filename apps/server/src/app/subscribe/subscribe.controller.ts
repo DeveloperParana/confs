@@ -16,6 +16,8 @@ export class SubscribeController {
 
   @Post()
   create(@Body() createSubscribeDto: CreateSubscribeDto) {
+    console.log(createSubscribeDto);
+
     return this.subscribeService.create(createSubscribeDto);
   }
 

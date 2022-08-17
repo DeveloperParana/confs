@@ -6,11 +6,23 @@
 </header>
 
 <main>
-  <form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
     <h1>Conferência anual dos desenvolvedores</h1>
     <h2>Faça porte da comunidade neste evento</h2>
 
-    <fieldset confs-subscribe-form></fieldset>
+    <p>{{ subscribeFacade.message$ | async }}</p>
+
+    <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
+      <input
+        #email
+        type="email"
+        formControlName="email"
+        placeholder="Acompanhe a programação"
+      />
+      <button type="submit" [disabled]="subscribeFacade.loading$ | async">
+        <code>query</code>
+      </button>
+    </fieldset>
   </form>
 
   <section>
@@ -24,11 +36,11 @@
 
     <nav>
       <a confs-github-button [href]="authFacade.authorize$ | async">
-        Prepare seu ingresso com GitHub
+        Vincular meu GitHub
       </a>
 
       <a confs-twitter-button [href]="authFacade.authorize$ | async">
-        Compartilhe com a comunidade
+        Avise a comunidade
       </a>
     </nav>
   </section>
