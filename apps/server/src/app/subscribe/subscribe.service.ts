@@ -1,9 +1,10 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Model } from 'mongoose';
 
+import { normalizeKeys } from '@confs/shared/util-format';
+
 import { Subscribe } from './entities/subscribe.entity';
 import { CreateSubscribeDto } from './dto';
-import { normalizeKeys } from '@confs/shared/util-format';
 
 @Injectable()
 export class SubscribeService {

@@ -1,12 +1,11 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
 import { AuthFacade } from '@confs/auth/data-state';
-import { BehaviorSubject } from 'rxjs';
-
 import '@confs/event/ui-ticket';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './subscribe-shell.component.html',
@@ -29,9 +28,9 @@ export class SubscribeShellComponent implements AfterViewInit {
     readonly authFacade: AuthFacade,
     readonly route: ActivatedRoute
   ) {
-    route.data.subscribe(({ ticketUser }) => {
-      console.log(ticketUser);
-    });
+    const username = route.snapshot.paramMap.get('username');
+    const login = username ?? 'developerparana';
+    this.ticketFacade.loadUserFromLogin(login);
 
     this.authFacade.loadAuthorizeParams();
   }

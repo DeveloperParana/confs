@@ -1,7 +1,7 @@
 import { RouterModule } from '@angular/router';
 
-import { OAuthResolver, TicketResolver } from './resolvers';
 import { SubscribeShellComponent } from './containers';
+import { OAuthResolver } from './resolvers';
 
 export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {
@@ -11,9 +11,6 @@ export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {
     path: ':username',
     component: SubscribeShellComponent,
-    resolve: {
-      ticketUser: TicketResolver,
-    },
   },
   {
     path: 'oauth/callback',
