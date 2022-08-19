@@ -64,6 +64,8 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/serve-static": "^3.0.0",
+    "hbs": "^4.2.0",
     "mongoose": "^6.5.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.4.0",

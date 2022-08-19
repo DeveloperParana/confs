@@ -102,8 +102,8 @@ template.innerHTML = `
           font-weight="600"
           letter-spacing="2px"
         >
-          <tspan x="141.101" y="309.2">de</tspan>
-          <tspan x="291.556" y="309.2">de</tspan>
+          <tspan x="131.101" y="309.2">de</tspan>
+          <tspan x="330.556" y="309.2">de</tspan>
         </text>
         <text
           fill="#C0C0CF"
@@ -128,9 +128,9 @@ template.innerHTML = `
           font-weight="600"
           letter-spacing="2px"
         >
-          <tspan x="104.593" y="309.2">22</tspan>
-          <tspan x="180.831" y="309.2">outubro</tspan>
-          <tspan x="331.286" y="309.2">2022</tspan>
+          <tspan x="104.593" y="309.2">5</tspan>
+          <tspan x="180.831" y="309.2">novembro</tspan>
+          <tspan x="381.286" y="309.2">2022</tspan>
         </text>
       </g>
     </g>
