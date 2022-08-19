@@ -10,6 +10,6 @@ const routes: Routes = [
   },
 ];
 
-const extras: ExtraOptions = { initialNavigation: 'enabledBlocking' };
+const extras: ExtraOptions = { initialNavigation: 'enabledBlocking', useHash: true };
 
 export const AppRouting = RouterModule.forRoot(routes, extras);

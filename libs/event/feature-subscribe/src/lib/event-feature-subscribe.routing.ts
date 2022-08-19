@@ -14,13 +14,14 @@ export const EventFeatureSubscribeRouting = RouterModule.forChild([
     },
     children: [
       {
-        path: '',
-        component: HomeComponent,
-      },
-      {
         path: ':username',
         component: HomeComponent,
         canActivate: [UserGuard],
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'developerparana'
       },
     ],
   },
