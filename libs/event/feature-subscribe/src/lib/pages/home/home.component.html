@@ -1,0 +1,47 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(email)">
+  <h1>Conferência anual de e para pessoas desenvolvedoras</h1>
+  <h2>Faça porte da comunidade neste evento</h2>
+
+  <p>{{ subscribeFacade.message$ | async }}</p>
+
+  <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
+    <input
+      #email
+      type="email"
+      formControlName="email"
+      (blur)="changeFocus(email)"
+      (focus)="changeFocus(email)"
+      [placeholder]="placeholder.acompanhe"
+    />
+    <button type="submit" [disabled]="subscribeFacade.loading$ | async">
+      enviar
+    </button>
+  </fieldset>
+</form>
+
+<section>
+  <ng-container *ngIf="ticketFacade.user$ | async as user; else loading">
+    <event-ticket
+      [attr.user-id]="user.id"
+      [attr.user-name]="user.name"
+      [attr.user-login]="user.login"
+      [attr.user-avatar]="user.avatarUrl"
+    >
+    </event-ticket>
+  </ng-container>
+  <ng-template #loading>
+    <figure>
+      <object data="/assets/loading.svg"></object>
+    </figure>
+  </ng-template>
+
+  <nav>
+    <a confs-github-button [href]="authFacade.authorize$ | async">
+      Use seu GitHub
+    </a>
+
+    <a confs-twitter-button [href]="authFacade.authorize$ | async">
+      Compartilhe seu convite
+    </a>
+  </nav>
+</section>

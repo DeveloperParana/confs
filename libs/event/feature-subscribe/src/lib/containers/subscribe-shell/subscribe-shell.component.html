@@ -1,0 +1,21 @@
+<header>
+  <img src="/assets/devpr-logo.svg" alt="DevPR Conf 2022" />
+  <time>
+    {{ date | date: 'MMMM d, yyyy' }}
+  </time>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <object data="/assets/logo.svg" type="image/svg+xml"></object>
+  <div>
+    <p><a rel="author" target="_blank" href="https://devparana.mx"> Comunidade DevParaná </a>.</p>
+    <p>
+      2015 - {{ date | date: 'yyyy' }} incentivando o compartilhamento de
+      conhecimento entre pessoas.
+    </p>
+  </div>
+</footer>
