@@ -12,13 +12,13 @@ export class SubscribeController {
     return this.subscribeService.create(createSubscribeDto);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.subscribeService.findOne(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.subscribeService.findOne(id);
+  // }
 
-  @Get()
-  findAll() {
-    return this.subscribeService.findAll();
-  }
+//   @Get()
+//   findAll() {
+//     return this.subscribeService.findAll();
+//   }
 }
