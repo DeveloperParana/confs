@@ -1,4 +1,4 @@
-import { GithubApiService } from '@confs/auth/data-access';
+import { ApiService } from '@confs/auth/data-access';
 import { State } from '@confs/shared/data-state';
 
 interface Scheduletate {
@@ -7,7 +7,7 @@ interface Scheduletate {
 }
 
 export class ScheduleFacade extends State<Scheduletate> {
-  constructor(readonly authService: GithubApiService) {
+  constructor(readonly authService: ApiService) {
     super({
       loading: false,
       talks: [],

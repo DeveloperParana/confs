@@ -1,10 +1,12 @@
-import { OAuthService } from '@confs/auth/data-access';
+import { ApiService, OAuthService } from '@confs/auth/data-access';
+
+import { GithubUser } from '@confs/auth/api-interfaces';
 import { State } from '@confs/shared/data-state';
 
 interface AuthState {
   loading: boolean;
   authorize: string;
-  user: unknown;
+  user: GithubUser | null;
 }
 
 export class AuthFacade extends State<AuthState> {
@@ -14,7 +16,10 @@ export class AuthFacade extends State<AuthState> {
 
   authorize$ = this.select((state) => state.authorize);
 
-  constructor(readonly authService: OAuthService) {
+  constructor(
+    readonly apiService: ApiService,
+    readonly oAuthService: OAuthService
+  ) {
     super({
       loading: false,
       authorize: '',
@@ -25,8 +30,15 @@ export class AuthFacade extends State<AuthState> {
   loadGithubAuthentication(code: string) {
     this.setState({ loading: true });
 
-    this.authService.getAccessToken(code).subscribe(({ accessToken }) => {
-      this.authService.getUserInfo(accessToken).subscribe((user) => {
+    const token$ = this.oAuthService.getAccessToken(code);
+
+    const $token = token$.subscribe((response) => {
+      const user$ = this.oAuthService.getUserInfo(response);
+
+      const $user = user$.subscribe((user) => {
+        $token.unsubscribe();
+        $user.unsubscribe();
+
         this.setState({
           loading: false,
           user,
@@ -36,7 +48,7 @@ export class AuthFacade extends State<AuthState> {
   }
 
   loadAuthorizeParams() {
-    const options = this.authService.getParamsFromOptions();
+    const options = this.oAuthService.getParamsFromOptions();
     const params = new URLSearchParams(options);
 
     const url = 'https://github.com/login/oauth/authorize';

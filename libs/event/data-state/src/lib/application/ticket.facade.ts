@@ -1,13 +1,14 @@
 import { map } from 'rxjs';
 
-import { GithubApiService } from '@confs/auth/data-access';
-import { TicketUser } from '@confs/auth/api-interfaces';
+import { ApiService } from '@confs/auth/data-access';
 import { State } from '@confs/shared/data-state';
 
 import { mapToTicketUser } from '../utilities';
+import { TicketUser } from '../entities';
 
 interface TicketState {
   loading: boolean;
+  error: string | null;
   user: TicketUser | null;
 }
 
@@ -16,9 +17,10 @@ export class TicketFacade extends State<TicketState> {
 
   user$ = this.select((state) => state.user);
 
-  constructor(readonly githubApiService: GithubApiService) {
+  constructor(readonly apiService: ApiService) {
     super({
       loading: false,
+      error: null,
       user: null,
     });
   }
@@ -26,7 +28,7 @@ export class TicketFacade extends State<TicketState> {
   loadUserFromLogin(username: string) {
     this.setState({ loading: true });
 
-    const user$ = this.githubApiService
+    const user$ = this.apiService
       .findUserByLogin(username)
       .pipe(map(mapToTicketUser));
 
@@ -39,9 +41,7 @@ export class TicketFacade extends State<TicketState> {
   loadUserFromId(id: string) {
     this.setState({ loading: true });
 
-    const user$ = this.githubApiService
-      .findUserById(id)
-      .pipe(map(mapToTicketUser));
+    const user$ = this.apiService.findUserById(id).pipe(map(mapToTicketUser));
 
     const $user = user$.subscribe((user) => {
       this.setState({ loading: false, user });

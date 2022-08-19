@@ -1,49 +1,21 @@
+<header>
+  <img src="/assets/devpr-logo.svg" alt="DevPR Conf 2022" />
+  <time>
+    {{ date | date: 'MMMM d, yyyy' }}
+  </time>
+</header>
+
 <main>
-  <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
-    <h1>Conferência anual de e para pessoas desenvolvedoras</h1>
-    <h2>Faça porte da comunidade neste evento</h2>
-
-    <p>{{ subscribeFacade.message$ | async }}</p>
-
-    <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
-      <input
-        #email
-        type="email"
-        formControlName="email"
-        [placeholder]="
-          (formFocused$ | async)
-            ? 'Digite seu email'
-            : 'Acompanhe a programação'
-        "
-      />
-      <button type="submit" [disabled]="subscribeFacade.loading$ | async">
-        <code>query</code>
-      </button>
-    </fieldset>
-  </form>
-
-  <section>
-    <ng-container *ngIf="ticketFacade.user$ | async as user; else loading">
-      <event-ticket
-        [attr.user-id]="user.id"
-        [attr.user-name]="user.name"
-        [attr.user-login]="user.login"
-        [attr.user-avatar]="user.avatarUrl"
-      >
-      </event-ticket>
-    </ng-container>
-    <ng-template #loading>
-      <object data="/assets/loading.svg"></object>
-    </ng-template>
-
-    <nav>
-      <a confs-github-button [href]="authFacade.authorize$ | async">
-        Vincular meu GitHub
-      </a>
-
-      <a confs-twitter-button [href]="authFacade.authorize$ | async">
-        Avise a comunidade
-      </a>
-    </nav>
-  </section>
+  <router-outlet></router-outlet>
 </main>
+
+<footer>
+  <object data="/assets/logo.svg" type="image/svg+xml"></object>
+  <div>
+    <p><a rel="author" target="_blank" href="https://devparana.mx"> Comunidade DevParaná </a>.</p>
+    <p>
+      2015 - {{ date | date: 'yyyy' }} incentivando o compartilhamento de
+      conhecimento entre pessoas.
+    </p>
+  </div>
+</footer>

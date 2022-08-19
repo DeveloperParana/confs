@@ -1,12 +1,12 @@
 import { Provider } from '@angular/core';
 
-import { environment } from '../environments/environment';
-
-import { GithubOAuthOptions } from '@confs/auth/api-interfaces';
-import { ServerApiService } from '@confs/shared/data-access';
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
-import { GithubApiService, OAuthService } from '@confs/auth/data-access';
+import { ApiService, OAuthService } from '@confs/auth/data-access';
+import { GithubOAuthOptions } from '@confs/auth/api-interfaces';
+import { ServerService } from '@confs/shared/data-access';
 import { AuthFacade } from '@confs/auth/data-state';
+
+import { environment } from '../environments/environment';
 
 export const APP_PROVIDERS: Provider[] = [
   {
@@ -18,36 +18,38 @@ export const APP_PROVIDERS: Provider[] = [
     useValue: environment['server.api'],
   },
   {
+    provide: ApiService,
+    useClass: ApiService,
+  },
+  {
     provide: OAuthService,
     useFactory: (options: GithubOAuthOptions) => new OAuthService(options),
     deps: ['github.oauth.options'],
   },
   {
     provide: AuthFacade,
-    useFactory: (authService: OAuthService) => new AuthFacade(authService),
-    deps: [OAuthService],
-  },
-  {
-    provide: GithubApiService,
-    useClass: GithubApiService,
+    useFactory: (apiService: ApiService, oAuthService: OAuthService) => {
+      return new AuthFacade(apiService, oAuthService);
+    },
+    deps: [ApiService, OAuthService],
   },
   {
     provide: TicketFacade,
-    useFactory: (githubApiService: GithubApiService) => {
+    useFactory: (githubApiService: ApiService) => {
       return new TicketFacade(githubApiService);
     },
-    deps: [GithubApiService],
+    deps: [ApiService],
   },
   {
-    provide: ServerApiService,
-    useFactory: (url: string) => new ServerApiService(url),
+    provide: ServerService,
+    useFactory: (url: string) => new ServerService(url),
     deps: ['server.api'],
   },
   {
     provide: SubscribeFacade,
-    useFactory: (serverApiService: ServerApiService) => {
+    useFactory: (serverApiService: ServerService) => {
       return new SubscribeFacade(serverApiService);
     },
-    deps: [ServerApiService],
+    deps: [ServerService],
   },
 ];

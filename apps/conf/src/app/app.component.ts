@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'conf';
-
-  date = new Date('05/11/2022').toLocaleDateString();
 }

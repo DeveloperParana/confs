@@ -7,7 +7,7 @@ export const environment = {
   'server.api': '/api',
   'github.oauth.options': {
     clientId: 'ff9e2e06e97c2a9411cc',
-    redirectUri: 'http://localhost:4200/oauth/callback',
+    redirectUri: 'http://localhost:4200',
     scope: 'user',
   },
 };

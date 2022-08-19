@@ -1,9 +1,8 @@
-import { ServerApiService } from '@confs/shared/data-access';
+import { ServerService } from '@confs/shared/data-access';
 import { State } from '@confs/shared/data-state';
 
 interface SubscribeState {
   loading: boolean;
-  error: string | null;
   message: string | null;
   subscribed: boolean;
 }
@@ -15,12 +14,9 @@ export class SubscribeFacade extends State<SubscribeState> {
 
   message$ = this.select((state) => state.message);
 
-  error$ = this.select((state) => state.error);
-
-  constructor(readonly authService: ServerApiService) {
+  constructor(readonly authService: ServerService) {
     super({
       loading: false,
-      error: null,
       message: null,
       subscribed: false,
     });
@@ -28,9 +24,13 @@ export class SubscribeFacade extends State<SubscribeState> {
 
   subscribe(value: { email: string }) {
     this.setState({ loading: true });
-    this.authService.post$('subscribe', value).subscribe(() => {
+
+    const sub$ = this.authService.post$('subscribe', value);
+
+    const $sub = sub$.subscribe(() => {
       const message = 'Aguarde nossas novidades';
       this.setState({ loading: false, subscribed: true, message });
+      $sub.unsubscribe();
     });
   }
 }

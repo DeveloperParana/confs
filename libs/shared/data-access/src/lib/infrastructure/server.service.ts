@@ -1,6 +1,6 @@
 import { Http } from '../http';
 
-export class ServerApiService extends Http {
+export class ServerService extends Http {
   constructor(readonly url: string) {
     super();
   }
