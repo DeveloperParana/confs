@@ -32,7 +32,7 @@ jobs:
         uses: mansagroup/nrwl-nx-action@v2
         with:
           targets: build
-          projects: confs
+          projects: conf
           args: '--prod'
 
       - name: Deploy
