@@ -13,7 +13,11 @@
         "polyfills": "apps/conf/src/polyfills.ts",
         "tsConfig": "apps/conf/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/conf/src/favicon.ico", "apps/conf/src/assets"],
+        "assets": [
+          "apps/conf/src/favicon.ico",
+          "apps/conf/src/CNAME",
+          "apps/conf/src/assets"
+        ],
         "styles": ["apps/conf/src/styles.scss"],
         "scripts": []
       },
@@ -37,7 +41,8 @@
               "with": "apps/conf/src/environments/environment.prod.ts"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "baseHref": "./"
         },
         "development": {
           "buildOptimizer": false,
