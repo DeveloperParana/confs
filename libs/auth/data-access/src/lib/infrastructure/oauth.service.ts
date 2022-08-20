@@ -4,32 +4,17 @@ import {
   GithubUser,
   AccessToken,
   AuthorizeParams,
-  GithubOAuthOptions,
-  GithubAccessTokenResponse,
+  AccessTokenResponse,
+  OAuthClientParameters,
 } from '@confs/auth/api-interfaces';
 import { Http } from '@confs/shared/data-access';
 import { normalizeKeys, toTitleCase } from '@confs/shared/util-format';
-
-class OAuthStorage {
-  private storage: Storage;
-
-  constructor(storage: Storage) {
-    this.storage = storage;
-  }
-
-  get(key: string) {
-    return this.storage.getItem(key);
-  }
-
-  set(key: string, value: string) {
-    this.storage.setItem(key, value);
-  }
-}
+import { OAuthStorage } from './oauth.storage';
 
 export class OAuthService extends Http {
-  storage = new OAuthStorage(localStorage);
+  storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
-  constructor(private readonly options: GithubOAuthOptions) {
+  constructor(private readonly options: OAuthClientParameters) {
     super();
   }
 
@@ -47,30 +32,28 @@ export class OAuthService extends Http {
   }
 
   getAccessToken(code: string) {
-    const { clientId, redirectUri, scope } = this.options;
-
     const url = '/api/oauth/access-token';
-    const data = { clientId, redirectUri, scope, code };
+    const data = { ...this.options, code };
 
-    return this.post<GithubAccessTokenResponse, AccessToken>(url, data).pipe(
-      tap(this.setAccessTokenToStorage('token'))
+    return this.post<AccessTokenResponse, AccessToken>(url, data).pipe(
+      tap(this.setAccessTokenToStorage('accessToken'))
     );
   }
 
-  getUserInfo(response: GithubAccessTokenResponse) {
-    const prefix = toTitleCase(response.token_type);
-    const headers = { Authorization: `${prefix} ${response.access_token}` };
+  getUserInfo(response: AccessTokenResponse) {
+    const prefix = toTitleCase(response.tokenType);
+    const headers = { Authorization: `${prefix} ${response.accessToken}` };
     return this.get<GithubUser>('https://api.github.com/user', headers);
   }
 
-  setAccessTokenToStorage(key: string) {
-    return <T extends GithubAccessTokenResponse>(accessToken: T) => {
-      this.storage.set(key, JSON.stringify({ accessToken }));
+  setAccessTokenToStorage(key: keyof AccessTokenResponse) {
+    return <T extends AccessTokenResponse>(accessToken: T) => {
+      this.storage.set(key, accessToken[key]);
     };
   }
 
-  getAccessTokenFromStorage(): GithubAccessTokenResponse {
-    const token = this.storage.get('token');
+  getAccessTokenFromStorage(): AccessTokenResponse {
+    const token = this.storage.get('accessToken');
     return token ? JSON.parse(token) : null;
   }
 }

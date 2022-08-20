@@ -2,9 +2,14 @@ import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
-import { AccessToken } from '@confs/auth/api-interfaces';
+import {
+  AccessToken,
+  AccessTokenResponse,
+  GithubAccessTokenResponse,
+} from '@confs/auth/api-interfaces';
+import { normalizeKeys } from '@confs/shared/util-format';
 
 const extractDataResponse = <T>({ data }: AxiosResponse<T>) => data;
 
@@ -15,7 +20,7 @@ export class OAuthService {
     private readonly configService: ConfigService
   ) {}
 
-  getAccessToken(options: AccessToken) {
+  getAccessToken(options: AccessToken): Observable<AccessTokenResponse> {
     const secretKey = 'GITHUB_OAUTH_CLIENT_SECRET';
     const clientSecret = this.configService.get(secretKey);
 
@@ -32,7 +37,10 @@ export class OAuthService {
     const url = 'https://github.com/login/oauth/access_token';
 
     return this.httpService
-      .post(url, parameters, { headers })
-      .pipe(map(extractDataResponse));
+      .post<GithubAccessTokenResponse>(url, parameters, { headers })
+      .pipe(
+        map(extractDataResponse),
+        map((response) => normalizeKeys(response))
+      );
   }
 }

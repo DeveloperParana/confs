@@ -1,7 +1,6 @@
 import { RouterModule } from '@angular/router';
 
 import { SubscribeShellComponent } from './containers';
-import { OAuthResolver } from './resolvers';
 import { HomeComponent } from './pages';
 import { UserGuard } from './guards';
 
@@ -9,9 +8,6 @@ export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {
     path: '',
     component: SubscribeShellComponent,
-    resolve: {
-      githubOAuthCode: OAuthResolver,
-    },
     children: [
       {
         path: ':username',
@@ -20,8 +16,8 @@ export const EventFeatureSubscribeRouting = RouterModule.forChild([
       },
       {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'developerparana'
+        component: HomeComponent,
+        canActivate: [UserGuard],
       },
     ],
   },

@@ -1,18 +1,21 @@
-import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Resolve, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
 import { AccessTokenResponse } from '@confs/auth/api-interfaces';
 import { AuthFacade } from '@confs/auth/data-state';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class OAuthResolver implements Resolve<AccessTokenResponse | boolean> {
   constructor(private authFacade: AuthFacade, private router: Router) {}
 
-  resolve(route: ActivatedRouteSnapshot) {
-    const code = route.queryParamMap.get('code');
+  resolve() {
+    // const code = route.queryParamMap.get('code');
+
+    const url = new URL(location.href);
+    const code = url.searchParams.get('code');
+    console.log('code', code);
+
     if (code) {
       this.authFacade.loadGithubAuthentication(code);
 

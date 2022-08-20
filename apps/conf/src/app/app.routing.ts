@@ -1,4 +1,5 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { OAuthResolver } from '@confs/event/feature-subscribe';
 
 const routes: Routes = [
   {
@@ -7,9 +8,15 @@ const routes: Routes = [
       import('@confs/event/feature-subscribe').then(
         (module) => module.EventFeatureSubscribeModule
       ),
+    resolve: {
+      githubOAuthCode: OAuthResolver
+    },
   },
 ];
 
-const extras: ExtraOptions = { initialNavigation: 'enabledBlocking', useHash: true };
+const extras: ExtraOptions = {
+  initialNavigation: 'enabledBlocking',
+  useHash: true,
+};
 
 export const AppRouting = RouterModule.forRoot(routes, extras);

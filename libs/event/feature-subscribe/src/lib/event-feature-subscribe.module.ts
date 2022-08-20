@@ -6,6 +6,7 @@ import { EventFeatureSubscribeRouting } from './event-feature-subscribe.routing'
 import { GithubButtonComponent, TwitterButtonComponent } from './components';
 import { SubscribeShellComponent } from './containers';
 import { HomeComponent } from './pages/home/home.component';
+import { OAuthResolver } from './resolvers';
 
 @NgModule({
   declarations: [
@@ -16,5 +17,6 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [OAuthResolver]
 })
 export class EventFeatureSubscribeModule {}

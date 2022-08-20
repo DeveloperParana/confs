@@ -11,7 +11,7 @@ export class UserGuard implements CanActivate {
   constructor(private ticketFacade: TicketFacade) {}
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    const username = route.paramMap.get('username');
+    const username = route.paramMap.get('username') ?? 'developerparana';
 
     if (username) {
       this.ticketFacade.loadUserFromLogin(username);

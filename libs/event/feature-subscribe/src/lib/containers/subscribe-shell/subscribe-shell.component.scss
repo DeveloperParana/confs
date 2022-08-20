@@ -55,6 +55,33 @@
     align-items: center;
   }
 
+  .cubes {
+    .left-top {
+      position: fixed;
+      top: 20vh;
+      left: -80px;
+      width: 300px;
+    }
+    .left-bottom {
+      position: fixed;
+      top: 70vh;
+      left: 80px;
+      width: 150px;
+    }
+    .right-top {
+      position: fixed;
+      top: 40vh;
+      right: 30px;
+      width: 150px;
+    }
+    .right-bottom {
+      position: fixed;
+      top: 80vh;
+      right: 0px;
+      width: 150px;
+    }
+  }
+
   footer {
     display: flex;
     align-items: center;
