@@ -1,7 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { AxiosResponse } from 'axios';
 import { map, Observable } from 'rxjs';
 
 import {
@@ -10,8 +9,7 @@ import {
   GithubAccessTokenResponse,
 } from '@confs/auth/api-interfaces';
 import { normalizeKeys } from '@confs/shared/util-format';
-
-const extractDataResponse = <T>({ data }: AxiosResponse<T>) => data;
+import { extractDataResponse } from '@confs/shared/data-access';
 
 @Injectable()
 export class OAuthService {

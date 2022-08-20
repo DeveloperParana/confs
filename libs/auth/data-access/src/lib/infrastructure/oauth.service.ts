@@ -8,13 +8,16 @@ import {
   OAuthClientParameters,
 } from '@confs/auth/api-interfaces';
 import { Http } from '@confs/shared/data-access';
-import { normalizeKeys, toTitleCase } from '@confs/shared/util-format';
+import { toTitleCase } from '@confs/shared/util-format';
 import { OAuthStorage } from './oauth.storage';
 
 export class OAuthService extends Http {
   storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
-  constructor(private readonly options: OAuthClientParameters) {
+  constructor(
+    private readonly options: OAuthClientParameters,
+    private readonly url: string
+  ) {
     super();
   }
 
@@ -32,7 +35,7 @@ export class OAuthService extends Http {
   }
 
   getAccessToken(code: string) {
-    const url = '/api/oauth/access-token';
+    const url = `${this.url}/oauth/access-token`;
     const data = { ...this.options, code };
 
     return this.post<AccessTokenResponse, AccessToken>(url, data).pipe(

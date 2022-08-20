@@ -1,6 +1,7 @@
 import { map } from 'rxjs';
 
-import { ApiService } from '@confs/auth/data-access';
+import { ApiService, OAuthStorage } from '@confs/auth/data-access';
+import { AccessTokenResponse } from '@confs/auth/api-interfaces';
 import { State } from '@confs/shared/data-state';
 
 import { mapToTicketUser } from '../utilities';
@@ -16,6 +17,8 @@ export class TicketFacade extends State<TicketState> {
   loading$ = this.select((state) => state.loading);
 
   user$ = this.select((state) => state.user);
+
+  storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
   constructor(readonly apiService: ApiService) {
     super({

@@ -1,11 +1,6 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
-import { Logger } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { NestFactory } from '@nestjs/core';
+import { Logger } from '@nestjs/common';
 import { join } from 'path';
 
 import { environment } from './environments/environment';
@@ -20,7 +15,7 @@ async function bootstrap() {
     app.setGlobalPrefix(apiPrefix);
   }
 
-  app.useStaticAssets(join(__dirname, 'public'));
+  app.useStaticAssets(join(__dirname, 'assets'));
   app.setBaseViewsDir(join(__dirname, 'views'));
   app.setViewEngine('hbs');
 
