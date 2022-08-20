@@ -1,7 +1,3 @@
-export function authApiInterfaces(): string {
-  return 'auth-api-interfaces';
-}
-
 export interface AuthorizeParams {
   client_id: string;
   redirect_uri: string;

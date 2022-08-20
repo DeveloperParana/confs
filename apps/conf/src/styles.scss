@@ -1,14 +1,19 @@
+@import './scss/variables';
+@import './scss/dropdown';
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
+  --color-primary: 173, 120, 255;
+  --color-accent: 62, 211, 61;
   --body-text-size-small: 1rem;
   --body-text-color-primary: 255, 255, 255;
   --fieldset-border-width: 2px;
-  --fieldset-border-color: rgb(173, 120, 255);
+  --fieldset-border-color: rgb(var(--color-primary));
   --fieldset-border-color-error: rgb(236, 63, 63);
   --fieldset-background-color: rgba(0, 0, 0, 0.8);
   --form-control-background-color: rgba(255, 255, 255, 0.08);
-  --form-control-outline-color: rgba(173, 120, 255, 0.4);
+  --form-control-outline-color: rgba(var(--color-primary), 0.4);
 
   --background-node-streak: #1d1f3c;
   --visual-distortion-zapper: 360px;

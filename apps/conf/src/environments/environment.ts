@@ -8,7 +8,7 @@ export const environment = {
   'github.oauth.options': {
     clientId: 'ff9e2e06e97c2a9411cc',
     redirectUri: 'http://localhost:4200',
-    scope: 'user',
+    scope: 'read:user', // <== muito importante que permaneça read:user apenas
   },
 };
 
