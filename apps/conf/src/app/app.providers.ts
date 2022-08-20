@@ -23,8 +23,10 @@ export const APP_PROVIDERS: Provider[] = [
   },
   {
     provide: OAuthService,
-    useFactory: (options: GithubOAuthOptions) => new OAuthService(options),
-    deps: ['github.oauth.options'],
+    useFactory: (options: GithubOAuthOptions, url: string) => {
+      return new OAuthService(options, url);
+    },
+    deps: ['github.oauth.options', 'server.api'],
   },
   {
     provide: AuthFacade,

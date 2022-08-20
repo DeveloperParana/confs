@@ -5,10 +5,6 @@ export interface GithubAccessToken {
   redirect_uri: string;
 }
 
-export interface GithubAccessTokenRequest extends GithubAccessToken {
-  client_secret: string;
-}
-
 export interface GithubAccessTokenResponse {
   access_token: string;
   token_type: string;
