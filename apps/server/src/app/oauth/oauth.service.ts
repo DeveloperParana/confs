@@ -30,6 +30,9 @@ export class OAuthService {
       client_secret: clientSecret,
     };
 
+    console.log(clientSecret, parameters);
+
+
     const headers = { Accept: 'application/json' };
 
     const url = 'https://github.com/login/oauth/access_token';

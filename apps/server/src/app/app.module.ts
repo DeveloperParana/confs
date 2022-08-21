@@ -12,8 +12,8 @@ import { WebpProvider } from './utilities/webp.provider';
 @Module({
   imports: [
     HttpModule,
-    OAuthModule,
     SubscribeModule,
+    OAuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),

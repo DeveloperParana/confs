@@ -1,19 +1,20 @@
-import { NestExpressApplication } from '@nestjs/platform-express';
-import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
 import { join } from 'path';
 
 import { environment } from './environments/environment';
+import { appFactory } from './app/app.factory';
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const { production } = environment;
+  const config = {
+    cors: true,
+    production,
+    entry: AppModule,
+    origin: [/localhost/, /\.devpr\.org$/],
+  };
 
-  let apiPrefix = '';
-  if (!environment.production) {
-    apiPrefix = 'api';
-    app.setGlobalPrefix(apiPrefix);
-  }
+  const { app, prefix } = await appFactory(config);
 
   app.useStaticAssets(join(__dirname, 'assets'));
   app.setBaseViewsDir(join(__dirname, 'views'));
@@ -21,7 +22,9 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3333;
   await app.listen(port);
-  Logger.log(`🚀 Application is running on: http://localhost:${port}/${apiPrefix}`);
+  Logger.log(
+    `🚀 Application is running on: http://localhost:${port}/${prefix}`
+  );
 }
 
 bootstrap();
