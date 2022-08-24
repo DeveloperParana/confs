@@ -1,7 +1,7 @@
 import { catchError, distinctUntilChanged, map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-export abstract class State<T> {
+export abstract class StateStore<T> {
   protected _error = new BehaviorSubject<string | null>(null);
   public error$ = this._error.asObservable();
 

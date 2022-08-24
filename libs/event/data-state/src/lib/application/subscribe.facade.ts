@@ -1,5 +1,5 @@
 import { Http } from '@confs/shared/data-access';
-import { State } from '@confs/shared/data-access';
+import { StateStore } from '@confs/shared/data-access';
 
 interface SubscribeState {
   loading: boolean;
@@ -7,7 +7,7 @@ interface SubscribeState {
   subscribed: boolean;
 }
 
-export class SubscribeFacade extends State<SubscribeState> {
+export class SubscribeFacade extends StateStore<SubscribeState> {
   loading$ = this.select((state) => state.loading);
 
   subscribed$ = this.select((state) => state.subscribed);

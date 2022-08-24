@@ -3,20 +3,20 @@ import { RouterModule } from '@angular/router';
 import { SubscribeShellComponent } from './containers';
 import { HomeComponent } from './pages';
 import { UserGuard } from './guards';
+import { OAuthResolver } from './resolvers';
 
 export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {
     path: '',
     component: SubscribeShellComponent,
-    canActivateChild: [UserGuard],
+    resolve: {
+      githubOAuthCode: OAuthResolver,
+    },
     children: [
-      {
-        path: ':user',
-        component: HomeComponent,
-      },
       {
         path: '',
         component: HomeComponent,
+        canActivate: [UserGuard],
       },
     ],
   },

@@ -3,7 +3,7 @@ import { map } from 'rxjs';
 import { AccessTokenResponse, GithubUser } from '@confs/auth/api-interfaces';
 import { OAuthService, OAuthStorage } from '@confs/auth/data-access';
 import { Http } from '@confs/shared/data-access';
-import { State } from '@confs/shared/data-access';
+import { StateStore } from '@confs/shared/data-access';
 
 import { mapToTicketUser } from '../utilities';
 import { TicketUser } from '../entities';
@@ -15,7 +15,7 @@ interface TicketState {
   user: TicketUser | null;
 }
 
-export class TicketFacade extends State<TicketState> {
+export class TicketFacade extends StateStore<TicketState> {
   loading$ = this.select((state) => state.loading);
 
   user$ = this.select((state) => state.user);
