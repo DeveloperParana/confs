@@ -1,5 +1,4 @@
-import { State } from '@confs/shared/data-state';
-import { Http } from '@confs/shared/data-access';
+import { Http, State } from '@confs/shared/data-access';
 
 interface Scheduletate {
   loading: boolean;

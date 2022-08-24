@@ -1,5 +1,5 @@
 import { Http } from '@confs/shared/data-access';
-import { State } from '@confs/shared/data-state';
+import { State } from '@confs/shared/data-access';
 
 interface SubscribeState {
   loading: boolean;

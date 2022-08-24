@@ -3,7 +3,7 @@ import { map } from 'rxjs';
 import { AccessTokenResponse, GithubUser } from '@confs/auth/api-interfaces';
 import { OAuthService, OAuthStorage } from '@confs/auth/data-access';
 import { Http } from '@confs/shared/data-access';
-import { State } from '@confs/shared/data-state';
+import { State } from '@confs/shared/data-access';
 
 import { mapToTicketUser } from '../utilities';
 import { TicketUser } from '../entities';

@@ -1,14 +1,7 @@
 import { Observable } from 'rxjs';
 
-export interface TotalLoaded {
-  total: number;
-  loaded: number;
-}
-
-export type HttpConfig<T = unknown> = Omit<RequestInit, 'body'> & {
-  queryParams?: URLSearchParams | Record<string, string>;
-  body?: T;
-};
+import { TotalLoaded } from './types/total-loaded';
+import { HttpConfig } from './types/http-config';
 
 export abstract class Http {
   abstract transfer<B>(

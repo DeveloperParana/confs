@@ -4,7 +4,6 @@
   "projects": {
     "auth-api-interfaces": "libs/auth/api-interfaces",
     "auth-data-access": "libs/auth/data-access",
-    "auth-data-state": "libs/auth/data-state",
     "conf": "apps/conf",
     "confs": "apps/confs",
     "confs-e2e": "apps/confs-e2e",
@@ -13,7 +12,6 @@
     "event-ui-ticket": "libs/event/ui-ticket",
     "server": "apps/server",
     "shared-data-access": "libs/shared/data-access",
-    "shared-data-state": "libs/shared/data-state",
     "shared-util-format": "libs/shared/util-format"
   }
 }
