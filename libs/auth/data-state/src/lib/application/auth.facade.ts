@@ -1,4 +1,4 @@
-import { ApiService, OAuthService } from '@confs/auth/data-access';
+import { OAuthService } from '@confs/auth/data-access';
 
 import { GithubUser } from '@confs/auth/api-interfaces';
 import { State } from '@confs/shared/data-state';
@@ -16,14 +16,24 @@ export class AuthFacade extends State<AuthState> {
 
   authorize$ = this.select((state) => state.authorize);
 
-  constructor(
-    readonly apiService: ApiService,
-    readonly oAuthService: OAuthService
-  ) {
+  constructor(readonly oAuthService: OAuthService) {
     super({
       loading: false,
       authorize: '',
       user: null,
+    });
+  }
+
+  loadUserFromStorage() {
+    const accessToken = this.oAuthService.getAccessTokenFromStorage();
+    const user$ = this.oAuthService.getUserInfo(accessToken);
+    const $user = user$.subscribe((user) => {
+      $user.unsubscribe();
+
+      this.setState({
+        loading: false,
+        user,
+      });
     });
   }
 
@@ -45,6 +55,10 @@ export class AuthFacade extends State<AuthState> {
         });
       });
     });
+  }
+
+  setUser(user: GithubUser) {
+    this.setState({ user });
   }
 
   loadAuthorizeParams() {

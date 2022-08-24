@@ -9,14 +9,13 @@ const routes: Routes = [
         (module) => module.EventFeatureSubscribeModule
       ),
     resolve: {
-      githubOAuthCode: OAuthResolver
+      githubOAuthCode: OAuthResolver,
     },
   },
 ];
 
 const extras: ExtraOptions = {
   initialNavigation: 'enabledBlocking',
-  useHash: true,
 };
 
 export const AppRouting = RouterModule.forRoot(routes, extras);

@@ -1,7 +1,10 @@
 <header>
-  <img src="/assets/devpr-logo.svg" alt="DevPR Conf 2022" />
+  <a routerLink="/">
+    <img src="/assets/devpr-logo.svg" alt="DevPR Conf 2022" />
+  </a>
   <time>
-    {{ date | date: 'MMMM d, yyyy' }}
+    Maringá
+    <!-- {{ date | date: 'MMMM d, yyyy' }} -->
   </time>
 </header>
 
@@ -10,10 +13,26 @@
 </main>
 
 <div class="cubes">
-  <object class="left-top" data="/assets/cube-orange.svg" type="image/svg+xml"></object>
-  <object class="left-bottom" data="/assets/cube-green.svg" type="image/svg+xml"></object>
-  <object class="right-top"  data="/assets/cube-blue.svg" type="image/svg+xml"></object>
-  <object class="right-bottom"  data="/assets/cube-purple.svg" type="image/svg+xml"></object>
+  <object
+    class="left-top"
+    data="/assets/cube-orange.svg"
+    type="image/svg+xml"
+  ></object>
+  <object
+    class="left-bottom"
+    data="/assets/cube-green.svg"
+    type="image/svg+xml"
+  ></object>
+  <object
+    class="right-top"
+    data="/assets/cube-blue.svg"
+    type="image/svg+xml"
+  ></object>
+  <object
+    class="right-bottom"
+    data="/assets/cube-purple.svg"
+    type="image/svg+xml"
+  ></object>
 </div>
 
 <footer>

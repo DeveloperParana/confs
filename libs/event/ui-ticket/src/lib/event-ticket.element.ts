@@ -2,12 +2,12 @@ import { template } from './event-ticket.template';
 
 export class EventTicketElement extends HTMLElement {
   static get observedAttributes() {
-    return ['user-id', 'user-name', 'user-login', 'user-avatar'];
+    return ['user-id', 'user-name', 'user-user', 'user-avatar'];
   }
 
   private _id = '';
   private _name = '';
-  private _login = '';
+  private _user = '';
   private _avatar = '';
 
   override get id() {
@@ -28,12 +28,12 @@ export class EventTicketElement extends HTMLElement {
     if (el) el.textContent = value;
   }
 
-  get login() {
-    return this._login;
+  get user() {
+    return this._user;
   }
-  set login(value) {
-    this._login = value;
-    const el = this.findById('user-login');
+  set user(value) {
+    this._user = value;
+    const el = this.findById('user-user');
     if (el) el.textContent = value;
   }
 
@@ -64,8 +64,8 @@ export class EventTicketElement extends HTMLElement {
         return (this.id = value);
       case 'user-name':
         return (this.name = value);
-      case 'user-login':
-        return (this.login = value);
+      case 'user-user':
+        return (this.user = value);
     }
   }
 

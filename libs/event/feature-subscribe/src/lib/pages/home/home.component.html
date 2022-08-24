@@ -24,7 +24,7 @@
     <event-ticket
       [attr.user-id]="user.id"
       [attr.user-name]="user.name"
-      [attr.user-login]="user.login"
+      [attr.user-user]="user.user"
       [attr.user-avatar]="user.avatarUrl"
     >
     </event-ticket>
@@ -36,12 +36,12 @@
   </ng-template>
 
   <nav>
-    <a confs-github-button [href]="authFacade.authorize$ | async">
+    <a confs-github-button [href]="ticketFacade.authorize$ | async">
       Use seu GitHub
     </a>
 
-    <a confs-twitter-button [href]="authFacade.authorize$ | async">
+    <!-- <a confs-twitter-button [href]="ticketFacade.authorize$ | async">
       Compartilhe seu convite
-    </a>
+    </a> -->
   </nav>
 </section>

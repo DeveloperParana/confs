@@ -1,5 +1,5 @@
-import { ApiService } from '@confs/auth/data-access';
 import { State } from '@confs/shared/data-state';
+import { Http } from '@confs/shared/data-access';
 
 interface Scheduletate {
   loading: boolean;
@@ -7,7 +7,7 @@ interface Scheduletate {
 }
 
 export class ScheduleFacade extends State<Scheduletate> {
-  constructor(readonly authService: ApiService) {
+  constructor(readonly httpService: Http) {
     super({
       loading: false,
       talks: [],

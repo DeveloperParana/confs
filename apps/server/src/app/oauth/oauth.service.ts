@@ -9,7 +9,7 @@ import {
   GithubAccessTokenResponse,
 } from '@confs/auth/api-interfaces';
 import { normalizeKeys } from '@confs/shared/util-format';
-import { extractDataResponse } from '@confs/shared/data-access';
+import { dataResponse } from '@confs/shared/data-access';
 
 @Injectable()
 export class OAuthService {
@@ -30,9 +30,6 @@ export class OAuthService {
       client_secret: clientSecret,
     };
 
-    console.log(clientSecret, parameters);
-
-
     const headers = { Accept: 'application/json' };
 
     const url = 'https://github.com/login/oauth/access_token';
@@ -40,8 +37,18 @@ export class OAuthService {
     return this.httpService
       .post<GithubAccessTokenResponse>(url, parameters, { headers })
       .pipe(
-        map(extractDataResponse),
-        map((response) => normalizeKeys(response))
+        map(dataResponse),
+        map<GithubAccessTokenResponse, AccessTokenResponse>(normalizeKeys)
       );
+  }
+
+  getUser(user: string) {
+    const envKey = 'GITHUB_TOKEN';
+    const githubToken = this.configService.get(envKey);
+
+    const headers = {
+      Accept: 'application/json',
+      Authentication: `Bearer ${githubToken}`,
+    };
   }
 }

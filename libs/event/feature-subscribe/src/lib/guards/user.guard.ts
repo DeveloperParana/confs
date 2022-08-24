@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivateChild } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -7,14 +7,14 @@ import { TicketFacade } from '@confs/event/data-state';
 @Injectable({
   providedIn: 'root',
 })
-export class UserGuard implements CanActivate {
+export class UserGuard implements CanActivateChild {
   constructor(private ticketFacade: TicketFacade) {}
 
-  canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    const username = route.paramMap.get('username') ?? 'developerparana';
+  canActivateChild(route: ActivatedRouteSnapshot): Observable<boolean> {
+    const user = route.queryParamMap.get('user') ?? 'developerparana';
 
-    if (username) {
-      this.ticketFacade.loadUserFromLogin(username);
+    if (user) {
+      this.ticketFacade.loadUserFromLogin(user);
     }
 
     return of(true);

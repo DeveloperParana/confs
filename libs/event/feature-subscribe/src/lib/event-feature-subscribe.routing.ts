@@ -8,16 +8,15 @@ export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {
     path: '',
     component: SubscribeShellComponent,
+    canActivateChild: [UserGuard],
     children: [
       {
-        path: ':username',
+        path: ':user',
         component: HomeComponent,
-        canActivate: [UserGuard],
       },
       {
         path: '',
         component: HomeComponent,
-        canActivate: [UserGuard],
       },
     ],
   },
