@@ -11,7 +11,7 @@ async function bootstrap() {
     cors: true,
     production,
     entry: AppModule,
-    origin: [/localhost/, /\.devpr\.org$/],
+    origin: '*',
   };
 
   const { app, prefix } = await appFactory(config);
