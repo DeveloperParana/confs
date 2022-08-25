@@ -3,30 +3,28 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
 import { AccessTokenResponse } from '@confs/auth/api-interfaces';
-import { AuthFacade } from '@confs/auth/data-state';
+import { TicketFacade } from '@confs/event/data-state';
 
 @Injectable()
 export class OAuthResolver implements Resolve<AccessTokenResponse | boolean> {
-  constructor(private authFacade: AuthFacade, private router: Router) {}
+  constructor(private ticketFacade: TicketFacade, private router: Router) {}
 
   resolve() {
     // const code = route.queryParamMap.get('code');
-
     const url = new URL(location.href);
     const code = url.searchParams.get('code');
-    console.log('code', code);
 
     if (code) {
-      this.authFacade.loadGithubAuthentication(code);
-
-      const user$ = this.authFacade.user$;
+      const user$ = this.ticketFacade.user$;
 
       const $user = user$.subscribe((user) => {
         if (user) {
-          this.router.navigate(['/', user.login]);
+          this.router.navigate(['/'], { queryParams: { user: user.login } });
           $user.unsubscribe();
         }
       });
+
+      this.ticketFacade.loadGithubAuthentication(code);
     }
 
     return of(true);

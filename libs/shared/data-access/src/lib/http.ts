@@ -1,27 +1,39 @@
-import { map } from 'rxjs/operators';
-import { ajax } from 'rxjs/ajax';
+import { Observable } from 'rxjs';
 
-import { extractAjaxResponse } from './utilities/extract-ajax-response';
+import { TotalLoaded } from './types/total-loaded';
+import { HttpConfig } from './types/http-config';
 
-export class Http {
-  get<T>(url: string, headers?: Record<string, string>) {
-    return ajax.get<T>(url, headers).pipe(map(extractAjaxResponse));
-  }
+export abstract class Http {
+  abstract transfer<B>(
+    url: string,
+    config?: HttpConfig<B>
+  ): Observable<TotalLoaded>;
 
-  post<T, D>(url: string, body: D, headers?: Record<string, string>) {
-    const req = ajax.post<T>(url, body, headers);
-    return req.pipe(map(extractAjaxResponse));
-  }
+  abstract request<R, B>(url: string, config?: HttpConfig<B>): Observable<R>;
 
-  put<T, D>(url: string, body: Partial<D>, headers?: Record<string, string>) {
-    return ajax.put<T>(url, body, headers).pipe(map(extractAjaxResponse));
-  }
+  abstract get<R>(url: string, headers?: Record<string, string>): Observable<R>;
 
-  patch<T, D>(url: string, body: D, headers?: Record<string, string>) {
-    return ajax.patch<T>(url, body, headers).pipe(map(extractAjaxResponse));
-  }
+  abstract post<R, B>(
+    url: string,
+    body: B,
+    headers?: Record<string, string>
+  ): Observable<R>;
 
-  delete<T>(url: string, headers?: Record<string, string>) {
-    return ajax.delete<T>(url, headers).pipe(map(extractAjaxResponse));
-  }
+  abstract put<R, B>(
+    url: string,
+    body?: B,
+    headers?: Record<string, string>
+  ): Observable<R>;
+
+  abstract patch<B>(
+    url: string,
+    body?: B,
+    headers?: Record<string, string>
+  ): Observable<void>;
+
+  abstract delete<R, B>(
+    url: string,
+    body?: B,
+    headers?: Record<string, string>
+  ): Observable<R>;
 }

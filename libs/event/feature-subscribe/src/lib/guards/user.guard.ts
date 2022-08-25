@@ -4,17 +4,15 @@ import { Observable, of } from 'rxjs';
 
 import { TicketFacade } from '@confs/event/data-state';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class UserGuard implements CanActivate {
   constructor(private ticketFacade: TicketFacade) {}
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    const username = route.paramMap.get('username') ?? 'developerparana';
+    const user = route.queryParamMap.get('user') ?? 'developerparana';
 
-    if (username) {
-      this.ticketFacade.loadUserFromLogin(username);
+    if (user) {
+      this.ticketFacade.loadUserFromLogin(user);
     }
 
     return of(true);

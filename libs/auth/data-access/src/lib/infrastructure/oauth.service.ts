@@ -11,15 +11,14 @@ import { Http } from '@confs/shared/data-access';
 import { toTitleCase } from '@confs/shared/util-format';
 import { OAuthStorage } from './oauth.storage';
 
-export class OAuthService extends Http {
+export class OAuthService {
   storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
   constructor(
+    private readonly http: Http,
     private readonly options: OAuthClientParameters,
     private readonly url: string
-  ) {
-    super();
-  }
+  ) {}
 
   getParamsFromOptions(
     login?: string,
@@ -38,15 +37,15 @@ export class OAuthService extends Http {
     const url = `${this.url}/oauth/access-token`;
     const data = { ...this.options, code };
 
-    return this.post<AccessTokenResponse, AccessToken>(url, data).pipe(
-      tap(this.setAccessTokenToStorage('accessToken'))
-    );
+    return this.http
+      .post<AccessTokenResponse, AccessToken>(url, data)
+      .pipe(tap(this.setAccessTokenToStorage('accessToken')));
   }
 
   getUserInfo(response: AccessTokenResponse) {
     const prefix = toTitleCase(response.tokenType);
     const headers = { Authorization: `${prefix} ${response.accessToken}` };
-    return this.get<GithubUser>('https://api.github.com/user', headers);
+    return this.http.get<GithubUser>('https://api.github.com/user', headers);
   }
 
   setAccessTokenToStorage(key: keyof AccessTokenResponse) {

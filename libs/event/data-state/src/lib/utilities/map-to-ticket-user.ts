@@ -6,7 +6,7 @@ import { TicketUser } from '../entities';
 export function mapToTicketUser(githubUser: GithubUser): TicketUser {
   const ticketUser = normalizeKeys<GithubUser, TicketUser>(githubUser);
 
-  const login = maxChars(ticketUser.login, 12);
+  const user = maxChars(ticketUser.login, 12);
 
-  return { ...ticketUser, login };
+  return { ...ticketUser, user };
 }

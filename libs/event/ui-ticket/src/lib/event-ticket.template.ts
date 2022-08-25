@@ -93,7 +93,7 @@ template.innerHTML = `
         </g>
       </g>
       <g id="date">
-        <text
+        <!--<text
           fill="#7E7E97"
           xml:space="preserve"
           style="white-space: pre"
@@ -131,7 +131,7 @@ template.innerHTML = `
           <tspan x="104.593" y="309.2">5</tspan>
           <tspan x="180.831" y="309.2">novembro</tspan>
           <tspan x="381.286" y="309.2">2022</tspan>
-        </text>
+        </text>-->
       </g>
     </g>
     <g id="member-container">
@@ -170,7 +170,7 @@ template.innerHTML = `
               font-size="20"
               letter-spacing="0em"
             >
-              <tspan x="347.082" y="122" id="user-login"></tspan>
+              <tspan x="347.082" y="122" id="user-user"></tspan>
             </text>
           </g>
           <path

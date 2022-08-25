@@ -1,4 +1,5 @@
 export interface TicketUser {
+  user: string;
   login: string;
   id: number;
   nodeId: string;

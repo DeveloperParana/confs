@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
-import { AuthFacade } from '@confs/auth/data-state';
 import '@confs/event/ui-ticket';
 
 import { SubscribeForm } from '../../forms';
@@ -21,12 +20,11 @@ export class HomeComponent implements OnInit {
 
   constructor(
     readonly subscribeFacade: SubscribeFacade,
-    readonly ticketFacade: TicketFacade,
-    readonly authFacade: AuthFacade
+    readonly ticketFacade: TicketFacade
   ) {}
 
   ngOnInit() {
-    this.authFacade.loadAuthorizeParams();
+    this.ticketFacade.loadAuthorizeParams();
   }
 
   changeFocus(input: HTMLInputElement) {
