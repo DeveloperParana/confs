@@ -22,6 +22,9 @@
         "libs/event/feature-subscribe/src/index.ts"
       ],
       "@confs/event/ui-ticket": ["libs/event/ui-ticket/src/index.ts"],
+      "@confs/shared/api-interfaces": [
+        "libs/shared/api-interfaces/src/index.ts"
+      ],
       "@confs/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@confs/shared/util-format": ["libs/shared/util-format/src/index.ts"]
     }
