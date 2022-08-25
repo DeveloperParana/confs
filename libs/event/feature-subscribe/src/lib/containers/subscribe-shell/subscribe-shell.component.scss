@@ -6,12 +6,20 @@
   width: 1024px;
   max-width: 100%;
 
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 24px;
-    width: 100%;
+    width: calc(100% - 48px);
+
+    // @media (max-width: 768px) {
+    //   width: unset;
+    // }
 
     flex-direction: column;
     row-gap: 12px;
@@ -58,6 +66,12 @@
   }
 
   .cubes {
+    @media (max-width: 1024px) {
+      opacity: 0.1;
+    }
+
+    z-index: 1;
+
     .left-top {
       position: fixed;
       top: 20vh;
@@ -88,7 +102,7 @@
     display: flex;
     align-items: center;
     column-gap: 12px;
-    padding: 12px 0;
+    padding: 12px 24px;
 
     p {
       margin-top: 0;
