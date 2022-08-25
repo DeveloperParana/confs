@@ -1,5 +1,4 @@
 import { Logger } from '@nestjs/common';
-import { join } from 'path';
 
 import { environment } from './environments/environment';
 import { appFactory } from './app/app.factory';
@@ -16,9 +15,9 @@ async function bootstrap() {
 
   const { app, prefix } = await appFactory(config);
 
-  app.useStaticAssets(join(__dirname, 'assets'));
-  app.setBaseViewsDir(join(__dirname, 'views'));
-  app.setViewEngine('hbs');
+  // app.useStaticAssets(join(__dirname, 'assets'));
+  // app.setBaseViewsDir(join(__dirname, 'views'));
+  // app.setViewEngine('hbs');
 
   const port = process.env.PORT || 3333;
   await app.listen(port);

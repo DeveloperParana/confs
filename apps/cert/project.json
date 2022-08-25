@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/cert/src",
+  "prefix": "cert",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/conf/cert",
+        "index": "apps/cert/src/index.html",
+        "main": "apps/cert/src/main.ts",
+        "polyfills": "apps/cert/src/polyfills.ts",
+        "tsConfig": "apps/cert/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/cert/src/assets"],
+        "styles": ["apps/cert/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/cert/src/envs/env.ts",
+              "with": "apps/cert/src/envs/env.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "baseHref": "./"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "cert:build:production"
+        },
+        "development": {
+          "browserTarget": "cert:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/cert/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "cert:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/cert/**/*.ts", "apps/cert/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/cert"],
+      "options": {
+        "jestConfig": "apps/cert/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { map, take } from 'rxjs';
 
 import { WebpProvider, ticketTemplate } from './utilities';
+import { Member } from '@confs/shared/api-interfaces';
 
 @Injectable()
 export class AppService {
@@ -44,5 +45,11 @@ export class AppService {
 
   convertToWebP(path: string) {
     return this.webp.convert(path);
+  }
+
+  getMembers() {
+    return this.httpService.get<Member[]>(
+      'https://api.meetup.com/developerparana/members'
+    );
   }
 }
