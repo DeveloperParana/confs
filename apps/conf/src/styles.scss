@@ -25,16 +25,12 @@ body {
   height: 100%;
 }
 
-html {
-  overflow: hidden;
-}
-
 body {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-
   font-family: 'Poppins', sans-serif;
   color: rgb(var(--body-text-color-primary));
 
@@ -84,8 +80,9 @@ button .svg-icon {
 .wrap {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   margin: 0 auto;
+  overflow: hidden;
   perspective: var(--visual-distortion-zapper);
   perspective-origin: 50% 50%;
   z-index: -1;
