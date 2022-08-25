@@ -69,7 +69,8 @@ export class AppComponent {
   readonly autocomplete$: Observable<Member[]>;
 
   constructor(private _http: HttpClient) {
-    const members = this._http.get<Member[]>(env['server.api']);
+    const url = `${env['server.api']}/members`;
+    const members = this._http.get<Member[]>(url);
 
     const form = this.form.valueChanges;
 
