@@ -5,9 +5,11 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/confs",
+        "outputPath": "dist/confs/browser",
         "index": "apps/confs/src/index.html",
         "main": "apps/confs/src/main.ts",
         "polyfills": "apps/confs/src/polyfills.ts",
@@ -18,7 +20,9 @@
           "apps/confs/src/CNAME",
           "apps/confs/src/assets"
         ],
-        "styles": ["apps/confs/src/styles.scss"],
+        "styles": [
+          "apps/confs/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -76,16 +80,80 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/confs/**/*.ts", "apps/confs/**/*.html"]
+        "lintFilePatterns": [
+          "apps/confs/**/*.ts",
+          "apps/confs/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/confs"],
+      "outputs": [
+        "coverage/apps/confs"
+      ],
       "options": {
         "jestConfig": "apps/confs/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/confs/server",
+        "main": "apps/confs/server.ts",
+        "tsConfig": "apps/confs/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/confs/src/environments/environment.ts",
+              "with": "apps/confs/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "confs:build:development",
+          "serverTarget": "confs:server:development"
+        },
+        "production": {
+          "browserTarget": "confs:build:production",
+          "serverTarget": "confs:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": [
+          "/"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "confs:build:production",
+          "serverTarget": "confs:server:production"
+        },
+        "development": {
+          "browserTarget": "confs:build:development",
+          "serverTarget": "confs:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []

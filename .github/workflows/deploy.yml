@@ -34,8 +34,14 @@ jobs:
           targets: build
           args: '--prod'
 
+      - name: SSR
+        run: npm run build:ssr
+
+      - name: Prerender
+        run: npm run prerender
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/apps/conf
+          publish_dir: ./dist/apps/conf/browser

@@ -9,7 +9,7 @@ import { AppRoutes } from './app.routing';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     PagesModule,
     SectionsModule,

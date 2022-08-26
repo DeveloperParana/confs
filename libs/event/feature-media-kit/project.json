@@ -1,0 +1,30 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/event/feature-media-kit/src",
+  "prefix": "confs",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/event/feature-media-kit"
+      ],
+      "options": {
+        "jestConfig": "libs/event/feature-media-kit/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/event/feature-media-kit/**/*.ts",
+          "libs/event/feature-media-kit/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "type:feature",
+    "scope:event"
+  ]
+}

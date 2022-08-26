@@ -8,6 +8,13 @@ const routes: Routes = [
         (module) => module.EventFeatureSubscribeModule
       ),
   },
+  {
+    path: 'media-kit',
+    loadChildren: () =>
+      import('@confs/event/feature-media-kit').then(
+        (module) => module.EventFeatureMediaKitModule
+      ),
+  },
 ];
 
 const extras: ExtraOptions = {

@@ -8,6 +8,7 @@
     "conf": "apps/conf",
     "confs": "apps/confs",
     "event-data-state": "libs/event/data-state",
+    "event-feature-media-kit": "libs/event/feature-media-kit",
     "event-feature-subscribe": "libs/event/feature-subscribe",
     "event-ui-ticket": "libs/event/ui-ticket",
     "server": "apps/server",

@@ -1,11 +1,17 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/cert/src",
   "prefix": "cert",
+  "implicitDependencies": [
+    "conf"
+  ],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/conf/cert",
         "index": "apps/cert/src/index.html",
@@ -13,8 +19,12 @@
         "polyfills": "apps/cert/src/polyfills.ts",
         "tsConfig": "apps/cert/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/cert/src/assets"],
-        "styles": ["apps/cert/src/styles.scss"],
+        "assets": [
+          "apps/cert/src/assets"
+        ],
+        "styles": [
+          "apps/cert/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -75,12 +85,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/cert/**/*.ts", "apps/cert/**/*.html"]
+        "lintFilePatterns": [
+          "apps/cert/**/*.ts",
+          "apps/cert/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/cert"],
+      "outputs": [
+        "coverage/apps/cert"
+      ],
       "options": {
         "jestConfig": "apps/cert/jest.config.ts",
         "passWithNoTests": true

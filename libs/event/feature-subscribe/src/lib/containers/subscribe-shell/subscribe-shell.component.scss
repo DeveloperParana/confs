@@ -17,10 +17,6 @@
     padding: 12px 24px;
     width: calc(100% - 48px);
 
-    // @media (max-width: 768px) {
-    //   width: unset;
-    // }
-
     flex-direction: column;
     row-gap: 12px;
 
@@ -108,7 +104,7 @@
       margin-top: 0;
       margin-bottom: 0;
 
-      color: rgba(var(--body-text-color-primary), 0.5);
+      color: rgba(var(--body-text-color-primary), 0.3);
 
       font-size: var(--body-text-size-small);
       transition: color 0.2s ease-in-out;
@@ -126,7 +122,7 @@
 
     &:hover {
       p {
-        color: rgba(var(--body-text-color-primary), 0.8);
+        color: rgba(var(--body-text-color-primary), 0.6);
       }
       object {
         opacity: 1;

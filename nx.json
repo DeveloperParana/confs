@@ -9,14 +9,18 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".eslintrc.json": "*",
-    "cert": ["conf"]
+    ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
         "accessToken": "ZDJiNmZiN2MtMDFjNy00MDUxLWI2OTktMmVjZTM3ZWEyMDRkfHJlYWQtd3JpdGU=",
         "cacheDirectory": "/tmp/nx",
         "parallel": 1
@@ -25,7 +29,9 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     }
   },
   "generators": {
@@ -43,5 +49,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "confs"
+  "defaultProject": "conf"
 }

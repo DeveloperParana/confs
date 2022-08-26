@@ -1,0 +1,20 @@
+<h1>Media Kit</h1>
+
+<section>
+  <button [disabled]="min$ | async" (click)="prev()">
+    👈
+  </button>
+
+  <figure *ngIf="current$ | async as i; else cover">
+    <img [src]="items[i]" alt="Slide i" />
+  </figure>
+  <ng-template #cover>
+    <figure>
+      <img [src]="items[0]" alt="Slide 0" />
+    </figure>
+  </ng-template>
+
+  <button [disabled]="max$ | async" (click)="next()">
+    👉
+  </button>
+</section>

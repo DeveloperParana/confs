@@ -21,13 +21,7 @@
 
 <section>
   <ng-container *ngIf="ticketFacade.user$ | async as user; else loading">
-    <event-ticket
-      [attr.user-id]="user.id"
-      [attr.user-name]="user.name"
-      [attr.user-user]="user.user"
-      [attr.user-avatar]="user.avatarUrl"
-    >
-    </event-ticket>
+    <confs-event-ticket [user]="user"></confs-event-ticket>
   </ng-container>
   <ng-template #loading>
     <figure>
@@ -45,4 +39,3 @@
     </a> -->
   </nav>
 </section>
-
