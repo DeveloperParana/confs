@@ -1,31 +1,20 @@
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject, combineLatest, Observable, map } from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { Member } from '@confs/shared/api-interfaces';
 
 import { CertComponent } from './cert.component';
-import { env } from '../envs/env';
-
-const filterMembers = (member: string | null) => {
-  return (m: Member): string[] => {
-    const value = member?.toLowerCase() ?? '';
-    const names = value.split(' ');
-
-    const founded = names.filter((name) =>
-      name.toLowerCase().includes(value) ? m : null
-    );
-
-    return founded;
-  };
-};
+import { AppService } from './app.service';
+import { filterMembers } from './utilities/filter-members';
 
 @Component({
   standalone: true,
   selector: 'cert-root',
   imports: [CommonModule, HttpClientModule, ReactiveFormsModule, CertComponent],
+  providers: [AppService],
   template: `
     <ng-container *ngIf="selected$ | async as name; else cert">
       <cert-image [name]="name"></cert-image>
@@ -68,9 +57,8 @@ export class AppComponent {
 
   readonly autocomplete$: Observable<Member[]>;
 
-  constructor(private _http: HttpClient) {
-    const url = `${env['server.api']}/members`;
-    const members = this._http.get<Member[]>(url);
+  constructor(private _service: AppService) {
+    const members = this._service.get();
 
     const form = this.form.valueChanges;
 
@@ -87,12 +75,9 @@ export class AppComponent {
 
   onSubmit() {
     const { member } = this.form.value;
+
     if (this.form.valid && member) {
       this._selected.next(member);
     }
-  }
-
-  onClear() {
-    this._selected.next('');
   }
 }
