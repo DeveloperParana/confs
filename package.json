@@ -15,7 +15,8 @@
     "dev:ssr": "nx run conf:serve-ssr",
     "serve:ssr": "node dist/conf/server/main.js",
     "build:ssr": "nx build && nx run conf:server",
-    "prerender": "nx run conf:prerender --routes media-kit"
+    "prerender": "nx run conf:prerender",
+    "media-kit": "nx run conf:move-media-kit"
   },
   "private": true,
   "devDependencies": {
