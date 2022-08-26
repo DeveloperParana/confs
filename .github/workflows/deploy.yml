@@ -40,6 +40,9 @@ jobs:
       - name: Prerender
         run: npm run prerender
 
+      - name: Build Cert
+        run: npm run build:cert
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

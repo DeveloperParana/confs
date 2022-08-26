@@ -13,7 +13,7 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/conf/cert",
+        "outputPath": "dist/apps/conf/browser/cert",
         "index": "apps/cert/src/index.html",
         "main": "apps/cert/src/main.ts",
         "polyfills": "apps/cert/src/polyfills.ts",

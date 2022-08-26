@@ -8,6 +8,7 @@
     "build": "nx build",
     "test": "nx test",
     "build:server": "npx nx build server --prod",
+    "build:cert": "npx nx build cert --prod",
     "start:server": "node dist/apps/server/main.js",
     "devpr": "CUSTOM_DOMAIN=devpr.org nx serve conf --host devpr.org --port 4200 --disable-host-check",
     "postinstall": "ngcc --properties es2020 browser module main",
