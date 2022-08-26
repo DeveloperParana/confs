@@ -8,7 +8,6 @@
     "conf": "apps/conf",
     "event-data-state": "libs/event/data-state",
     "event-feature-subscribe": "libs/event/feature-subscribe",
-    "event-ui-ticket": "libs/event/ui-ticket",
     "server": "apps/server",
     "shared-api-interfaces": "libs/shared/api-interfaces",
     "shared-data-access": "libs/shared/data-access",
