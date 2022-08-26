@@ -34,11 +34,8 @@ jobs:
           targets: build
           args: '--prod'
 
-      - name: SSR
-        run: npm run build:ssr
-
-      - name: Prerender
-        run: npm run prerender
+      - name: Build Cert
+        run: npm run media-kit
 
       - name: Build Cert
         run: npm run build:cert
