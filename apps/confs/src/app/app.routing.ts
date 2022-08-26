@@ -7,6 +7,6 @@ const routes: Routes = [
 ];
 
 export const AppRoutes = RouterModule.forRoot(routes, {
-  initialNavigation: 'enabledBlocking',
-  useHash: true,
+    initialNavigation: 'enabledBlocking',
+    useHash: true,
 });

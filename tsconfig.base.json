@@ -18,6 +18,9 @@
       "@confs/auth/api-interfaces": ["libs/auth/api-interfaces/src/index.ts"],
       "@confs/auth/data-access": ["libs/auth/data-access/src/index.ts"],
       "@confs/event/data-state": ["libs/event/data-state/src/index.ts"],
+      "@confs/event/feature-media-kit": [
+        "libs/event/feature-media-kit/src/index.ts"
+      ],
       "@confs/event/feature-subscribe": [
         "libs/event/feature-subscribe/src/index.ts"
       ],

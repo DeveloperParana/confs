@@ -5,7 +5,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/event/feature-subscribe"],
+      "outputs": [
+        "coverage/libs/event/feature-subscribe"
+      ],
       "options": {
         "jestConfig": "libs/event/feature-subscribe/jest.config.ts",
         "passWithNoTests": true
@@ -21,5 +23,8 @@
       }
     }
   },
-  "tags": ["type:feature", "scope:event"]
+  "tags": [
+    "type:feature",
+    "scope:event"
+  ]
 }

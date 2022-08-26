@@ -5,19 +5,28 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/event/ui-ticket/**/*.ts"]
+        "lintFilePatterns": [
+          "libs/event/ui-ticket/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/event/ui-ticket"],
+      "outputs": [
+        "coverage/libs/event/ui-ticket"
+      ],
       "options": {
         "jestConfig": "libs/event/ui-ticket/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["type:ui", "scope:event"]
+  "tags": [
+    "type:ui",
+    "scope:event"
+  ]
 }

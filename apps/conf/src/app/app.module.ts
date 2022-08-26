@@ -8,7 +8,10 @@ import { AppRouting } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRouting],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRouting
+  ],
   providers: [...APP_PROVIDERS, OAuthResolver],
   bootstrap: [AppComponent],
 })

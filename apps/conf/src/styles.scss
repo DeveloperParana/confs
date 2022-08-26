@@ -68,6 +68,11 @@ button {
   &:hover {
     cursor: pointer;
   }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
 }
 
 a svg,

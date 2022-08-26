@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
-import '@confs/event/ui-ticket';
 
 import { SubscribeForm } from '../../forms';
 
