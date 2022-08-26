@@ -3,9 +3,6 @@
   "projectType": "application",
   "sourceRoot": "apps/cert/src",
   "prefix": "cert",
-  "implicitDependencies": [
-    "conf"
-  ],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
