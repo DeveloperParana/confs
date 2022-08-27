@@ -5,32 +5,21 @@
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/shared/api-interfaces",
         "main": "libs/shared/api-interfaces/src/index.ts",
         "tsConfig": "libs/shared/api-interfaces/tsconfig.lib.json",
-        "assets": [
-          "libs/shared/api-interfaces/*.md"
-        ]
+        "assets": ["libs/shared/api-interfaces/*.md"]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/shared/api-interfaces/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/shared/api-interfaces/**/*.ts"]
       }
     }
   },
-  "tags": [
-    "type:api",
-    "scope:shared"
-  ]
+  "tags": ["type:api", "scope:shared"]
 }
