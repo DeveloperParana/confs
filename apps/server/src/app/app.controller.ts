@@ -57,5 +57,4 @@ export class AppController {
   //   }
   //   return this.appService.createTicket(username);
   // }
-
 }

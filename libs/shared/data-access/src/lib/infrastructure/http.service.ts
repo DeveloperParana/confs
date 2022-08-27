@@ -2,8 +2,8 @@ import { map } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
 
 import { Http } from '../http';
-import { TotalLoaded } from "../types/total-loaded";
-import { HttpConfig } from "../types/http-config";
+import { TotalLoaded } from '../types/total-loaded';
+import { HttpConfig } from '../types/http-config';
 import { ajaxResponse, totalLoaded } from '../utilities';
 
 export class HttpService implements Http {

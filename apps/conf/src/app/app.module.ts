@@ -10,7 +10,7 @@ import { AppRouting } from './app.routing';
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRouting
+    AppRouting,
   ],
   providers: [...APP_PROVIDERS, OAuthResolver],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 import { AjaxResponse } from 'rxjs/ajax';
-import { TotalLoaded } from "../types/total-loaded";
+import { TotalLoaded } from '../types/total-loaded';
 
 export const totalLoaded = <T>({
   total,
