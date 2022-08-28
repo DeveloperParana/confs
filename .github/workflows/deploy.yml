@@ -35,9 +35,6 @@ jobs:
           args: '--prod'
 
       - name: Build Cert
-        run: npm run media-kit
-
-      - name: Build Cert
         run: npm run build:cert
 
       - name: Deploy
