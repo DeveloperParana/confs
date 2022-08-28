@@ -6,5 +6,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubscribeShellComponent {
-  date = new Date('05/11/2022').toLocaleDateString();
+  date = new Date('11/03/2023').toLocaleDateString();
 }

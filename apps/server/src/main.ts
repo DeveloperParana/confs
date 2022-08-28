@@ -1,3 +1,5 @@
+import { join } from 'node:path';
+
 import { Logger } from '@nestjs/common';
 
 import { environment } from './environments/environment';

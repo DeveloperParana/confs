@@ -1,12 +1,16 @@
 import { open, writeFile } from 'node:fs/promises';
-import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { HttpService } from '@nestjs/axios';
 import { map, take } from 'rxjs';
 
-import { WebpProvider, ticketTemplate } from './utilities';
+import { dataResponse } from '@confs/shared/data-access';
 import { Member } from '@confs/shared/api-interfaces';
-import { ConfigService } from '@nestjs/config';
+
+import { WebpProvider, ticketTemplate } from './utilities';
 
 @Injectable()
 export class AppService {
@@ -16,64 +20,69 @@ export class AppService {
     private readonly webp: WebpProvider
   ) {}
 
-  getData(): { message: string } {
-    return { message: 'Welcome to server!' };
-  }
-
-  getGithubUser(username: string) {
-    const headers = { Accept: 'application/json' };
-    const url = `https://api.github.com/users/${username}`;
-    return this.httpService.get(url, { headers }).pipe(map(({ data }) => data));
-  }
-
   getGithubUserByLogin(login: string) {
-    const envKey = 'GITHUB_TOKEN';
-    const githubToken = this.configService.get(envKey);
-    const headers = {
-      Accept: 'application/json',
-      Authentication: `Bearer ${githubToken}`,
-    };
+    const headers = this.buildHeaders();
     const url = `https://api.github.com/users/${login}`;
-    return this.httpService.get(url, { headers }).pipe(map(({ data }) => data));
+
+    this.createTicket(login);
+
+    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
   }
 
   getGithubUserById(id: number) {
-    const envKey = 'GITHUB_TOKEN';
-    const githubToken = this.configService.get(envKey);
-    const headers = {
-      Accept: 'application/json',
-      Authentication: `Bearer ${githubToken}`,
-    };
+    const headers = this.buildHeaders();
     const url = `https://api.github.com/user/${id}`;
-    return this.httpService.get(url, { headers }).pipe(map(({ data }) => data));
+    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
   }
 
-  async createTicket(username: string) {
-    const user$ = this.getGithubUser(username).pipe(take(1));
-
-    const $user = user$.subscribe((user) => {
-      const file = `assets/${user.login}.svg`;
-      const path = join(__dirname, file);
-
-      open(path, 'w')
-        .then(async (fd) => {
-          const tmpl = ticketTemplate(user);
-          return writeFile(fd, tmpl, 'utf8')
-            .then(() => this.convertToWebP(path))
-            .catch(console.error)
-            .finally(fd.close);
-        })
-        .finally(() => $user.unsubscribe());
-    });
-  }
-
-  convertToWebP(path: string) {
-    return this.webp.convert(path);
+  getGithubUser(username: string) {
+    const headers = this.buildHeaders();
+    const url = `https://api.github.com/users/${username}`;
+    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
   }
 
   getMembers() {
     return this.httpService.get<Member[]>(
       'https://api.meetup.com/developerparana/members'
     );
+  }
+
+  async createTicket(username: string) {
+    const ticket = this.hasTicket(username);
+
+    if (typeof ticket === 'string') {
+      const user$ = this.getGithubUser(username).pipe(take(1));
+
+      const $user = user$.subscribe((user) => {
+        open(ticket, 'w')
+          .then(async (fd) => {
+            const tmpl = ticketTemplate(user);
+
+            try {
+              return writeFile(fd, tmpl, 'utf8')
+                .then(() => this.webp.convert(ticket))
+                .finally(fd.close);
+            } catch (err) {
+              throw new BadRequestException(err);
+            }
+          })
+          .finally(() => $user.unsubscribe());
+      });
+    }
+  }
+
+  hasTicket(login: string) {
+    const file = `assets/${login}.svg`;
+    const path = join(__dirname, file);
+    return existsSync(path) ? true : path;
+  }
+
+  buildHeaders() {
+    const envKey = 'GITHUB_TOKEN';
+    const githubToken = this.configService.get(envKey);
+    return {
+      Accept: 'application/json',
+      Authentication: `Bearer ${githubToken}`,
+    };
   }
 }
