@@ -16,7 +16,17 @@
         "assets": [
           "apps/conf/src/favicon.ico",
           "apps/conf/src/CNAME",
-          "apps/conf/src/assets"
+          "apps/conf/src/assets",
+          {
+            "input": "./assets",
+            "glob": "*.pdf",
+            "output": "./"
+          },
+          {
+            "input": "./assets/media-kit",
+            "glob": "**/*.*",
+            "output": "./media-kit"
+          }
         ],
         "styles": ["apps/conf/src/styles.scss"],
         "scripts": []
@@ -146,13 +156,6 @@
         }
       },
       "defaultConfiguration": "production"
-    },
-    "move-media-kit": {
-      "executor": "nx:run-commands",
-      "outputs": [],
-      "options": {
-        "command": "cp -r assets/media-kit dist/apps/conf/browser"
-      }
     }
   },
   "tags": ["type:app"]
