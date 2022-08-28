@@ -2,7 +2,7 @@ import { map } from 'rxjs';
 
 import { AccessTokenResponse, GithubUser } from '@confs/auth/api-interfaces';
 import { OAuthService, OAuthStorage } from '@confs/auth/data-access';
-import { Http } from '@confs/shared/data-access';
+import { Http, ServerService } from '@confs/shared/data-access';
 import { StateStore } from '@confs/shared/data-access';
 
 import { mapToTicketUser } from '../utilities';
@@ -24,7 +24,11 @@ export class TicketFacade extends StateStore<TicketState> {
 
   storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
-  constructor(readonly httpService: Http, readonly oAuthService: OAuthService) {
+  constructor(
+    readonly httpService: Http,
+    readonly oAuthService: OAuthService,
+    readonly serverService: ServerService
+  ) {
     super({
       loading: false,
       error: null,
@@ -58,10 +62,8 @@ export class TicketFacade extends StateStore<TicketState> {
   loadUserFromLogin(user: string) {
     this.setState({ loading: true });
 
-    const url = 'https://api.github.com/users';
-
-    const user$ = this.httpService
-      .get<GithubUser>(`${url}/${user}`)
+    const user$ = this.serverService
+      .get<GithubUser>(`users/${user}`)
       .pipe(map(mapToTicketUser));
 
     const $user = user$.subscribe((user) => {
@@ -73,10 +75,8 @@ export class TicketFacade extends StateStore<TicketState> {
   loadUserFromId(id: string) {
     this.setState({ loading: true });
 
-    const url = 'https://api.github.com/user';
-
-    const user$ = this.httpService
-      .get<GithubUser>(`${url}/${id}`)
+    const user$ = this.serverService
+      .get<GithubUser>(`user/${id}`)
       .pipe(map(mapToTicketUser));
 
     const $user = user$.subscribe((user) => {

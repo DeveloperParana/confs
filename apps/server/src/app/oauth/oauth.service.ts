@@ -41,14 +41,4 @@ export class OAuthService {
         map<GithubAccessTokenResponse, AccessTokenResponse>(normalizeKeys)
       );
   }
-
-  getUser(user: string) {
-    const envKey = 'GITHUB_TOKEN';
-    const githubToken = this.configService.get(envKey);
-
-    const headers = {
-      Accept: 'application/json',
-      Authentication: `Bearer ${githubToken}`,
-    };
-  }
 }

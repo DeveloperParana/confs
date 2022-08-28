@@ -6,10 +6,12 @@ import { map, take } from 'rxjs';
 
 import { WebpProvider, ticketTemplate } from './utilities';
 import { Member } from '@confs/shared/api-interfaces';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AppService {
   constructor(
+    private readonly configService: ConfigService,
     private readonly httpService: HttpService,
     private readonly webp: WebpProvider
   ) {}
@@ -21,6 +23,28 @@ export class AppService {
   getGithubUser(username: string) {
     const headers = { Accept: 'application/json' };
     const url = `https://api.github.com/users/${username}`;
+    return this.httpService.get(url, { headers }).pipe(map(({ data }) => data));
+  }
+
+  getGithubUserByLogin(login: string) {
+    const envKey = 'GITHUB_TOKEN';
+    const githubToken = this.configService.get(envKey);
+    const headers = {
+      Accept: 'application/json',
+      Authentication: `Bearer ${githubToken}`,
+    };
+    const url = `https://api.github.com/users/${login}`;
+    return this.httpService.get(url, { headers }).pipe(map(({ data }) => data));
+  }
+
+  getGithubUserById(id: number) {
+    const envKey = 'GITHUB_TOKEN';
+    const githubToken = this.configService.get(envKey);
+    const headers = {
+      Accept: 'application/json',
+      Authentication: `Bearer ${githubToken}`,
+    };
+    const url = `https://api.github.com/user/${id}`;
     return this.httpService.get(url, { headers }).pipe(map(({ data }) => data));
   }
 
