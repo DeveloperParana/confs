@@ -25,14 +25,14 @@ export const APP_PROVIDERS: Provider[] = [
     deps: [Http, 'github.oauth.options', 'server.api'],
   },
   {
-    provide: TicketFacade,
-    useClass: TicketFacade,
-    deps: [Http, OAuthService],
-  },
-  {
     provide: ServerService,
     useClass: ServerService,
     deps: [Http, 'server.api'],
+  },
+  {
+    provide: TicketFacade,
+    useClass: TicketFacade,
+    deps: [Http, OAuthService, ServerService],
   },
   {
     provide: SubscribeFacade,
