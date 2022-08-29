@@ -1,9 +1,9 @@
 import { RouterModule } from '@angular/router';
 
 import { SubscribeShellComponent } from './containers';
+import { OAuthResolver } from './resolvers';
 import { HomeComponent } from './pages';
 import { UserGuard } from './guards';
-import { OAuthResolver } from './resolvers';
 
 export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {

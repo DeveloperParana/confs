@@ -9,6 +9,7 @@ import {
 } from '@confs/auth/api-interfaces';
 import { Http } from '@confs/shared/data-access';
 import { toTitleCase } from '@confs/shared/util-format';
+
 import { OAuthStorage } from './oauth.storage';
 
 export class OAuthService {
