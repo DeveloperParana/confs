@@ -1,6 +1,6 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { EventFeatureSubscribeRouting } from './event-feature-subscribe.routing';
 import {
@@ -22,7 +22,6 @@ import { UserGuard } from './guards';
     HomeComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [UserGuard, OAuthResolver],
 })
 export class EventFeatureSubscribeModule {}

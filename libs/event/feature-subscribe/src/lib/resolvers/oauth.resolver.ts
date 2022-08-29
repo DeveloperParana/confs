@@ -10,7 +10,6 @@ export class OAuthResolver implements Resolve<AccessTokenResponse | boolean> {
   constructor(private ticketFacade: TicketFacade, private router: Router) {}
 
   resolve() {
-    // const code = route.queryParamMap.get('code');
     const url = new URL(location.href);
     const code = url.searchParams.get('code');
 
