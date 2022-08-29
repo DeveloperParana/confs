@@ -14,18 +14,17 @@
         "tsConfig": "apps/conf/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/conf/src/favicon.ico",
           "apps/conf/src/CNAME",
           "apps/conf/src/assets",
-          {
-            "input": "./assets",
-            "glob": "*.pdf",
-            "output": "./"
-          },
           {
             "input": "./assets/media-kit",
             "glob": "**/*.*",
             "output": "./media-kit"
+          },
+          {
+            "input": "./assets/icons",
+            "glob": "**/*.svg",
+            "output": "./assets/icons"
           }
         ],
         "styles": ["apps/conf/src/styles.scss"],

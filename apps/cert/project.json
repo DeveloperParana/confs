@@ -14,7 +14,14 @@
         "polyfills": "apps/cert/src/polyfills.ts",
         "tsConfig": "apps/cert/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/cert/src/assets"],
+        "assets": [
+          "apps/cert/src/assets",
+          {
+            "input": "./assets/icons",
+            "glob": "**/*.svg",
+            "output": "./assets/icons"
+          }
+        ],
         "styles": ["apps/cert/src/styles.scss"],
         "scripts": []
       },
