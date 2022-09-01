@@ -11,6 +11,9 @@
     "server": "apps/server",
     "shared-api-interfaces": "libs/shared/api-interfaces",
     "shared-data-access": "libs/shared/data-access",
+    "shared-project-data-access": "libs/shared/project/data-access",
+    "shared-project-domain": "libs/shared/project/domain",
+    "shared-project-feature-project": "libs/shared/project/feature-project",
     "shared-util-format": "libs/shared/util-format"
   }
 }

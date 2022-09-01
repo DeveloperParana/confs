@@ -8,11 +8,13 @@ import { OAuthModule } from './oauth/oauth.module';
 import { SubscribeModule } from './subscribe/subscribe.module';
 import { DatabaseModule } from './database/database.module';
 import { WebpProvider } from './utilities/webp.provider';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
     HttpModule,
     OAuthModule,
+    ProjectModule,
     SubscribeModule,
     ConfigModule.forRoot({
       isGlobal: true,

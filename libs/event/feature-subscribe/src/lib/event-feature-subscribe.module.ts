@@ -2,6 +2,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { SharedProjectFeatureProjectModule } from '@confs/shared/project/feature-project';
+
 import { EventFeatureSubscribeRouting } from './event-feature-subscribe.routing';
 import {
   EventTicketComponent,
@@ -16,12 +18,17 @@ import { UserGuard } from './guards';
 @NgModule({
   declarations: [
     SubscribeShellComponent,
-    GithubButtonComponent,
     TwitterButtonComponent,
+    GithubButtonComponent,
     EventTicketComponent,
     HomeComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    SharedProjectFeatureProjectModule,
+    EventFeatureSubscribeRouting,
+  ],
   providers: [UserGuard, OAuthResolver],
 })
 export class EventFeatureSubscribeModule {}
