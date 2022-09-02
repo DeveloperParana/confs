@@ -1,41 +1,44 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit(email)">
-  <h1>Conferência anual de e para pessoas desenvolvedoras</h1>
-  <h2>Faça parte da comunidade neste evento</h2>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
+    <h1>Conferência anual de e para pessoas desenvolvedoras</h1>
+    <h2>Faça parte da comunidade neste evento</h2>
 
-  <p>{{ subscribeFacade.message$ | async }}</p>
+    <p>{{ subscribeFacade.message$ | async }}</p>
 
-  <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
-    <input
-      #email
-      type="email"
-      formControlName="email"
-      (blur)="changeFocus(email)"
-      (focus)="changeFocus(email)"
-      [placeholder]="placeholder.acompanhe"
-    />
-    <button type="submit" [disabled]="subscribeFacade.loading$ | async">
-      enviar
-    </button>
-  </fieldset>
-</form>
+    <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
+      <input
+        #email
+        type="email"
+        formControlName="email"
+        (blur)="changeFocus(email)"
+        (focus)="changeFocus(email)"
+        [placeholder]="placeholder.acompanhe"
+      />
+      <button type="submit" [disabled]="subscribeFacade.loading$ | async">
+        enviar
+      </button>
+    </fieldset>
+  </form>
 
-<section>
-  <ng-container *ngIf="ticketFacade.user$ | async as user; else loading">
-    <confs-event-ticket [user]="user"></confs-event-ticket>
-  </ng-container>
-  <ng-template #loading>
-    <figure>
-      <object data="/assets/loading.svg"></object>
-    </figure>
-  </ng-template>
+  <section>
+    <ng-container *ngIf="ticketFacade.user$ | async as user; else loading">
+      <confs-event-ticket [user]="user"></confs-event-ticket>
+    </ng-container>
+    <ng-template #loading>
+      <figure>
+        <object data="/assets/loading.svg"></object>
+      </figure>
+    </ng-template>
 
-  <nav>
-    <a confs-github-button [href]="ticketFacade.authorize$ | async">
-      Use seu GitHub
-    </a>
+    <nav>
+      <a confs-github-button [href]="ticketFacade.authorize$ | async">
+        Use seu github para montar seu convite
+      </a>
 
-    <!-- <a confs-twitter-button [href]="ticketFacade.authorize$ | async">
-      Compartilhe seu convite
-    </a> -->
-  </nav>
-</section>
+      <!-- <a confs-twitter-button [href]="ticketFacade.authorize$ | async">
+        Compartilhe seu convite
+      </a> -->
+    </nav>
+  </section>
+
+</div>

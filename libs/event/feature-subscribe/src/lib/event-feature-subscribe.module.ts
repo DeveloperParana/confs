@@ -8,20 +8,22 @@ import {
   GithubButtonComponent,
   TwitterButtonComponent,
 } from './components';
-import { SubscribeShellComponent } from './containers';
-import { HomeComponent } from './pages';
 import { OAuthResolver } from './resolvers';
+import { HomeComponent } from './pages';
 import { UserGuard } from './guards';
 
 @NgModule({
   declarations: [
-    SubscribeShellComponent,
-    GithubButtonComponent,
     TwitterButtonComponent,
+    GithubButtonComponent,
     EventTicketComponent,
     HomeComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    EventFeatureSubscribeRouting,
+  ],
   providers: [UserGuard, OAuthResolver],
 })
 export class EventFeatureSubscribeModule {}

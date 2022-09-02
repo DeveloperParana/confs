@@ -4,6 +4,10 @@ import pt from '@angular/common/locales/pt';
 
 import { Http, HttpService, ServerService } from '@confs/shared/data-access';
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
+import {
+  ProjectService,
+  ProjectFacade,
+} from '@confs/shared/project/data-access';
 import { OAuthService } from '@confs/auth/data-access';
 
 import { environment } from '../environments/environment';
@@ -19,6 +23,14 @@ export const APP_PROVIDERS: Provider[] = [
   {
     provide: 'server.api',
     useValue: environment['server.api'],
+  },
+  {
+    provide: 'event.date',
+    useValue: environment['event.date'],
+  },
+  {
+    provide: 'speakers.id',
+    useValue: environment['speakers.id'],
   },
   {
     provide: Http,
@@ -43,6 +55,16 @@ export const APP_PROVIDERS: Provider[] = [
     provide: SubscribeFacade,
     useClass: SubscribeFacade,
     deps: [ServerService],
+  },
+  {
+    provide: ProjectService,
+    useClass: ProjectService,
+    deps: [Http, 'server.api'],
+  },
+  {
+    provide: ProjectFacade,
+    useClass: ProjectFacade,
+    deps: [ProjectService],
   },
   {
     provide: LOCALE_ID,
