@@ -1,6 +1,12 @@
 :host {
+  flex: 1;
   display: flex;
-  flex-flow: row wrap;
-  column-gap: 36px;
+  flex-direction: column;
   max-width: 1024px;
+
+  > section {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 36px;
+  }
 }

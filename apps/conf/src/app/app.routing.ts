@@ -17,6 +17,7 @@ const routes: Routes = [
 
 const extras: ExtraOptions = {
   initialNavigation: 'enabledNonBlocking',
+  useHash: true
 };
 
 export const AppRouting = RouterModule.forRoot(routes, extras);

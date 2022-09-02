@@ -1,5 +1,6 @@
 ::ng-deep confs-project-column-card {
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: 600;
   }
   h2:first-child {
@@ -23,6 +24,10 @@
   background: rgb(var(--card-background-color));
   border-radius: var(--border-width);
 
+  h1 {
+    font-size: 48px;
+  }
+
   > p:first-child {
     margin-top: 0;
   }
@@ -45,10 +50,17 @@
     left: calc(-1 * var(--border-width));
     height: calc(100% + var(--border-width) * 2);
     width: calc(100% + var(--border-width) * 2);
+    margin: var(--border-width);
     border-radius: calc(2 * var(--border-width));
     animation: animatedgradient 3s ease alternate infinite;
     background: linear-gradient(60deg, #36cc69, #4bffb3, #2dc27a);
     background-size: 300% 300%;
+    opacity: 0.5;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover:after {
+    opacity: 1;
   }
 
   &.green::after {
