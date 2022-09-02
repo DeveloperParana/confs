@@ -1,17 +1,22 @@
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { Routes, ExtraOptions, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'conf',
     loadChildren: () =>
-      import('@confs/event/feature-subscribe').then(
-        (module) => module.EventFeatureSubscribeModule
+      import('@confs/event/feature-shell').then(
+        (module) => module.EventFeatureShellModule
       ),
+  },
+  {
+    path: '',
+    redirectTo: 'conf',
+    pathMatch: 'full',
   },
 ];
 
 const extras: ExtraOptions = {
-  initialNavigation: 'enabledBlocking',
+  initialNavigation: 'enabledNonBlocking',
 };
 
 export const AppRouting = RouterModule.forRoot(routes, extras);

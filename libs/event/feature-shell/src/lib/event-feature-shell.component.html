@@ -1,6 +1,9 @@
 <header>
   <a routerLink="/">
-    <img src="/assets/devpr-logo.svg" alt="DevPR Conf 2022" />
+    <img
+      src="/assets/devpr-logo.svg"
+      [alt]="'DevPR Conf ' + date | date: 'yyyy'"
+    />
   </a>
   <time>
     {{ date | date: 'longDate' }}
@@ -13,23 +16,9 @@
 
 <div class="cubes">
   <object
-    class="left-top"
-    data="/assets/cube-orange.svg"
-    type="image/svg+xml"
-  ></object>
-  <object
-    class="left-bottom"
-    data="/assets/cube-green.svg"
-    type="image/svg+xml"
-  ></object>
-  <object
-    class="right-top"
-    data="/assets/cube-blue.svg"
-    type="image/svg+xml"
-  ></object>
-  <object
-    class="right-bottom"
-    data="/assets/cube-purple.svg"
+    *ngFor="let c of cubes | keyvalue"
+    [data]="c.value | safeUrl"
+    [class]="c.key"
     type="image/svg+xml"
   ></object>
 </div>
@@ -41,8 +30,10 @@
       <a rel="author" target="_blank" href="https://devparana.mx">
         Comunidade DevParaná
       </a>
-      - Veja nosso
-      <a href="/media-kit"> media kit </a>
+      - Veja nosso media kit:
+      <a href="/media-kit"> pt-br </a>
+      |
+      <a href="/media-kit/en"> en-us </a>
     </p>
     <p>
       2015 - {{ date | date: 'yyyy' }} incentivando o compartilhamento de

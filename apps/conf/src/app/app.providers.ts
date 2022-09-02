@@ -25,6 +25,14 @@ export const APP_PROVIDERS: Provider[] = [
     useValue: environment['server.api'],
   },
   {
+    provide: 'event.date',
+    useValue: environment['event.date'],
+  },
+  {
+    provide: 'speakers.id',
+    useValue: environment['speakers.id'],
+  },
+  {
     provide: Http,
     useClass: HttpService,
   },
