@@ -79,7 +79,6 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/serve-static": "^3.0.0",
     "@nguniversal/express-engine": "^14.1.0",
-    "convert-svg-to-webp": "^0.6.4",
     "express": "^4.15.2",
     "hbs": "^4.2.0",
     "marked": "^4.1.0",
