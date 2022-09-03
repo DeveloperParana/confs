@@ -21,8 +21,8 @@ export const EventFeatureShellRouting = RouterModule.forChild([
           import('@confs/event/feature-page').then(
             (m) => m.EventFeaturePageModule
           ),
-        title: 'Página - DevParaná Conf 2023',
-      }
+        title: 'DevParaná Conf 2023',
+      },
     ],
   },
 ]);

@@ -3,6 +3,7 @@ import ptBR from '@angular/common/locales/extra/br';
 import pt from '@angular/common/locales/pt';
 
 import { Http, HttpService, ServerService } from '@confs/shared/data-access';
+import { EventFeaturePageTitleStrategy } from '@confs/event/feature-page';
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
 import {
   ProjectService,
@@ -12,6 +13,7 @@ import { OAuthService } from '@confs/auth/data-access';
 
 import { environment } from '../environments/environment';
 import { registerLocaleData } from '@angular/common';
+import { TitleStrategy } from '@angular/router';
 
 registerLocaleData(pt, 'pt-BR', ptBR);
 
@@ -70,6 +72,7 @@ export const APP_PROVIDERS: Provider[] = [
     useClass: ProjectFacade,
     deps: [ProjectService],
   },
+  { provide: TitleStrategy, useClass: EventFeaturePageTitleStrategy },
   {
     provide: LOCALE_ID,
     useValue: 'pt-BR',

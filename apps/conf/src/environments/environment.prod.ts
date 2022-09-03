@@ -4,7 +4,7 @@ export const environment = {
   'event.date': '11/03/2023',
   'speakers.id': 19145242,
   pages: {
-    project: 19145242,
+    project: 14615934,
     palestras: 19145242,
     patrocinadores: 19145633,
   },

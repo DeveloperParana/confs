@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ProjectColumn } from '@confs/shared/project/domain';
 
 @Component({
-  selector: 'confs-project-columns',
+  selector: 'confs-project-columns,ul[confs-project-columns]',
   templateUrl: './project-columns.component.html',
   styleUrls: ['./project-columns.component.scss'],
 })

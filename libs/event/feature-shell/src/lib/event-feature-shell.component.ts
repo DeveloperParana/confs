@@ -21,9 +21,6 @@ export class EventFeatureShellComponent {
     @Inject('pages') pages: { project: number }
   ) {
     this.date = new Date(eventDate).toLocaleDateString();
-
-    console.log(pages);
-
     this.projectFacade.loadProjectColumns(pages.project);
   }
 }

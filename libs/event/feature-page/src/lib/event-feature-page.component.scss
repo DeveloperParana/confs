@@ -6,4 +6,10 @@
   justify-content: center;
   width: 1024px;
   max-width: 100%;
+
+  position: relative;
+
+  > .loader {
+    position: absolute;
+  }
 }

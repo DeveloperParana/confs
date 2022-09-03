@@ -51,7 +51,7 @@ export const ticketTemplate = (user: GithubUser) => {
             <text fill='white' xml:space='preserve' style='white-space: pre' font-family='Poppins' font-size='22' font-weight='600' letter-spacing='2px'>
               <tspan x='104.593' y='309.2'>5</tspan>
               <tspan x='180.831' y='309.2'>novembro</tspan>
-              <tspan x='381.286' y='309.2'>2022</tspan>
+              <tspan x='381.286' y='309.2'>2023</tspan>
             </text>
           </g>
         </g>

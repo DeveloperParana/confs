@@ -20,7 +20,12 @@ import { ProjectFacade } from '@confs/shared/project/data-access';
       </confs-project-column>
     </ng-container>
 
-    <p *ngIf="projectFacade.loading$ | async">Carregando...</p>
+    <figure class="loader" *ngIf="projectFacade.loading$ | async">
+      <object data="/assets/loading.svg"></object>
+      <caption>
+        Carregando...
+      </caption>
+    </figure>
 
     <h3>{{ projectFacade.message$ | async }}</h3>
   `,
