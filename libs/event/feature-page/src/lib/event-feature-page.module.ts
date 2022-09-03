@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventFeaturePageComponent } from './event-feature-page.component';
 import { EventFeaturePageRouting } from './event-feature-page.routing';
-import { SharedProjectFeatureProjectModule } from '@confs/shared/project/feature-project';
+import { SharedProjectUiProjectModule } from '@confs/shared-project-ui-project';
 
 @NgModule({
   declarations: [EventFeaturePageComponent],
   imports: [
     CommonModule,
-    SharedProjectFeatureProjectModule,
+    SharedProjectUiProjectModule,
     EventFeaturePageRouting,
   ],
 })

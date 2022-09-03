@@ -23,6 +23,9 @@
       "@confs/event/feature-subscribe": [
         "libs/event/feature-subscribe/src/index.ts"
       ],
+      "@confs/shared-project-ui-project": [
+        "libs/shared/project/ui-project/src/index.ts"
+      ],
       "@confs/shared/api-interfaces": [
         "libs/shared/api-interfaces/src/index.ts"
       ],
@@ -32,9 +35,6 @@
       ],
       "@confs/shared/project/domain": [
         "libs/shared/project/domain/src/index.ts"
-      ],
-      "@confs/shared/project/feature-project": [
-        "libs/shared/project/feature-project/src/index.ts"
       ],
       "@confs/shared/ui-pipes": ["libs/shared/ui-pipes/src/index.ts"],
       "@confs/shared/util-format": ["libs/shared/util-format/src/index.ts"]

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedProjectFeatureProjectModule } from '@confs/shared/project/feature-project';
+import { SharedProjectUiProjectModule } from '@confs/shared-project-ui-project';
 import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
 
 import { EventFeatureShellRouting } from './event-feature-shell.routing';
@@ -12,7 +12,7 @@ import { EventFeatureShellComponent } from './event-feature-shell.component';
   imports: [
     CommonModule,
     SharedUiPipesModule,
-    SharedProjectFeatureProjectModule,
+    SharedProjectUiProjectModule,
     EventFeatureShellRouting,
   ],
 })

@@ -21,4 +21,4 @@ import { ProjectColumnComponent } from './project-column/project-column.componen
     ProjectColumnCardComponent,
   ],
 })
-export class SharedProjectFeatureProjectModule {}
+export class SharedProjectUiProjectModule {}
