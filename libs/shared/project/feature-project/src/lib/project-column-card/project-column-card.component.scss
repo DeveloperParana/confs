@@ -21,7 +21,9 @@
 :host {
   --border-width: 3px;
 
-  flex: 1;
+  flex-basis: calc(50% - 96px);
+  margin-bottom: 36px;
+
   display: flex;
   flex-direction: column;
   position: relative;

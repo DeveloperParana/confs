@@ -10,6 +10,10 @@
   </time>
 </header>
 
+<nav *ngIf="projectFacade.columns$ | async as columns">
+  <confs-project-columns [columns]="columns"></confs-project-columns>
+</nav>
+
 <main>
   <router-outlet></router-outlet>
 </main>

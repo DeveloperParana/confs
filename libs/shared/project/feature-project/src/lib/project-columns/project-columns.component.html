@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let column of columns">
+    <a [routerLink]="['page', column.id]" routerLinkActive="active">
+      {{ column.name }}
+    </a>
+  </li>
+</ul>

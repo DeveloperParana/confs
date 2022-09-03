@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
 
-import { ProjectComponent } from './containers';
-import {
-  ProjectColumnComponent,
-  ProjectColumnCardComponent,
-} from './components';
+import { ProjectColumnCardComponent } from './project-column-card/project-column-card.component';
+import { ProjectColumnsComponent } from './project-columns/project-columns.component';
+import { ProjectColumnComponent } from './project-column/project-column.component';
 
 @NgModule({
-  imports: [CommonModule, SharedUiPipesModule],
+  imports: [CommonModule, RouterModule, SharedUiPipesModule],
   declarations: [
-    ProjectComponent,
     ProjectColumnComponent,
+    ProjectColumnsComponent,
     ProjectColumnCardComponent,
   ],
   exports: [
-    ProjectComponent,
     ProjectColumnComponent,
+    ProjectColumnsComponent,
     ProjectColumnCardComponent,
   ],
 })

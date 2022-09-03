@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedProjectFeatureProjectModule } from '@confs/shared/project/feature-project';
 import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
 
 import { EventFeatureShellRouting } from './event-feature-shell.routing';
@@ -8,6 +9,11 @@ import { EventFeatureShellComponent } from './event-feature-shell.component';
 
 @NgModule({
   declarations: [EventFeatureShellComponent],
-  imports: [CommonModule, SharedUiPipesModule, EventFeatureShellRouting],
+  imports: [
+    CommonModule,
+    SharedUiPipesModule,
+    SharedProjectFeatureProjectModule,
+    EventFeatureShellRouting,
+  ],
 })
 export class EventFeatureShellModule {}

@@ -1,7 +1,5 @@
 export * from './lib/shared-project-feature-project.module';
 
-export * from './lib/containers/project/project.component';
-
-export * from './lib/components/project-column/project-column.component';
-
-export * from './lib/components/project-column-card/project-column-card.component';
+export * from './lib/project-column-card/project-column-card.component';
+export * from './lib/project-columns/project-columns.component';
+export * from './lib/project-column/project-column.component';

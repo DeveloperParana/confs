@@ -1,0 +1,22 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > header {
+    padding: 0px 24px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    width: calc(100% - 48px);
+  }
+
+  > section {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 32px;
+  }
+}

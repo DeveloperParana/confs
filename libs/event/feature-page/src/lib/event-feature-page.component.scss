@@ -4,20 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1024px;
-
-  > header {
-    padding: 0px 24px;
-    margin-bottom: 24px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.2);
-
-    width: calc(100% - 48px);
-  }
-
-  > section {
-    display: flex;
-    flex-flow: row wrap;
-    column-gap: 36px;
-  }
+  width: 1024px;
+  max-width: 100%;
 }
