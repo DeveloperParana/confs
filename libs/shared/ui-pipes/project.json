@@ -1,13 +1,13 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/event/feature-speaker/src",
+  "sourceRoot": "libs/shared/ui-pipes/src",
   "prefix": "confs",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/event/feature-speaker"],
+      "outputs": ["coverage/libs/shared/ui-pipes"],
       "options": {
-        "jestConfig": "libs/event/feature-speaker/jest.config.ts",
+        "jestConfig": "libs/shared/ui-pipes/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -15,11 +15,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/event/feature-speaker/**/*.ts",
-          "libs/event/feature-speaker/**/*.html"
+          "libs/shared/ui-pipes/**/*.ts",
+          "libs/shared/ui-pipes/**/*.html"
         ]
       }
     }
   },
-  "tags": ["type:feature", "scope:event"]
+  "tags": ["type:ui", "scope:shared"]
 }

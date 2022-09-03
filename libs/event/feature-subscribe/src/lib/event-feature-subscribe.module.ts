@@ -19,11 +19,7 @@ import { UserGuard } from './guards';
     EventTicketComponent,
     HomeComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    EventFeatureSubscribeRouting,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
   providers: [UserGuard, OAuthResolver],
 })
 export class EventFeatureSubscribeModule {}

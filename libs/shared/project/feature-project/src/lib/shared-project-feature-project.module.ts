@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
+
 import { ProjectComponent } from './containers';
-import { HtmlPipe } from './pipes/html.pipe';
 import {
   ProjectColumnComponent,
   ProjectColumnCardComponent,
 } from './components';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, SharedUiPipesModule],
   declarations: [
-    HtmlPipe,
     ProjectComponent,
     ProjectColumnComponent,
     ProjectColumnCardComponent,

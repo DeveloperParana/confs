@@ -33,6 +33,10 @@ export const APP_PROVIDERS: Provider[] = [
     useValue: environment['speakers.id'],
   },
   {
+    provide: 'pages',
+    useValue: environment.pages,
+  },
+  {
     provide: Http,
     useClass: HttpService,
   },

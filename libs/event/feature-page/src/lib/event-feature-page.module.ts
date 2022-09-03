@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { EventFeaturePageComponent } from './event-feature-page.component';
+import { EventFeaturePageRouting } from './event-feature-page.routing';
 import { SharedProjectFeatureProjectModule } from '@confs/shared/project/feature-project';
 
-import { EventFeatureSpeakerRouting } from './event-feature-speaker.routing';
-import { EventSpeakersComponent } from './containers';
-
 @NgModule({
-  declarations: [EventSpeakersComponent],
+  declarations: [EventFeaturePageComponent],
   imports: [
     CommonModule,
     SharedProjectFeatureProjectModule,
-    EventFeatureSpeakerRouting,
+    EventFeaturePageRouting,
   ],
 })
-export class EventFeatureSpeakerModule {}
+export class EventFeaturePageModule {}

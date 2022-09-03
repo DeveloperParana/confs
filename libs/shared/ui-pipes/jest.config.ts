@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'event-feature-speaker',
+  displayName: 'shared-ui-pipes',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/event/feature-speaker',
+  coverageDirectory: '../../../coverage/libs/shared/ui-pipes',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

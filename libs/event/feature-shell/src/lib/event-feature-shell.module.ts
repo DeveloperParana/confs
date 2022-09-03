@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
+
 import { EventFeatureShellRouting } from './event-feature-shell.routing';
 import { EventFeatureShellComponent } from './event-feature-shell.component';
-import { SafeUrlPipe } from './pipes/safe-url';
 
 @NgModule({
-  declarations: [EventFeatureShellComponent, SafeUrlPipe],
-  imports: [CommonModule, EventFeatureShellRouting],
+  declarations: [EventFeatureShellComponent],
+  imports: [CommonModule, SharedUiPipesModule, EventFeatureShellRouting],
 })
 export class EventFeatureShellModule {}

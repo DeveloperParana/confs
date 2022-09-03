@@ -3,9 +3,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { marked } from 'marked';
 
 @Pipe({
-  name: 'html',
+  name: 'mdtoHtml',
 })
-export class HtmlPipe implements PipeTransform {
+export class MdToHtmlPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
 
   transform(value: string) {
