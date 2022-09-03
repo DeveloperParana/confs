@@ -16,12 +16,12 @@ export const EventFeatureShellRouting = RouterModule.forChild([
         title: 'Fique ligado - DevParaná Conf 2023',
       },
       {
-        path: 'palestras',
+        path: 'page',
         loadChildren: () =>
-          import('@confs/event/feature-speaker').then(
-            (module) => module.EventFeatureSpeakerModule
+          import('@confs/event/feature-page').then(
+            (m) => m.EventFeaturePageModule
           ),
-        title: 'Palestras - DevParaná Conf 2023',
+        title: 'DevParaná Conf 2023',
       },
     ],
   },

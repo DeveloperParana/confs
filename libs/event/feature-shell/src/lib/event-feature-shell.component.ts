@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ProjectFacade } from '@confs/shared/project/data-access';
 
 @Component({
   templateUrl: './event-feature-shell.component.html',
@@ -14,7 +15,12 @@ export class EventFeatureShellComponent {
     'right-bottom': '/assets/cube-purple.svg',
   };
 
-  constructor(@Inject('event.date') eventDate: string) {
+  constructor(
+    readonly projectFacade: ProjectFacade,
+    @Inject('event.date') eventDate: string,
+    @Inject('pages') pages: { project: number }
+  ) {
     this.date = new Date(eventDate).toLocaleDateString();
+    this.projectFacade.loadProjectColumns(pages.project);
   }
 }

@@ -3,19 +3,55 @@
   flex-direction: column;
   align-content: space-between;
   height: 100%;
-  width: 1024px;
-  max-width: 100%;
+  width: 100%;
 
   @media (min-width: 1024px) {
     width: 100%;
+  }
+
+  main {
+    width: 1024px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  nav {
+    width: 100%;
+    background: #111121;
+    column-gap: 16px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+    a.logo {
+      display: block;
+      margin: 24px 8px;
+      width: 180px;
+
+      img {
+        display: flex;
+        height: 100%;
+      }
+    }
+
+    time {
+      right: 0;
+      margin-bottom: -50px;
+    }
   }
 
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
-    width: calc(100% - 48px);
+
+    width: 100%;
 
     flex-direction: column;
     row-gap: 12px;

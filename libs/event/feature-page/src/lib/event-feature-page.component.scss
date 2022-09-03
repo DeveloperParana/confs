@@ -1,0 +1,15 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1024px;
+  max-width: 100%;
+
+  position: relative;
+
+  > .loader {
+    position: absolute;
+  }
+}

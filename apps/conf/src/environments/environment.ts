@@ -7,6 +7,11 @@ export const environment = {
   'event.date': '11/03/2023',
   'server.api': '/api',
   'speakers.id': 19145242,
+  pages: {
+    project: 14615934,
+    palestras: 19145242,
+    patrocinadores: 19145633,
+  },
   'github.oauth.options': {
     clientId: 'ff9e2e06e97c2a9411cc',
     redirectUri: 'http://localhost:4200',

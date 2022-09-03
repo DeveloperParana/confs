@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/shared/ui-pipes/src",
+  "prefix": "confs",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui-pipes"],
+      "options": {
+        "jestConfig": "libs/shared/ui-pipes/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui-pipes/**/*.ts",
+          "libs/shared/ui-pipes/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type:ui", "scope:shared"]
+}

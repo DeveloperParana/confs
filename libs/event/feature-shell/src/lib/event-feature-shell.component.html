@@ -1,13 +1,16 @@
 <header>
-  <a routerLink="/">
-    <img
-      src="/assets/devpr-logo.svg"
-      [alt]="'DevPR Conf ' + date | date: 'yyyy'"
-    />
-  </a>
-  <time>
-    {{ date | date: 'longDate' }}
-  </time>
+  <nav *ngIf="projectFacade.columns$ | async as columns">
+    <a routerLink="/" class="logo">
+      <img
+        src="/assets/devpr-logo.svg"
+        [alt]="'DevPR Conf ' + date | date: 'yyyy'"
+      />
+    </a>
+    <ul confs-project-columns [columns]="columns"></ul>
+    <time>
+      {{ date | date: 'longDate' }}
+    </time>
+  </nav>
 </header>
 
 <main>
