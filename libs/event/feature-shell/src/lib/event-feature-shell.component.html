@@ -1,17 +1,8 @@
-<header>
-  <nav *ngIf="projectFacade.columns$ | async as columns">
-    <a routerLink="/" class="logo">
-      <img
-        src="/assets/devpr-logo.svg"
-        [alt]="'DevPR Conf ' + date | date: 'yyyy'"
-      />
-    </a>
-    <ul confs-project-columns [columns]="columns"></ul>
-    <time>
-      {{ date | date: 'longDate' }}
-    </time>
-  </nav>
-</header>
+<header
+  confs-event-feature-shell
+  [columns]="projectFacade.columns$ | async"
+  [date]="date"
+></header>
 
 <main>
   <router-outlet></router-outlet>
@@ -22,25 +13,7 @@
     *ngFor="let c of cubes | keyvalue"
     [data]="c.value | safeUrl"
     [class]="c.key"
-    type="image/svg+xml"
   ></object>
 </div>
 
-<footer>
-  <object data="/assets/logo.svg" type="image/svg+xml"></object>
-  <div>
-    <p>
-      <a rel="author" target="_blank" href="https://devparana.mx">
-        Comunidade DevParaná
-      </a>
-      - Veja nosso media kit:
-      <a href="/media-kit"> pt-br </a>
-      |
-      <a href="/media-kit/en"> en-us </a>
-    </p>
-    <p>
-      2015 - {{ date | date: 'yyyy' }} incentivando o compartilhamento de
-      conhecimento entre pessoas
-    </p>
-  </div>
-</footer>
+<footer confs-event-feature-shell [date]="date"></footer>

@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
 
-import { SubscribeForm } from '../../forms';
+import { SubscribeForm } from './forms';
 
 @Component({
-  selector: 'confs-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './event-feature-subscribe.component.html',
+  styleUrls: ['./event-feature-subscribe.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class EventFeatureSubscribeComponent implements OnInit {
   form = new SubscribeForm();
 
   placeholder = {

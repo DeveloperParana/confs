@@ -91,7 +91,7 @@ button .svg-icon {
   overflow: hidden;
   perspective: var(--visual-distortion-zapper);
   perspective-origin: 50% 50%;
-  z-index: -1;
+  z-index: -2;
 }
 
 .top-plane {

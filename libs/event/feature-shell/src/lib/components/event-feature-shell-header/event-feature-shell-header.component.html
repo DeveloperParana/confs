@@ -1,0 +1,14 @@
+<a routerLink="/" class="logo">
+  <img
+    src="/assets/devpr-logo.svg"
+    [alt]="'DevPR Conf ' + date | date: 'yyyy'"
+  />
+</a>
+
+<nav *ngIf="columns">
+  <ul confs-project-columns [columns]="columns"></ul>
+</nav>
+
+<time>
+  {{ date | date: 'longDate' }}
+</time>

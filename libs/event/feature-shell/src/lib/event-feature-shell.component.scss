@@ -10,91 +10,13 @@
   }
 
   main {
-    width: 1024px;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-
-  nav {
-    width: 100%;
-    background: #111121;
-    column-gap: 16px;
-    height: 64px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-
-    padding-left: 24px;
-    padding-right: 24px;
-
-    a.logo {
-      display: block;
-      margin: 24px 8px;
-      width: 180px;
-
-      img {
-        display: flex;
-        height: 100%;
-      }
-    }
-
-    time {
-      right: 0;
-      margin-bottom: -50px;
-    }
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-
-    flex-direction: column;
-    row-gap: 12px;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
-
-    a,
-    img {
-      width: 200px;
-      max-width: 200px;
-      filter: drop-shadow(1px 2px 2px rgb(0 0 0 / 0.9));
-    }
-  }
-
-  time {
-    display: inline-flex;
-    transform: skew(-8deg);
-    padding: 6px 24px;
-    margin-right: 12px;
-
-    font-style: italic;
-    text-align: center;
-    text-transform: capitalize;
-
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 26px;
-    letter-spacing: 0.07em;
-
-    color: #ffffff;
-    background: linear-gradient(
-      347.16deg,
-      #8c4bff 8.18%,
-      rgba(197, 75, 255, 0.79) 114.87%
-    );
-  }
-
-  main {
     flex: 1;
     display: flex;
     align-items: center;
+
+    width: 1024px;
+    margin: 0 auto;
+    max-width: 100%;
 
     z-index: 2;
   }
@@ -104,7 +26,7 @@
       opacity: 0.1;
     }
 
-    z-index: 0;
+    z-index: -1;
 
     .left-top {
       position: fixed;
@@ -133,38 +55,6 @@
   }
 
   footer {
-    display: flex;
-    align-items: center;
-    column-gap: 24px;
-    padding: 24px 24px;
 
-    p {
-      margin-top: 0;
-      margin-bottom: 0;
-
-      color: rgba(var(--body-text-color-primary), 0.3);
-
-      font-size: var(--body-text-size-small);
-      transition: color 0.2s ease-in-out;
-    }
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
-
-    object {
-      opacity: 0.5;
-      max-height: 36px;
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    &:hover {
-      p {
-        color: rgba(var(--body-text-color-primary), 0.6);
-      }
-      object {
-        opacity: 1;
-      }
-    }
   }
 }
