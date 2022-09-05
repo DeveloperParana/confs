@@ -1,13 +1,13 @@
 import { RouterModule } from '@angular/router';
 
+import { EventFeatureSubscribeComponent } from './event-feature-subscribe.component';
 import { OAuthResolver } from './resolvers';
-import { HomeComponent } from './pages';
 import { UserGuard } from './guards';
 
 export const EventFeatureSubscribeRouting = RouterModule.forChild([
   {
     path: '',
-    component: HomeComponent,
+    component: EventFeatureSubscribeComponent,
     resolve: {
       githubOAuthCode: OAuthResolver,
     },

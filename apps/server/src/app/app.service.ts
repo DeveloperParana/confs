@@ -10,15 +10,15 @@ import { map, take } from 'rxjs';
 import { dataResponse } from '@confs/shared/data-access';
 import { Member } from '@confs/shared/api-interfaces';
 
-import { WebpProvider, ticketTemplate } from './utilities';
+import { ticketTemplate } from './utilities';
 
 @Injectable()
 export class AppService {
   constructor(
     private readonly configService: ConfigService,
-    private readonly httpService: HttpService,
-    private readonly webp: WebpProvider
-  ) {}
+    private readonly httpService: HttpService
+  ) // private readonly webp: WebpProvider
+  {}
 
   getGithubUserByLogin(login: string) {
     const headers = this.buildHeaders();
@@ -59,9 +59,11 @@ export class AppService {
             const tmpl = ticketTemplate(user);
 
             try {
-              return writeFile(fd, tmpl, 'utf8')
-                .then(() => this.webp.convert(ticket))
-                .finally(fd.close);
+              return (
+                writeFile(fd, tmpl, 'utf8')
+                  // .then(() => this.webp.convert(ticket))
+                  .finally(fd.close)
+              );
             } catch (err) {
               throw new BadRequestException(err);
             }

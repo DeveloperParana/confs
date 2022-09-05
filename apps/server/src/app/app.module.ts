@@ -7,7 +7,6 @@ import { AppController } from './app.controller';
 import { OAuthModule } from './oauth/oauth.module';
 import { SubscribeModule } from './subscribe/subscribe.module';
 import { DatabaseModule } from './database/database.module';
-import { WebpProvider } from './utilities/webp.provider';
 import { ProjectModule } from './project/project.module';
 
 @Module({
@@ -22,6 +21,6 @@ import { ProjectModule } from './project/project.module';
     DatabaseModule,
   ],
   controllers: [AppController],
-  providers: [AppService, WebpProvider],
+  providers: [AppService],
 })
 export class AppModule {}
