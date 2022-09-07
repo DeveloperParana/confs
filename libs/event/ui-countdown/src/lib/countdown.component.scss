@@ -1,0 +1,45 @@
+:host {
+  --color-purple-glow: 100, 0, 255;
+  --color-green-glow: 0, 255, 0;
+
+  display: flex;
+  column-gap: 16px;
+
+  var {
+    font-size: 100%;
+    animation: neon4 1s ease-in-out infinite alternate,
+      ping 1s ease-in-out infinite both;
+  }
+
+  small {
+    font-size: 80%;
+    opacity: 0.7;
+  }
+
+  @keyframes neon4 {
+    from {
+      text-shadow: 0 0 10px rgba(var(--color-purple-glow), 0.4),
+        0 0 20px rgba(var(--color-purple-glow), 0.4),
+        0 0 30px rgba(var(--color-purple-glow), 0.4),
+        0 0 40px rgba(var(--color-purple-glow), 0.4);
+    }
+    to {
+      text-shadow: 0 0 5px rgba(var(--color-purple-glow), 0.8),
+        0 0 10px rgba(var(--color-purple-glow), 0.8),
+        0 0 15px rgba(var(--color-purple-glow), 0.8),
+        0 0 20px rgba(var(--color-purple-glow), 0.8);
+    }
+  }
+
+  @keyframes ping {
+    0% {
+      opacity: 0.9;
+    }
+    80% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+}

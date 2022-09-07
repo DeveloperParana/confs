@@ -9,6 +9,10 @@ interface AppOptions extends NestApplicationOptions {
   production: boolean;
 }
 
+const appMessage = (port: number, prefix: string) => {
+  return `🚀 Application is running on: http://localhost:${port}/${prefix}`;
+};
+
 export const appFactory = async <T extends NestExpressApplication>(
   options: AppOptions
 ) => {
@@ -24,5 +28,8 @@ export const appFactory = async <T extends NestExpressApplication>(
     app.setGlobalPrefix(prefix);
   }
 
-  return { app, prefix };
+  const port = process.env.PORT ? +process.env.PORT : 3333;
+  const message = appMessage(port, prefix);
+
+  return { app, prefix, port, message };
 };

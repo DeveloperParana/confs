@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { OAuthResolver } from '@confs/event/feature-subscribe';
 
 import { AppComponent } from './app.component';
 import { APP_PROVIDERS } from './app.providers';
@@ -12,7 +11,7 @@ import { AppRouting } from './app.routing';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRouting,
   ],
-  providers: [...APP_PROVIDERS, OAuthResolver],
+  providers: [...APP_PROVIDERS],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 interface State {
   loading: boolean;
-  message: string | null;
+  message?: string | null;
 }
 
 export abstract class StateStore<T extends State> {
@@ -16,8 +16,6 @@ export abstract class StateStore<T extends State> {
   }
 
   abstract loading$: Observable<boolean>;
-
-  abstract message$: Observable<string | null>;
 
   constructor(initialState: T) {
     this._state = new BehaviorSubject<T>(initialState);
