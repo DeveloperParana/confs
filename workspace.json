@@ -10,6 +10,7 @@
     "event-feature-page": "libs/event/feature-page",
     "event-feature-shell": "libs/event/feature-shell",
     "event-feature-subscribe": "libs/event/feature-subscribe",
+    "event-ui-countdown": "libs/event/ui-countdown",
     "server": "apps/server",
     "shared-api-interfaces": "libs/shared/api-interfaces",
     "shared-data-access": "libs/shared/data-access",

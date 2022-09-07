@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+
 import { ProjectFacade } from '@confs/shared/project/data-access';
 
 @Component({

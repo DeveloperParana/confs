@@ -9,6 +9,9 @@
   <ul confs-project-columns [columns]="columns"></ul>
 </nav>
 
-<time>
-  {{ date | date: 'longDate' }}
-</time>
+<div>
+  <time>
+    {{ date | date: 'longDate' }}
+  </time>
+  <event-countdown [value]="countdown.value$"></event-countdown>
+</div>

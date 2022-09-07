@@ -31,10 +31,6 @@ export const APP_PROVIDERS: Provider[] = [
     useValue: environment['event.date'],
   },
   {
-    provide: 'speakers.id',
-    useValue: environment['speakers.id'],
-  },
-  {
     provide: 'pages',
     useValue: environment.pages,
   },
