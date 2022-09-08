@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TicketUser } from '@confs/event/data-state';
+import { TicketUser } from '@confs/event/data-access';
 
 @Component({
   selector: 'confs-event-ticket',

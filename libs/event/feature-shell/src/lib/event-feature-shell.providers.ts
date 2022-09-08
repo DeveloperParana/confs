@@ -1,12 +1,12 @@
 import { Provider } from '@angular/core';
 
 import { Http, ServerService } from '@confs/shared/data-access';
-import { ProjectService } from '@confs/shared/project/data-access';
+import { ProjectService } from '@confs/event/data-access';
 import {
   SubscribeFacade,
   TicketFacade,
   EventFacade,
-} from '@confs/event/data-state';
+} from '@confs/event/data-access';
 import { OAuthResolver } from '@confs/event/feature-subscribe';
 import { OAuthService } from '@confs/auth/data-access';
 

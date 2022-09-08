@@ -5,7 +5,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 
-import { CountdownFacade } from '@confs/event/data-state';
+import { CountdownFacade } from '@confs/event/data-access';
 
 @Component({
   selector:

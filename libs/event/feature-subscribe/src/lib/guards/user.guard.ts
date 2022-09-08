@@ -2,7 +2,7 @@ import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { TicketFacade } from '@confs/event/data-state';
+import { TicketFacade } from '@confs/event/data-access';
 
 @Injectable()
 export class UserGuard implements CanActivate {

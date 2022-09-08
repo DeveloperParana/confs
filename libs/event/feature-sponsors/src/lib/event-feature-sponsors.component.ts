@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
 import { ProjectsConfig } from '@confs/shared/api-interfaces';
-import { EventFacade } from '@confs/event/data-state';
+import { EventFacade } from '@confs/event/data-access';
 
 @Component({
   template: `
@@ -28,9 +28,9 @@ import { EventFacade } from '@confs/event/data-state';
 })
 export class EventFeatureSponsorsComponent implements OnInit {
   constructor(
-    readonly eventFacade: EventFacade,
     @Inject('github.projects')
-    readonly projects: ProjectsConfig
+    readonly projects: ProjectsConfig,
+    readonly eventFacade: EventFacade
   ) {}
 
   ngOnInit() {

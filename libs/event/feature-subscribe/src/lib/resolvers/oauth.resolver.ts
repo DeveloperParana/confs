@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
 import { AccessTokenResponse } from '@confs/auth/api-interfaces';
-import { TicketFacade } from '@confs/event/data-state';
+import { TicketFacade } from '@confs/event/data-access';
 
 @Injectable()
 export class OAuthResolver implements Resolve<AccessTokenResponse | boolean> {

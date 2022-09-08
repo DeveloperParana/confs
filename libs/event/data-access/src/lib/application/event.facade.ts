@@ -1,9 +1,9 @@
 import { marked } from 'marked';
 import { forkJoin, map } from 'rxjs';
 
+import { ProjectService } from '../infrastructure/project.service';
 import { normalizeKeys } from '@confs/shared/util-format';
 import { StateStore } from '@confs/shared/data-access';
-import { ProjectService } from '@confs/shared/project/data-access';
 import {
   Project,
   GithubProject,

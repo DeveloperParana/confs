@@ -1,3 +1,4 @@
+export * from './lib/infrastructure/project.service';
 export * from './lib/application/countdown.facade';
 export * from './lib/application/schedule.facade';
 export * from './lib/application/subscribe.facade';
