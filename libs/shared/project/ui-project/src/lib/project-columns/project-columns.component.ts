@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProjectColumn } from '@confs/shared/project/domain';
+import { ProjectColumn } from '@confs/shared/project/api-interfaces';
 
 @Component({
   selector: 'confs-project-columns,ul[confs-project-columns]',

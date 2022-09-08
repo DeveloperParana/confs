@@ -1,6 +1,6 @@
 import { Input, Component, HostBinding } from '@angular/core';
 
-import { ProjectColumnCard } from '@confs/shared/project/domain';
+import { ProjectColumnCard } from '@confs/shared/project/api-interfaces';
 
 const color = ['orange', 'blue', 'purple', 'green'];
 

@@ -19,9 +19,7 @@ import { EventFacade } from '@confs/event/data-state';
     </ng-container>
     <figure class="loader" *ngIf="eventFacade.loading$ | async">
       <object data="/assets/loading.svg"></object>
-      <caption>
-        Carregando...
-      </caption>
+      <caption> Carregando... </caption>
     </figure>
   `,
   styleUrls: ['./event-feature-speakers.component.scss'],

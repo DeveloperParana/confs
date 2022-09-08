@@ -18,7 +18,6 @@
       "@confs/auth/api-interfaces": ["libs/auth/api-interfaces/src/index.ts"],
       "@confs/auth/data-access": ["libs/auth/data-access/src/index.ts"],
       "@confs/event/data-state": ["libs/event/data-state/src/index.ts"],
-      "@confs/event/feature-page": ["libs/event/feature-page/src/index.ts"],
       "@confs/event/feature-shell": ["libs/event/feature-shell/src/index.ts"],
       "@confs/event/feature-speakers": [
         "libs/event/feature-speakers/src/index.ts"
@@ -42,9 +41,6 @@
       ],
       "@confs/shared/project/data-access": [
         "libs/shared/project/data-access/src/index.ts"
-      ],
-      "@confs/shared/project/domain": [
-        "libs/shared/project/domain/src/index.ts"
       ],
       "@confs/shared/ui-pipes": ["libs/shared/ui-pipes/src/index.ts"],
       "@confs/shared/util-format": ["libs/shared/util-format/src/index.ts"]

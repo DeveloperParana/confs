@@ -2,7 +2,7 @@ import {
   GithubProject,
   GithubProjectColumn,
   GithubProjectColumnCard,
-} from '@confs/shared/project/domain';
+} from '@confs/shared/project/api-interfaces';
 import { Http } from '@confs/shared/data-access';
 
 export class ProjectService {

@@ -7,7 +7,6 @@
     "cert": "apps/cert",
     "conf": "apps/conf",
     "event-data-state": "libs/event/data-state",
-    "event-feature-page": "libs/event/feature-page",
     "event-feature-shell": "libs/event/feature-shell",
     "event-feature-speakers": "libs/event/feature-speakers",
     "event-feature-sponsors": "libs/event/feature-sponsors",
@@ -18,7 +17,6 @@
     "shared-data-access": "libs/shared/data-access",
     "shared-project-api-interfaces": "libs/shared/project/api-interfaces",
     "shared-project-data-access": "libs/shared/project/data-access",
-    "shared-project-domain": "libs/shared/project/domain",
     "shared-project-ui-project": "libs/shared/project/ui-project",
     "shared-ui-pipes": "libs/shared/ui-pipes",
     "shared-util-format": "libs/shared/util-format"
