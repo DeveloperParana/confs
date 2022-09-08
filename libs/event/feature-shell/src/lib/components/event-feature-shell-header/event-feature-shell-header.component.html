@@ -5,13 +5,20 @@
   />
 </a>
 
-<nav *ngIf="columns">
-  <ul confs-project-columns [columns]="columns"></ul>
+<nav>
+  <ul>
+    <li>
+      <a routerLink="palestras" routerLinkActive="active">Palestras</a>
+    </li>
+    <li>
+      <a routerLink="patrocinios" routerLinkActive="active">Patrocínios</a>
+    </li>
+  </ul>
 </nav>
 
 <div>
   <time>
-    {{ date | date: 'longDate' }}
+    Dia {{ date | date: 'longDate' }}
   </time>
   <event-countdown [value]="countdown.value$"></event-countdown>
 </div>

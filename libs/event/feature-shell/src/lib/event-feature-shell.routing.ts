@@ -13,15 +13,23 @@ export const EventFeatureShellRouting = RouterModule.forChild([
           import('@confs/event/feature-subscribe').then(
             (m) => m.EventFeatureSubscribeModule
           ),
-        title: 'Fique ligado - DevParaná Conf 2023',
+        title: 'Acompanhe - DevParaná Conf 2023',
       },
       {
-        path: 'page',
+        path: 'palestras',
         loadChildren: () =>
-          import('@confs/event/feature-page').then(
-            (m) => m.EventFeaturePageModule
+          import('@confs/event/feature-speakers').then(
+            (m) => m.EventFeatureSpeakersModule
           ),
-        title: 'DevParaná Conf 2023',
+        title: 'Palestras - DevParaná Conf 2023',
+      },
+      {
+        path: 'patrocinios',
+        loadChildren: () =>
+          import('@confs/event/feature-sponsors').then(
+            (m) => m.EventFeatureSponsorsModule
+          ),
+        title: 'Patrocínios - DevParaná Conf 2023',
       },
     ],
   },

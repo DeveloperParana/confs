@@ -7,8 +7,6 @@ import {
 
 import { CountdownFacade } from '@confs/event/data-state';
 
-import { ProjectColumn } from '@confs/shared/project/domain';
-
 @Component({
   selector:
     'confs-event-feature-shell-header,header[confs-event-feature-shell]',
@@ -17,8 +15,6 @@ import { ProjectColumn } from '@confs/shared/project/domain';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventFeatureShellHeaderComponent implements OnInit {
-  @Input() columns: ProjectColumn[] | null = [];
-
   @Input() date?: string;
 
   readonly countdown = new CountdownFacade();

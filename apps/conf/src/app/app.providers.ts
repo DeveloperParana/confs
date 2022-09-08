@@ -16,6 +16,10 @@ const VALUE_PROVIDERS = [
     useValue: environment['github.oauth.options'],
   },
   {
+    provide: 'github.projects',
+    useValue: environment.projects,
+  },
+  {
     provide: 'server.api',
     useValue: environment['server.api'],
   },

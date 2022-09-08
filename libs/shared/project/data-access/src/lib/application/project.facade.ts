@@ -21,6 +21,7 @@ interface ProjectState {
   column: ProjectColumn | null;
   columns: ProjectColumn[];
   cards: ProjectColumnCard[];
+  card: ProjectColumnCard | null;
 }
 
 export class ProjectFacade extends StateStore<ProjectState> {
@@ -30,6 +31,7 @@ export class ProjectFacade extends StateStore<ProjectState> {
   columns$ = this.select((state) => state.columns);
   column$ = this.select((state) => state.column);
   cards$ = this.select((state) => state.cards);
+  card$ = this.select((state) => state.card);
 
   constructor(private projectService: ProjectService) {
     super({
@@ -39,6 +41,7 @@ export class ProjectFacade extends StateStore<ProjectState> {
       column: null,
       columns: [],
       cards: [],
+      card: null,
     });
   }
 
@@ -105,6 +108,20 @@ export class ProjectFacade extends StateStore<ProjectState> {
       this.setState({ loading: false, cards });
 
       $project.unsubscribe();
+    });
+  }
+
+  loadProjectColumnCard(cardId: number) {
+    this.setState({ loading: true });
+
+    const card$ = this.projectService
+      .getProjectColumnCard(cardId)
+      .pipe(map<GithubProjectColumnCard, ProjectColumnCard>(normalizeKeys));
+
+    const $card = card$.subscribe((card) => {
+      this.setState({ loading: false, card });
+
+      $card.unsubscribe();
     });
   }
 }

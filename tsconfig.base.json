@@ -20,6 +20,12 @@
       "@confs/event/data-state": ["libs/event/data-state/src/index.ts"],
       "@confs/event/feature-page": ["libs/event/feature-page/src/index.ts"],
       "@confs/event/feature-shell": ["libs/event/feature-shell/src/index.ts"],
+      "@confs/event/feature-speakers": [
+        "libs/event/feature-speakers/src/index.ts"
+      ],
+      "@confs/event/feature-sponsors": [
+        "libs/event/feature-sponsors/src/index.ts"
+      ],
       "@confs/event/feature-subscribe": [
         "libs/event/feature-subscribe/src/index.ts"
       ],
@@ -31,6 +37,9 @@
         "libs/shared/api-interfaces/src/index.ts"
       ],
       "@confs/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@confs/shared/project/api-interfaces": [
+        "libs/shared/project/api-interfaces/src/index.ts"
+      ],
       "@confs/shared/project/data-access": [
         "libs/shared/project/data-access/src/index.ts"
       ],

@@ -31,4 +31,10 @@ export class ProjectService {
 
     return this.http.get<GithubProjectColumnCard[]>(url);
   }
+
+  getProjectColumnCard(cardId: number) {
+    const url = `${this.url}/project/columns/cards/${cardId}`;
+
+    return this.http.get<GithubProjectColumnCard>(url);
+  }
 }

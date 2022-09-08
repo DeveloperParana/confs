@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/event/feature-sponsors/src",
+  "prefix": "event",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/event/feature-sponsors"],
+      "options": {
+        "jestConfig": "libs/event/feature-sponsors/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/event/feature-sponsors/**/*.ts",
+          "libs/event/feature-sponsors/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type:feature", "scope:event"]
+}
