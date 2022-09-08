@@ -10,7 +10,7 @@ import {
   GithubProjectColumn,
   ProjectColumnCard,
   GithubProjectColumnCard,
-} from '@confs/shared/project/api-interfaces';
+} from '@confs/shared/api-interfaces';
 
 import { ProjectService } from '../infrastructure/project.service';
 

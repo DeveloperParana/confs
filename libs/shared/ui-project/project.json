@@ -1,14 +1,14 @@
 {
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/shared/project/ui-project/src",
+  "sourceRoot": "libs/shared/ui-project/src",
   "prefix": "confs",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/project/ui-project"],
+      "outputs": ["coverage/libs/shared/ui-project"],
       "options": {
-        "jestConfig": "libs/shared/project/ui-project/jest.config.ts",
+        "jestConfig": "libs/shared/ui-project/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -16,8 +16,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/project/ui-project/**/*.ts",
-          "libs/shared/project/ui-project/**/*.html"
+          "libs/shared/ui-project/**/*.ts",
+          "libs/shared/ui-project/**/*.html"
         ]
       }
     }

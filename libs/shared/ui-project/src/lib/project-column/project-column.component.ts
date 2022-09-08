@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ProjectColumn } from '@confs/shared/project/api-interfaces';
+import { ProjectColumn } from '@confs/shared/api-interfaces';
 
 @Component({
   selector: 'confs-project-column',

@@ -3,23 +3,21 @@
   "sourceRoot": "libs/shared/api-interfaces/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/shared/api-interfaces",
-        "main": "libs/shared/api-interfaces/src/index.ts",
-        "tsConfig": "libs/shared/api-interfaces/tsconfig.lib.json",
-        "assets": ["libs/shared/api-interfaces/*.md"]
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/shared/api-interfaces/**/*.ts"]
       }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/api-interfaces"],
+      "options": {
+        "jestConfig": "libs/shared/api-interfaces/jest.config.ts",
+        "passWithNoTests": true
+      }
     }
   },
-  "tags": ["type:api", "scope:shared"]
+  "tags": ["type:api", "scope:shared", "domain:project"]
 }

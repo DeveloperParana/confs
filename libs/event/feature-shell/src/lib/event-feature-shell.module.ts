@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedProjectUiProjectModule } from '@confs/shared-project-ui-project';
+import { SharedUiProjectModule } from '@confs/shared/ui-project';
 import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
 
 import { EventFeatureShellRouting } from './event-feature-shell.routing';
@@ -20,7 +20,7 @@ import { EventUiCountdownModule } from '@confs/event/ui-countdown';
     CommonModule,
     SharedUiPipesModule,
     EventUiCountdownModule,
-    SharedProjectUiProjectModule,
+    SharedUiProjectModule,
     EventFeatureShellRouting,
   ],
 })

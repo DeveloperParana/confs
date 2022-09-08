@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
-import { Member } from '@confs/shared/api-interfaces';
+import { MeetupMember } from '@confs/shared/api-interfaces';
 
 import { CertComponent } from './cert.component';
 import { AppService } from './app.service';
@@ -55,7 +55,7 @@ export class AppComponent {
   private _selected = new BehaviorSubject('');
   readonly selected$ = this._selected.asObservable();
 
-  readonly autocomplete$: Observable<Member[]>;
+  readonly autocomplete$: Observable<MeetupMember[]>;
 
   constructor(private _service: AppService) {
     const members = this._service.get();

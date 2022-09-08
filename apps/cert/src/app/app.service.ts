@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of, tap } from 'rxjs';
 
-import { Member } from '@confs/shared/api-interfaces';
+import { MeetupMember } from '@confs/shared/api-interfaces';
 
 import { AppStorage } from './app.storage';
 import { env } from '../envs/env';
 
 interface AppStorageMap {
-  members: Member[];
+  members: MeetupMember[];
   membersLastUpdate: Date;
 }
 
@@ -43,11 +43,11 @@ export class AppService {
     return of(members);
   }
 
-  private _fromLocalStorage(): Member[] {
+  private _fromLocalStorage(): MeetupMember[] {
     const localData = this._storage.get('members');
     if (localData && typeof localData === 'string') {
       try {
-        return JSON.parse(localData) as Member[];
+        return JSON.parse(localData) as MeetupMember[];
       } catch (err) {
         return [];
       }
@@ -58,7 +58,7 @@ export class AppService {
 
   private _fromRestAPI() {
     const url = `${env['server.api']}/members`;
-    return this._http.get<Member[]>(url).pipe(tap(this._updateLocal()));
+    return this._http.get<MeetupMember[]>(url).pipe(tap(this._updateLocal()));
   }
 
   private _getLastUpdate() {
@@ -67,7 +67,7 @@ export class AppService {
   }
 
   private _updateLocal(date = new Date().toUTCString()) {
-    return (members: Member[]) => {
+    return (members: MeetupMember[]) => {
       const value = JSON.stringify(members);
       this._storage.set('members', value);
       this._storage.set('membersLastUpdate', date);

@@ -29,16 +29,11 @@
         "libs/event/feature-subscribe/src/index.ts"
       ],
       "@confs/event/ui-countdown": ["libs/event/ui-countdown/src/index.ts"],
-      "@confs/shared-project-ui-project": [
-        "libs/shared/project/ui-project/src/index.ts"
-      ],
       "@confs/shared/api-interfaces": [
         "libs/shared/api-interfaces/src/index.ts"
       ],
+      "@confs/shared/ui-project": ["libs/shared/ui-project/src/index.ts"],
       "@confs/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@confs/shared/project/api-interfaces": [
-        "libs/shared/project/api-interfaces/src/index.ts"
-      ],
       "@confs/shared/project/data-access": [
         "libs/shared/project/data-access/src/index.ts"
       ],

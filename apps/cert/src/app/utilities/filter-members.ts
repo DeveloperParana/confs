@@ -1,7 +1,7 @@
-import { Member } from '@confs/shared/api-interfaces';
+import { MeetupMember } from '@confs/shared/api-interfaces';
 
 export const filterMembers = (member: string | null) => {
-  return (m: Member): string[] => {
+  return (m: MeetupMember): string[] => {
     const value = member?.toLowerCase() ?? '';
     const names = value.split(' ');
 

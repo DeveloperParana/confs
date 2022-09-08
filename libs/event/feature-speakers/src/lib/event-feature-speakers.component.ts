@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
-import { ProjectsConfig } from '@confs/shared/project/api-interfaces';
+import { ProjectsConfig } from '@confs/shared/api-interfaces';
 import { EventFacade } from '@confs/event/data-state';
 
 @Component({
@@ -19,7 +19,9 @@ import { EventFacade } from '@confs/event/data-state';
     </ng-container>
     <figure class="loader" *ngIf="eventFacade.loading$ | async">
       <object data="/assets/loading.svg"></object>
-      <caption> Carregando... </caption>
+      <caption>
+        Carregando...
+      </caption>
     </figure>
   `,
   styleUrls: ['./event-feature-speakers.component.scss'],

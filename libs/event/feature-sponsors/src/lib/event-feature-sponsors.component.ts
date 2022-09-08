@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
-import { ProjectsConfig } from '@confs/shared/project/api-interfaces';
+import { ProjectsConfig } from '@confs/shared/api-interfaces';
 import { EventFacade } from '@confs/event/data-state';
 
 @Component({

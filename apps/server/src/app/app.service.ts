@@ -8,7 +8,7 @@ import { HttpService } from '@nestjs/axios';
 import { map, take } from 'rxjs';
 
 import { dataResponse } from '@confs/shared/data-access';
-import { Member } from '@confs/shared/api-interfaces';
+import { MeetupMember } from '@confs/shared/api-interfaces';
 
 import { ticketTemplate } from './utilities';
 
@@ -16,9 +16,8 @@ import { ticketTemplate } from './utilities';
 export class AppService {
   constructor(
     private readonly configService: ConfigService,
-    private readonly httpService: HttpService
-  ) // private readonly webp: WebpProvider
-  {}
+    private readonly httpService: HttpService // private readonly webp: WebpProvider
+  ) {}
 
   getGithubUserByLogin(login: string) {
     const headers = this.buildHeaders();
@@ -42,7 +41,7 @@ export class AppService {
   }
 
   getMembers() {
-    return this.httpService.get<Member[]>(
+    return this.httpService.get<MeetupMember[]>(
       'https://api.meetup.com/developerparana/members'
     );
   }

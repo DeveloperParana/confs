@@ -10,7 +10,7 @@ import {
   ProjectConfig,
   ProjectColumnCard,
   GithubProjectColumnCard,
-} from '@confs/shared/project/api-interfaces';
+} from '@confs/shared/api-interfaces';
 
 interface EventState {
   loading: boolean;

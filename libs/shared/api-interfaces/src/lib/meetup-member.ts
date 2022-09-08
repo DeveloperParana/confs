@@ -1,4 +1,4 @@
-export interface Member {
+export interface MeetupMember {
   id: number;
   name: string;
   bio?: string;
