@@ -1,4 +1,5 @@
 {
+  "name": "shared-project-domain",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/project/domain/src",
   "projectType": "library",
@@ -12,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/project/domain"],
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/project/domain"],
       "options": {
         "jestConfig": "libs/shared/project/domain/jest.config.ts",
         "passWithNoTests": true

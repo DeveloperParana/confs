@@ -1,4 +1,5 @@
 {
+  "name": "shared-project-data-access",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/project/data-access/src",
   "projectType": "library",
@@ -12,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/project/data-access"],
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/project/data-access"],
       "options": {
         "jestConfig": "libs/shared/project/data-access/jest.config.ts",
         "passWithNoTests": true

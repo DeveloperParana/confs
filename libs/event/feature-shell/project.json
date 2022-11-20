@@ -1,11 +1,12 @@
 {
+  "name": "event-feature-shell",
   "projectType": "library",
   "sourceRoot": "libs/event/feature-shell/src",
   "prefix": "confs",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/event/feature-shell"],
+      "outputs": ["{workspaceRoot}/coverage/libs/event/feature-shell"],
       "options": {
         "jestConfig": "libs/event/feature-shell/jest.config.ts",
         "passWithNoTests": true

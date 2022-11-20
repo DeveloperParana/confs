@@ -1,4 +1,5 @@
 {
+  "name": "conf",
   "projectType": "application",
   "sourceRoot": "apps/conf/src",
   "prefix": "conf",
@@ -93,7 +94,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/conf"],
+      "outputs": ["{workspaceRoot}/coverage/apps/conf"],
       "options": {
         "jestConfig": "apps/conf/jest.config.ts",
         "passWithNoTests": true
@@ -123,7 +124,21 @@
           "extractLicenses": false
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "production",
+      "production": {
+        "outputHashing": "media",
+        "fileReplacements": [
+          {
+            "replace": "apps/conf/src/environments/environment.ts",
+            "with": "apps/conf/src/environments/environment.prod.ts"
+          }
+        ]
+      },
+      "development": {
+        "optimization": false,
+        "sourceMap": true,
+        "extractLicenses": false
+      }
     },
     "serve-ssr": {
       "executor": "@nguniversal/builders:ssr-dev-server",
@@ -157,5 +172,8 @@
       "defaultConfiguration": "production"
     }
   },
-  "tags": ["type:app"]
+  "tags": ["type:app"],
+  "namedInputs": {
+    "projectSpecificFiles": ["{workspaceRoot}/assets/media-kit/**/*.*"]
+  }
 }

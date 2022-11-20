@@ -1,4 +1,5 @@
 {
+  "name": "cert",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/cert/src",
@@ -88,7 +89,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/cert"],
+      "outputs": ["{workspaceRoot}/coverage/apps/cert"],
       "options": {
         "jestConfig": "apps/cert/jest.config.ts",
         "passWithNoTests": true

@@ -1,11 +1,12 @@
 {
+  "name": "event-ui-countdown",
   "projectType": "library",
   "sourceRoot": "libs/event/ui-countdown/src",
   "prefix": "event",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/event/ui-countdown"],
+      "outputs": ["{workspaceRoot}/coverage/libs/event/ui-countdown"],
       "options": {
         "jestConfig": "libs/event/ui-countdown/jest.config.ts",
         "passWithNoTests": true
