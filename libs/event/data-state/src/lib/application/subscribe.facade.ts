@@ -1,4 +1,4 @@
-import { Http } from '@confs/shared/data-access';
+import { ServerService } from '@confs/shared/data-access';
 import { StateStore } from '@confs/shared/data-access';
 
 interface SubscribeState {
@@ -14,7 +14,7 @@ export class SubscribeFacade extends StateStore<SubscribeState> {
 
   message$ = this.select((state) => state.message);
 
-  constructor(readonly http: Http) {
+  constructor(readonly serverService: ServerService) {
     super({
       loading: false,
       message: null,
@@ -25,7 +25,7 @@ export class SubscribeFacade extends StateStore<SubscribeState> {
   subscribe(value: { email: string }) {
     this.setState({ loading: true });
 
-    const sub$ = this.http.post('subscribe', value);
+    const sub$ = this.serverService.post('subscribe', value);
 
     const $sub = sub$.subscribe(() => {
       const message = 'Aguarde nossas novidades';

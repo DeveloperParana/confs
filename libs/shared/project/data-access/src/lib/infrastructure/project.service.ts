@@ -3,32 +3,31 @@ import {
   GithubProjectColumn,
   GithubProjectColumnCard,
 } from '@confs/shared/project/domain';
-import { Http } from '@confs/shared/data-access';
+import { ServerService } from '@confs/shared/data-access';
 
 export class ProjectService {
-  constructor(private readonly http: Http, private readonly url: string) {}
+  constructor(private readonly serverService: ServerService) {}
 
   getProject(projectId: number) {
-    const url = `${this.url}/project/${projectId}`;
+    const url = `project/${projectId}`;
 
-    return this.http.get<GithubProject>(url);
+    return this.serverService.get<GithubProject>(url);
   }
 
   getProjectColumns(projectId: number) {
-    const url = `${this.url}/project/${projectId}/columns`;
-
-    return this.http.get<GithubProjectColumn[]>(url);
+    const url = `project/${projectId}/columns`;
+    return this.serverService.get<GithubProjectColumn[]>(url);
   }
 
   getProjectColumn(columnId: number) {
-    const url = `${this.url}/project/columns/${columnId}`;
+    const url = `project/columns/${columnId}`;
 
-    return this.http.get<GithubProjectColumn>(url);
+    return this.serverService.get<GithubProjectColumn>(url);
   }
 
   getProjectColumnCards(columnId: number) {
-    const url = `${this.url}/project/columns/${columnId}/cards`;
+    const url = `project/columns/${columnId}/cards`;
 
-    return this.http.get<GithubProjectColumnCard[]>(url);
+    return this.serverService.get<GithubProjectColumnCard[]>(url);
   }
 }

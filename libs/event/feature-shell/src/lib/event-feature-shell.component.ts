@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 
 import { ProjectFacade } from '@confs/shared/project/data-access';
 
+
 @Component({
   templateUrl: './event-feature-shell.component.html',
   styleUrls: ['./event-feature-shell.component.scss'],

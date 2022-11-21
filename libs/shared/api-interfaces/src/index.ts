@@ -1,1 +1,1 @@
-export * from './lib/member';
+export * from './public-api';

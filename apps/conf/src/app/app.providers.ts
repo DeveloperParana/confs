@@ -2,11 +2,12 @@ import { LOCALE_ID, Provider } from '@angular/core';
 import ptBR from '@angular/common/locales/extra/br';
 import pt from '@angular/common/locales/pt';
 
-import { environment } from '../environments/environment';
-import { registerLocaleData } from '@angular/common';
 import { eventFeatureShellProviders } from '@confs/event/feature-shell';
-import { Http, HttpService, ServerService } from '@confs/shared/data-access';
+import { registerLocaleData } from '@angular/common';
+import { HttpClientService, ServerService } from '@confs/shared/data-access';
 import { OAuthService } from '@confs/auth/data-access';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 registerLocaleData(pt, 'pt-BR', ptBR);
 
@@ -35,18 +36,18 @@ const VALUE_PROVIDERS = [
 
 const HTTP_PROVIDERS = [
   {
-    provide: Http,
-    useClass: HttpService,
+    provide: HttpClientService,
+    useClass: HttpClient,
   },
   {
     provide: OAuthService,
     useClass: OAuthService,
-    deps: [Http, 'github.oauth.options', 'server.api'],
+    deps: [ServerService, HttpClientService, 'github.oauth.options'],
   },
   {
     provide: ServerService,
     useClass: ServerService,
-    deps: [Http, 'server.api'],
+    deps: [HttpClientService, 'server.api'],
   },
 ];
 
