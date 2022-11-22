@@ -8,12 +8,4 @@
   <router-outlet></router-outlet>
 </main>
 
-<div class="cubes">
-  <object
-    *ngFor="let c of cubes | keyvalue"
-    [data]="c.value | safeUrl"
-    [class]="c.key"
-  ></object>
-</div>
-
 <footer confs-event-feature-shell [date]="date"></footer>

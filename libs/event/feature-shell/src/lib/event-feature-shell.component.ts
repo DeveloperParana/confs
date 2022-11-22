@@ -10,12 +10,6 @@ import { ProjectFacade } from '@confs/shared/project/data-access';
 })
 export class EventFeatureShellComponent {
   readonly date: string;
-  readonly cubes = {
-    'left-top': '/assets/cube-orange.svg',
-    'right-top': '/assets/cube-blue.svg',
-    'left-bottom': '/assets/cube-green.svg',
-    'right-bottom': '/assets/cube-purple.svg',
-  };
 
   constructor(
     readonly projectFacade: ProjectFacade,

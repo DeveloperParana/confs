@@ -6,7 +6,16 @@
 </a>
 
 <nav *ngIf="columns">
-  <ul confs-project-columns [columns]="columns"></ul>
+  <ul>
+    <li *ngFor="let column of columns">
+      <a [routerLink]="['page', column.id]" routerLinkActive="active">
+        {{ column.name }}
+      </a>
+    </li>
+    <li>
+      <a routerLink="c4p" routerLinkActive="active"> C4P </a>
+    </li>
+  </ul>
 </nav>
 
 <div>

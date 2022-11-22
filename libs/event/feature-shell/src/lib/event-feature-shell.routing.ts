@@ -1,5 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { EventFeatureShellComponent } from './event-feature-shell.component';
+import { EventFeatureShellC4pComponent } from './pages';
 
 export const EventFeatureShellRouting = RouterModule.forChild([
   {
@@ -14,6 +15,11 @@ export const EventFeatureShellRouting = RouterModule.forChild([
             (m) => m.EventFeatureSubscribeModule
           ),
         title: 'Fique ligado - DevParaná Conf 2023',
+      },
+      {
+        path: 'c4p',
+        component: EventFeatureShellC4pComponent,
+        title: 'C4P - DevParaná Conf 2023',
       },
       {
         path: 'page',

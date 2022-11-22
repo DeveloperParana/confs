@@ -20,7 +20,8 @@ import { ProjectFacade } from '@confs/shared/project/data-access';
       </confs-project-column>
     </ng-container>
 
-    <figure class="loader" *ngIf="projectFacade.loading$ | async">
+    <!-- <figure class="loader" *ngIf="projectFacade.loading$ | async"> -->
+    <figure class="loader">
       <object data="/assets/loading.svg"></object>
       <caption>
         Carregando...
