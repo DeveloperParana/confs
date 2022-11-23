@@ -2,7 +2,6 @@ confs-event-feature-page {
   flex: 1;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   width: 1024px;
   max-width: 100%;
 
@@ -34,16 +33,9 @@ confs-event-feature-page {
         padding: 0;
         display: flex;
         flex-direction: column;
-        // border: 2px dashed rgba(var(--color-accent), 0.4);
-        // background: linear-gradient(
-        //   258.54deg,
-        //   #a5f381 9.73%,
-        //   #33c130 54.17%,
-        //   #6ffb8e 67.77%,
-        //   #1ad939 91.08%
-        // );
         border-radius: 8px;
         overflow: hidden;
+
         div {
           display: flex;
           box-sizing: border-box;
@@ -79,7 +71,6 @@ confs-event-feature-page {
             filter: grayscale(0);
           }
         }
-
       }
     }
   }

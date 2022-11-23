@@ -1,7 +1,8 @@
 <div>
   <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
     <h1>Conferência anual de e para pessoas desenvolvedoras</h1>
-    <h2>Faça parte da comunidade neste evento</h2>
+
+    <h3>Faça parte da comunidade neste evento</h3>
 
     <p>{{ subscribeFacade.message$ | async }}</p>
 
@@ -34,7 +35,9 @@
       <a confs-github-button [href]="ticketFacade.authorize$ | async">
         Use seu github e monte seu convite
       </a>
-
+      <p>
+        <span class="highlight">*</span> Em breve o 1° lote de ingressos estará a venda, falta muito pouco.
+      </p>
       <!-- <a confs-twitter-button [href]="ticketFacade.authorize$ | async">
         Compartilhe seu convite
       </a> -->
