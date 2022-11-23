@@ -1,11 +1,12 @@
 {
+  "name": "shared-ui-pipes",
   "projectType": "library",
   "sourceRoot": "libs/shared/ui-pipes/src",
   "prefix": "confs",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/ui-pipes"],
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/ui-pipes"],
       "options": {
         "jestConfig": "libs/shared/ui-pipes/jest.config.ts",
         "passWithNoTests": true

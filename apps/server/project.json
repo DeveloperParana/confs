@@ -1,16 +1,19 @@
 {
+  "name": "server",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/server",
         "main": "apps/server/src/main.ts",
         "tsConfig": "apps/server/tsconfig.app.json",
-        "assets": ["apps/server/src/assets", "apps/server/src/views"]
+        "assets": ["apps/server/src/assets", "apps/server/src/views"],
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {
@@ -46,7 +49,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/server"],
+      "outputs": ["{workspaceRoot}/coverage/apps/server"],
       "options": {
         "jestConfig": "apps/server/jest.config.ts",
         "passWithNoTests": true

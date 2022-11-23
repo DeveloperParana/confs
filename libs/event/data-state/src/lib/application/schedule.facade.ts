@@ -1,4 +1,4 @@
-import { Http, StateStore } from '@confs/shared/data-access';
+import { ServerService, StateStore } from '@confs/shared/data-access';
 
 interface Scheduletate {
   loading: boolean;
@@ -11,7 +11,7 @@ export class ScheduleFacade extends StateStore<Scheduletate> {
 
   message$ = this.select((state) => state.message);
 
-  constructor(readonly httpService: Http) {
+  constructor(readonly serverService: ServerService) {
     super({
       loading: false,
       message: null,

@@ -1,11 +1,12 @@
 {
+  "name": "event-feature-subscribe",
   "projectType": "library",
   "sourceRoot": "libs/event/feature-subscribe/src",
   "prefix": "confs",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/event/feature-subscribe"],
+      "outputs": ["{workspaceRoot}/coverage/libs/event/feature-subscribe"],
       "options": {
         "jestConfig": "libs/event/feature-subscribe/jest.config.ts",
         "passWithNoTests": true

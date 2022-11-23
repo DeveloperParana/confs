@@ -1,4 +1,5 @@
 {
+  "name": "shared-util-format",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/util-format/src",
   "projectType": "library",
@@ -12,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/util-format"],
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/util-format"],
       "options": {
         "jestConfig": "libs/shared/util-format/jest.config.ts",
         "passWithNoTests": true

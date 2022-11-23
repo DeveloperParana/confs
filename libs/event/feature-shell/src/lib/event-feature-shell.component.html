@@ -6,14 +6,13 @@
 
 <main>
   <router-outlet></router-outlet>
-</main>
 
-<div class="cubes">
-  <object
-    *ngFor="let c of cubes | keyvalue"
-    [data]="c.value | safeUrl"
-    [class]="c.key"
-  ></object>
-</div>
+  <figure class="loader" *ngIf="loaderService.visible$ | async">
+    <object data="/assets/loading.svg"></object>
+    <caption>
+      Carregando
+    </caption>
+  </figure>
+</main>
 
 <footer confs-event-feature-shell [date]="date"></footer>

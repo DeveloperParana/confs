@@ -7,8 +7,8 @@ import {
   AccessTokenResponse,
   OAuthClientParameters,
 } from '@confs/auth/api-interfaces';
-import { Http } from '@confs/shared/data-access';
-import { toTitleCase } from '@confs/shared/util-format';
+import { HttpClientService, ServerService } from '@confs/shared/data-access';
+import { titleCase } from '@confs/shared/util-format';
 
 import { OAuthStorage } from './oauth.storage';
 
@@ -16,9 +16,9 @@ export class OAuthService {
   storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
   constructor(
-    private readonly http: Http,
-    private readonly options: OAuthClientParameters,
-    private readonly url: string
+    private readonly serverService: ServerService,
+    private readonly httpClientService: HttpClientService,
+    private readonly options: OAuthClientParameters
   ) {}
 
   getParamsFromOptions(
@@ -35,18 +35,21 @@ export class OAuthService {
   }
 
   getAccessToken(code: string) {
-    const url = `${this.url}/oauth/access-token`;
+    const url = `oauth/access-token`;
     const data = { ...this.options, code };
 
-    return this.http
+    return this.serverService
       .post<AccessTokenResponse, AccessToken>(url, data)
       .pipe(tap(this.setAccessTokenToStorage('accessToken')));
   }
 
   getUserInfo(response: AccessTokenResponse) {
-    const prefix = toTitleCase(response.tokenType);
-    const headers = { Authorization: `${prefix} ${response.accessToken}` };
-    return this.http.get<GithubUser>('https://api.github.com/user', headers);
+    const prefix = titleCase(response.tokenType);
+    const token = `${prefix} ${response.accessToken}`
+    return this.httpClientService.get<GithubUser>(
+      'https://api.github.com/user',
+      { headers: { Authorization: token } }
+    );
   }
 
   setAccessTokenToStorage(key: keyof AccessTokenResponse) {

@@ -1,7 +1,7 @@
-import { Http } from '../http';
+import { HttpClientService } from './http/client.service';
 
 export class ServerService {
-  constructor(private readonly http: Http, public url: string) {}
+  constructor(private readonly http: HttpClientService, public url: string) {}
 
   get<T>(endpoint: string, headers?: Record<string, string>) {
     const url = `${this.url}/${endpoint}`;
@@ -9,6 +9,6 @@ export class ServerService {
   }
 
   post<T, D>(endpoint: string, body: D, headers?: Record<string, string>) {
-    return this.http.post<T, D>(`${this.url}/${endpoint}`, body, headers);
+    return this.http.post<T>(`${this.url}/${endpoint}`, body, headers);
   }
 }

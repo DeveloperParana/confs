@@ -1,0 +1,36 @@
+<ng-container *ngIf="column$ | async as column">
+  <header class="flex align-center space-between">
+    <h1>{{ column.name }}</h1>
+
+    <ng-container [ngSwitch]="column.name">
+      <ng-container *ngSwitchCase="'Palestras'">
+        <a
+          target="_blank"
+          class="button neutral shine-effect"
+          href="https://forms.gle/3JdAVKdoE9jM3mGy6"
+          rel="external,noopener,nofollow"
+        >
+          Envie sua palestra para compartilhar
+        </a>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Patrocinadores'">
+        <a
+          target="_blank"
+          class="button neutral shine-effect"
+          href="https://forms.gle/G6T8ivVgPFbYuXiM8"
+          rel="external,noopener,nofollow"
+        >
+          Entre em contato para saber como patrocinar
+        </a>
+      </ng-container>
+    </ng-container>
+  </header>
+
+  <section>
+    <ol>
+      <li *ngFor="let card of column.cards">
+        <div [innerHTML]="card.note | mdtoHtml"></div>
+      </li>
+    </ol>
+  </section>
+</ng-container>

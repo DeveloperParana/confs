@@ -1,0 +1,77 @@
+confs-event-feature-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 1024px;
+  max-width: 100%;
+
+  margin: 24px 0;
+
+  > section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    ol {
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 32px;
+      }
+
+      li {
+        flex: 1;
+        flex-basis: calc(50% - 64px);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: hidden;
+
+        div {
+          display: flex;
+          box-sizing: border-box;
+          flex-direction: column;
+          align-items: flex-start;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 6px;
+          padding: 0 24px;
+
+          p,
+          h2,
+          h3 {
+            width: 100%;
+            margin-top: 0;
+          }
+
+          h2 + h3 {
+            margin: 0;
+            font-weight: normal;
+          }
+
+          img {
+            width: 200%;
+            object-fit: cover;
+            margin-left: -50%;
+            max-height: 360px;
+
+            filter: grayscale(1);
+            transition: filter 250ms ease-in-out;
+          }
+
+          &:hover img {
+            filter: grayscale(0);
+          }
+        }
+      }
+    }
+  }
+}

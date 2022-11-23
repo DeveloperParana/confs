@@ -1,6 +1,6 @@
 import { map } from 'rxjs';
 
-import { StateStore, Http, ServerService } from '@confs/shared/data-access';
+import { StateStore, ServerService } from '@confs/shared/data-access';
 import { AccessTokenResponse, GithubUser } from '@confs/auth/api-interfaces';
 import { OAuthService, OAuthStorage } from '@confs/auth/data-access';
 
@@ -26,7 +26,6 @@ export class TicketFacade extends StateStore<TicketState> {
   storage = new OAuthStorage<AccessTokenResponse>(localStorage);
 
   constructor(
-    readonly httpService: Http,
     readonly oAuthService: OAuthService,
     readonly serverService: ServerService
   ) {

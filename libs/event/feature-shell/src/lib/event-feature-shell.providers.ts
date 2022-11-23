@@ -1,22 +1,18 @@
 import { Provider } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-
 import {
+  ServerService,
   ProjectService,
   ProjectFacade,
-} from '@confs/shared/project/data-access';
-import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
-import { Http, ServerService } from '@confs/shared/data-access';
+} from '@confs/shared/data-access';
 import { OAuthService } from '@confs/auth/data-access';
-import { EventFeaturePageTitleStrategy } from '@confs/event/feature-page';
 import { OAuthResolver } from '@confs/event/feature-subscribe';
+import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
 
 export const eventFeatureShellProviders = (): Provider[] => [
   {
     provide: TicketFacade,
     useClass: TicketFacade,
-    deps: [Http, OAuthService, ServerService],
+    deps: [OAuthService, ServerService],
   },
   {
     provide: SubscribeFacade,
@@ -26,17 +22,12 @@ export const eventFeatureShellProviders = (): Provider[] => [
   {
     provide: ProjectService,
     useClass: ProjectService,
-    deps: [Http, 'server.api'],
+    deps: [ServerService],
   },
   {
     provide: ProjectFacade,
     useClass: ProjectFacade,
     deps: [ProjectService],
-  },
-  {
-    provide: TitleStrategy,
-    useClass: EventFeaturePageTitleStrategy,
-    deps: [ProjectFacade, Title],
   },
   OAuthResolver,
 ];
