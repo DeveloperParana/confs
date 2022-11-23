@@ -7,8 +7,8 @@ type RecordObject<T> = {
 export const normalizeKeys = <T, R>(obj: RecordObject<T>) => {
   const normalized = {} as Record<string, unknown>;
 
-  Object.keys(obj).forEach((key) => {
-    normalized[camelCase(key)] = obj[key as keyof T];
+  Object.entries(obj).forEach(([key, value]) => {
+    normalized[camelCase(key)] = value;
   });
 
   return normalized as R;

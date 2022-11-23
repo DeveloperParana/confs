@@ -20,5 +20,5 @@
       }
     }
   },
-  "tags": ["type:state", "scope:event"]
+  "tags": ["type:data-state", "scope:event"]
 }

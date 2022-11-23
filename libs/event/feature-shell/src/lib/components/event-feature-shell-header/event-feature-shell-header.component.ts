@@ -6,8 +6,7 @@ import {
 } from '@angular/core';
 
 import { CountdownFacade } from '@confs/event/data-state';
-
-import { ProjectColumn } from '@confs/shared/project/domain';
+import { ProjectColumn } from '@confs/shared/api-interfaces';
 
 @Component({
   selector:

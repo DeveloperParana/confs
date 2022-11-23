@@ -1,13 +1,19 @@
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LOCALE_ID, Provider } from '@angular/core';
 import ptBR from '@angular/common/locales/extra/br';
+import { registerLocaleData } from '@angular/common';
 import pt from '@angular/common/locales/pt';
 
-import { eventFeatureShellProviders } from '@confs/event/feature-shell';
-import { registerLocaleData } from '@angular/common';
-import { HttpClientService, ServerService } from '@confs/shared/data-access';
-import { OAuthService } from '@confs/auth/data-access';
-import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
+
+import {
+  ClientInterceptor,
+  HttpClientService,
+  LoaderService,
+  ServerService,
+} from '@confs/shared/data-access';
+import { eventFeatureShellProviders } from '@confs/event/feature-shell';
+import { OAuthService } from '@confs/auth/data-access';
 
 registerLocaleData(pt, 'pt-BR', ptBR);
 
@@ -48,6 +54,18 @@ const HTTP_PROVIDERS = [
     provide: ServerService,
     useClass: ServerService,
     deps: [HttpClientService, 'server.api'],
+  },
+  {
+    provide: LoaderService,
+    useClass: LoaderService,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useFactory: (loaderService: LoaderService) => {
+      return new ClientInterceptor(loaderService);
+    },
+    deps: [LoaderService],
+    multi: true,
   },
 ];
 

@@ -15,9 +15,12 @@ export function camelCaseTransformMerge(input: string, index: number) {
   return pascalCaseTransformMerge(input);
 }
 
-export function camelCase(input: string, options: Options = {}) {
+export function camelCase<T extends string, R extends string>(
+  input: T,
+  options: Options = {}
+) {
   return pascalCase(input, {
     transform: camelCaseTransform,
     ...options,
-  });
+  }) as R;
 }

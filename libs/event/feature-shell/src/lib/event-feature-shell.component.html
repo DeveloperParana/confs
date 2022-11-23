@@ -6,6 +6,13 @@
 
 <main>
   <router-outlet></router-outlet>
+
+  <figure class="loader" *ngIf="loaderService.visible$ | async">
+    <object data="/assets/loading.svg"></object>
+    <caption>
+      Carregando
+    </caption>
+  </figure>
 </main>
 
 <footer confs-event-feature-shell [date]="date"></footer>

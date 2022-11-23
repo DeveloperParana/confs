@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { LoaderService } from '@confs/shared/data-access';
 
-import { ProjectFacade } from '@confs/shared/project/data-access';
-
+import { ProjectFacade } from '@confs/shared/data-access';
 
 @Component({
   templateUrl: './event-feature-shell.component.html',
@@ -13,6 +13,7 @@ export class EventFeatureShellComponent {
 
   constructor(
     readonly projectFacade: ProjectFacade,
+    readonly loaderService: LoaderService,
     @Inject('event.date') eventDate: string,
     @Inject('pages') pages: { project: number }
   ) {

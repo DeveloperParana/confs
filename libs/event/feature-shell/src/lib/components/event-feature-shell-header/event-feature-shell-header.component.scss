@@ -17,6 +17,22 @@
     padding: 0px;
   }
 
+  @keyframes blink {
+    50% {
+      fill: transparent;
+    }
+  }
+  .dot {
+    animation: 1s blink infinite;
+    fill: white;
+  }
+  .dot:nth-child(2) {
+    animation-delay: 250ms;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 500ms;
+  }
+
   a.logo {
     width: 200px;
     max-width: 200px;
@@ -115,12 +131,12 @@
       text-transform: capitalize;
 
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 26px;
       letter-spacing: 0.07em;
 
       color: #ffffff;
-      background: var(--background-linear-gradient-accent)
+      background: var(--background-linear-gradient-accent);
       // background: linear-gradient(
       //   347.16deg,
       //   hsla(var(--color-accent-base), 100%, 50%, 1) 8.18%,

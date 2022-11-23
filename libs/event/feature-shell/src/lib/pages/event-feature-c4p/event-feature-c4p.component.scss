@@ -1,0 +1,13 @@
+:host {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 1024px;
+  max-width: 100%;
+
+  .emoji {
+    font-size: 150%;
+  }
+}
