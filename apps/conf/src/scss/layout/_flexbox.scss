@@ -1,68 +1,46 @@
 .flex {
   display: flex;
-  &.justify-end {
-    justify-content: flex-end;
-  }
-  &.justify-start {
-    justify-content: flex-start;
-  }
-  &.space-between {
-    justify-content: space-between;
-  }
-  &.space-around {
-    justify-content: space-around;
-  }
-  &.align-end {
-    align-content: flex-end;
-  }
-  &.align-start {
-    align-content: flex-start;
-  }
-  &.align-center {
-    align-items: center;
-  }
+
+  &-1 { flex: 1; }
+  &-2 { flex: 2; }
+  &-3 { flex: 3; }
+  &-4 { flex: 4; }
+
+  &.align-start { align-content: flex-start; }
+  &.align-center { align-items: center; }
+  &.align-end { align-content: flex-end; }
+  &.justify-start { justify-content: flex-start; }
+  &.justify-end { justify-content: flex-end; }
+  &.space-between { justify-content: space-between; }
+  &.space-around { justify-content: space-around; }
+
   &-col {
     flex-direction: column;
-    &.justify-end {
-      align-content: flex-end;
+
+    &.align-start { justify-content: flex-start; }
+    &.align-center { justify-items: center; }
+    &.align-end { justify-content: flex-end; }
+    &.justify-start { align-content: flex-start; }
+    &.justify-end { align-content: flex-end; }
+    &.space-between { justify-content: space-between; }
+    &.space-around { justify-content: space-around; }
+
+    &.gap {
+      &-8 { column-gap: 8px; }
+      &-16 { column-gap: 16px; }
+      &-32 { column-gap: 32px; }
+      &-64 { column-gap: 64px; }
     }
-    &.justify-start {
-      align-content: flex-start;
-    }
-    &.align-end {
-      justify-content: flex-end;
-    }
-    &.align-start {
-      justify-content: flex-start;
-    }
-    &.gap-8 { column-gap: 8px; }
-    &.gap-16 { column-gap: 16px; }
-    &.gap-32 { column-gap: 32px; }
-    &.gap-64 { column-gap: 64px; }
-  }
-  &-row {
-    flex-direction: row;
-    &.gap-8 { column-gap: 8px; }
-    &.gap-16 { column-gap: 16px; }
-    &.gap-32 { column-gap: 32px; }
-    &.gap-64 { column-gap: 64px; }
-  }
-  &-1 {
-    flex: 1;
-  }
-  &-2 {
-    flex: 2;
-  }
-  &-3 {
-    flex: 3;
-  }
-  &-4 {
-    flex: 4;
   }
 
-  .gap {
-    &-col-8 { column-gap: 8px; }
-    &-col-16 { column-gap: 16px; }
-    &-col-32 { column-gap: 32px; }
+  &-row {
+    flex-direction: row;
+
+    &.gap {
+      &-8 { row-gap: 8px; }
+      &-16 { row-gap: 16px; }
+      &-32 { row-gap: 32px; }
+      &-64 { row-gap: 64px; }
+    }
   }
 }

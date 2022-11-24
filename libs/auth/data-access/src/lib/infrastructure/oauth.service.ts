@@ -10,10 +10,10 @@ import {
 import { HttpClientService, ServerService } from '@confs/shared/data-access';
 import { titleCase } from '@confs/shared/util-format';
 
-import { OAuthStorage } from './oauth.storage';
+import { createOAuthStorage } from './oauth.storage';
 
 export class OAuthService {
-  storage = new OAuthStorage<AccessTokenResponse>(localStorage);
+  storage = createOAuthStorage<AccessTokenResponse>();
 
   constructor(
     private readonly serverService: ServerService,
@@ -40,22 +40,20 @@ export class OAuthService {
 
     return this.serverService
       .post<AccessTokenResponse, AccessToken>(url, data)
-      .pipe(tap(this.setAccessTokenToStorage('accessToken')));
+      .pipe(tap(this.setAccessTokenToStorage));
   }
 
   getUserInfo(response: AccessTokenResponse) {
     const prefix = titleCase(response.tokenType);
-    const token = `${prefix} ${response.accessToken}`
+    const token = `${prefix} ${response.accessToken}`;
     return this.httpClientService.get<GithubUser>(
       'https://api.github.com/user',
       { headers: { Authorization: token } }
     );
   }
 
-  setAccessTokenToStorage(key: keyof AccessTokenResponse) {
-    return <T extends AccessTokenResponse>(accessToken: T) => {
-      this.storage.set(key, accessToken[key]);
-    };
+  setAccessTokenToStorage<T extends AccessTokenResponse>(accessToken: T) {
+    this.storage.set('accessToken', JSON.stringify(accessToken));
   }
 
   getAccessTokenFromStorage(): AccessTokenResponse {

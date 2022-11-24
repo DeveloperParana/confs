@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OAuthFacade } from '@confs/auth/data-access';
 
-import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
+import { SubscribeFacade } from '@confs/shared/data-access';
 
 import { SubscribeForm } from './forms';
 
@@ -12,17 +13,17 @@ export class EventFeatureSubscribeComponent implements OnInit {
   form = new SubscribeForm();
 
   placeholder = {
-    email: 'Digite seu email',
-    acompanhe: 'Acompanhe a programação',
+    email: 'Ex.: seu.nome@gmail.com',
+    acompanhe: 'Entre com seu e-mail',
   };
 
   constructor(
     readonly subscribeFacade: SubscribeFacade,
-    readonly ticketFacade: TicketFacade
+    readonly oAuthFacade: OAuthFacade
   ) {}
 
   ngOnInit() {
-    this.ticketFacade.loadAuthorizeParams();
+    this.oAuthFacade.loadAuthorizeParams();
   }
 
   changeFocus(input: HTMLInputElement) {

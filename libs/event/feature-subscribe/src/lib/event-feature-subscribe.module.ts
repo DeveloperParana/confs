@@ -9,7 +9,6 @@ import {
   GithubButtonComponent,
   TwitterButtonComponent,
 } from './components';
-import { OAuthResolver } from './resolvers';
 import { UserGuard } from './guards';
 
 @NgModule({
@@ -17,9 +16,9 @@ import { UserGuard } from './guards';
     TwitterButtonComponent,
     GithubButtonComponent,
     EventTicketComponent,
-    EventFeatureSubscribeComponent
+    EventFeatureSubscribeComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, EventFeatureSubscribeRouting],
-  providers: [UserGuard, OAuthResolver],
+  providers: [UserGuard],
 })
 export class EventFeatureSubscribeModule {}

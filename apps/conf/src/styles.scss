@@ -1,5 +1,6 @@
 @import './scss/variables';
 @import './scss/dropdown';
+@import './scss/animations';
 @import './scss/layout/flexbox';
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500&family=Poppins:wght@400;600;700&display=swap');
@@ -25,7 +26,10 @@
   --visual-distortion-zapper: 360px;
   --nano-velocity: 2s;
 
-  --background-solid-neutral: rgba(var(--color-white), 0.06);
+  --background-solid-light-neutral: rgba(var(--color-white), 0.06);
+  --background-solid-dark-neutral: rgba(var(--color-black), 0.9);
+  --backdrop-background-color: rgba(var(--color-black), 0.8);
+
   --background-linear-gradient-accent: linear-gradient(
     180deg,
     hsl(var(--color-accent-base), 56%, 58%) 0%,
@@ -67,17 +71,29 @@ a:visited {
 
 button,
 a.button {
-  display: inline-flex;
-
+  border: 0;
+  display: inline;
 
   background: var(--background-linear-gradient-accent);
 
   &.primary {
     background: rgba(var(--color-primary), 1);
   }
+
   &.neutral {
-    background: var(--background-solid-neutral);
+    background: var(--background-solid-light-neutral);
+    border-color: var(--background-solid-dark-neutral);
+    border-width: 1px;
+    border-style: solid;
   }
+
+  &.dark {
+    background: var(--background-solid-dark-neutral);
+    border-color: var(--background-solid-light-neutral);
+    border-width: 1px;
+    border-style: solid;
+  }
+
   &.accent {
     background: rgba(var(--color-accent), 1);
   }
@@ -136,6 +152,27 @@ main {
     }
   }
 }
+
+dialog {
+  padding: 0;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  object,
+  figure,
+  img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &[open] {
+    animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+}
+
 .wrap {
   width: 100%;
   height: 100%;

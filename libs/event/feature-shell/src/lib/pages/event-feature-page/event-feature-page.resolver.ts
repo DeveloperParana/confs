@@ -1,17 +1,14 @@
-import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import {
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  TitleStrategy,
-  Resolve,
-} from '@angular/router';
-import { ProjectColumn } from '@confs/shared/api-interfaces';
+import { Injectable } from '@angular/core';
 import { forkJoin, EMPTY, map } from 'rxjs';
 import {
-  ProjectMapper,
-  ProjectService,
-} from '@confs/shared/data-access';
+  Resolve,
+  TitleStrategy,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot,
+} from '@angular/router';
+import { ProjectColumn } from '@confs/shared/api-interfaces';
+import { ProjectMapper, ProjectService } from '@confs/shared/data-access';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +17,6 @@ export class EventFeaturePageResolver
   extends TitleStrategy
   implements Resolve<ProjectColumn | never>
 {
-
   constructor(
     private readonly title: Title,
     private readonly projectService: ProjectService

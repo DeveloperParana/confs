@@ -1,8 +1,14 @@
 <header
-  confs-event-feature-shell
+  confs-event-feature
   [columns]="projectFacade.columns$ | async"
   [date]="date"
-></header>
+>
+  <time>
+    {{ date | date : 'longDate' }}
+  </time>
+
+  <confs-event-feature-counter [date]="date"></confs-event-feature-counter>
+</header>
 
 <main>
   <router-outlet></router-outlet>
@@ -15,4 +21,4 @@
   </figure>
 </main>
 
-<footer confs-event-feature-shell [date]="date"></footer>
+<footer confs-event-feature [year]="year"></footer>

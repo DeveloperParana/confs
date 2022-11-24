@@ -13,6 +13,5 @@ export class EventFeaturePageComponent {
   readonly column$ = this._route.data.pipe(
     map<Data, ProjectColumn>(({ column }) => column)
   );
-
   constructor(private _route: ActivatedRoute) {}
 }
