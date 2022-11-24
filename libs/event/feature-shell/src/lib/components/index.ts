@@ -1,2 +1,3 @@
-export * from './event-feature-shell-footer/event-feature-shell-footer.component';
-export * from './event-feature-shell-header/event-feature-shell-header.component';
+export * from './event-feature-counter/event-feature-counter.component';
+export * from './event-feature-footer/event-feature-footer.component';
+export * from './event-feature-header/event-feature-header.component';

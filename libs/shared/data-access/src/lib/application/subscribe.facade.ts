@@ -1,0 +1,36 @@
+import { ServerService } from '../infrastructure/server.service';
+import { StateStore } from '../+store/state.store';
+
+interface SubscribeState {
+  loading: boolean;
+  message: string | null;
+  subscribed: boolean;
+}
+
+export class SubscribeFacade extends StateStore<SubscribeState> {
+  loading$ = this.select((state) => state.loading);
+
+  subscribed$ = this.select((state) => state.subscribed);
+
+  message$ = this.select((state) => state.message);
+
+  constructor(readonly serverService: ServerService) {
+    super({
+      loading: false,
+      message: null,
+      subscribed: false,
+    });
+  }
+
+  subscribe(value: { email: string }) {
+    this.setState({ loading: true });
+
+    const sub$ = this.serverService.post('subscribe', value);
+
+    const $sub = sub$.subscribe(() => {
+      const message = 'Aguarde nossas novidades';
+      this.setState({ loading: false, subscribed: true, message });
+      $sub.unsubscribe();
+    });
+  }
+}

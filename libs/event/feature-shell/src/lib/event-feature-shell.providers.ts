@@ -4,15 +4,21 @@ import {
   ProjectService,
   ProjectFacade,
 } from '@confs/shared/data-access';
-import { OAuthService } from '@confs/auth/data-access';
-import { OAuthResolver } from '@confs/event/feature-subscribe';
-import { SubscribeFacade, TicketFacade } from '@confs/event/data-state';
+import { SubscribeFacade } from '@confs/shared/data-access';
+import { OAuthFacade, OAuthService } from '@confs/auth/data-access';
+import { OAuthResolver } from '@confs/auth/data-access';
+import { Router } from '@angular/router';
 
 export const eventFeatureShellProviders = (): Provider[] => [
   {
-    provide: TicketFacade,
-    useClass: TicketFacade,
+    provide: OAuthFacade,
+    useClass: OAuthFacade,
     deps: [OAuthService, ServerService],
+  },
+  {
+    provide: OAuthResolver,
+    useClass: OAuthResolver,
+    deps: [OAuthFacade, Router],
   },
   {
     provide: SubscribeFacade,
@@ -29,5 +35,4 @@ export const eventFeatureShellProviders = (): Provider[] => [
     useClass: ProjectFacade,
     deps: [ProjectService],
   },
-  OAuthResolver,
 ];

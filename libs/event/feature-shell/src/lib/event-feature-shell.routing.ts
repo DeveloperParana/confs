@@ -1,9 +1,10 @@
 import { RouterModule } from '@angular/router';
 import { EventFeatureShellComponent } from './event-feature-shell.component';
 import {
+  EventFeaturePageResolver,
   EventFeatureC4pComponent,
   EventFeaturePageComponent,
-  EventFeaturePageResolver,
+  EventFeatureTicketComponent,
 } from './pages';
 
 export const EventFeatureShellRouting = RouterModule.forChild([
@@ -30,8 +31,12 @@ export const EventFeatureShellRouting = RouterModule.forChild([
         component: EventFeaturePageComponent,
         resolve: {
           column: EventFeaturePageResolver,
-        }
+        },
       },
     ],
+  },
+  {
+    path: 'ticket/:user',
+    component: EventFeatureTicketComponent
   },
 ]);

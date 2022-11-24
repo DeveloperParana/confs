@@ -3,9 +3,26 @@
 
   width: 1024px;
   max-width: 100%;
+  margin: 24px 0;
 
   display: flex;
   flex-direction: column;
+
+  ul {
+    padding-left: 0;
+    margin-left: -4px;
+    list-style: none;
+
+    li {
+      display: flex;
+      column-gap: 4px;
+      align-items: center;
+
+      svg {
+        color: rgb(var(--color-accent));
+      }
+    }
+  }
 
   section,
   footer {

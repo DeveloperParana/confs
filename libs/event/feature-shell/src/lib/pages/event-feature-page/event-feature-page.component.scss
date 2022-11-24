@@ -4,73 +4,84 @@ confs-event-feature-page {
   flex-direction: column;
   width: 1024px;
   max-width: 100%;
-
   margin: 24px 0;
 
   > section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 
-    ol {
-      flex: 1;
-      margin: 0;
-      padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* repeat = as many times as you can fit */
+    /* auto-fit = fit as many items on the line as possible, go bigger if you need to */
+    /*minmax = (min size, max size) = the minimum size the column should be is 200px, but if there's space then give them all 1fr of that width. */
+    grid-gap: 10px;
+    max-width: 33%;
+
+    div {
       display: flex;
+      box-sizing: border-box;
       flex-direction: column;
-      row-gap: 32px;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      padding: 0 24px;
+      overflow: hidden;
 
-      @media (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: 32px;
+      p,
+      h2,
+      h3 {
+        width: 100%;
+        margin-top: 0;
+
+        &:first-of-type {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
       }
 
-      li {
-        flex: 1;
-        flex-basis: calc(50% - 64px);
+      strong {
+        font-weight: 500;
+        color: rgba(var(--color-accent), 0.9);
+      }
+
+      h2 + h3 {
         margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        border-radius: 8px;
-        overflow: hidden;
+        font-weight: normal;
+      }
 
-        div {
-          display: flex;
-          box-sizing: border-box;
-          flex-direction: column;
-          align-items: flex-start;
-          background: rgba(0, 0, 0, 0.2);
-          border-radius: 6px;
-          padding: 0 24px;
+      p {
+        color: rgba(var(--color-white), 0.8);
 
-          p,
-          h2,
-          h3 {
-            width: 100%;
-            margin-top: 0;
-          }
-
-          h2 + h3 {
-            margin: 0;
-            font-weight: normal;
-          }
-
-          img {
-            width: 200%;
-            object-fit: cover;
-            margin-left: -50%;
-            max-height: 360px;
-
-            filter: grayscale(1);
-            transition: filter 250ms ease-in-out;
-          }
-
-          &:hover img {
-            filter: grayscale(0);
-          }
+        &:first-child {
+          overflow: hidden;
         }
+      }
+
+      hr {
+        display: block;
+        margin: 4px 0 16px;
+        border-color: rgba(var(--color-white), 0.1);
+        height: 1px;
+        width: 100%;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+
+      img {
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+        object-position: bottom;
+        max-height: 360px;
+        filter: grayscale(1);
+        transition: filter 250ms ease-in, transform 500ms ease-out;
+      }
+
+      &:hover img {
+        transform: scale(1.2);
+        filter: grayscale(0);
       }
     }
   }

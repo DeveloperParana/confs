@@ -27,10 +27,8 @@
   </header>
 
   <section>
-    <ol>
-      <li *ngFor="let card of column.cards">
-        <div [innerHTML]="card.note | mdtoHtml"></div>
-      </li>
-    </ol>
+    <ng-container *ngFor="let card of column.cards">
+      <div [innerHTML]="card.note | mdtoHtml"></div>
+    </ng-container>
   </section>
 </ng-container>

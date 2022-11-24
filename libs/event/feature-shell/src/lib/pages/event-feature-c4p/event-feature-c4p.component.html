@@ -1,5 +1,12 @@
-<header>
+<header class="flex align-center space-between">
   <h1>C4P</h1>
+  <button
+    type="button"
+    class="neutral shine-effect"
+    (click)="dialogEl.showModal()"
+  >
+    Copiar link do form usando QRCode
+  </button>
 </header>
 
 <section class="flex flex-row gap-64">
@@ -17,12 +24,12 @@
   <div class="flex-1">
     <h2>Benefícios</h2>
     <ul>
-      <li>Aprendizado contínuo</li>
-      <li>Fortalecer seu networking</li>
-      <li>Criar novos laços de amizades</li>
-      <li>Conhecer outros lugares</li>
-      <li>Conhecer outras culturas</li>
-      <li>Praticar oratória</li>
+      <li *ngFor="let item of benefits">
+        <svg width="24" height="24">
+          <use href="#check"></use>
+        </svg>
+        {{ item }}
+      </li>
     </ul>
   </div>
 </section>
@@ -38,4 +45,21 @@
   </a>
 </footer>
 
-<!-- <object data="assets/c4p-qrcode.svg" type=""></object> -->
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="check" viewBox="0 0 48 48">
+    <path
+      fill="currentColor"
+      d="m20 32.1-7.65-7.65 2.1-2.1L20 27.9l13.55-13.55 2.1 2.1Z"
+    />
+  </symbol>
+</svg>
+
+<dialog #dialogEl>
+  <object data="assets/c4p-qrcode.svg" type="image/svg+xml"></object>
+
+  <footer class="flex justify-end">
+    <button type="button" class="dark" (click)="dialogEl.close()">
+      Fechar
+    </button>
+  </footer>
+</dialog>

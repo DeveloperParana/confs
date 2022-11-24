@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EventUiCountdownModule } from '@confs/event/ui-countdown';
 import { SharedUiPipesModule } from '@confs/shared/ui-pipes';
 
 import { EventFeatureShellRouting } from './event-feature-shell.routing';
 import { EventFeatureShellComponent } from './event-feature-shell.component';
-import { EventFeatureC4pComponent, EventFeaturePageComponent } from './pages';
 import {
-  EventFeatureShellHeaderComponent,
-  EventFeatureShellFooterComponent,
+  EventFeatureC4pComponent,
+  EventFeaturePageComponent,
+  EventFeatureTicketComponent,
+} from './pages';
+import {
+  EventFeatureHeaderComponent,
+  EventFeatureFooterComponent,
+  EventFeatureCounterComponent,
 } from './components';
 
 @NgModule({
@@ -17,13 +21,14 @@ import {
     EventFeatureC4pComponent,
     EventFeaturePageComponent,
     EventFeatureShellComponent,
-    EventFeatureShellHeaderComponent,
-    EventFeatureShellFooterComponent,
+    EventFeatureHeaderComponent,
+    EventFeatureFooterComponent,
+    EventFeatureTicketComponent,
+    EventFeatureCounterComponent,
   ],
   imports: [
     CommonModule,
     SharedUiPipesModule,
-    EventUiCountdownModule,
     EventFeatureShellRouting,
   ],
 })
