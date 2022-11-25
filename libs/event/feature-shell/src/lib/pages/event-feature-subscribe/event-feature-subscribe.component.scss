@@ -1,0 +1,111 @@
+// https://www.w3.org/WAI/ARIA/apg/example-index/checkbox/checkbox-mixed
+
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 1024px;
+  margin: 24px 0;
+
+  header h1 {
+    font-weight: 600;
+  }
+
+  > section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+
+    div {
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      align-content: space-between;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.02);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      padding: 24px;
+      overflow: hidden;
+      row-gap: 24px;
+
+      h4 {
+        font-weight: 500;
+        margin: 0;
+      }
+
+      fieldset {
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        row-gap: 64px;
+        padding: 6px;
+
+        background: var(--fieldset-background-color);
+        border: var(--fieldset-border-width) solid var(--fieldset-border-color);
+
+        legend {
+          display: flex;
+          line-height: 0.8;
+          padding: 0 6px;
+        }
+
+        &.hide {
+          display: none;
+        }
+
+        input {
+          transition: outline-color 0.2s ease-in-out;
+          background-color: var(--form-control-background-color);
+          color: white;
+          padding: 12px;
+          min-width: 200px;
+          border-radius: 6px;
+          margin: 1px 0 0;
+          border: 0;
+          flex: 1;
+
+          &::placeholder {
+            color: #8e8ea9;
+          }
+
+          &::placeholder {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+          }
+
+          box-shadow: none;
+          outline: none;
+          border-width: 2px;
+          border-style: solid;
+          border-color: transparent;
+
+          &:focus {
+            border-color: rgba(var(--color-white), 0.6);
+          }
+        }
+
+        button {
+          border-radius: 4px;
+          height: 45px;
+        }
+      }
+
+      form:invalid fieldset {
+        border-color: rgba(var(--fieldset-border-color-error), 0.6);
+        input:focus {
+          border-color: rgba(var(--fieldset-border-color-warn), 1);
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      confs-event-feature-ticket svg {
+        width: 300px;
+      }
+    }
+  }
+}

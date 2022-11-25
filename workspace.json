@@ -7,12 +7,9 @@
     "cert": "apps/cert",
     "conf": "apps/conf",
     "event-feature-shell": "libs/event/feature-shell",
-    "event-feature-subscribe": "libs/event/feature-subscribe",
-    "event-ui-countdown": "libs/event/ui-countdown",
     "server": "apps/server",
     "shared-api-interfaces": "libs/shared/api-interfaces",
     "shared-data-access": "libs/shared/data-access",
-    "shared-ui-pipes": "libs/shared/ui-pipes",
     "shared-util-format": "libs/shared/util-format"
   }
 }

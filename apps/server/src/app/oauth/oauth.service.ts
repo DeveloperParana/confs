@@ -9,7 +9,6 @@ import {
   GithubAccessTokenResponse,
 } from '@confs/auth/api-interfaces';
 import { normalizeKeys } from '@confs/shared/util-format';
-import { dataResponse } from '@confs/shared/data-access';
 
 @Injectable()
 export class OAuthService {
@@ -21,6 +20,8 @@ export class OAuthService {
   getAccessToken(options: AccessToken): Observable<AccessTokenResponse> {
     const secretKey = 'GITHUB_OAUTH_CLIENT_SECRET';
     const clientSecret = this.configService.get(secretKey);
+
+    console.log('CLIENT SECRET: ', clientSecret);
 
     const parameters = {
       code: options.code,
@@ -35,9 +36,11 @@ export class OAuthService {
     const url = 'https://github.com/login/oauth/access_token';
 
     return this.httpService
-      .post<GithubAccessTokenResponse>(url, parameters, { headers })
+      .post<GithubAccessTokenResponse>(url, parameters, {
+        headers,
+      })
       .pipe(
-        map(dataResponse),
+        map((response) => response.data),
         map<GithubAccessTokenResponse, AccessTokenResponse>(normalizeKeys)
       );
   }

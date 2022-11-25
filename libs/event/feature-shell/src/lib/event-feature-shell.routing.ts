@@ -1,10 +1,11 @@
 import { RouterModule } from '@angular/router';
+import { OAuthGuard, OAuthResolver } from '@confs/auth/data-access';
 import { EventFeatureShellComponent } from './event-feature-shell.component';
 import {
   EventFeaturePageResolver,
   EventFeatureC4pComponent,
   EventFeaturePageComponent,
-  EventFeatureTicketComponent,
+  EventFeatureSubscribeComponent,
 } from './pages';
 
 export const EventFeatureShellRouting = RouterModule.forChild([
@@ -15,11 +16,12 @@ export const EventFeatureShellRouting = RouterModule.forChild([
     children: [
       {
         path: '',
-        loadChildren: () =>
-          import('@confs/event/feature-subscribe').then(
-            (m) => m.EventFeatureSubscribeModule
-          ),
-        title: 'Fique ligado - DevPR Conf 2023',
+        component: EventFeatureSubscribeComponent,
+        resolve: {
+          githubOAuthCode: OAuthResolver,
+        },
+        canActivate: [OAuthGuard],
+        // title: 'Fique ligado - DevPR Conf 2023',
       },
       {
         path: 'c4p',
@@ -34,9 +36,5 @@ export const EventFeatureShellRouting = RouterModule.forChild([
         },
       },
     ],
-  },
-  {
-    path: 'ticket/:user',
-    component: EventFeatureTicketComponent
   },
 ]);

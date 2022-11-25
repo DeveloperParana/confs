@@ -17,7 +17,8 @@
   --body-text-color-primary: 255, 255, 255;
   --fieldset-border-width: 2px;
   --fieldset-border-color: rgb(var(--color-accent));
-  --fieldset-border-color-error: rgb(236, 63, 63);
+  --fieldset-border-color-error: 236, 63, 63;
+  --fieldset-border-color-warn: 236, 216, 63;
   --fieldset-background-color: rgba(0, 0, 0, 0.8);
   --form-control-background-color: rgba(255, 255, 255, 0.08);
   --form-control-outline-color: rgba(var(--color-primary), 0.4);
