@@ -1,0 +1,60 @@
+<header class="flex align-center space-between">
+  <h1>A DevPR Conf é organizada de e para nossa comunidade</h1>
+</header>
+<section>
+  <div>
+    <h4>
+      As novidades incluem novos palestrantes convidados confirmados, palestras
+      recebidas pelo call for papers selecionadas, mentorias com profissionais,
+      empresas com oportunidades e desafios, brindes para sorteios...
+    </h4>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
+      <p>{{ subscribeFacade.message$ | async }}</p>
+
+      <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
+        <legend>Quer receber os releases de novidades?</legend>
+        <input
+          #email
+          type="email"
+          id="emailAddress"
+          formControlName="email"
+          (blur)="changeFocus(email)"
+          (focus)="changeFocus(email)"
+          [placeholder]="placeholder.acompanhe"
+        />
+        <button
+          type="submit"
+          class="neutral shine-effect"
+          [disabled]="subscribeFacade.loading$ | async"
+        >
+          enviar
+        </button>
+      </fieldset>
+
+      <p>
+        <small>
+          Seu e-mail nunca será compartilhado ou vendido para terceiros e esta
+          base será apagada no dia do evento, após ter cumprido seu propósito.
+        </small>
+      </p>
+    </form>
+  </div>
+
+  <div>
+    <ng-container *ngIf="oAuthFacade.user$ | async as user">
+      <confs-event-feature-ticket [user]="user"></confs-event-feature-ticket>
+    </ng-container>
+    <a confs-event-feature [href]="oAuthFacade.authorize$ | async">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M11.9992 0C5.37299 0 0 5.39353 0 12.0483C0 17.3703 3.43799 21.8859 8.20724 23.4792C8.80725 23.5899 9.02625 23.2179 9.02625 22.8987C9.02625 22.6125 9.01573 21.855 9.00974 20.8498C5.67148 21.5779 4.96725 19.2347 4.96725 19.2347C4.422 17.8432 3.63525 17.4727 3.63525 17.4727C2.5455 16.725 3.71774 16.7401 3.71774 16.7401C4.92149 16.8252 5.55524 17.9818 5.55524 17.9818C6.62624 19.8228 8.364 19.2912 9.048 18.9825C9.15675 18.2039 9.46725 17.673 9.81 17.3719C7.14525 17.0677 4.34399 16.0346 4.34399 11.4181C4.34399 10.1026 4.81125 9.02739 5.57925 8.18481C5.4555 7.87986 5.04376 6.65553 5.69626 4.99673C5.69626 4.99673 6.70425 4.67294 8.99625 6.2316C9.954 5.96429 10.98 5.83102 12.0008 5.82574C13.02 5.83102 14.0467 5.96429 15.0052 6.2316C17.2957 4.67294 18.3015 4.99673 18.3015 4.99673C18.9563 6.65553 18.5445 7.87986 18.4207 8.18481C19.1902 9.02739 19.6545 10.1026 19.6545 11.4181C19.6545 16.0459 16.8488 17.0646 14.1758 17.3628C14.6063 17.7348 14.9903 18.4697 14.9903 19.5939C14.9903 21.2045 14.9753 22.5033 14.9753 22.8987C14.9753 23.2209 15.1913 23.5959 15.8003 23.4777C20.565 21.8814 24 17.3688 24 12.0483C24 5.39353 18.627 0 11.9992 0Z"
+          fill="white"
+        />
+      </svg>
+      Use seu github e monte seu convite
+    </a>
+  </div>
+</section>

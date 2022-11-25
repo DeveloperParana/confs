@@ -52,9 +52,9 @@ export class OAuthService {
     );
   }
 
-  setAccessTokenToStorage<T extends AccessTokenResponse>(accessToken: T) {
+  setAccessTokenToStorage = <T extends AccessTokenResponse>(accessToken: T) => {
     this.storage.set('accessToken', JSON.stringify(accessToken));
-  }
+  };
 
   getAccessTokenFromStorage(): AccessTokenResponse {
     const token = this.storage.get('accessToken');

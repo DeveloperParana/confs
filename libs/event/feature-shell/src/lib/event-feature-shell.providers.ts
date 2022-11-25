@@ -5,7 +5,7 @@ import {
   ProjectFacade,
 } from '@confs/shared/data-access';
 import { SubscribeFacade } from '@confs/shared/data-access';
-import { OAuthFacade, OAuthService } from '@confs/auth/data-access';
+import { OAuthFacade, OAuthGuard, OAuthService } from '@confs/auth/data-access';
 import { OAuthResolver } from '@confs/auth/data-access';
 import { Router } from '@angular/router';
 
@@ -14,6 +14,11 @@ export const eventFeatureShellProviders = (): Provider[] => [
     provide: OAuthFacade,
     useClass: OAuthFacade,
     deps: [OAuthService, ServerService],
+  },
+  {
+    provide: OAuthGuard,
+    useClass: OAuthGuard,
+    deps: [OAuthFacade],
   },
   {
     provide: OAuthResolver,
