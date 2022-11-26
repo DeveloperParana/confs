@@ -16,9 +16,8 @@ import { ticketTemplate } from './utilities';
 export class AppService {
   constructor(
     private readonly configService: ConfigService,
-    private readonly httpService: HttpService
-  ) // private readonly webp: WebpProvider
-  {}
+    private readonly httpService: HttpService // private readonly webp: WebpProvider
+  ) {}
 
   getGithubUserByLogin(login: string) {
     const headers = this.buildHeaders();

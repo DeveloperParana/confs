@@ -8,6 +8,7 @@ import { MdToHtmlPipe, SafeUrlPipe } from './pipes';
 import {
   EventFeatureC4pComponent,
   EventFeaturePageComponent,
+  EventFeatureLocalComponent,
   EventFeatureSubscribeComponent,
 } from './pages';
 import {
@@ -31,11 +32,8 @@ import {
     EventFeatureTicketComponent,
     EventFeatureCounterComponent,
     EventFeatureSubscribeComponent,
+    EventFeatureLocalComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    EventFeatureShellRouting,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, EventFeatureShellRouting],
 })
 export class EventFeatureShellModule {}

@@ -5,8 +5,7 @@ import { Resolve, Router } from '@confs/shared/api-interfaces';
 import { OAuthFacade } from '../application/oauth.facade';
 
 export class OAuthResolver implements Resolve<boolean> {
-
-  constructor(private oAuthFacade: OAuthFacade,  private router: Router) {}
+  constructor(private oAuthFacade: OAuthFacade, private router: Router) {}
 
   resolve() {
     const url = new URL(location.href);

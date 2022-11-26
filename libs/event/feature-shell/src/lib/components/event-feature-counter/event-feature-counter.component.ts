@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Observable, interval, map, takeWhile } from 'rxjs';
+import { Observable, interval, map, takeWhile, of } from 'rxjs';
 import { StateStore } from '@confs/shared/data-access';
 
 export interface CounterState {
@@ -80,11 +80,19 @@ export class EventFeatureCounterComponent extends StateStore<CounterState> {
   }
 
   start(date: Date) {
-    const end = date.getTime();
-
     this.setState({ loading: false });
 
-    interval(1000)
+    const end = date.getTime();
+    const now = new Date().getTime();
+    const diff = (end - now) / 1000;
+    this.setState({
+      day: this.day(diff),
+      hour: this.hour(diff),
+      min: this.min(diff),
+      sec: this.sec(diff),
+    });
+
+    interval(1000 * 60)
       .pipe(
         map(() => new Date().getTime()),
         takeWhile((now: number) => end >= now),

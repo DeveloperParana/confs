@@ -8,7 +8,6 @@ import {
 import { OAuthFacade } from '../application/oauth.facade';
 
 export class OAuthGuard implements CanActivate {
-
   constructor(private oauthFacade: OAuthFacade) {}
 
   canActivate(route: ActivatedRouteSnapshot) {

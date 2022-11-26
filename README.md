@@ -47,12 +47,12 @@ Alguns componentes de _apresentação_ são desenvolvidos usando [componentes da
 
 Até o presente momento, para componentes de funcionalidades, foi adotado [angular](https://angular.io/) como padrão.
 
-
 ---
 
 ## Repositório
 
 Esse repositório utiliza [Nx](https://nx.dev) para gerenciar projetos, seus relacionamentos e execução de tarefas, tanto em desenvolvimento como pipelines de _integração contínua_. Em conjunto temos também bibliotecas como [Jest](https://jestjs.io/) para testes unitários, [Cypress](https://www.cypress.io/) para testes de integração e [ESLint](https://eslint.org/) para linting da base de código e checagem de relacionamentos entre os projetos devido algumas boas práticas utilizadas.
+
 ### Desenvolvimento Local
 
 ```bash
