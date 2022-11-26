@@ -1,17 +1,10 @@
-<header class="flex align-center space-between">
+<!-- <header class="flex align-center space-between">
   <h1>A DevPR Conf é organizada de e para nossa comunidade</h1>
-</header>
+</header> -->
+
 <section>
   <div>
-    <h4>
-      As novidades incluem novos palestrantes convidados confirmados, palestras
-      recebidas pelo call for papers selecionadas, mentorias com profissionais,
-      empresas com oportunidades e desafios, brindes para sorteios...
-    </h4>
-
     <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
-      <p>{{ subscribeFacade.message$ | async }}</p>
-
       <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
         <legend>Quer receber os releases de novidades?</legend>
         <input
@@ -31,7 +24,12 @@
           enviar
         </button>
       </fieldset>
-
+      <h4>
+        As novidades incluem novos palestrantes convidados confirmados,
+        palestras recebidas pelo call for papers selecionadas, mentorias com
+        profissionais, empresas com oportunidades e desafios, brindes para
+        sorteios...
+      </h4>
       <p>
         <small>
           Seu e-mail nunca será compartilhado ou vendido para terceiros e esta
@@ -58,3 +56,17 @@
     </a>
   </div>
 </section>
+<!--
+<hr>
+
+<section>
+  <div>
+    <h1>O 1° LOTE de ingressos acompanha uma camiseta exclusiva do evento</h1>
+    <iframe
+    src="https://app.vectary.com/p/0WqOdKIWjf9A6tkSQKBE7z"
+    frameborder="0"
+    width="100%"
+    height="480"
+    ></iframe>
+  </div>
+</section> -->

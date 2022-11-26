@@ -4,4 +4,3 @@ export * from './lib/title-case';
 export * from './lib/lower-case';
 export * from './lib/no-case';
 export * from './lib/pascal-case';
-

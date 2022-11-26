@@ -13,7 +13,6 @@ declare class Tree<T> {
 }
 
 export declare class RouterStateSnapshot extends Tree<ActivatedRouteSnapshot> {
-  /** The url from which this snapshot was created */
   url: string;
   toString(): string;
 }
