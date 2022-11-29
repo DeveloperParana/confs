@@ -21,8 +21,6 @@ export class OAuthService {
     const secretKey = 'GITHUB_OAUTH_CLIENT_SECRET';
     const clientSecret = this.configService.get(secretKey);
 
-    console.log('CLIENT SECRET: ', clientSecret);
-
     const parameters = {
       code: options.code,
       scope: options.scope,
