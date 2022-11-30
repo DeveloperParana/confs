@@ -20,28 +20,60 @@
 
       gtag('config', 'G-VY20Y5X6E9');
     </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+      fbq('init', '866119987758019');
+      fbq('track', 'PageView');
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=866119987758019&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <!-- Event Schema (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "DevParaná Conf 2023",
         "location": {
           "@type": "Place",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Maringá",
-            "addressRegion": "PR"
+            "addressRegion": "PR",
+            "postalCode": "87050-900",
+            "streetAddress": "Av. Guedner, 1610"
           },
-          "url": "https://www.google.com/maps/@-23.4421142,-51.9176214,3a,82.2y,92.86h,87.14t/data=!3m7!1e1!3m5!1sAF1QipM6aB5EaCKWUTQMQrRVnHmxukwceqzobaqDFKzD!2e10!3e12!7i11860!8i5930"
+          "name": "UniCesumar - Maringá"
         },
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "R$ 50",
-          "offerCount": "200"
-        },
-        "startDate": "2023-03-11T08:00",
-        "url": "https://devpr.org"
+        "name": "DevParaná Conf 2023",
+        "startDate": "2023-03-11T08:00"
       }
     </script>
   </head>

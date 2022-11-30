@@ -1,12 +1,12 @@
-<!-- <header class="flex align-center space-between">
+<header class="flex align-center space-between">
   <h1>A DevPR Conf é organizada de e para nossa comunidade</h1>
-</header> -->
+</header>
 
 <section>
   <div>
     <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
       <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
-        <legend>Quer receber os releases de novidades?</legend>
+        <legend>Receba os releases com novidades</legend>
         <input
           #email
           type="email"

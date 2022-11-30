@@ -2,40 +2,21 @@
   <img src="/assets/devpr-logo.svg" [alt]="'DevPR Conf ' + date" />
 </a>
 
-<nav>
-  <ul>
-    <li>
-      <a
-        routerLink="/conf"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        Conf
+<nav confs-event-feature>
+  <ng-container *ngIf="columns!.length < 1; else projectTmpl">
+    <svg height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <circle class="dot" cx="10" cy="30" r="2" style="fill: white" />
+      <circle class="dot" cx="20" cy="30" r="2" style="fill: white" />
+      <circle class="dot" cx="30" cy="30" r="2" style="fill: white" />
+    </svg>
+  </ng-container>
+  <ng-template #projectTmpl>
+    <li *ngFor="let column of columns">
+      <a [routerLink]="[column.id]" routerLinkActive="active">
+        {{ column.name }}
       </a>
     </li>
-    <li>
-      <a routerLink="/conf/local" routerLinkActive="active"> Local </a>
-    </li>
-    <li>
-      <a routerLink="/conf/c4p" routerLinkActive="active"> C4P </a>
-    </li>
-    <ng-container *ngIf="columns!.length < 1; else projectTmpl">
-      <svg height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-        <circle class="dot" cx="10" cy="30" r="2" style="fill: white" />
-        <circle class="dot" cx="20" cy="30" r="2" style="fill: white" />
-        <circle class="dot" cx="30" cy="30" r="2" style="fill: white" />
-      </svg>
-    </ng-container>
-    <ng-template #projectTmpl>
-      <ul>
-        <li *ngFor="let column of columns">
-          <a [routerLink]="[column.id]" routerLinkActive="active">
-            {{ column.name }}
-          </a>
-        </li>
-      </ul>
-    </ng-template>
-  </ul>
+  </ng-template>
 </nav>
 
 <div>

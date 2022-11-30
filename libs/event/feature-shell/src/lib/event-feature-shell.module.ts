@@ -17,6 +17,8 @@ import {
   EventFeatureTicketComponent,
   EventFeatureFooterComponent,
   EventFeatureCounterComponent,
+  EventFeatureNavComponent,
+  ButtonNavToggleComponent,
 } from './components';
 
 @NgModule({
@@ -33,6 +35,8 @@ import {
     EventFeatureCounterComponent,
     EventFeatureSubscribeComponent,
     EventFeatureLocalComponent,
+    EventFeatureNavComponent,
+    ButtonNavToggleComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, EventFeatureShellRouting],
 })

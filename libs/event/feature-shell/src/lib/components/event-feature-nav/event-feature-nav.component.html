@@ -1,0 +1,21 @@
+<confs-button-nav-toggle #navToggle="buttonNavToggle"></confs-button-nav-toggle>
+<ul>
+  <li>
+    <a
+      routerLink="/conf"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Conf
+    </a>
+  </li>
+  <li>
+    <a routerLink="/conf/c4p" routerLinkActive="active"> C4P </a>
+  </li>
+
+  <ng-content></ng-content>
+
+  <li>
+    <a routerLink="/conf/local" routerLinkActive="active"> Local </a>
+  </li>
+</ul>
