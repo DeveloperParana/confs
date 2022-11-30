@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  width: 40px;
+  height: 36px;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '<- Menu';
+    position: absolute;
+    font-size: 18px;
+    color: rgba(var(--body-text-color-primary), 0.3);
+    width: 100px;
+    left: 54px;
+  }
+
+  &[opened="true"]::after {
+    content: '';
+  }
+
+
+  div {
+    position: absolute;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(var(--color-accent), 0.9);
+    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6),
+      width 0.2s ease 0.2s;
+  }
+  input {
+    display: none;
+    & + div {
+      top: 50%;
+      left: 0;
+      margin: -2px 0 0 0;
+      width: 40px;
+      transform-origin: 50% 50%;
+      & + div {
+        top: 2px;
+        left: 0;
+        width: 20px;
+        transform-origin: 0 50%;
+        & + div {
+          bottom: 2px;
+          right: 0;
+          width: 28px;
+          transform-origin: 100% 50%;
+          transform: translate(-12px, 0);
+        }
+      }
+    }
+    &:checked + div {
+      transform: rotate(-45deg);
+      transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s;
+      & + div {
+        width: 19px;
+        transform: translate(6px, 0) rotate(45deg);
+        transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s,
+          width 0.2s ease;
+        & + div {
+          width: 19px;
+          transform: translate(-6px, 0) rotate(45deg);
+          transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s,
+            width 0.2s ease;
+        }
+      }
+    }
+  }
+}

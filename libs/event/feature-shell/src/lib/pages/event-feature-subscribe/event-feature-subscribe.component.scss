@@ -6,11 +6,23 @@
   flex-direction: column;
   max-width: 100%;
   width: 1024px;
-  margin: 24px 0;
 
   header h1 {
     font-weight: 600;
   }
+
+  > section {
+    padding: 8px 16px;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 24px 0;
+
+    section {
+      padding: 0;
+    }
+  }
+
 
   > section {
     display: grid;
@@ -31,6 +43,9 @@
       row-gap: 24px;
 
       position: relative;
+
+      padding: 16px 24px 8px;
+
       h1:first-child {
         position: absolute;
         top: 0;
@@ -46,7 +61,6 @@
         padding: 24px;
       }
 
-      padding: 0px 24px;
 
       h4 {
         font-weight: 500;

@@ -1,4 +1,5 @@
 import { Routes, ExtraOptions, RouterModule } from '@angular/router';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {
@@ -17,6 +18,8 @@ const routes: Routes = [
 
 const extras: ExtraOptions = {
   initialNavigation: 'enabledNonBlocking',
+  // enableTracing: !environment.production,
+  scrollPositionRestoration: 'enabled',
   useHash: true,
 };
 

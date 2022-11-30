@@ -7,8 +7,7 @@
 
 :root {
   --color-accent-base: 126;
-  --color-accent-base: 126;
-  --color-primary: 173, 120, 255;
+  --color-primary: 65, 167, 69;
   --color-accent: 62, 211, 61;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -34,7 +33,7 @@
   --background-linear-gradient-accent: linear-gradient(
     180deg,
     hsl(var(--color-accent-base), 56%, 58%) 0%,
-    hsl(calc(var(--color-accent-base) + 7), 61%, 31%) 100%
+    hsl(calc(var(--color-accent-base)), 61%, 31%) 100%
   );
 }
 
@@ -75,7 +74,7 @@ a.button {
   border: 0;
   display: inline;
 
-  background: var(--background-linear-gradient-accent);
+  background: rgba(var(--color-primary), 1);
 
   &.primary {
     background: rgba(var(--color-primary), 1);

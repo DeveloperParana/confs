@@ -3,7 +3,11 @@
 
   width: 1024px;
   max-width: 100%;
-  margin: 24px 0;
+
+
+  @media (min-width: 1024px) {
+    margin: 24px 0;
+  }
 
   display: flex;
   flex-direction: column;
