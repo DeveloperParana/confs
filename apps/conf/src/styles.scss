@@ -96,6 +96,7 @@ a.button {
 
   &.accent {
     background: rgba(var(--color-accent), 1);
+    color: rgba(var(--color-black));
   }
 
   transition: transform 0.2s ease-in-out;
