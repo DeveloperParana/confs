@@ -40,10 +40,20 @@
   </div>
 
   <div>
+    <!-- <confs-event-feature-sympla></confs-event-feature-sympla> -->
     <ng-container *ngIf="oAuthFacade.user$ | async as user">
       <confs-event-feature-ticket [user]="user"></confs-event-feature-ticket>
     </ng-container>
-    <a confs-event-feature [href]="oAuthFacade.authorize$ | async">
+
+    <a
+      target="_blank"
+      class="button accent shine-effect"
+      rel="external,noopener,nofollow"
+      href="https://www.sympla.com.br/devparana-conference-2023__1810983"
+    >
+      Comprar ingresso
+    </a>
+    <!-- <a confs-event-feature [href]="oAuthFacade.authorize$ | async">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
@@ -52,21 +62,7 @@
           fill="white"
         />
       </svg>
-      Use seu github e monte seu convite
-    </a>
+      Monte seu convite
+    </a> -->
   </div>
 </section>
-<!--
-<hr>
-
-<section>
-  <div>
-    <h1>O 1° LOTE de ingressos acompanha uma camiseta exclusiva do evento</h1>
-    <iframe
-    src="https://app.vectary.com/p/0WqOdKIWjf9A6tkSQKBE7z"
-    frameborder="0"
-    width="100%"
-    height="480"
-    ></iframe>
-  </div>
-</section> -->
