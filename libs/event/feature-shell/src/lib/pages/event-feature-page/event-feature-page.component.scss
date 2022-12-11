@@ -1,6 +1,4 @@
 confs-event-feature-page {
-  --div-width: calc(100%);
-
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -22,27 +20,32 @@ confs-event-feature-page {
   > section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* repeat = as many times as you can fit */
-    /* auto-fit = fit as many items on the line as possible, go bigger if you need to */
-    /*minmax = (min size, max size) = the minimum size the column should be is 200px, but if there's space then give them all 1fr of that width. */
-    grid-gap: 10px;
+    grid-gap: 24px;
 
     div {
       display: flex;
       box-sizing: border-box;
       flex-direction: column;
       align-items: flex-start;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: transparent;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      background-color: rgba(255, 255, 255, 0.003);
+      border-color: rgba(255, 255, 255, 0.01);
       border-radius: 8px;
       overflow: hidden;
-      // max-width: 33%;
+
+      transition: border-color 250ms ease-in, background-color 500ms ease-out;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.02);
+        border-color: rgba(255, 255, 255, 0.09);
+      }
 
       p,
       h2,
       h3 {
         padding: 0 24px;
-        width: var(--div-width);
       }
 
       p,
@@ -89,6 +92,22 @@ confs-event-feature-page {
         &:first-child {
           padding: 0;
           overflow: hidden;
+          width: 100%;
+
+          img {
+            width: 100%;
+            display: flex;
+            object-fit: cover;
+            object-position: bottom;
+            max-height: 360px;
+            filter: grayscale(1);
+            transition: filter 250ms ease-in, transform 500ms ease-out;
+          }
+        }
+
+        &:hover img {
+          transform: scale(1.1);
+          filter: grayscale(0);
         }
       }
 
@@ -102,21 +121,6 @@ confs-event-feature-page {
         &:first-of-type {
           margin-top: 0;
         }
-      }
-
-      img {
-        width: var(--div-width);
-        display: flex;
-        object-fit: cover;
-        object-position: bottom;
-        max-height: 360px;
-        filter: grayscale(1);
-        transition: filter 250ms ease-in, transform 500ms ease-out;
-      }
-
-      &:hover img {
-        transform: scale(1.1);
-        filter: grayscale(0);
       }
     }
   }

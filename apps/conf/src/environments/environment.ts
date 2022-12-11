@@ -7,9 +7,9 @@ export const environment = {
   'event.date': '03/11/2023',
   'server.api': '/api',
   pages: {
-    project: 14615934,
-    palestras: 19145242,
-    patrocinadores: 19145633,
+    project: 14649051,
+    palestras: 19259040,
+    patrocinadores: 19259041,
   },
   'github.oauth.options': {
     clientId: 'ff9e2e06e97c2a9411cc',
