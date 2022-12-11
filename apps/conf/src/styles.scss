@@ -168,14 +168,14 @@ a[title]:hover {
 }
 
 a[title]::before {
-  opacity: 0;
-  color: inherit;
-  visibility: hidden;
-  content: attr(title);
   top: 0px;
   left: -24px;
   right: -24px;
   z-index: -1;
+  opacity: 0;
+  color: inherit;
+  content: attr(title);
+  visibility: hidden;
   position: absolute;
   transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
     opacity 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -183,7 +183,8 @@ a[title]::before {
 
 a[title]:hover::before {
   visibility: visible;
-  top: -36px;
+  font-weight: bolder;
+  top: -26px;
   opacity: 1;
 }
 

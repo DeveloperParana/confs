@@ -4,16 +4,12 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  svg use {
-    fill: rgba(255, 255, 255, 0.08);
-    transition: fill 250ms ease-in-out;
+  a:link svg {
+    filter: blur(2px);
+    transition: filter 400ms ease-in-out;
     &:hover {
-      fill: rgba(255, 255, 255, 0.8);
+      filter: blur(0);
     }
-  }
-
-  svg:hover rect {
-    opacity: 1;
   }
 
   @media (min-width: 768px) {
