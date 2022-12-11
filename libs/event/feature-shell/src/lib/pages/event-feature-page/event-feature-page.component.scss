@@ -98,7 +98,6 @@ confs-event-feature-page {
             width: 100%;
             display: flex;
             object-fit: cover;
-            object-position: bottom;
             max-height: 360px;
             filter: grayscale(1);
             transition: filter 250ms ease-in, transform 500ms ease-out;
