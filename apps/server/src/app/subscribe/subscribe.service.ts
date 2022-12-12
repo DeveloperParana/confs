@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, ConflictException } from '@nestjs/common';
 import { Model } from 'mongoose';
 
 import { normalizeKeys } from '@confs/shared/util-format';
@@ -13,8 +13,17 @@ export class SubscribeService {
     private readonly _model: Model<Subscribe>
   ) {}
 
-  async create(createSubscribeDto: CreateSubscribeDto): Promise<Subscribe> {
-    const promise = new this._model(createSubscribeDto).save();
+  async create({
+    email,
+    ...createSubscribeDto
+  }: CreateSubscribeDto): Promise<Subscribe> {
+    const subscriber = await this.findBy({ email, ...createSubscribeDto });
+
+    if (subscriber) {
+      throw new ConflictException(`O e-mail ${email} já existe na lista`);
+    }
+
+    const promise = new this._model({ email, ...createSubscribeDto }).save();
 
     return promise.then((subscribe) =>
       normalizeKeys<unknown, Subscribe>(subscribe.toJSON())
@@ -37,5 +46,9 @@ export class SubscribeService {
     return promise.then((subscribe) =>
       normalizeKeys<unknown, Subscribe>(subscribe.toJSON())
     );
+  }
+
+  async findBy(props: Partial<Subscribe>): Promise<Subscribe> {
+    return this._model.findOne(props).exec();
   }
 }

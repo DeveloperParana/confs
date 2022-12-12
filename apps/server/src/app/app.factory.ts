@@ -1,5 +1,5 @@
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { NestApplicationOptions, Type } from '@nestjs/common';
+import { NestApplicationOptions, Type, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 interface AppOptions extends NestApplicationOptions {
@@ -18,6 +18,8 @@ export const appFactory = async <T extends NestExpressApplication>(
 ) => {
   const { entry, production, origin, ...config } = options;
   const app = await NestFactory.create<T>(entry, config);
+
+  app.useGlobalPipes(new ValidationPipe());
 
   let prefix = '';
 

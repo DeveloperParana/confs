@@ -4,42 +4,53 @@
 
 <section>
   <div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
-      <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
-        <legend>Receba os releases com novidades</legend>
-        <input
-          #email
-          type="email"
-          id="emailAddress"
-          formControlName="email"
-          (blur)="changeFocus(email)"
-          (focus)="changeFocus(email)"
-          [placeholder]="placeholder.acompanhe"
-        />
-        <button
-          type="submit"
-          class="neutral shine-effect"
-          [disabled]="subscribeFacade.loading$ | async"
-        >
-          enviar
-        </button>
-      </fieldset>
-      <h4>
-        As novidades incluem novos palestrantes convidados confirmados,
-        palestras recebidas pelo call for papers selecionadas, mentorias com
-        profissionais, empresas com oportunidades e desafios, brindes para
-        sorteios...
-      </h4>
-      <p>
-        <small>
-          Seu e-mail nunca será compartilhado ou vendido para terceiros e esta
-          base será apagada no dia do evento, após ter cumprido seu propósito.
-        </small>
-      </p>
-    </form>
+    <ng-container
+      *ngIf="subscribeFacade.subscribed$ | async; else subscribeTmpl"
+    >
+      <h2>Obrigado pelo interesse!</h2>
+    </ng-container>
+
+    <p class="warn" *ngIf="subscribeFacade.message$ | async as message">
+      {{ message }}
+    </p>
+    <h4>
+      As novidades incluem novos palestrantes convidados confirmados, palestras
+      recebidas pelo call for papers selecionadas, mentorias com profissionais,
+      empresas com oportunidades e desafios, brindes para sorteios...
+    </h4>
+    <p>
+      <small>
+        Seu e-mail nunca será compartilhado ou vendido para terceiros e esta
+        base será apagada no dia do evento, após ter cumprido seu propósito.
+      </small>
+    </p>
+    <ng-template #subscribeTmpl>
+      <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
+        <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
+          <legend>Receba os releases com novidades</legend>
+          <input
+            #email
+            type="email"
+            id="emailAddress"
+            formControlName="email"
+            (blur)="changeFocus(email)"
+            (focus)="changeFocus(email)"
+            [placeholder]="placeholder.acompanhe"
+          />
+          <button
+            type="submit"
+            class="neutral shine-effect"
+            [disabled]="subscribeFacade.loading$ | async"
+          >
+            enviar
+          </button>
+        </fieldset>
+      </form>
+    </ng-template>
+
   </div>
 
-  <div>
+  <div class="flex flex-col gap-32">
     <!-- <confs-event-feature-sympla></confs-event-feature-sympla> -->
     <ng-container *ngIf="oAuthFacade.user$ | async as user">
       <confs-event-feature-ticket [user]="user"></confs-event-feature-ticket>

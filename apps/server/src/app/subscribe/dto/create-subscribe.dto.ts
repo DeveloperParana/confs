@@ -1,6 +1,17 @@
+import { IsEmail, IsEmpty, IsString } from 'class-validator';
+
 export class CreateSubscribeDto {
+  @IsEmail({}, { always: true })
+  @IsString({ always: true })
   email: string;
-  username?: string;
-  name?: string;
+
+  @IsEmpty()
+  @IsString({})
+  username = '';
+
+  @IsEmpty()
+  @IsString({})
+  name = '';
+
   id?: number;
 }

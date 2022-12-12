@@ -11,6 +11,7 @@
   --color-accent: 62, 211, 61;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
+  --color-warn: 236, 216, 63;
   --card-background-color: 33, 33, 52;
   --body-text-size-small: 1rem;
   --body-text-color-primary: 255, 255, 255;
@@ -67,6 +68,10 @@ a:link,
 a:visited {
   color: white;
   text-decoration: none;
+}
+
+.warn {
+  color: rgba(var(--color-warn), 0.8);
 }
 
 button,

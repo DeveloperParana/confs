@@ -49,6 +49,21 @@ export interface HttpResponseBase {
   ): this;
 }
 
+export interface HttpErrorResponse extends HttpResponseBase, Error {
+  readonly name: 'HttpErrorResponse';
+  readonly message: string;
+  readonly error: any | null;
+  readonly ok: false;
+
+  new (init: {
+    error?: Error;
+    headers?: HttpHeaders;
+    status?: number;
+    statusText?: string;
+    url?: string;
+  }): this;
+}
+
 export interface HttpHeaderResponse extends HttpResponseBase {
   new (init: {
     headers?: HttpHeaders;

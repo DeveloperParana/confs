@@ -40,6 +40,7 @@ export class EventFeatureSubscribeComponent implements OnInit {
 
     if (this.form.valid && email) {
       this.subscribeFacade.subscribe({ email });
+      this.form.controls.email.reset();
     } else {
       this.form.markAllAsTouched();
       if (input) input.focus();
