@@ -1,4 +1,4 @@
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Injectable } from '@angular/core';
 import { forkJoin, EMPTY, map } from 'rxjs';
 import {
@@ -19,6 +19,7 @@ export class EventFeaturePageResolver
 {
   constructor(
     private readonly title: Title,
+    private readonly meta: Meta,
     private readonly projectService: ProjectService
   ) {
     super();
@@ -56,6 +57,24 @@ export class EventFeaturePageResolver
     return (column: ProjectColumn) => {
       const title = this.buildTitle(state) ?? 'DevPR Conf 2023';
       this.title.setTitle(`${column ? column.name : ''} - ${title}`);
+      this.updateCanonical();
     };
+  }
+
+  updateCanonical() {
+    let link = document.head.querySelector(
+      'link[rel="canonical"]'
+    ) as HTMLLinkElement;
+
+    if (link) {
+      link.href = location.toString();
+    } else {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+      link.href = location.toString();
+    }
+
+    console.log(location.toString());
   }
 }
