@@ -1,5 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Observable, interval, map, takeWhile, of } from 'rxjs';
+import {
+  Input,
+  Component,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { Observable, interval, map, takeWhile } from 'rxjs';
 import { StateStore } from '@confs/shared/data-access';
 
 export interface CounterState {

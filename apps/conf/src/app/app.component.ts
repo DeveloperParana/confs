@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'conf-root',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'conf';
+
+  @HostBinding('attr.itemprop')
+  itemprop = 'organization';
+
+  @HostBinding('attr.itemscope')
+  itemscope = '';
+
+  @HostBinding('attr.itemtype')
+  itemtype = 'https://schema.org/Organization';
 }
