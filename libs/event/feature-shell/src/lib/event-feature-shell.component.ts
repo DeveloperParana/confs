@@ -1,35 +1,16 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import {
+  Inject,
+  Component,
+  HostBinding,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { LoaderService } from '@confs/shared/data-access';
 
 import { ProjectFacade } from '@confs/shared/data-access';
 
 @Component({
-  template: `
-    <header
-      confs-event-feature
-      [columns]="projectFacade.columns$ | async"
-      [date]="date"
-    >
-      <time>
-        {{ date | date : 'longDate' }}
-      </time>
-
-      <confs-event-feature-counter [date]="date"></confs-event-feature-counter>
-    </header>
-
-    <main>
-      <router-outlet></router-outlet>
-
-      <figure class="loader" *ngIf="loaderService.visible$ | async">
-        <object data="/assets/loading.svg"></object>
-        <caption>
-          Carregando
-        </caption>
-      </figure>
-    </main>
-
-    <footer confs-event-feature [year]="year"></footer>
-  `,
+  selector: 'confs-feature-shell',
+  templateUrl: './event-feature-shell.component.html',
   styleUrls: ['./event-feature-shell.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -38,14 +19,24 @@ export class EventFeatureShellComponent {
 
   year = '';
 
+  @HostBinding('attr.itemprop')
+  itemprop = 'event';
+
+  @HostBinding('attr.itemscope')
+  itemscope = '';
+
+  @HostBinding('attr.itemtype')
+  itemtype = 'https://schema.org/Event';
+
   constructor(
     readonly projectFacade: ProjectFacade,
     readonly loaderService: LoaderService,
     @Inject('event.date') readonly eventDate: string,
     @Inject('pages') readonly pages: { project: number }
   ) {
-    this.date = new Date(eventDate);
-    this.year = this.date.getFullYear().toString();
+    const date = new Date(eventDate)
+    this.date = date;
+    this.year = date.getFullYear().toString();
     this.projectFacade.loadProjectColumns(pages.project);
   }
 }

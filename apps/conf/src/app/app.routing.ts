@@ -1,7 +1,13 @@
 import { Routes, ExtraOptions, RouterModule } from '@angular/router';
-import { environment } from '../environments/environment';
 
 const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () =>
+      import('@confs/event/feature-shell').then(
+        (module) => module.EventFeatureShellModule
+      ),
+  },
   {
     path: 'conf',
     loadChildren: () =>

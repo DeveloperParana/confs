@@ -3,7 +3,7 @@
   [columns]="projectFacade.columns$ | async"
   [date]="date"
 >
-  <time>
+  <time itemprop="startDate">
     {{ date | date : 'longDate' }}
   </time>
 
