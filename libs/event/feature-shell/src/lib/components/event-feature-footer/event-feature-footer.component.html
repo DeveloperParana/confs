@@ -5,12 +5,19 @@
       <h1 itemprop="name">Comunidade DevParaná</h1>
     </a>
     <p>
+      O evento será no <span itemprop="location">bloco 7 da Unicesumar</span> e
+      inicia às
+      <time itemprop="startDate">
+        {{ date | date : 'yyyy/MM/dd hh:mm:ss' }}
+      </time>
+    </p>
+    <!-- <p>
       Acesse nosso media kit em
       <a href="/media-kit"> português </a>
       ou
       <a href="/media-kit/en"> inglês </a>
       e seja nosso parceiro
-    </p>
+    </p> -->
     <p itemprop="description">
       &copy; 2015 - {{ year }} incentivando o conhecimento entre pessoas
     </p>

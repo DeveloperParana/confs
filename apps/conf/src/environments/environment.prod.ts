@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   'server.api': 'https://api.devpr.org',
-  'event.date': '03/11/2023',
+  'event.date': '03/11/2023 08:00:00',
   pages: {
     project: 14615934,
     palestras: 19145242,
