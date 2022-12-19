@@ -8,4 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class EventFeatureFooterComponent {
   @Input() year?: string;
+  @Input() date = new Date;
 }

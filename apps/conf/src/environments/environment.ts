@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  'event.date': '03/11/2023',
+  'event.date': '03/11/2023 08:00:00',
   'server.api': '/api',
   pages: {
     project: 14649051,

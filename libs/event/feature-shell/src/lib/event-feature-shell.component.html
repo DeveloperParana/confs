@@ -3,7 +3,7 @@
   [columns]="projectFacade.columns$ | async"
   [date]="date"
 >
-  <time itemprop="startDate">
+  <time>
     {{ date | date : 'longDate' }}
   </time>
 
@@ -21,4 +21,4 @@
   </figure>
 </main>
 
-<footer confs-event-feature [year]="year"></footer>
+<footer confs-event-feature [date]="date" [year]="year"></footer>

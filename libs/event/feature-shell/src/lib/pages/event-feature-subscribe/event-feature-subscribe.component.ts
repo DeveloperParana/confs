@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { OAuthFacade } from '@confs/auth/data-access';
+import { Component, Inject } from '@angular/core';
 
+import { OAuthFacade } from '@confs/auth/data-access';
 import { SubscribeFacade } from '@confs/shared/data-access';
 
 @Component({
   templateUrl: './event-feature-subscribe.component.html',
   styleUrls: ['./event-feature-subscribe.component.scss'],
 })
-export class EventFeatureSubscribeComponent implements OnInit {
+export class EventFeatureSubscribeComponent {
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
   });
+
+  date
 
   placeholder = {
     email: 'Ex.: seu.nome@gmail.com',
@@ -19,12 +21,11 @@ export class EventFeatureSubscribeComponent implements OnInit {
   };
 
   constructor(
+    @Inject('event.date') readonly eventDate: string,
     readonly subscribeFacade: SubscribeFacade,
-    readonly oAuthFacade: OAuthFacade
-  ) {}
-
-  ngOnInit() {
-    this.oAuthFacade.loadAuthorizeParams();
+    readonly oAuthFacade: OAuthFacade,
+  ) {
+    this.date = new Date(eventDate)
   }
 
   changeFocus(input: HTMLInputElement) {
