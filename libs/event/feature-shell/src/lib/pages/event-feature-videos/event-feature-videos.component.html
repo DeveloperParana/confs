@@ -1,0 +1,15 @@
+<header class="flex align-center space-between">
+  <h1>Vídeos</h1>
+</header>
+
+<section>
+  <div class="video-wrapper" *ngFor="let video of videos">
+    <iframe
+      [src]="'https://www.youtube-nocookie.com/embed/' + video | safeUrl"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
