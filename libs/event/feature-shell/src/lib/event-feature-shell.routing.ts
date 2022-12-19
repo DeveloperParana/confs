@@ -8,6 +8,7 @@ import {
   EventFeatureSubscribeComponent,
   EventFeatureLocalComponent,
 } from './pages';
+import { EventFeatureVideosComponent } from './pages/event-feature-videos/event-feature-videos.component';
 
 export const EventFeatureShellRouting = RouterModule.forChild([
   {
@@ -27,6 +28,11 @@ export const EventFeatureShellRouting = RouterModule.forChild([
         path: 'c4p',
         component: EventFeatureC4pComponent,
         title: 'C4P - DevPR Conf 2023',
+      },
+      {
+        path: 'videos',
+        component: EventFeatureVideosComponent,
+        title: 'Vídeos - DevPR Conf 2023',
       },
       {
         path: 'local',

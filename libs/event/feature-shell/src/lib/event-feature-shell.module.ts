@@ -20,6 +20,7 @@ import {
   EventFeatureNavComponent,
   ButtonNavToggleComponent,
 } from './components';
+import { EventFeatureVideosComponent } from './pages/event-feature-videos/event-feature-videos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {
     EventFeatureLocalComponent,
     EventFeatureNavComponent,
     ButtonNavToggleComponent,
+    EventFeatureVideosComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, EventFeatureShellRouting],
 })
