@@ -1,5 +1,7 @@
 <header class="flex align-center space-between">
-  <h2 itemprop="description">A DevPR Conf é organizada por pessoas da comunidade e para comunidade</h2>
+  <h2 itemprop="description">
+    A DevPR Conf é organizada por pessoas da comunidade e para comunidade
+  </h2>
 </header>
 
 <section>
@@ -47,7 +49,6 @@
         </fieldset>
       </form>
     </ng-template>
-
   </div>
 
   <div class="flex flex-col gap-32">
@@ -56,14 +57,20 @@
       <confs-event-feature-ticket [user]="user"></confs-event-feature-ticket>
     </ng-container>
 
-    <a
-      target="_blank"
-      class="button accent shine-effect"
-      rel="external,noopener,nofollow"
-      href="https://www.sympla.com.br/devparana-conference-2023__1810983"
-    >
-      Comprar ingresso
-    </a>
+    <p class="flex full space-between">
+      <a class="button primary shine-effect" routerLink="/palestras">
+        Palestras confirmadas
+      </a>
+
+      <a
+        target="_blank"
+        class="button accent shine-effect"
+        rel="external,noopener,nofollow"
+        href="https://www.sympla.com.br/devparana-conference-2023__1810983"
+      >
+        Comprar ingresso
+      </a>
+    </p>
     <!-- <a confs-event-feature [href]="oAuthFacade.authorize$ | async">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path

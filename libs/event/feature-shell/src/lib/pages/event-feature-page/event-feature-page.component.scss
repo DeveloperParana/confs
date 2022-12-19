@@ -86,6 +86,14 @@ confs-event-feature-page {
         margin-bottom: 4px;
       }
 
+      &[itemprop='sponsor'] {
+        p:first-child {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
       p {
         color: rgba(var(--color-white), 0.8);
 
