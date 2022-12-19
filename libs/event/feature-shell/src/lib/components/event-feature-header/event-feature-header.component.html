@@ -1,5 +1,9 @@
 <a routerLink="/" class="logo">
-  <img itemprop="logo" src="/assets/devpr-logo.svg" [alt]="'DevPR Conf ' + date" />
+  <img
+    itemprop="logo"
+    src="/assets/devpr-logo.svg"
+    [alt]="'DevPR Conf ' + date"
+  />
 </a>
 
 <nav confs-event-feature>
@@ -12,7 +16,7 @@
   </ng-container>
   <ng-template #projectTmpl>
     <li *ngFor="let column of columns">
-      <a [routerLink]="[column.id]" routerLinkActive="active">
+      <a [routerLink]="[column.name.toLowerCase()]" routerLinkActive="active">
         {{ column.name }}
       </a>
     </li>

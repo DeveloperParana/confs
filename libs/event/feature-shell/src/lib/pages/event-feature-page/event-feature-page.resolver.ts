@@ -1,5 +1,5 @@
 import { Meta, Title } from '@angular/platform-browser';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { forkJoin, EMPTY, map } from 'rxjs';
 import {
   Resolve,
@@ -18,15 +18,21 @@ export class EventFeaturePageResolver
   implements Resolve<ProjectColumn | never>
 {
   constructor(
-    private readonly title: Title,
-    private readonly meta: Meta,
-    private readonly projectService: ProjectService
+    @Inject('pages')
+    private readonly pages: Record<string, number>,
+    private readonly projectService: ProjectService,
+    private readonly title: Title
   ) {
     super();
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const { column } = route.params;
+    let { column } = route.params;
+
+    console.log(column);
+    console.log(this.pages);
+
+    if (isNaN(+column)) column = this.pages[column];
 
     if (column) {
       const column$ = this.projectService
