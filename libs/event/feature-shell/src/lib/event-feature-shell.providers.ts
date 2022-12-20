@@ -3,6 +3,7 @@ import {
   ServerService,
   ProjectService,
   ProjectFacade,
+  AdsService,
 } from '@confs/shared/data-access';
 import { SubscribeFacade } from '@confs/shared/data-access';
 import { OAuthFacade, OAuthGuard, OAuthService } from '@confs/auth/data-access';
@@ -39,5 +40,9 @@ export const eventFeatureShellProviders = (): Provider[] => [
     provide: ProjectFacade,
     useClass: ProjectFacade,
     deps: [ProjectService],
+  },
+  {
+    provide: AdsService,
+    useClass: AdsService,
   },
 ];
