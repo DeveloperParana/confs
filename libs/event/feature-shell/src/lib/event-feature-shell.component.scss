@@ -10,13 +10,13 @@
     max-width: 100%;
   }
 
-  footer[confs-event-feature] {
-    display: none;
+  // footer[confs-event-feature] {
+  //   display: none;
 
-    @media (min-width: 1024px) {
-      display: flex;
-    }
-  }
+  //   @media (min-width: 1024px) {
+  //     display: flex;
+  //   }
+  // }
 
   main {
     flex: 1;
