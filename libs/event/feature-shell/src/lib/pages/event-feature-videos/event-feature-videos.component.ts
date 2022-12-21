@@ -7,10 +7,11 @@ import { Component } from '@angular/core';
 })
 export class EventFeatureVideosComponent {
   videos = [
+    'j851UgthL5M',
     '8pv7BPwkJ7s',
     'sKAWvPyszsA',
-    'BC5Z5rVPUYo',
     'UrN70ufBLws',
+    'BC5Z5rVPUYo',
     'qNLEmUWtAV8',
   ]
 }
