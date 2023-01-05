@@ -16,6 +16,7 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/conf/src/CNAME",
+          "apps/conf/src/sitemap.xml",
           "apps/conf/src/assets",
           {
             "input": "./assets/media-kit",
