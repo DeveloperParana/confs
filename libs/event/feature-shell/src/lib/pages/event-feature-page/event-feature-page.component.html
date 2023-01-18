@@ -4,14 +4,15 @@
 
     <ng-container [ngSwitch]="column.name">
       <ng-container *ngSwitchCase="'Palestras'">
-        <a
+        <button
           target="_blank"
           class="button neutral shine-effect"
           href="https://forms.gle/3JdAVKdoE9jM3mGy6"
           rel="external,noopener,nofollow"
+          disabled
         >
-          Envie sua palestra para compartilhar
-        </a>
+          Envie sua palestra (C4P encerrado)
+        </button>
       </ng-container>
       <ng-container *ngSwitchCase="'Patrocinadores'">
         <a

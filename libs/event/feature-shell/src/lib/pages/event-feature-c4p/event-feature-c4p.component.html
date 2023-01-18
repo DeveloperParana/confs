@@ -4,8 +4,9 @@
     type="button"
     class="button neutral shine-effect"
     (click)="dialogEl.showModal()"
+    disabled
   >
-    Copiar link usando QRCode
+    Copiar link usando QRCode (C4P encerrado)
   </button>
 </header>
 
@@ -35,8 +36,8 @@
 </section>
 
 <footer class="flex">
-  <button class="accent shine-effect" (click)="submit()">
-    Preencher formulário
+  <button class="accent shine-effect" disabled (click)="submit()">
+    Preencher formulário (C4P encerrado)
   </button>
 </footer>
 
