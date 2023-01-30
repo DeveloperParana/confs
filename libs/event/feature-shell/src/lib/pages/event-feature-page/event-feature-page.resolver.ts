@@ -39,9 +39,10 @@ export class EventFeaturePageResolver
         .getProjectColumn(column)
         .pipe(map(ProjectMapper.normalizeColumn));
 
-      const cards$ = this.projectService
-        .getProjectColumnCards(column)
-        .pipe(map(ProjectMapper.normalizeCards));
+      const cards$ = this.projectService.getProjectColumnCards(column).pipe(
+        map(ProjectMapper.normalizeCards),
+        map((cards) => cards.reverse())
+      );
 
       return forkJoin([column$, cards$]).pipe(
         map(([column, cards]) => ({ ...column, cards })),
