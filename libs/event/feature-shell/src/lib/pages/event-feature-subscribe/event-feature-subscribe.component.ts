@@ -13,19 +13,39 @@ export class EventFeatureSubscribeComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  date
+  date;
 
   placeholder = {
     email: 'Ex.: seu.nome@gmail.com',
     acompanhe: 'Entre com seu e-mail',
   };
 
+  images = [
+    // { path: '/assets/sponsors/db1/logo.svg' },
+    { path: '/assets/speakers/teo-calvo.webp' },
+    { path: '/assets/speakers/william-grasel.webp' },
+    { path: '/assets/speakers/reinaldo-ferraz.webp' },
+    { path: '/assets/speakers/giovanni-bassi.webp' },
+    { path: '/assets/speakers/teo-calvo.webp' },
+    { path: '/assets/speakers/william-grasel.webp' },
+    { path: '/assets/speakers/reinaldo-ferraz.webp' },
+    { path: '/assets/speakers/giovanni-bassi.webp' },
+    { path: '/assets/speakers/teo-calvo.webp' },
+    { path: '/assets/speakers/william-grasel.webp' },
+    { path: '/assets/speakers/reinaldo-ferraz.webp' },
+    { path: '/assets/speakers/giovanni-bassi.webp' },
+  ];
+
   constructor(
     @Inject('event.date') readonly eventDate: string,
     readonly subscribeFacade: SubscribeFacade,
-    readonly oAuthFacade: OAuthFacade,
+    readonly oAuthFacade: OAuthFacade
   ) {
-    this.date = new Date(eventDate)
+    this.date = new Date(eventDate);
+  }
+
+  handleCarouselEvents(event: any) {
+    console.log(event);
   }
 
   changeFocus(input: HTMLInputElement) {

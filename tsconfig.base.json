@@ -26,6 +26,7 @@
       ],
       "@confs/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@confs/shared/ui-dialog": ["libs/shared/ui-dialog/src/index.ts"],
+      "@confs/shared/ui-event": ["libs/shared/ui-event/src/index.ts"],
       "@confs/shared/util-format": ["libs/shared/util-format/src/index.ts"]
     }
   },
