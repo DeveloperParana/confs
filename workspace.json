@@ -10,6 +10,7 @@
     "server": "apps/server",
     "shared-api-interfaces": "libs/shared/api-interfaces",
     "shared-data-access": "libs/shared/data-access",
+    "shared-ui-event": "libs/shared/ui-event",
     "shared-util-format": "libs/shared/util-format"
   }
 }

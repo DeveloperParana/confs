@@ -13,19 +13,34 @@ export class EventFeatureSubscribeComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  date
+  date;
 
   placeholder = {
     email: 'Ex.: seu.nome@gmail.com',
     acompanhe: 'Entre com seu e-mail',
   };
 
+  images = [
+    { path: '/assets/carousel/reinaldo-ferraz.jpg', alt: 'Reinaldo Ferraz' },
+    { path: '/assets/carousel/lais-lima.jpg', alt: 'Lís Lima' },
+    { path: '/assets/carousel/erick-wendel.jpg', alt: 'Erick Wendel' },
+    { path: '/assets/carousel/william-grasel.jpg', alt: 'William Grasel' },
+    { path: '/assets/carousel/giovanni-bassi.jpg', alt: 'Giovanni Bassi' },
+    { path: '/assets/carousel/kelly-garcia.jpg', alt: 'Kelly Garcia' },
+    { path: '/assets/carousel/alexandro-hervis.jpg', alt: 'Alexandro Hervis' },
+    { path: '/assets/carousel/teo-calvo.jpg', alt: 'Teo Calvo' },
+  ];
+
   constructor(
     @Inject('event.date') readonly eventDate: string,
     readonly subscribeFacade: SubscribeFacade,
-    readonly oAuthFacade: OAuthFacade,
+    readonly oAuthFacade: OAuthFacade
   ) {
-    this.date = new Date(eventDate)
+    this.date = new Date(eventDate);
+  }
+
+  handleCarouselEvents(event: any) {
+    console.log(event);
   }
 
   changeFocus(input: HTMLInputElement) {

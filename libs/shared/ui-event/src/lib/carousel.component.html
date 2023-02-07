@@ -1,0 +1,55 @@
+<div class="carousel-counter" *ngIf="isCounter">{{ counter }}</div>
+
+<div class="carousel-container" [class.carousel-moving]="isMoving">
+  <div
+    class="carousel-cells"
+    #cells
+    (transitionend)="handleTransitionendCellContainer($event)"
+  >
+    <ng-content></ng-content>
+
+    <ng-template ngFor let-image [ngForOf]="images" let-i="index">
+      <div
+        class="carousel-cell"
+        [style.width]="getCellWidth() + 'px'"
+        [style.border-radius]="borderRadius + 'px'"
+        *ngIf="i < cellLimit"
+      >
+        <!-- Image -->
+        <img
+          *ngIf="getImage(i) && getImage(i)['image']"
+          [src]="getImage(i)['image']['path']"
+          [alt]="getImage(i)['image']['alt']"
+          [style.object-fit]="objectFit"
+          draggable="false"
+        />
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="carousel-dots" *ngIf="dots">
+    <div
+      class="carousel-dot"
+      [class.carousel-dot-active]="i === activeDotIndex"
+      *ngFor="let dot of dotsArr; index as i"
+    ></div>
+  </div>
+</div>
+
+<div
+  class="carousel-arrows"
+  [class.carousel-arrows-outside]="arrowsOutside"
+  [class.carousel-dark-arrows]="arrowsTheme === 'dark'"
+  *ngIf="isArrows"
+>
+  <div
+    class="carousel-arrow carousel-arrow-prev"
+    [class.carousel-arrow-disabled]="isPrevArrowDisabled()"
+    (click)="prev()"
+  ></div>
+  <div
+    class="carousel-arrow carousel-arrow-next"
+    [class.carousel-arrow-disabled]="isNextArrowDisabled()"
+    (click)="next()"
+  ></div>
+</div>

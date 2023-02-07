@@ -21,6 +21,7 @@ import {
   ButtonNavToggleComponent,
 } from './components';
 import { EventFeatureVideosComponent } from './pages/event-feature-videos/event-feature-videos.component';
+import { UiEventModule } from '@confs/shared/ui-event';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,11 @@ import { EventFeatureVideosComponent } from './pages/event-feature-videos/event-
     ButtonNavToggleComponent,
     EventFeatureVideosComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, EventFeatureShellRouting],
+  imports: [
+    CommonModule,
+    UiEventModule,
+    ReactiveFormsModule,
+    EventFeatureShellRouting,
+  ],
 })
 export class EventFeatureShellModule {}
