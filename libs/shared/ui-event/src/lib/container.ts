@@ -1,19 +1,21 @@
+import { Cells } from './cells';
 import { Properties as CarouselProperties } from './types';
+import { Utils } from './utils';
 
 export class Container {
   /* The index of the new position relative to
    * the active index, for example -1 or +1
    */
-  newPositionIndex: number = 0;
-  isPositionCorrection: boolean = false;
-  initialPositionX: number = 0;
-  initialElementPositionX: number = 0;
-  isLocked: boolean = true;
-  pullLimit: number = 100;
-  startTime: number = 0;
-  startX: number = 0;
-  moveX: number = 0;
-  isSwipeInProgress: boolean = false;
+  newPositionIndex = 0;
+  isPositionCorrection = false;
+  initialPositionX = 0;
+  initialElementPositionX = 0;
+  isLocked = true;
+  pullLimit = 100;
+  startTime = 0;
+  startX = 0;
+  moveX = 0;
+  isSwipeInProgress = false;
 
   get visibleWidth() {
     return this.utils.visibleWidth;
@@ -89,8 +91,8 @@ export class Container {
 
   constructor(
     private carouselProperties: CarouselProperties,
-    private utils: any,
-    private cells: any
+    private utils: Utils,
+    private cells: Cells
   ) {
     this.init();
   }

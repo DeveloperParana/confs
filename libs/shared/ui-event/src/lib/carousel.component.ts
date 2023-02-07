@@ -21,6 +21,19 @@ import { Slide } from './slide';
 import { Utils } from './utils';
 import { Properties as CarouselProperties } from './types';
 
+type ObjectFit = 'contain' | 'cover' | 'none';
+
+type TouchListener = 'auto' | 'mouse and touch';
+
+type Theme = 'light' | 'dark';
+
+type TransitionTiming =
+  | 'ease'
+  | 'ease-in'
+  | 'ease-out'
+  | 'ease-in-out'
+  | 'linear';
+
 @Component({
   selector: 'ui-carousel, [ui-carousel]',
   templateUrl: './carousel.component.html',
@@ -37,14 +50,14 @@ export class CarouselComponent implements OnDestroy {
   touches: any;
   landscapeMode: any;
   minTimeout = 30;
-  isVideoPlaying: boolean = false;
-  _isCounter: boolean = false;
+  isVideoPlaying = false;
+  _isCounter = false;
   _width!: number;
   _cellWidth: number | '100%' = 200;
-  _loop: boolean = false;
-  _lightDOM: boolean = false;
-  isMoving: boolean = false;
-  isNgContent: boolean = false;
+  _loop = false;
+  _lightDOM = false;
+  isMoving = false;
+  isNgContent = false;
   cellLength!: number;
   dotsArr: any;
   carouselProperties!: CarouselProperties;
@@ -120,33 +133,28 @@ export class CarouselComponent implements OnDestroy {
   @Output() events: EventEmitter<any> = new EventEmitter<any>();
 
   @Input() id!: number;
-  @Input() height: number = 200;
+  @Input() height = 200;
   @Input() width!: number;
-  @Input() autoplay: boolean = false;
-  @Input() autoplayInterval: number = 5000;
-  @Input() pauseOnHover: boolean = true;
-  @Input() dots: boolean = false;
+  @Input() autoplay = false;
+  @Input() autoplayInterval = 5000;
+  @Input() pauseOnHover = true;
+  @Input() dots = false;
   @Input() borderRadius!: number;
-  @Input() margin: number = 10;
-  @Input() objectFit: 'contain' | 'cover' | 'none' = 'cover';
-  @Input() minSwipeDistance: number = 10;
-  @Input() transitionDuration: number = 200;
-  @Input() transitionTimingFunction:
-    | 'ease'
-    | 'ease-in'
-    | 'ease-out'
-    | 'ease-in-out'
-    | 'linear' = 'ease-out';
+  @Input() margin = 10;
+  @Input() objectFit: ObjectFit = 'cover';
+  @Input() minSwipeDistance = 10;
+  @Input() transitionDuration = 200;
+  @Input() transitionTimingFunction: TransitionTiming = 'ease-out';
   @Input() videoProperties: any;
-  @Input() counterSeparator: string = ' / ';
-  @Input() overflowCellsLimit: number = 3;
-  @Input() listeners: 'auto' | 'mouse and touch' = 'mouse and touch';
-  @Input() cellsToShow!: number;
-  @Input() cellsToScroll: number = 1;
-  @Input() freeScroll: boolean = false;
-  @Input() arrows: boolean = true;
-  @Input() arrowsOutside: boolean = false;
-  @Input() arrowsTheme: 'light' | 'dark' = 'light';
+  @Input() counterSeparator = ' / ';
+  @Input() overflowCellsLimit = 3;
+  @Input() listeners: TouchListener = 'mouse and touch';
+  @Input() cellsToShow = 3;
+  @Input() cellsToScroll = 1;
+  @Input() freeScroll = false;
+  @Input() arrows = true;
+  @Input() arrowsOutside = false;
+  @Input() arrowsTheme: Theme = 'light';
 
   @Input()
   set images(images: Images & any) {

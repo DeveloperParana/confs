@@ -36,4 +36,5 @@ export interface Image {
   path: string;
   width?: number;
   height?: number;
+  alt?: string;
 }

@@ -1,4 +1,5 @@
 import { Image, Properties as CarouselProperties } from './types';
+import { Utils } from './utils';
 
 export interface Cell {
   index: number;
@@ -72,7 +73,7 @@ export class Cells {
 
   constructor(
     private carouselProperties: CarouselProperties,
-    private utils: any
+    private utils: Utils
   ) {
     this.imageUtils = new ImageUtils(this.element);
     this.init(carouselProperties);

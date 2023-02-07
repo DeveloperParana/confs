@@ -6,6 +6,19 @@
 
 <section>
   <div>
+    <ui-carousel
+      [images]="images"
+      [autoplay]="true"
+      [arrows]="true"
+      [cellsToShow]="4"
+      [borderRadius]="6"
+    >
+    </ui-carousel>
+  </div>
+</section>
+
+<section>
+  <div>
     <ng-container
       *ngIf="subscribeFacade.subscribed$ | async; else subscribeTmpl"
     >
@@ -82,17 +95,5 @@
       </svg>
       Monte seu convite
     </a> -->
-  </div>
-</section>
-
-<section>
-  <div>
-    <ui-carousel
-      [images]="images"
-      [autoplay]="true"
-      [arrows]="true"
-      [cellsToShow]="3"
-    >
-    </ui-carousel>
   </div>
 </section>

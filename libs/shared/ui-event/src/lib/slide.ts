@@ -1,4 +1,7 @@
+import { Cells } from './cells';
+import { Container } from './container';
 import { Properties as CarouselProperties } from './types';
+import { Utils } from './utils';
 
 export interface Properties {
   carouselProperties: CarouselProperties;
@@ -74,9 +77,9 @@ export class Slide {
 
   constructor(
     private carouselProperties: CarouselProperties,
-    private utils: any,
-    private cells: any,
-    private container: any
+    private utils: Utils,
+    private cells: Cells,
+    private container: Container
   ) {
     this.init();
   }
@@ -92,7 +95,7 @@ export class Slide {
       this.carouselProperties.hostElement.clientWidth;
   }
 
-  handleTouchstart() {
+  handleTouchstart<E extends Event>(event?: E) {
     /* Touchstart event is not called for arrow */
     this.isNotClickOnArrow = true;
     this.isSlideLengthLimited = false;
@@ -102,7 +105,7 @@ export class Slide {
     }
   }
 
-  handleTouchend() {
+  handleTouchend<E extends Event>(event?: E) {
     if (!this.isNotClickOnArrow) {
       return;
     }
@@ -179,7 +182,7 @@ export class Slide {
 
     if (this.container.getCurrentPositionX() !== newPositionX) {
       this.isSlideInProgress = true;
-      this.container.transformPositionX(newPositionX);
+      if (newPositionX) this.container.transformPositionX(newPositionX)
     }
   }
 

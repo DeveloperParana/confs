@@ -1,18 +1,22 @@
+import { Cells } from './cells';
+import { Container } from './container';
+import { Slide } from './slide';
 import { Properties } from './types';
+import { Utils } from './utils';
 
 export class Carousel {
   cellsElement: HTMLElement | undefined;
 
   /* The slide length has been limited by the limitSlideLength() method */
-  isSlideLengthLimited: boolean = false;
+  isSlideLengthLimited = false;
 
-  isContentImages: boolean = true;
+  isContentImages = true;
   visibleWidth!: number;
-  isLazyLoad: boolean = true;
-  isContainerLocked: boolean = true;
+  isLazyLoad = true;
+  isContainerLocked = true;
   alignCells: 'left' | 'center' = 'left';
-  initialContainerPosition: number = 0;
-  autoplayId: any;
+  initialContainerPosition = 0;
+  autoplayId?: number;
   containerPullLimit = 100;
 
   get cellLength() {
@@ -97,10 +101,10 @@ export class Carousel {
 
   constructor(
     private properties: Properties,
-    private utils: any,
-    private cells: any,
-    private container: any,
-    private slide: any
+    private utils: Utils,
+    private cells: Cells,
+    private container: Container,
+    private slide: Slide
   ) {
     this.init();
   }

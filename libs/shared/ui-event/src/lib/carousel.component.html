@@ -19,6 +19,7 @@
         <img
           *ngIf="getImage(i) && getImage(i)['image']"
           [src]="getImage(i)['image']['path']"
+          [alt]="getImage(i)['image']['alt']"
           [style.object-fit]="objectFit"
           draggable="false"
         />
