@@ -121,7 +121,7 @@ export class Carousel {
   }
 
   destroy() {
-    clearInterval(this.autoplayId);
+    window.clearInterval(this.autoplayId);
   }
 
   lineUpCells() {
@@ -173,14 +173,14 @@ export class Carousel {
   };
 
   autoplay() {
-    this.autoplayId = setInterval(() => {
+    this.autoplayId = window.setInterval(() => {
       this.next();
     }, this.properties.autoplayInterval);
   }
 
   stopAutoplay() {
     if (this.autoplayId) {
-      clearInterval(this.autoplayId);
+      window.clearInterval(this.autoplayId);
     }
   }
 }
