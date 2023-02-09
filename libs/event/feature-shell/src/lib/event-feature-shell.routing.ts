@@ -7,8 +7,8 @@ import {
   EventFeaturePageComponent,
   EventFeatureSubscribeComponent,
   EventFeatureLocalComponent,
+  EventFeatureVideosComponent
 } from './pages';
-import { EventFeatureVideosComponent } from './pages/event-feature-videos/event-feature-videos.component';
 
 export const EventFeatureShellRouting = RouterModule.forChild([
   {
