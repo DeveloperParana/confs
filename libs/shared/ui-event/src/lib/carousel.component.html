@@ -40,15 +40,17 @@
   class="carousel-arrows"
   [class.carousel-arrows-outside]="arrowsOutside"
   [class.carousel-dark-arrows]="arrowsTheme === 'dark'"
-  *ngIf="isArrows"
+  *ngIf="isArrows && arrowsOutside"
 >
   <div
     class="carousel-arrow carousel-arrow-prev"
+    *ngIf="arrowsOutside"
     [class.carousel-arrow-disabled]="isPrevArrowDisabled()"
     (click)="prev()"
   ></div>
   <div
     class="carousel-arrow carousel-arrow-next"
+    *ngIf="arrowsOutside"
     [class.carousel-arrow-disabled]="isNextArrowDisabled()"
     (click)="next()"
   ></div>

@@ -29,9 +29,6 @@ export class EventFeaturePageResolver
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     let { column } = route.params;
 
-    console.log(column);
-    console.log(this.pages);
-
     if (isNaN(+column)) column = this.pages[column];
 
     if (column) {

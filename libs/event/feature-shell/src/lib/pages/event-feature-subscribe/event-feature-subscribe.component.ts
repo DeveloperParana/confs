@@ -2,7 +2,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, Inject } from '@angular/core';
 
 import { OAuthFacade } from '@confs/auth/data-access';
-import { SubscribeFacade } from '@confs/shared/data-access';
+import {
+  ProjectMapper,
+  ProjectService,
+  SubscribeFacade,
+} from '@confs/shared/data-access';
+import { map } from 'rxjs';
 
 @Component({
   templateUrl: './event-feature-subscribe.component.html',
@@ -20,19 +25,25 @@ export class EventFeatureSubscribeComponent {
     acompanhe: 'Entre com seu e-mail',
   };
 
-  images = [
-    { path: '/assets/carousel/reinaldo-ferraz.jpg', alt: 'Reinaldo Ferraz' },
-    { path: '/assets/carousel/lais-lima.jpg', alt: 'Lís Lima' },
-    { path: '/assets/carousel/erick-wendel.jpg', alt: 'Erick Wendel' },
-    { path: '/assets/carousel/william-grasel.jpg', alt: 'William Grasel' },
-    { path: '/assets/carousel/giovanni-bassi.jpg', alt: 'Giovanni Bassi' },
-    { path: '/assets/carousel/kelly-garcia.jpg', alt: 'Kelly Garcia' },
-    { path: '/assets/carousel/alexandro-hervis.jpg', alt: 'Alexandro Hervis' },
-    { path: '/assets/carousel/teo-calvo.jpg', alt: 'Teo Calvo' },
-  ];
+  images$ = this.projectService.getProjectColumnCards(19259040).pipe(
+    map(ProjectMapper.normalizeCards),
+    map((cards) => cards.reverse()),
+    map((cards) => {
+      return cards.map((card) => {
+        const parser = new DOMParser();
+        const html = parser.parseFromString(card.note, 'text/html');
+        const img = html.querySelector('img');
+        const h3 = html.querySelector('h3');
+        return img
+          ? { path: img.getAttribute('src'), alt: h3?.innerText }
+          : { path: '', alt: '' };
+      });
+    })
+  );
 
   constructor(
     @Inject('event.date') readonly eventDate: string,
+    private readonly projectService: ProjectService,
     readonly subscribeFacade: SubscribeFacade,
     readonly oAuthFacade: OAuthFacade
   ) {

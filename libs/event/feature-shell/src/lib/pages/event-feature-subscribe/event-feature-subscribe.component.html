@@ -5,11 +5,10 @@
 </header>
 
 <section>
-  <div>
+  <div *ngIf="images$ | async as images">
     <ui-carousel
       [images]="images"
       [autoplay]="true"
-      [arrows]="true"
       [cellsToShow]="4"
       [borderRadius]="6"
     >
