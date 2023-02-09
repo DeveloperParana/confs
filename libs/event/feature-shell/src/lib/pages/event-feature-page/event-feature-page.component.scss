@@ -5,6 +5,15 @@ confs-event-feature-page {
   width: 1024px;
   max-width: 100%;
 
+  hr {
+    display: block;
+    margin: 48px 0 64px;
+    border-color: rgba(var(--color-white), 0.1);
+    height: 1px;
+    width: 100%;
+
+  }
+
   section {
     padding: 8px 24px;
   }
@@ -119,15 +128,7 @@ confs-event-feature-page {
       }
 
       hr {
-        display: block;
         margin: 12px 0 16px;
-        border-color: rgba(var(--color-white), 0.1);
-        height: 1px;
-        width: 100%;
-
-        &:first-of-type {
-          margin-top: 0;
-        }
       }
     }
   }

@@ -255,8 +255,6 @@ export class CarouselComponent implements OnDestroy {
 
   ngAfterViewInit() {
     this.initCarousel();
-    console.log('init');
-
     this.cellLength = this.getCellLength();
     this.dotsArr = Array(this.cellLength).fill(1);
     this.ref.detectChanges();
