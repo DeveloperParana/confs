@@ -4,6 +4,7 @@ export const environment = {
   'event.date': '03/11/2023 08:00:00',
   pages: {
     project: 14615934,
+    starter: 19346279,
     palestras: 19145242,
     patrocinadores: 19145633,
   },

@@ -8,6 +8,7 @@ export const environment = {
   'server.api': '/api',
   pages: {
     project: 14649051,
+    starter: 19346278,
     palestras: 19259040,
     patrocinadores: 19259041,
   },
