@@ -141,6 +141,11 @@ confs-event-feature-page {
     flex-direction: row;
     gap: 10px;
     padding: 10px;
+    border: 0;
+  }
+
+  div > div > a:hover {
+    transform: scale(1.5);
   }
 
   .linkedin {
@@ -148,6 +153,7 @@ confs-event-feature-page {
     width: 24px;
     height: 24px;
     background-size: contain;
+    transition: 0.3s;
   }
 
   .Instagram {
@@ -155,6 +161,7 @@ confs-event-feature-page {
     width: 24px;
     height: 24px;
     background-size: contain;
+    transition: 0.3s;
   }
 
   .twitter {
@@ -162,6 +169,7 @@ confs-event-feature-page {
     width: 24px;
     height: 24px;
     background-size: contain;
+    transition: 0.3s;
   }
 
   .erick-curso {
@@ -169,6 +177,7 @@ confs-event-feature-page {
     width: 24px;
     height: 24px;
     background-size: contain;
+    transition: 0.3s;
   }
 
   .erick-blog {
@@ -177,6 +186,7 @@ confs-event-feature-page {
     width: 24px;
     height: 24px;
     background-size: contain;
+    transition: 0.3s;
   }
 
   .links {
@@ -185,5 +195,15 @@ confs-event-feature-page {
     width: 24px;
     height: 24px;
     background-size: contain;
+    transition: 0.3s;
+  }
+
+  .github {
+    background-image: url('/assets/icons/github-icon.svg');
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    transition: 0.3s;
   }
 }
