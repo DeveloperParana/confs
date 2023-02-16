@@ -52,12 +52,12 @@ body {
   font-family: 'Poppins', sans-serif;
   color: rgb(var(--body-text-color-primary));
 
-  background-image: linear-gradient(
-    180deg,
-    #112020 0%,
-    #05080a 51.56%,
-    #112020 100%
-  );
+  // background-image: linear-gradient(
+  //   180deg,
+  //   #112020 0%,
+  //   #05080a 51.56%,
+  //   #112020 100%
+  // );
 }
 
 ul {
@@ -226,6 +226,12 @@ dialog {
   perspective: var(--visual-distortion-zapper);
   perspective-origin: 50% 50%;
   z-index: -2;
+  background-image: linear-gradient(
+    180deg,
+    #112020 0%,
+    #05080a 51.56%,
+    #112020 100%
+  );
 }
 
 .top-plane {
