@@ -11,7 +11,6 @@ confs-event-feature-page {
     border-color: rgba(var(--color-white), 0.1);
     height: 1px;
     width: 100%;
-
   }
 
   section {
@@ -131,5 +130,60 @@ confs-event-feature-page {
         margin: 12px 0 16px;
       }
     }
+  }
+
+  svg {
+    width: 100%;
+  }
+
+  div > div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .linkedin {
+    background-image: url('/assets/icons/linkedin-icon.svg');
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
+
+  .Instagram {
+    background-image: url('/assets/icons/instagram-icon.svg');
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
+
+  .twitter {
+    background-image: url('/assets/icons/twitter-icon.svg');
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
+
+  .erick-curso {
+    background-image: url('/assets/icons/erick-site-icon.svg');
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
+
+  .erick-blog {
+    background-image: url('/assets/icons/erick-blog-icon.svg');
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
+
+  .links {
+    background-image: url('/assets/icons/www-icon.svg');
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
   }
 }
