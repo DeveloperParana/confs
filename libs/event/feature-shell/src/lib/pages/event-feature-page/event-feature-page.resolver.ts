@@ -1,6 +1,6 @@
 import { Meta, Title } from '@angular/platform-browser';
 import { Inject, Injectable } from '@angular/core';
-import { forkJoin, EMPTY, map } from 'rxjs';
+import { forkJoin, EMPTY, map, of } from 'rxjs';
 import {
   Resolve,
   TitleStrategy,
@@ -47,6 +47,7 @@ export class EventFeaturePageResolver
       );
     }
 
+    this.updateCanonical();
     return EMPTY;
   }
 
@@ -77,6 +78,7 @@ export class EventFeaturePageResolver
       link.setAttribute('rel', 'canonical');
       document.head.appendChild(link);
       link.href = location.toString();
+      console.log(link);
     }
 
     console.log(location.toString());
