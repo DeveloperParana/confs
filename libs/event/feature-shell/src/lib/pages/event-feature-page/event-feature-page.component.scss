@@ -27,19 +27,16 @@ confs-event-feature-page {
     &::placeholder {
       color: #8e8ea9;
     }
-
     &::placeholder {
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
     }
-
     box-shadow: none;
     outline: none;
     border-width: 2px;
     border-style: solid;
     border-color: transparent;
-
     &:focus {
       border-color: rgba(var(--color-white), 0.6);
     }
@@ -151,7 +148,6 @@ confs-event-feature-page {
             transition: filter 250ms ease-in, transform 500ms ease-out;
           }
         }
-
         &:hover img {
           transform: scale(1.1);
           filter: grayscale(0);
@@ -175,7 +171,6 @@ confs-event-feature-page {
     padding: 10px;
     border: 0;
   }
-
   div > div > a:hover {
     transform: scale(1.5);
   }

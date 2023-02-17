@@ -5,6 +5,7 @@ export const environment = {
   pages: {
     project: 14615934,
     starter: 19346279,
+    equipe: 19360587,
     palestras: 19145242,
     patrocinadores: 19145633,
   },
