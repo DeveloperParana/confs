@@ -2,29 +2,9 @@
   <header class="flex align-center space-between">
     <h1>{{ column.name }}</h1>
 
-    <ng-container [ngSwitch]="column.name">
-      <ng-container *ngSwitchCase="'Palestras'">
-        <button
-          target="_blank"
-          class="button neutral shine-effect"
-          href="https://forms.gle/3JdAVKdoE9jM3mGy6"
-          rel="external,noopener,nofollow"
-          disabled
-        >
-          Envie sua palestra (C4P encerrado)
-        </button>
-      </ng-container>
-      <ng-container *ngSwitchCase="'Patrocinadores'">
-        <a
-          target="_blank"
-          class="button neutral shine-effect"
-          href="https://forms.gle/G6T8ivVgPFbYuXiM8"
-          rel="external,noopener,nofollow"
-        >
-          Coloque sua empresa em nosso evento
-        </a>
-      </ng-container>
-    </ng-container>
+    <form>
+      <input #search type="search" (input)="onSearch(search.value)" />
+    </form>
   </header>
 
   <section
@@ -36,7 +16,7 @@
         : 'https://schema.org/Organization'
     "
   >
-    <ng-container *ngFor="let card of column.cards">
+    <ng-container *ngFor="let card of cards$ | async">
       <div
         [attr.itemprop]="column.name === 'Palestras' ? 'person' : 'sponsor'"
         [innerHTML]="card.note | mdToHtml"
@@ -44,7 +24,7 @@
     </ng-container>
   </section>
 
-  <hr>
+  <hr />
 
   <section class="flex justify-center">
     <div itemprop="sponsor">
