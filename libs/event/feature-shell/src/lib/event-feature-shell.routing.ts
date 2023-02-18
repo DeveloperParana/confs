@@ -7,14 +7,14 @@ import {
   EventFeaturePageComponent,
   EventFeatureSubscribeComponent,
   EventFeatureLocalComponent,
-  EventFeatureVideosComponent
+  EventFeatureVideosComponent,
 } from './pages';
 
 export const EventFeatureShellRouting = RouterModule.forChild([
   {
     path: '',
     component: EventFeatureShellComponent,
-    pathMatch: 'prefix',
+    // pathMatch: 'prefix',
     children: [
       {
         path: '',
@@ -28,16 +28,25 @@ export const EventFeatureShellRouting = RouterModule.forChild([
         path: 'c4p',
         component: EventFeatureC4pComponent,
         title: 'C4P - DevPR Conf 2023',
+        resolve: {
+          column: EventFeaturePageResolver,
+        },
       },
       {
         path: 'videos',
         component: EventFeatureVideosComponent,
         title: 'Vídeos - DevPR Conf 2023',
+        resolve: {
+          column: EventFeaturePageResolver,
+        },
       },
       {
         path: 'local',
         component: EventFeatureLocalComponent,
         title: 'Local - DevPR Conf 2023',
+        resolve: {
+          column: EventFeaturePageResolver,
+        },
       },
       {
         path: ':column',

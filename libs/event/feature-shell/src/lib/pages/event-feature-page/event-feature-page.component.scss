@@ -13,6 +13,49 @@ confs-event-feature-page {
     width: 100%;
   }
 
+  form {
+    display: flex;
+    align-items: center;
+
+    svg {
+      position: absolute;
+      z-index: 100;
+      width: 24px;
+      height: 24px;
+      padding-left: 8px;
+    }
+
+    input {
+      transition: outline-color 0.2s ease-in-out;
+      background-color: var(--form-control-background-color);
+      color: white;
+      padding: 12px;
+      padding-left: 36px;
+      min-width: 200px;
+      border-radius: 6px;
+      margin: 1px 0 0;
+      border: 0;
+      flex: 1;
+
+      &::placeholder {
+        color: #ccc;
+      }
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      box-shadow: none;
+      outline: none;
+      border-width: 2px;
+      border-style: solid;
+      border-color: transparent;
+      &:focus {
+        border-color: rgba(var(--color-white), 0.6);
+      }
+    }
+  }
+
   section {
     padding: 8px 24px;
   }
@@ -119,7 +162,6 @@ confs-event-feature-page {
             transition: filter 250ms ease-in, transform 500ms ease-out;
           }
         }
-
         &:hover img {
           transform: scale(1.1);
           filter: grayscale(0);
@@ -140,8 +182,9 @@ confs-event-feature-page {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding: 10px;
+    padding: 15px;
     border: 0;
+    overflow: visible;
   }
 
   div > div > a {
@@ -153,6 +196,10 @@ confs-event-feature-page {
 
   div > div > a:hover {
     transform: scale(1.5);
+  }
+
+  div > div > a[title] {
+    font-size: 10px;
   }
 
   .linkedin {

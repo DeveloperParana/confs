@@ -23,9 +23,10 @@ const routes: Routes = [
 ];
 
 const extras: ExtraOptions = {
-  initialNavigation: 'enabledNonBlocking',
+  initialNavigation: 'enabledBlocking',
+  urlUpdateStrategy: 'eager',
   // enableTracing: !environment.production,
-  scrollPositionRestoration: 'enabled',
+  // scrollPositionRestoration: 'enabled',
   useHash: true,
 };
 

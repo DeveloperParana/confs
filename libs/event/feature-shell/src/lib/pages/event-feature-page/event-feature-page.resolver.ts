@@ -1,6 +1,6 @@
-import { Meta, Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { Inject, Injectable } from '@angular/core';
-import { forkJoin, EMPTY, map } from 'rxjs';
+import { forkJoin, EMPTY, map, of } from 'rxjs';
 import {
   Resolve,
   TitleStrategy,
@@ -15,7 +15,7 @@ import { ProjectMapper, ProjectService } from '@confs/shared/data-access';
 })
 export class EventFeaturePageResolver
   extends TitleStrategy
-  implements Resolve<ProjectColumn | never>
+  implements Resolve<ProjectColumn | null>
 {
   constructor(
     @Inject('pages')
@@ -47,7 +47,8 @@ export class EventFeaturePageResolver
       );
     }
 
-    return EMPTY;
+    this.updateCanonical();
+    return of(null);
   }
 
   handlePage(state: RouterStateSnapshot) {
@@ -77,6 +78,7 @@ export class EventFeaturePageResolver
       link.setAttribute('rel', 'canonical');
       document.head.appendChild(link);
       link.href = location.toString();
+      console.log(link);
     }
 
     console.log(location.toString());
