@@ -144,66 +144,42 @@ confs-event-feature-page {
     border: 0;
   }
 
+  div > div > a {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    transition: 0.3s;
+  }
+
   div > div > a:hover {
     transform: scale(1.5);
   }
 
   .linkedin {
     background-image: url('/assets/icons/linkedin-icon.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 
   .Instagram {
     background-image: url('/assets/icons/instagram-icon.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 
   .twitter {
     background-image: url('/assets/icons/twitter-icon.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 
   .erick-curso {
     background-image: url('/assets/icons/erick-site-icon.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 
   .erick-blog {
     background-image: url('/assets/icons/erick-blog-icon.svg');
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 
   .links {
     background-image: url('/assets/icons/www-icon.svg');
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 
   .github {
     background-image: url('/assets/icons/github-icon.svg');
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    transition: 0.3s;
   }
 }
