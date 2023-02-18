@@ -1,22 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-  <g clip-path="url(#clip0_1417_80)">
-    <rect width="48" height="48" rx="24" fill="black" />
-    <path d="M47.9339 6.39551L6.52734 47.934H17.9339L47.9339 17.9999V6.39551Z" fill="#212121" />
-    <path d="M47.9339 19.2527V30.7252L30.5603 47.934H19.2197L47.9339 19.2527Z" fill="#212121" />
-    <path d="M47.9339 31.6153V43.3516L42.9889 47.934H31.6482L47.9339 31.6153Z" fill="#212121" />
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <mask id="mask0_1000_72691" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+    width="48" height="48">
     <path
-      d="M31.2883 19.7786L23.9933 15.5121L16.6984 19.7786V28.1959L23.9933 32.4496L31.2883 28.1959V19.7786Z"
+      d="M48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24Z"
       fill="white" />
+  </mask>
+  <g mask="url(#mask0_1000_72691)">
     <path
-      d="M31.2883 15.7562V10.7958L23.9933 6.59351L8.9668 15.2679V32.6938L13.2564 35.1868V17.7867L23.9933 11.5925L31.2883 15.7562Z"
-      fill="white" />
+      d="M48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24Z"
+      fill="black" fill-opacity="0.3" />
     <path
-      d="M34.7046 12.8262V30.1878L23.9933 36.3948L16.6984 32.1797V37.1273L23.9933 41.4067L39.0327 32.6938V15.2679L34.7046 12.8262Z"
-      fill="white" />
+      d="M31.2891 19.7787L23.9941 15.5122L16.6992 19.7787V28.196L23.9941 32.4497L31.2891 28.196V19.7787Z"
+      fill="url(#paint0_linear_1000_72691)" />
+    <path
+      d="M31.2902 15.7564V10.796L23.9952 6.59375L8.96875 15.2681V32.694L13.2584 35.187V17.7869L23.9952 11.5927L31.2902 15.7564Z"
+      fill="url(#paint1_linear_1000_72691)" />
+    <path
+      d="M34.7054 12.8262V30.1878L23.9941 36.3948L16.6992 32.1797V37.1273L23.9941 41.4067L39.0335 32.6938V15.2679L34.7054 12.8262Z"
+      fill="url(#paint2_linear_1000_72691)" />
   </g>
   <defs>
-    <clipPath id="clip0_1417_80">
-      <rect width="48" height="48" rx="24" fill="white" />
-    </clipPath>
+    <linearGradient id="paint0_linear_1000_72691" x1="23.9942" y1="15.5122" x2="23.9942"
+      y2="32.4497" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1DEA1D" />
+      <stop offset="1" stop-color="#6FDB95" />
+    </linearGradient>
+    <linearGradient id="paint1_linear_1000_72691" x1="20.1295" y1="6.59375" x2="20.1295" y2="35.187"
+      gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1DEA1D" />
+      <stop offset="1" stop-color="#6FDB95" />
+    </linearGradient>
+    <linearGradient id="paint2_linear_1000_72691" x1="27.8664" y1="12.8262" x2="27.8664"
+      y2="41.4067" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1DEA1D" />
+      <stop offset="1" stop-color="#6FDB95" />
+    </linearGradient>
   </defs>
 </svg>
