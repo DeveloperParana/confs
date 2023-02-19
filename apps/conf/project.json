@@ -26,6 +26,11 @@
             "output": "./media-kit"
           },
           {
+            "input": "./assets/speakers",
+            "glob": "**/*.webp",
+            "output": "./assets/speakers"
+          },
+          {
             "input": "./assets/icons",
             "glob": "**/*.svg",
             "output": "./assets/icons"

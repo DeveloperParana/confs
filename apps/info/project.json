@@ -23,7 +23,12 @@
           "apps/info/src/CNAME",
           "apps/info/src/favicon.svg",
           "apps/info/src/assets",
-          "apps/info/src/manifest.webmanifest"
+          "apps/info/src/manifest.webmanifest",
+          {
+            "input": "./assets/speakers",
+            "glob": "**/*.webp",
+            "output": "./assets/photo"
+          }
         ],
         "styles": [
           "apps/info/src/styles.scss"
