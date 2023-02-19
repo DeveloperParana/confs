@@ -77,9 +77,9 @@ export class AppStore extends StateStore<AppState> {
   loadSchedule() {
     this.setState({ loading: true });
     const auditorium$ = this.http.get<Schedule[]>(
-      '/assets/data/auditorium.json'
+      './assets/data/auditorium.json'
     );
-    const inspire$ = this.http.get<Schedule[]>('/assets/data/inspire.json');
+    const inspire$ = this.http.get<Schedule[]>('./assets/data/inspire.json');
 
     forkJoin([auditorium$, inspire$])
       .pipe(take(1))
