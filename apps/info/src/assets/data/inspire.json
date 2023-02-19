@@ -2,7 +2,7 @@
   {
     "id": "0164b527-db05-4a61-86eb-fd333edff2b3",
     "speaker": "Fernando Sedrez",
-    "photo": "/assets/photo/fernando-sedrez.webp",
+    "photo": "./assets/photo/fernando-sedrez.webp",
     "role": "Especialista em Engenharia de Dados na Globo",
     "title": "Cloud Functions: Melhorando o processo de desenvolvimento",
     "description": "",
@@ -13,7 +13,7 @@
   {
     "id": "a8fcae22-88fe-447b-b409-876230534686",
     "speaker": "Érica Sanches",
-    "photo": "/assets/photo/erica-sanches.webp",
+    "photo": "./assets/photo/erica-sanches.webp",
     "role": "Gestora de Projetos Inovadores no SEBRAE/PR",
     "title": "Empreendedor e intraempreendedor – Vocês são muito valiosos!",
     "description": "",
@@ -24,7 +24,7 @@
   {
     "id": "f1b84f89-81aa-4076-b8ea-529dac58e57e",
     "speaker": "Pausa para almoço",
-    "photo": "/assets/image/lunch-time.svg",
+    "photo": "./assets/image/lunch-time.svg",
     "role": "",
     "title": "Retorno às 1:30 PM",
     "description": "Sugestões",
@@ -35,7 +35,7 @@
   {
     "id": "3db5b74a-a355-4a26-8ba9-a428edcf7d30",
     "speaker": "Fabricio Rodrigues",
-    "photo": "/assets/photo/fabricio-rodrigues.webp",
+    "photo": "./assets/photo/fabricio-rodrigues.webp",
     "role": "Analista de Dados na ACT Digital",
     "title": "Transição de carreira, não é tão difícil assim",
     "description": "",
@@ -46,7 +46,7 @@
   {
     "id": "e3a288a7-6e2c-4282-ad5a-4d67f58d9eab",
     "speaker": "Maria Lazaretti",
-    "photo": "/assets/photo/maria-lazaretti.webp",
+    "photo": "./assets/photo/maria-lazaretti.webp",
     "role": "Team Leader | Gestão do Conhecimento na Matera",
     "title": "Gestão do Conhecimento",
     "description": "",
@@ -57,7 +57,7 @@
   {
     "id": "d6da642d-ba44-4ff0-abba-3c261288cbc1",
     "speaker": "Igor Martins",
-    "photo": "/assets/photo/igor-martins.webp",
+    "photo": "./assets/photo/igor-martins.webp",
     "role": "Client Engineering na IBM",
     "title": "Tecnologia além da parte técnica",
     "description": "",
@@ -68,7 +68,7 @@
   {
     "id": "b6a62901-9757-4167-bec5-813f3c5c1c32",
     "speaker": "Coffee",
-    "photo": "/assets/image/coffee.svg",
+    "photo": "./assets/image/coffee.svg",
     "role": "",
     "title": "Retorno às 4:30 PM",
     "description": "Aumente sua rede de contatos",
@@ -79,7 +79,7 @@
   {
     "id": "9eb19745-d95b-4d44-bb43-bfe17fdd7ee5",
     "speaker": "William Grasel",
-    "photo": "/assets/photo/william-grasel.webp",
+    "photo": "./assets/photo/william-grasel.webp",
     "role": "Google Developer Expert, Microsoft MVP e Desenvolvedor Web na Stone",
     "title": "Explodindo sua mente com TypeScript",
     "description": "",
@@ -90,7 +90,7 @@
   {
     "id": "1ae82057-612f-48ac-961f-56415ce317d8",
     "speaker": "João Brito",
-    "photo": "/assets/photo/joao-brito.webp",
+    "photo": "./assets/photo/joao-brito.webp",
     "role": "CTO - Getup",
     "title": "Conheça seus clusters Kubernetes como a palma da sua mão",
     "description": "",
