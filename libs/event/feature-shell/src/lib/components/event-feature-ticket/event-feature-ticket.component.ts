@@ -1,10 +1,5 @@
-import {
-  Input,
-  Component,
-  HostBinding,
-  ViewEncapsulation,
-} from '@angular/core';
-import { User } from '@confs/auth/api-interfaces';
+import {Input, Component, HostBinding, ViewEncapsulation} from '@angular/core';
+import {User} from '@confs/auth/api-interfaces';
 
 @Component({
   selector: 'confs-event-feature-ticket',

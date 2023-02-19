@@ -1,4 +1,4 @@
-import { normalizeKeys } from './normalize-keys';
+import {normalizeKeys} from './normalize-keys';
 
 const example = {
   access_token: 'token',

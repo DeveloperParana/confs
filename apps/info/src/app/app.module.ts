@@ -1,14 +1,14 @@
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {NgModule, isDevMode} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSharedModule } from './shared/mat-shared.module';
-import { SharedModule } from './shared/shared.module';
-import { AppStore } from './app.store';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSharedModule} from './shared/mat-shared.module';
+import {SharedModule} from './shared/shared.module';
+import {AppStore} from './app.store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,9 +26,7 @@ import { AppStore } from './app.store';
     MatSharedModule,
     SharedModule,
   ],
-  providers: [
-    AppStore,
-  ],
+  providers: [AppStore],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

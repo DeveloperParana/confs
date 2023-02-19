@@ -18,7 +18,7 @@ import {
   styleUrls: ['./button-nav-toggle.component.scss'],
 })
 export class ButtonNavToggleComponent {
-  @ViewChild('checkboxEl', { static: true })
+  @ViewChild('checkboxEl', {static: true})
   checkboxRef!: ElementRef<HTMLInputElement>;
 
   get checkbox() {

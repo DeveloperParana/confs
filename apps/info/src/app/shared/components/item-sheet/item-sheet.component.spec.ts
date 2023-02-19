@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ItemSheetComponent } from './item-sheet.component';
+import {ItemSheetComponent} from './item-sheet.component';
 
 describe('ItemSheetComponent', () => {
   let component: ItemSheetComponent;

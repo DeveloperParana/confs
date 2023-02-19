@@ -1,4 +1,4 @@
-import { Member } from '@confs/shared/api-interfaces';
+import {Member} from '@confs/shared/api-interfaces';
 
 export const filterMembers = (member: string | null) => {
   return (m: Member): string[] => {

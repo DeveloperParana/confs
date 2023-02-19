@@ -1,4 +1,4 @@
-import { TransformKeysToCamelCase } from '@confs/shared/api-interfaces';
-import { GithubUser } from './github-user';
+import {TransformKeysToCamelCase} from '@confs/shared/api-interfaces';
+import {GithubUser} from './github-user';
 
-export type User = TransformKeysToCamelCase<GithubUser> & { user: string };
+export type User = TransformKeysToCamelCase<GithubUser> & {user: string};

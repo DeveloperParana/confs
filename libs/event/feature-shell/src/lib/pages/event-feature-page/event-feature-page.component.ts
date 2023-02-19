@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ProjectColumn, ProjectColumnCard } from '@confs/shared/api-interfaces';
-import { ActivatedRoute, Data } from '@angular/router';
-import { BehaviorSubject, map, tap } from 'rxjs';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {ProjectColumn, ProjectColumnCard} from '@confs/shared/api-interfaces';
+import {ActivatedRoute, Data} from '@angular/router';
+import {BehaviorSubject, map, tap} from 'rxjs';
 
 @Component({
   selector: 'confs-event-feature-page',
@@ -22,7 +22,7 @@ export class EventFeaturePageComponent {
   }
 
   readonly column$ = this._route.data.pipe(
-    map<Data, ProjectColumn>(({ column }) => column),
+    map<Data, ProjectColumn>(({column}) => column),
     tap((column) => {
       this._cards.next(column.cards ?? []);
       this._all.next(column.cards ?? []);

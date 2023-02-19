@@ -1,4 +1,4 @@
-import { InSlotPipe } from './in-slot.pipe';
+import {InSlotPipe} from './in-slot.pipe';
 
 describe('InSlotPipe', () => {
   it('create an instance', () => {

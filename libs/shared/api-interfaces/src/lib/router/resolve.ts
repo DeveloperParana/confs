@@ -1,6 +1,6 @@
-import { ActivatedRouteSnapshot } from './activated-route-snapshot';
-import { RouterStateSnapshot } from './router-state-snapshot';
-import { Observable } from 'rxjs';
+import {ActivatedRouteSnapshot} from './activated-route-snapshot';
+import {RouterStateSnapshot} from './router-state-snapshot';
+import {Observable} from 'rxjs';
 
 export interface Resolve<T> {
   resolve(

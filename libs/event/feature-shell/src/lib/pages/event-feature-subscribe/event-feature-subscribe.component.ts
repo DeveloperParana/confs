@@ -1,13 +1,13 @@
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, Inject } from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, Inject} from '@angular/core';
 
-import { OAuthFacade } from '@confs/auth/data-access';
+import {OAuthFacade} from '@confs/auth/data-access';
 import {
   ProjectMapper,
   ProjectService,
   SubscribeFacade,
 } from '@confs/shared/data-access';
-import { map } from 'rxjs';
+import {map} from 'rxjs';
 
 @Component({
   templateUrl: './event-feature-subscribe.component.html',
@@ -35,8 +35,8 @@ export class EventFeatureSubscribeComponent {
         const img = html.querySelector('img');
         const h3 = html.querySelector('h3');
         return img
-          ? { path: img.getAttribute('src'), alt: h3?.innerText }
-          : { path: '', alt: '' };
+          ? {path: img.getAttribute('src'), alt: h3?.innerText}
+          : {path: '', alt: ''};
       });
     })
   );
@@ -63,10 +63,10 @@ export class EventFeatureSubscribeComponent {
   }
 
   onSubmit(input?: HTMLInputElement) {
-    const { email = '' } = this.form.value;
+    const {email = ''} = this.form.value;
 
     if (this.form.valid && email) {
-      this.subscribeFacade.subscribe({ email });
+      this.subscribeFacade.subscribe({email});
       this.form.controls.email.reset();
     } else {
       this.form.markAllAsTouched();

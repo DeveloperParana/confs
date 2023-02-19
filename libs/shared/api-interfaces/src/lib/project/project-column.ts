@@ -1,4 +1,4 @@
-import { ProjectColumnCard } from './project-column-card';
+import {ProjectColumnCard} from './project-column-card';
 
 export interface ProjectColumn {
   url: string;

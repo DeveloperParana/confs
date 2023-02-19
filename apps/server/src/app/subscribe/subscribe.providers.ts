@@ -1,5 +1,5 @@
-import { Connection } from 'mongoose';
-import { SubscribeSchema } from './schemas/subscribe.schema';
+import {Connection} from 'mongoose';
+import {SubscribeSchema} from './schemas/subscribe.schema';
 
 export const subscribeProviders = [
   {

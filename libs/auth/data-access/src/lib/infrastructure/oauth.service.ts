@@ -1,4 +1,4 @@
-import { tap } from 'rxjs';
+import {tap} from 'rxjs';
 
 import {
   GithubUser,
@@ -7,10 +7,10 @@ import {
   AccessTokenResponse,
   OAuthClientParameters,
 } from '@confs/auth/api-interfaces';
-import { HttpClientService, ServerService } from '@confs/shared/data-access';
-import { titleCase } from '@confs/shared/util-format';
+import {HttpClientService, ServerService} from '@confs/shared/data-access';
+import {titleCase} from '@confs/shared/util-format';
 
-import { createOAuthStorage } from './oauth.storage';
+import {createOAuthStorage} from './oauth.storage';
 
 export class OAuthService {
   storage = createOAuthStorage<AccessTokenResponse>();
@@ -36,7 +36,7 @@ export class OAuthService {
 
   getAccessToken(code: string) {
     const url = `oauth/access-token`;
-    const data = { ...this.options, code };
+    const data = {...this.options, code};
 
     return this.serverService
       .post<AccessTokenResponse, AccessToken>(url, data)
@@ -48,7 +48,7 @@ export class OAuthService {
     const token = `${prefix} ${response.accessToken}`;
     return this.httpClientService.get<GithubUser>(
       'https://api.github.com/user',
-      { headers: { Authorization: token } }
+      {headers: {Authorization: token}}
     );
   }
 

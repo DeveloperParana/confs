@@ -1,7 +1,7 @@
-import { Cells } from './cells';
-import { Container } from './container';
-import { Properties as CarouselProperties } from './types';
-import { Utils } from './utils';
+import {Cells} from './cells';
+import {Container} from './container';
+import {Properties as CarouselProperties} from './types';
+import {Utils} from './utils';
 
 export interface Properties {
   carouselProperties: CarouselProperties;
@@ -182,7 +182,7 @@ export class Slide {
 
     if (this.container.getCurrentPositionX() !== newPositionX) {
       this.isSlideInProgress = true;
-      if (newPositionX) this.container.transformPositionX(newPositionX)
+      if (newPositionX) this.container.transformPositionX(newPositionX);
     }
   }
 

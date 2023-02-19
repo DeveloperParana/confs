@@ -5,7 +5,7 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { AdsService } from '@confs/shared/data-access';
+import {AdsService} from '@confs/shared/data-access';
 
 @Component({
   selector: 'confs-event-feature-c4p',
@@ -32,7 +32,7 @@ export class EventFeatureC4pComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const dialog = this._dialogRef.nativeElement;
-    function onClick({ target }: MouseEvent) {
+    function onClick({target}: MouseEvent) {
       if (target === dialog) dialog.close();
     }
     dialog.addEventListener('click', onClick);

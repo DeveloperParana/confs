@@ -7,16 +7,12 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/conf/browser/info",
         "index": "apps/info/src/index.html",
         "main": "apps/info/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/info/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -30,9 +26,7 @@
             "output": "./assets/photo"
           }
         ],
-        "styles": [
-          "apps/info/src/styles.scss"
-        ],
+        "styles": ["apps/info/src/styles.scss"],
         "scripts": [],
         "serviceWorker": true,
         "ngswConfigPath": "apps/info/ngsw-config.json"
@@ -89,17 +83,12 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/info/**/*.ts",
-          "apps/info/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/info/**/*.ts", "apps/info/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/info/jest.config.ts",
         "passWithNoTests": true

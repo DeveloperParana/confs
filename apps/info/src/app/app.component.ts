@@ -1,15 +1,10 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  OnDestroy,
-  Type,
-} from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
-import { AppStore } from './app.store';
-import { interval, map } from 'rxjs';
-import { Schedule } from './types';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { ItemSheetComponent } from './shared/components/item-sheet/item-sheet.component';
+import {ChangeDetectorRef, Component, OnDestroy, Type} from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {AppStore} from './app.store';
+import {interval, map} from 'rxjs';
+import {Schedule} from './types';
+import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import {ItemSheetComponent} from './shared/components/item-sheet/item-sheet.component';
 
 @Component({
   selector: 'info-root',
@@ -45,7 +40,7 @@ export class AppComponent implements OnDestroy {
     const sheet = this.openItem(ItemSheetComponent, item);
     sheet.afterDismissed().subscribe((response) => {
       console.log(response);
-      if (response) this.store.addSchedule(response)
+      if (response) this.store.addSchedule(response);
     });
   }
 

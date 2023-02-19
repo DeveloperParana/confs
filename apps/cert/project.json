@@ -7,9 +7,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/conf/browser/cert",
         "index": "apps/cert/src/index.html",
@@ -25,9 +23,7 @@
             "output": "./assets/icons"
           }
         ],
-        "styles": [
-          "apps/cert/src/styles.scss"
-        ],
+        "styles": ["apps/cert/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -88,17 +84,12 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/cert/**/*.ts",
-          "apps/cert/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/cert/**/*.ts", "apps/cert/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/cert"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/cert"],
       "options": {
         "jestConfig": "apps/cert/jest.config.ts",
         "passWithNoTests": true

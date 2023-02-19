@@ -1,6 +1,6 @@
-import { Post, Body, Controller } from '@nestjs/common';
-import { SubscribeService } from './subscribe.service';
-import { CreateSubscribeDto } from './dto';
+import {Post, Body, Controller} from '@nestjs/common';
+import {SubscribeService} from './subscribe.service';
+import {CreateSubscribeDto} from './dto';
 
 @Controller('subscribe')
 export class SubscribeController {

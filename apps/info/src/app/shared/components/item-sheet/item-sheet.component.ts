@@ -1,9 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {
   MatBottomSheetRef,
   MAT_BOTTOM_SHEET_DATA,
 } from '@angular/material/bottom-sheet';
-import { Schedule } from '../../../types';
+import {Schedule} from '../../../types';
 
 @Component({
   templateUrl: './item-sheet.component.html',

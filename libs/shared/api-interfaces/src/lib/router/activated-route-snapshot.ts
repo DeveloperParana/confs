@@ -1,6 +1,6 @@
-import { ParamMap } from './param-map';
-import { Params } from './params';
-import { Data } from './data';
+import {ParamMap} from './param-map';
+import {Params} from './params';
+import {Data} from './data';
 
 export declare class ActivatedRouteSnapshot {
   url: string[];

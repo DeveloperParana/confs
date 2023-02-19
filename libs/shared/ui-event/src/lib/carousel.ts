@@ -1,8 +1,8 @@
-import { Cells } from './cells';
-import { Container } from './container';
-import { Slide } from './slide';
-import { Properties } from './types';
-import { Utils } from './utils';
+import {Cells} from './cells';
+import {Container} from './container';
+import {Slide} from './slide';
+import {Properties} from './types';
+import {Utils} from './utils';
 
 export class Carousel {
   cellsElement: HTMLElement | undefined;

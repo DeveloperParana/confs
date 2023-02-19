@@ -1,4 +1,4 @@
-import { HttpHeaders } from './headers';
+import {HttpHeaders} from './headers';
 
 export enum HttpEventType {
   Sent,

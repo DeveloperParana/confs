@@ -1,14 +1,14 @@
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { BehaviorSubject, combineLatest, Observable, map } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {BehaviorSubject, combineLatest, Observable, map} from 'rxjs';
+import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
 
-import { Member } from '@confs/shared/api-interfaces';
+import {Member} from '@confs/shared/api-interfaces';
 
-import { CertComponent } from './cert.component';
-import { AppService } from './app.service';
-import { filterMembers } from './utilities/filter-members';
+import {CertComponent} from './cert.component';
+import {AppService} from './app.service';
+import {filterMembers} from './utilities/filter-members';
 
 @Component({
   standalone: true,
@@ -62,10 +62,10 @@ export class AppComponent {
 
     const form = this.form.valueChanges;
 
-    const autocomplete$ = combineLatest({ members, form });
+    const autocomplete$ = combineLatest({members, form});
 
     this.autocomplete$ = autocomplete$.pipe(
-      map(({ members, form }) => {
+      map(({members, form}) => {
         return form.member
           ? members.filter(filterMembers(form.member))
           : members;
@@ -74,7 +74,7 @@ export class AppComponent {
   }
 
   onSubmit() {
-    const { member } = this.form.value;
+    const {member} = this.form.value;
 
     if (this.form.valid && member) {
       this._selected.next(member);

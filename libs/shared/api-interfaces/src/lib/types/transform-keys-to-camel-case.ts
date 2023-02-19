@@ -105,21 +105,21 @@ type CallRecursiveTransformIfObj<T> = T extends Record<any, any>
 export type SwitchKeyValue<
   T,
   T1 extends Record<string, any> = {
-    [K in keyof T]: { key: K; value: T[K] };
+    [K in keyof T]: {key: K; value: T[K]};
   },
   T2 = {
     [K in GetObjValues<T1>['value']]: Extract<
       GetObjValues<T1>,
-      { value: K }
+      {value: K}
     >['key'];
   }
 > = T2;
 
 export type TransformKeysToCamelCase<
   T extends Record<string, any>,
-  T0 = { [K in keyof T]: UpperCaseToCamelCase<K> },
+  T0 = {[K in keyof T]: UpperCaseToCamelCase<K>},
   T1 = SwitchKeyValue<T0>,
-  T2 = { [K in keyof T1]: CallRecursiveTransformIfObj<T[Cast<T1[K], string>]> }
+  T2 = {[K in keyof T1]: CallRecursiveTransformIfObj<T[Cast<T1[K], string>]>}
 > = T2;
 
 type NestedKeyRevert = TransformKeysToCamelCase<{

@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { of, tap } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {of, tap} from 'rxjs';
 
-import { Member } from '@confs/shared/api-interfaces';
+import {Member} from '@confs/shared/api-interfaces';
 
-import { AppStorage } from './app.storage';
-import { env } from '../envs/env';
+import {AppStorage} from './app.storage';
+import {env} from '../envs/env';
 
 interface AppStorageMap {
   members: Member[];

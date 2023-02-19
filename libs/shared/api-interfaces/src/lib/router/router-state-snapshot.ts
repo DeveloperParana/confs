@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot } from './activated-route-snapshot';
+import {ActivatedRouteSnapshot} from './activated-route-snapshot';
 
 declare class TreeNode<T> {
   value: T;

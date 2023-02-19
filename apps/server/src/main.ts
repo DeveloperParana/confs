@@ -1,13 +1,13 @@
-import { Logger } from '@nestjs/common';
+import {Logger} from '@nestjs/common';
 
-import { environment } from './environments/environment';
-import { appFactory } from './app/app.factory';
-import { AppModule as entry } from './app/app.module';
+import {environment} from './environments/environment';
+import {appFactory} from './app/app.factory';
+import {AppModule as entry} from './app/app.module';
 
 async function bootstrap() {
-  const { production, origin } = environment;
+  const {production, origin} = environment;
 
-  const { app, port, message } = await appFactory({
+  const {app, port, message} = await appFactory({
     entry,
     origin,
     production,

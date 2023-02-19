@@ -6,9 +6,7 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/libs/event/feature-shell"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/libs/event/feature-shell"],
       "options": {
         "jestConfig": "libs/event/feature-shell/jest.config.ts",
         "passWithNoTests": true
@@ -24,8 +22,5 @@
       }
     }
   },
-  "tags": [
-    "type:feature-shell",
-    "scope:event"
-  ]
+  "tags": ["type:feature-shell", "scope:event"]
 }

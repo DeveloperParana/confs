@@ -1,4 +1,4 @@
-import { Routes, ExtraOptions, RouterModule } from '@angular/router';
+import {Routes, ExtraOptions, RouterModule} from '@angular/router';
 
 const routes: Routes = [
   {

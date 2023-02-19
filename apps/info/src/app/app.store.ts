@@ -1,14 +1,10 @@
-import {
-  eachMinuteOfInterval,
-  differenceInMinutes,
-  isSameHour,
-} from 'date-fns';
-import { StateStore } from '@confs/shared/data-access';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Schedule } from './types/schedule';
-import { Place, Kind } from './types';
-import { forkJoin, map, take } from 'rxjs';
+import {eachMinuteOfInterval, differenceInMinutes, isSameHour} from 'date-fns';
+import {StateStore} from '@confs/shared/data-access';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Schedule} from './types/schedule';
+import {Place, Kind} from './types';
+import {forkJoin, map, take} from 'rxjs';
 
 function freeze<T>(value: T): Readonly<T> {
   return Object.freeze(value);
@@ -52,7 +48,7 @@ const initialState = freeze<AppState>({
       start: new Date(2023, 3, 19, 8),
       end: new Date(2023, 3, 19, 20),
     },
-    { step: 30 }
+    {step: 30}
   ),
 });
 
@@ -75,37 +71,37 @@ export class AppStore extends StateStore<AppState> {
   }
 
   loadSchedule() {
-    this.setState({ loading: true });
+    this.setState({loading: true});
     const auditorium$ = this.http
       .get<Schedule[]>('./assets/data/auditorium.json')
       .pipe(
         map((items) =>
-          items.map((item) => ({ ...item, start: new Date(item.start) }))
+          items.map((item) => ({...item, start: new Date(item.start)}))
         )
       );
     const inspire$ = this.http
       .get<Schedule[]>('./assets/data/inspire.json')
       .pipe(
         map((items) =>
-          items.map((item) => ({ ...item, start: new Date(item.start) }))
+          items.map((item) => ({...item, start: new Date(item.start)}))
         )
       );
 
     forkJoin([auditorium$, inspire$])
       .pipe(take(1))
       .subscribe(([auditorium, inspire]) => {
-        this.setState({ loading: false, auditorium, inspire });
+        this.setState({loading: false, auditorium, inspire});
       });
   }
 
   addSchedule(item: Schedule) {
     this.favorites.set(item.start, item);
-    this.setState({ schedule: Array.from(this.favorites.values()) });
+    this.setState({schedule: Array.from(this.favorites.values())});
   }
 
   removeSchedule(item: Schedule) {
     this.favorites.delete(item.start);
-    this.setState({ schedule: Array.from(this.favorites.values()) });
+    this.setState({schedule: Array.from(this.favorites.values())});
   }
 
   loadCurrent() {
@@ -115,7 +111,7 @@ export class AppStore extends StateStore<AppState> {
   }
 
   filterSchedule(place: Place | null, kind: Kind | null) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
     // this.setState({ schedule, loading: false });
   }
 }

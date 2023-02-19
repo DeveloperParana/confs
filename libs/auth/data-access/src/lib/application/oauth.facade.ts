@@ -3,11 +3,11 @@ import {
   GithubUser,
   AccessTokenResponse,
 } from '@confs/auth/api-interfaces';
-import { ServerService, StateStore } from '@confs/shared/data-access';
-import { createOAuthStorage } from '../infrastructure/oauth.storage';
-import { OAuthService } from '../infrastructure/oauth.service';
-import { UserMapper } from '../mapper/user.mapper';
-import { map } from 'rxjs';
+import {ServerService, StateStore} from '@confs/shared/data-access';
+import {createOAuthStorage} from '../infrastructure/oauth.storage';
+import {OAuthService} from '../infrastructure/oauth.service';
+import {UserMapper} from '../mapper/user.mapper';
+import {map} from 'rxjs';
 
 interface OAuthState {
   loading: boolean;
@@ -52,7 +52,7 @@ export class OAuthFacade extends StateStore<OAuthState> {
     const url = 'https://github.com/login/oauth/authorize';
     const authorize = decodeURIComponent(`${url}?${params}`);
 
-    this.setState({ authorize });
+    this.setState({authorize});
   }
 
   /**
@@ -65,7 +65,7 @@ export class OAuthFacade extends StateStore<OAuthState> {
    *
    */
   loadGithubAuthentication(code: string) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const token$ = this.oAuthService.getAccessToken(code);
 
@@ -96,14 +96,14 @@ export class OAuthFacade extends StateStore<OAuthState> {
    *
    */
   loadUserFromLogin(login: string) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const user$ = this.serverService
       .get<GithubUser>(`users/${login}`)
       .pipe(map(UserMapper.normalizeUser));
 
     const $user = user$.subscribe((user) => {
-      this.setState({ loading: false, user });
+      this.setState({loading: false, user});
       $user.unsubscribe();
     });
   }
@@ -116,14 +116,14 @@ export class OAuthFacade extends StateStore<OAuthState> {
    *
    */
   loadUserFromId(id: string) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const user$ = this.serverService
       .get<GithubUser>(`user/${id}`)
       .pipe(map(UserMapper.normalizeUser));
 
     const $user = user$.subscribe((user) => {
-      this.setState({ loading: false, user });
+      this.setState({loading: false, user});
       $user.unsubscribe();
     });
   }

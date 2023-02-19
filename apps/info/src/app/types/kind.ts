@@ -1,4 +1,4 @@
 export enum Kind {
-  Talk = "talk",
-  Workshop = "workshop",
+  Talk = 'talk',
+  Workshop = 'workshop',
 }

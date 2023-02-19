@@ -11,7 +11,7 @@ export function titleCase(input: string) {
 
   // tslint:disable-next-line
   while ((m = TOKENS.exec(input)) !== null) {
-    const { 0: token, index } = m;
+    const {0: token, index} = m;
 
     if (
       // Ignore already capitalized words.

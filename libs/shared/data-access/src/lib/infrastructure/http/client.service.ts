@@ -6,7 +6,7 @@ import {
   HttpOptionsParams,
   HttpOptionsHeaders,
 } from '@confs/shared/api-interfaces';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 
 export abstract class HttpClientService {
   abstract handler: HttpHandler;

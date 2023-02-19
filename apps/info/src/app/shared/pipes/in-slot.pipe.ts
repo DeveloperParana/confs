@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { addMinutes } from 'date-fns';
+import {Pipe, PipeTransform} from '@angular/core';
+import {addMinutes} from 'date-fns';
 
-@Pipe({ name: 'inSlot' })
+@Pipe({name: 'inSlot'})
 export class InSlotPipe implements PipeTransform {
   transform(current: Date, duration: number = 60) {
     const date = new Date();

@@ -4,9 +4,9 @@ import {
   HostBinding,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { LoaderService } from '@confs/shared/data-access';
+import {LoaderService} from '@confs/shared/data-access';
 
-import { ProjectFacade } from '@confs/shared/data-access';
+import {ProjectFacade} from '@confs/shared/data-access';
 
 @Component({
   selector: 'confs-feature-shell',
@@ -32,9 +32,9 @@ export class EventFeatureShellComponent {
     readonly projectFacade: ProjectFacade,
     readonly loaderService: LoaderService,
     @Inject('event.date') readonly eventDate: string,
-    @Inject('pages') readonly pages: { project: number }
+    @Inject('pages') readonly pages: {project: number}
   ) {
-    const date = new Date(eventDate)
+    const date = new Date(eventDate);
     this.date = date;
     this.year = date.getFullYear().toString();
     this.projectFacade.loadProjectColumns(pages.project);

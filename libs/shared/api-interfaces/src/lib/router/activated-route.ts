@@ -1,9 +1,9 @@
-import { Observable } from 'rxjs';
-import { ActivatedRouteSnapshot } from './activated-route-snapshot';
-import { ParamMap } from './param-map';
-import { Params } from './params';
-import { Route } from './route';
-import { Data } from './data';
+import {Observable} from 'rxjs';
+import {ActivatedRouteSnapshot} from './activated-route-snapshot';
+import {ParamMap} from './param-map';
+import {Params} from './params';
+import {Route} from './route';
+import {Data} from './data';
 
 export abstract class ActivatedRoute {
   abstract url: Observable<string[]>;
