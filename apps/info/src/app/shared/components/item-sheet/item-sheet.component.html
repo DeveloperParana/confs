@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar [src]="data.photo" />
+    <mat-card-title>{{ data.speaker }}</mat-card-title>
+    <mat-card-subtitle>{{ data.role }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ data.title }}</p>
+    <p>{{ data.description }}</p>
+    <p>{{ data.start | date : 'shortTime' }}</p>
+  </mat-card-content>
+  <mat-card-actions class="flex row space-between">
+    <button mat-icon-button (click)="like()">
+      <mat-icon color="warn">
+        {{ liked ? 'favorite' : 'favorite_border' }}
+      </mat-icon>
+    </button>
+    <button mat-raised-button (click)="ref.dismiss(liked ? data : null)">
+      Fechar
+    </button>
+  </mat-card-actions>
+</mat-card>

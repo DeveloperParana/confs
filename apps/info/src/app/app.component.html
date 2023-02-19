@@ -1,0 +1,84 @@
+<main class="info-container" [class.info-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="info-toolbar">
+    <a routerLink="/">
+      <object
+        data="/assets/image/devpr-conf.svg"
+        type="image/svg+xml"
+        width="64px"
+      ></object>
+    </a>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="info-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-action-list *ngIf="store.slots$ | async as slots">
+        <button
+          mat-list-item
+          *ngFor="let slot of slots; index as i"
+          [activated]="slot | inSlot : 30"
+        >
+          {{ slot | date : 'shortTime' }}
+          {{ slot | inSlot }}
+        </button>
+      </mat-action-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="info-sidenav-content">
+      <mat-tab-group class="info-tab-group">
+        <mat-tab label="Auditório">
+          <ng-template matTabContent>
+            <mat-action-list>
+              <mat-list-item
+                *ngFor="let item of store.auditorium$ | async"
+                [activated]="item.start | inSlot : item.duration"
+                (click)="viewItem(item)"
+                lines="3"
+              >
+                <img
+                  matListItemAvatar
+                  [src]="item.photo"
+                  [alt]="item.speaker"
+                />
+                <span matListItemTitle>{{ item.speaker }}</span>
+                <span matListItemMeta>{{
+                  item.start | date : 'shortTime'
+                }}</span>
+                <span>{{ item.title }}</span>
+              </mat-list-item>
+            </mat-action-list>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Inspira">
+          <ng-template matTabContent>
+            <mat-list>
+              <mat-list-item
+                *ngFor="let item of store.inspire$ | async"
+                [activated]="item.start | inSlot : item.duration"
+                lines="3"
+              >
+                <img
+                  matListItemAvatar
+                  [src]="item.photo"
+                  [alt]="item.speaker"
+                />
+                <span matListItemTitle>{{ item.speaker }}</span>
+                <span matListItemMeta>{{
+                  item.start | date : 'shortTime'
+                }}</span>
+                <span>{{ item.title }}</span>
+              </mat-list-item>
+            </mat-list>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>

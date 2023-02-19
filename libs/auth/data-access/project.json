@@ -6,19 +6,28 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/auth/data-access/**/*.ts"]
+        "lintFilePatterns": [
+          "libs/auth/data-access/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/auth/data-access"],
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/auth/data-access"
+      ],
       "options": {
         "jestConfig": "libs/auth/data-access/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["type:data-access", "scope:auth"]
+  "tags": [
+    "type:data-access",
+    "scope:auth"
+  ]
 }
