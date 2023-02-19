@@ -62,6 +62,7 @@
               <mat-list-item
                 *ngFor="let item of store.inspire$ | async"
                 [activated]="item.start | inSlot : item.duration"
+                (click)="viewItem(item)"
                 lines="3"
               >
                 <img

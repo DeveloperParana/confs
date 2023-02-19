@@ -76,10 +76,20 @@ export class AppStore extends StateStore<AppState> {
 
   loadSchedule() {
     this.setState({ loading: true });
-    const auditorium$ = this.http.get<Schedule[]>(
-      './assets/data/auditorium.json'
-    );
-    const inspire$ = this.http.get<Schedule[]>('./assets/data/inspire.json');
+    const auditorium$ = this.http
+      .get<Schedule[]>('./assets/data/auditorium.json')
+      .pipe(
+        map((items) =>
+          items.map((item) => ({ ...item, start: new Date(item.start) }))
+        )
+      );
+    const inspire$ = this.http
+      .get<Schedule[]>('./assets/data/inspire.json')
+      .pipe(
+        map((items) =>
+          items.map((item) => ({ ...item, start: new Date(item.start) }))
+        )
+      );
 
     forkJoin([auditorium$, inspire$])
       .pipe(take(1))
