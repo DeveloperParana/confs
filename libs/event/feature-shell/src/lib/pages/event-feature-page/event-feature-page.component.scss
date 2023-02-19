@@ -178,10 +178,14 @@ confs-event-feature-page {
     all: unset;
     display: flex;
     gap: 10px;
-    padding: 0 0 15px 15px;
+    margin: 0 0 15px 24px;
 
     &:hover {
       background-color: transparent;
+    }
+
+    &:hover > :not(:hover) {
+      opacity: 0.5;
     }
   }
 
@@ -192,7 +196,7 @@ confs-event-feature-page {
     transition: 0.3s;
 
     &:hover {
-      transform: scale(1.5);
+      transform: scale(1.7);
     }
 
     &[title] {
@@ -226,5 +230,9 @@ confs-event-feature-page {
 
   .github {
     background-image: url('/assets/icons/github-icon.svg');
+  }
+
+  .github {
+    background-image: url('/assets/icons/youtube-icon.svg');
   }
 }
