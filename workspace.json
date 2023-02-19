@@ -7,6 +7,7 @@
     "cert": "apps/cert",
     "conf": "apps/conf",
     "event-feature-shell": "libs/event/feature-shell",
+    "info": "apps/info",
     "server": "apps/server",
     "shared-api-interfaces": "libs/shared/api-interfaces",
     "shared-data-access": "libs/shared/data-access",

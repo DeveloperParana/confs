@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/conf/browser",
         "index": "apps/conf/src/index.html",
@@ -29,7 +31,9 @@
             "output": "./assets/icons"
           }
         ],
-        "styles": ["apps/conf/src/styles.scss"],
+        "styles": [
+          "apps/conf/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -90,12 +94,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/conf/**/*.ts", "apps/conf/**/*.html"]
+        "lintFilePatterns": [
+          "apps/conf/**/*.ts",
+          "apps/conf/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/conf"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/conf"
+      ],
       "options": {
         "jestConfig": "apps/conf/jest.config.ts",
         "passWithNoTests": true
@@ -158,7 +167,9 @@
     "prerender": {
       "executor": "@nguniversal/builders:prerender",
       "options": {
-        "routes": ["/"]
+        "routes": [
+          "/"
+        ]
       },
       "configurations": {
         "production": {
@@ -173,8 +184,12 @@
       "defaultConfiguration": "production"
     }
   },
-  "tags": ["type:app"],
+  "tags": [
+    "type:app"
+  ],
   "namedInputs": {
-    "projectSpecificFiles": ["{workspaceRoot}/assets/media-kit/**/*.*"]
+    "projectSpecificFiles": [
+      "{workspaceRoot}/assets/media-kit/**/*.*"
+    ]
   }
 }
