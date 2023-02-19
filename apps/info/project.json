@@ -11,7 +11,7 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/info",
+        "outputPath": "dist/apps/conf/browser/info",
         "index": "apps/info/src/index.html",
         "main": "apps/info/src/main.ts",
         "polyfills": [
@@ -34,6 +34,7 @@
       },
       "configurations": {
         "production": {
+          "baseHref": "/info",
           "budgets": [
             {
               "type": "initial",
