@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676836735112,
+  "timestamp": 1676836953337,
   "index": "info/index.html",
   "assetGroups": [
     {
@@ -111,7 +111,7 @@
     "info/assets/photo/teo-calvo.webp": "1e8579f9d9f5ba4605a89da893e474c20c27cb8f",
     "info/assets/photo/william-grasel.webp": "087bdf130d0bcb8c7a41e725928161706d3486af",
     "info/favicon.svg": "c10d4483d72e0de9b6ed9f4799430c547b335dfe",
-    "info/index.html": "392e3f5545bb6ddc42f121bc45a89c553aa3132c",
+    "info/index.html": "b42243959d6417bf67c743ad636d4e0a35e831b4",
     "info/main.127aba9f07f6f7eb.js": "33d4fda72c3e9a5b042a8e6abf9f11a601af556e",
     "info/manifest.webmanifest": "785919605e713b0772f9db00ac07010bc060082a",
     "info/polyfills.447f199eba77bbe4.js": "602d0b28cc78cc837046951200ea897c8443530c",
