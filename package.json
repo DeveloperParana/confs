@@ -16,7 +16,8 @@
     "serve:ssr": "node dist/apps/conf/server/main.js",
     "build:ssr": "nx build && nx run conf:server",
     "prerender": "nx run conf:prerender",
-    "media-kit": "npx http-server ./assets/media-kit -o"
+    "media-kit": "npx http-server ./assets/media-kit -o",
+    "build:digitalocean": "npm install --production=false && npm run build && npm ci --legacy-peer-deps"
   },
   "private": true,
   "devDependencies": {
@@ -95,5 +96,9 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
+  },
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.3.1"
   }
 }
