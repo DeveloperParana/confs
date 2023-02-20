@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676836953337,
+  "timestamp": 1676925544005,
   "index": "info/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "info/favicon.svg",
         "info/index.html",
-        "info/main.127aba9f07f6f7eb.js",
+        "info/main.b2552baaf6ab2e2c.js",
         "info/manifest.webmanifest",
-        "info/polyfills.447f199eba77bbe4.js",
+        "info/polyfills.56f9465b2d6d194e.js",
         "info/runtime.edad518100656c0a.js",
-        "info/styles.4dfa3492fea229ca.css"
+        "info/styles.6315fc57bfd70275.css"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
@@ -111,12 +111,12 @@
     "info/assets/photo/teo-calvo.webp": "1e8579f9d9f5ba4605a89da893e474c20c27cb8f",
     "info/assets/photo/william-grasel.webp": "087bdf130d0bcb8c7a41e725928161706d3486af",
     "info/favicon.svg": "c10d4483d72e0de9b6ed9f4799430c547b335dfe",
-    "info/index.html": "b42243959d6417bf67c743ad636d4e0a35e831b4",
-    "info/main.127aba9f07f6f7eb.js": "33d4fda72c3e9a5b042a8e6abf9f11a601af556e",
+    "info/index.html": "5ada6c63ef7cf33b078c83da32111e72ae027c4c",
+    "info/main.b2552baaf6ab2e2c.js": "2ab6b1e850cefac883ea71492efc4f75cda97863",
     "info/manifest.webmanifest": "785919605e713b0772f9db00ac07010bc060082a",
-    "info/polyfills.447f199eba77bbe4.js": "602d0b28cc78cc837046951200ea897c8443530c",
+    "info/polyfills.56f9465b2d6d194e.js": "2d48d0ad9a8158ea3261a868addbd948a34f492c",
     "info/runtime.edad518100656c0a.js": "3f59dfce3de992a6be03b8194790e828309f627c",
-    "info/styles.4dfa3492fea229ca.css": "fb9b0528854f24018f4706100bc4dd53112238c9"
+    "info/styles.6315fc57bfd70275.css": "0e3b72f17016128e21dd02a1c5ce4d6b5fceda5e"
   },
   "navigationUrls": [
     {
