@@ -1,6 +1,6 @@
-import { ActivatedRoute } from './activated-route';
-import { Params } from './params';
-import { Routes } from './routes';
+import {ActivatedRoute} from './activated-route';
+import {Params} from './params';
+import {Routes} from './routes';
 
 export type QueryParamsHandling = 'merge' | 'preserve' | '';
 

@@ -1,10 +1,10 @@
-import { Injectable, Inject, ConflictException } from '@nestjs/common';
-import { Model } from 'mongoose';
+import {Injectable, Inject, ConflictException} from '@nestjs/common';
+import {Model} from 'mongoose';
 
-import { normalizeKeys } from '@confs/shared/util-format';
+import {normalizeKeys} from '@confs/shared/util-format';
 
-import { Subscribe } from './entities/subscribe.entity';
-import { CreateSubscribeDto } from './dto';
+import {Subscribe} from './entities/subscribe.entity';
+import {CreateSubscribeDto} from './dto';
 
 @Injectable()
 export class SubscribeService {
@@ -17,13 +17,13 @@ export class SubscribeService {
     email,
     ...createSubscribeDto
   }: CreateSubscribeDto): Promise<Subscribe> {
-    const subscriber = await this.findBy({ email, ...createSubscribeDto });
+    const subscriber = await this.findBy({email, ...createSubscribeDto});
 
     if (subscriber) {
       throw new ConflictException(`O e-mail ${email} já existe na lista`);
     }
 
-    const promise = new this._model({ email, ...createSubscribeDto }).save();
+    const promise = new this._model({email, ...createSubscribeDto}).save();
 
     return promise.then((subscribe) =>
       normalizeKeys<unknown, Subscribe>(subscribe.toJSON())
@@ -41,7 +41,7 @@ export class SubscribeService {
   }
 
   async findOne(id: string): Promise<Subscribe> {
-    const promise = this._model.findOne({ id }).exec();
+    const promise = this._model.findOne({id}).exec();
 
     return promise.then((subscribe) =>
       normalizeKeys<unknown, Subscribe>(subscribe.toJSON())

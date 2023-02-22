@@ -3,8 +3,8 @@ import {
   HttpHandler,
   HttpInterceptor,
 } from '@confs/shared/api-interfaces';
-import { LoaderService } from '../loader.service';
-import { finalize } from 'rxjs';
+import {LoaderService} from '../loader.service';
+import {finalize} from 'rxjs';
 
 export class ClientInterceptor implements HttpInterceptor {
   constructor(private loaderService: LoaderService) {}

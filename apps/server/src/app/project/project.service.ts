@@ -1,9 +1,9 @@
-import { ConfigService } from '@nestjs/config';
-import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
-import { map } from 'rxjs';
+import {ConfigService} from '@nestjs/config';
+import {HttpService} from '@nestjs/axios';
+import {Injectable} from '@nestjs/common';
+import {map} from 'rxjs';
 
-import { dataResponse } from '@confs/shared/data-access';
+import {dataResponse} from '@confs/shared/data-access';
 
 @Injectable()
 export class ProjectService {
@@ -32,7 +32,7 @@ export class ProjectService {
 
   private request(url: string) {
     const headers = this.getHeaders();
-    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
+    return this.httpService.get(url, {headers}).pipe(map(dataResponse));
   }
 
   private getHeaders() {
@@ -41,6 +41,6 @@ export class ProjectService {
     const token = this.configService.get('GHTK_PROJECT');
     const Authorization = `Bearer ${token}`;
 
-    return { Accept, Authorization };
+    return {Accept, Authorization};
   }
 }

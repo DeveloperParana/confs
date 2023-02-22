@@ -1,14 +1,14 @@
-import { ConfigService } from '@nestjs/config';
-import { Injectable } from '@nestjs/common';
-import { HttpService } from '@nestjs/axios';
-import { map, Observable } from 'rxjs';
+import {ConfigService} from '@nestjs/config';
+import {Injectable} from '@nestjs/common';
+import {HttpService} from '@nestjs/axios';
+import {map, Observable} from 'rxjs';
 
 import {
   AccessToken,
   AccessTokenResponse,
   GithubAccessTokenResponse,
 } from '@confs/auth/api-interfaces';
-import { normalizeKeys } from '@confs/shared/util-format';
+import {normalizeKeys} from '@confs/shared/util-format';
 
 @Injectable()
 export class OAuthService {
@@ -29,7 +29,7 @@ export class OAuthService {
       client_secret: clientSecret,
     };
 
-    const headers = { Accept: 'application/json' };
+    const headers = {Accept: 'application/json'};
 
     const url = 'https://github.com/login/oauth/access_token';
 

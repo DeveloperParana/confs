@@ -14,10 +14,9 @@
     left: 54px;
   }
 
-  &[opened="true"]::after {
+  &[opened='true']::after {
     content: '';
   }
-
 
   div {
     position: absolute;

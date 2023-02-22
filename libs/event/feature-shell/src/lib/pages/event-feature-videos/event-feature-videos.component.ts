@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'confs-event-feature-videos',
@@ -15,5 +15,5 @@ export class EventFeatureVideosComponent {
     'UrN70ufBLws',
     'BC5Z5rVPUYo',
     'qNLEmUWtAV8',
-  ]
+  ];
 }

@@ -1,6 +1,6 @@
-import { EventFeatureShellComponent } from './event-feature-shell.component';
-import { OAuthGuard, OAuthResolver } from '@confs/auth/data-access';
-import { RouterModule } from '@angular/router';
+import {EventFeatureShellComponent} from './event-feature-shell.component';
+import {OAuthGuard, OAuthResolver} from '@confs/auth/data-access';
+import {RouterModule} from '@angular/router';
 import {
   EventFeaturePageResolver,
   EventFeatureC4pComponent,

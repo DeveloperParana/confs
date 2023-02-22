@@ -1,14 +1,14 @@
-import { Title } from '@angular/platform-browser';
-import { Inject, Injectable } from '@angular/core';
-import { forkJoin, EMPTY, map, of } from 'rxjs';
+import {Title} from '@angular/platform-browser';
+import {Inject, Injectable} from '@angular/core';
+import {forkJoin, EMPTY, map, of} from 'rxjs';
 import {
   Resolve,
   TitleStrategy,
   RouterStateSnapshot,
   ActivatedRouteSnapshot,
 } from '@angular/router';
-import { ProjectColumn } from '@confs/shared/api-interfaces';
-import { ProjectMapper, ProjectService } from '@confs/shared/data-access';
+import {ProjectColumn} from '@confs/shared/api-interfaces';
+import {ProjectMapper, ProjectService} from '@confs/shared/data-access';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +27,7 @@ export class EventFeaturePageResolver
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    let { column } = route.params;
+    let {column} = route.params;
 
     if (isNaN(+column)) column = this.pages[column];
 
@@ -42,7 +42,7 @@ export class EventFeaturePageResolver
       );
 
       return forkJoin([column$, cards$]).pipe(
-        map(([column, cards]) => ({ ...column, cards })),
+        map(([column, cards]) => ({...column, cards})),
         map((column) => this.handlePage(state)(column))
       );
     }

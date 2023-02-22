@@ -1,5 +1,5 @@
-import { normalizeKeys } from '@confs/shared/util-format';
-import { marked } from 'marked';
+import {normalizeKeys} from '@confs/shared/util-format';
+import {marked} from 'marked';
 import {
   Project,
   ProjectColumn,
@@ -12,7 +12,7 @@ import {
 export class ProjectMapper {
   static normalizeCards(cards: GithubProjectColumnCard[]): ProjectColumnCard[] {
     return cards
-      .map((card) => ({ ...card, note: marked(card.note) }))
+      .map((card) => ({...card, note: marked(card.note)}))
       .map((card) => normalizeKeys(card));
   }
 

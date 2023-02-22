@@ -1,4 +1,4 @@
-import { HttpClientService } from './http/client.service';
+import {HttpClientService} from './http/client.service';
 
 export class ServerService {
   constructor(private readonly http: HttpClientService, public url: string) {}

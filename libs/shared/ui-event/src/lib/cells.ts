@@ -1,5 +1,5 @@
-import { Image, Properties as CarouselProperties } from './types';
-import { Utils } from './utils';
+import {Image, Properties as CarouselProperties} from './types';
+import {Utils} from './utils';
 
 export interface Cell {
   index: number;

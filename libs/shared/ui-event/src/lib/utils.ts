@@ -1,4 +1,4 @@
-import { Properties as CarouselProperties } from './types';
+import {Properties as CarouselProperties} from './types';
 
 export class Utils {
   get images() {

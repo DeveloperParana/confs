@@ -1,8 +1,8 @@
-import { of } from 'rxjs';
+import {of} from 'rxjs';
 
-import { Resolve, Router } from '@confs/shared/api-interfaces';
+import {Resolve, Router} from '@confs/shared/api-interfaces';
 
-import { OAuthFacade } from '../application/oauth.facade';
+import {OAuthFacade} from '../application/oauth.facade';
 
 export class OAuthResolver implements Resolve<boolean> {
   constructor(private oAuthFacade: OAuthFacade, private router: Router) {}
@@ -15,7 +15,7 @@ export class OAuthResolver implements Resolve<boolean> {
       const user$ = this.oAuthFacade.user$;
       const $user = user$.subscribe((user) => {
         if (user) {
-          this.router.navigate(['/'], { queryParams: { user: user.login } });
+          this.router.navigate(['/'], {queryParams: {user: user.login}});
           $user.unsubscribe();
         }
       });

@@ -1,6 +1,6 @@
-import { HttpContext } from './context';
-import { HttpHeaders } from './headers';
-import { HttpParams } from './params';
+import {HttpContext} from './context';
+import {HttpHeaders} from './headers';
+import {HttpParams} from './params';
 
 export interface HttpRequest<T> {
   readonly url: string;

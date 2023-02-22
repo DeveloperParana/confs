@@ -1,4 +1,4 @@
-import { noCase, Options } from './no-case';
+import {noCase, Options} from './no-case';
 
 export function pascalCaseTransform(input: string, index: number) {
   const firstChar = input.charAt(0);

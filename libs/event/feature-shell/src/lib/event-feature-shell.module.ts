@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { UiEventModule } from '@confs/shared/ui-event';
-import { EventFeatureShellRouting } from './event-feature-shell.routing';
-import { EventFeatureShellComponent } from './event-feature-shell.component';
-import { MdToHtmlPipe, SafeUrlPipe } from './pipes';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
+import {UiEventModule} from '@confs/shared/ui-event';
+import {EventFeatureShellRouting} from './event-feature-shell.routing';
+import {EventFeatureShellComponent} from './event-feature-shell.component';
+import {MdToHtmlPipe, SafeUrlPipe} from './pipes';
 import {
   EventFeatureC4pComponent,
   EventFeaturePageComponent,

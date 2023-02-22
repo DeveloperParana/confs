@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 
 export class LoaderService {
   private _visible = new BehaviorSubject(false);

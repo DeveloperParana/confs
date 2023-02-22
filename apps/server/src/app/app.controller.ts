@@ -1,7 +1,7 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { map } from 'rxjs';
+import {Controller, Get, Param} from '@nestjs/common';
+import {map} from 'rxjs';
 
-import { AppService } from './app.service';
+import {AppService} from './app.service';
 
 @Controller()
 export class AppController {
@@ -10,7 +10,7 @@ export class AppController {
   @Get('members')
   members() {
     return this.appService.getMembers().pipe(
-      map(({ data }) => {
+      map(({data}) => {
         return data.map((m) => ({
           status: m.status,
           photo: m.photo,

@@ -1,4 +1,4 @@
-import { GithubUser } from '@confs/auth/api-interfaces';
+import {GithubUser} from '@confs/auth/api-interfaces';
 
 export const ticketTemplate = (user: GithubUser) => {
   return `

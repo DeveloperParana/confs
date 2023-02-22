@@ -24,7 +24,6 @@
     }
   }
 
-
   > section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -60,7 +59,6 @@
       &:last-child {
         padding: 24px;
       }
-
 
       h4 {
         font-weight: 500;

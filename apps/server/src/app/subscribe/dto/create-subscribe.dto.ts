@@ -1,8 +1,8 @@
-import { IsEmail, IsEmpty, IsString } from 'class-validator';
+import {IsEmail, IsEmpty, IsString} from 'class-validator';
 
 export class CreateSubscribeDto {
-  @IsEmail({}, { always: true })
-  @IsString({ always: true })
+  @IsEmail({}, {always: true})
+  @IsString({always: true})
   email: string;
 
   @IsEmpty()

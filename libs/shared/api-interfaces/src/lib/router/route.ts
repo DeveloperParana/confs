@@ -1,4 +1,4 @@
-import { Data } from './data';
+import {Data} from './data';
 
 export declare interface Route {
   // title?: string | Type<Resolve<string>> | ResolveFn<string>;

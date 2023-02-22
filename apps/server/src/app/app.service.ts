@@ -1,16 +1,16 @@
-import { open, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
+import {open, writeFile} from 'node:fs/promises';
+import {existsSync} from 'node:fs';
+import {join} from 'node:path';
 
-import { BadRequestException, Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { HttpService } from '@nestjs/axios';
-import { map, take } from 'rxjs';
+import {BadRequestException, Injectable} from '@nestjs/common';
+import {ConfigService} from '@nestjs/config';
+import {HttpService} from '@nestjs/axios';
+import {map, take} from 'rxjs';
 
-import { dataResponse } from '@confs/shared/data-access';
-import { Member } from '@confs/shared/api-interfaces';
+import {dataResponse} from '@confs/shared/data-access';
+import {Member} from '@confs/shared/api-interfaces';
 
-import { ticketTemplate } from './utilities';
+import {ticketTemplate} from './utilities';
 
 @Injectable()
 export class AppService {
@@ -25,19 +25,19 @@ export class AppService {
 
     this.createTicket(login);
 
-    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
+    return this.httpService.get(url, {headers}).pipe(map(dataResponse));
   }
 
   getGithubUserById(id: number) {
     const headers = this.buildHeaders();
     const url = `https://api.github.com/user/${id}`;
-    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
+    return this.httpService.get(url, {headers}).pipe(map(dataResponse));
   }
 
   getGithubUser(username: string) {
     const headers = this.buildHeaders();
     const url = `https://api.github.com/users/${username}`;
-    return this.httpService.get(url, { headers }).pipe(map(dataResponse));
+    return this.httpService.get(url, {headers}).pipe(map(dataResponse));
   }
 
   getMembers() {

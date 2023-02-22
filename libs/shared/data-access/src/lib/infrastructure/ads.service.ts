@@ -5,7 +5,7 @@ export class AdsService {
     c4p: () =>
       twq('event', 'tw-od9na-od9nc', {
         /** event id */
-        status: 'started'
+        status: 'started',
       }),
     ticket: () => () => 'ticket',
   };

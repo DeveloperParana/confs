@@ -40,7 +40,7 @@
     </p>
     <ng-template #subscribeTmpl>
       <form [formGroup]="form" (ngSubmit)="onSubmit(email)">
-        <fieldset [ngClass]="{ hide: subscribeFacade.subscribed$ | async }">
+        <fieldset [ngClass]="{hide: subscribeFacade.subscribed$ | async}">
           <legend>Receba os releases com novidades</legend>
           <input
             #email

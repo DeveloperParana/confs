@@ -4,7 +4,7 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { ProjectColumn } from '@confs/shared/api-interfaces';
+import {ProjectColumn} from '@confs/shared/api-interfaces';
 
 @Component({
   selector: 'confs-event-feature-header,header[confs-event-feature]',

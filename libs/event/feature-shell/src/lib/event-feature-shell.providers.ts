@@ -1,14 +1,14 @@
-import { Provider } from '@angular/core';
+import {Provider} from '@angular/core';
 import {
   ServerService,
   ProjectService,
   ProjectFacade,
   AdsService,
 } from '@confs/shared/data-access';
-import { SubscribeFacade } from '@confs/shared/data-access';
-import { OAuthFacade, OAuthGuard, OAuthService } from '@confs/auth/data-access';
-import { OAuthResolver } from '@confs/auth/data-access';
-import { Router } from '@angular/router';
+import {SubscribeFacade} from '@confs/shared/data-access';
+import {OAuthFacade, OAuthGuard, OAuthService} from '@confs/auth/data-access';
+import {OAuthResolver} from '@confs/auth/data-access';
+import {Router} from '@angular/router';
 
 export const eventFeatureShellProviders = (): Provider[] => [
   {

@@ -1,4 +1,4 @@
-import { lowerCase } from './lower-case';
+import {lowerCase} from './lower-case';
 
 export interface Options {
   splitRegexp?: RegExp | RegExp[];

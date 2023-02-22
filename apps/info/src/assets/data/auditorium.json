@@ -1,0 +1,112 @@
+[
+  {
+    "id": "af0efa86-9e7a-4faa-ab13-1a768fe09c63",
+    "speaker": "Reinaldo Ferraz",
+    "photo": "./assets/photo/reinaldo-ferraz.webp",
+    "role": "Representante do NIC.br em grupos de trabalho do W3C internacional em Acessibilidade na Web, Digital Publishing e Web das Coisas. Autor de quatro livros.",
+    "title": "Por dentro do W3C e das novidades nos padrões de acessibilidade",
+    "description": "",
+    "start": "Sat Mar 11 2023 09:00:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "7a4c707b-f285-410b-a7c9-f9cc025f1148",
+    "speaker": "Kelly Garcia",
+    "photo": "./assets/photo/kelly-garcia.webp",
+    "role": "Agile Coach na Ambev Tech, co-organizadora dos grupos DevGirls e Maringá Agile",
+    "title": "Como fazer ritos melhores usando métricas",
+    "description": "",
+    "start": "Sat Mar 11 2023 10:00:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "e1f5d10b-5dc4-4700-a57a-d18e60f2cbdf",
+    "speaker": "Erick Wendel",
+    "photo": "./assets/photo/erick-wendel.webp",
+    "role": "Especialista em JavaScript e Educador na ErickWendel.com",
+    "title": "5 aprendizados sobre NodeJS que se aplicam para o Front-end",
+    "description": "",
+    "start": "Sat Mar 11 2023 11:00:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "fbc355b9-0d67-4b8d-9bde-72bca28b137b",
+    "speaker": "Pausa para almoço",
+    "photo": "./assets/image/lunch-time.svg",
+    "role": "",
+    "title": "Retorno às 1:30 PM",
+    "description": "Sugestões",
+    "start": "Sat Mar 11 2023 12:00:00",
+    "duration": 90,
+    "kind": "talk"
+  },
+  {
+    "id": "1f061233-9954-4e5f-97fc-a75fb82a2805",
+    "speaker": "Giovanni Bassi",
+    "photo": "./assets/photo/giovanni-bassi.webp",
+    "role": "Programador, Microsoft MVP, Agilista e Fundador da Lambda3",
+    "title": "Gestão de segredos com Vault",
+    "description": "Vault é uma ferramenta que faz a gestão de segredos, como senhas e strings de conexão. Nesta palestra você vai aprender porque esse tipo de ferramenta é importante, como utilizar o Vault para criar as credenciais de um banco de dados sob demanda, fazer a rotação dessas credenciais, acessá-las de uma aplicação, e mais.",
+    "start": "Sat Mar 11 2023 13:30:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "07720860-0af7-4247-9a86-c453d3974592",
+    "speaker": "Alexandro Hervis",
+    "photo": "./assets/photo/alexandro-hervis.webp",
+    "role": "Staff Engineer na DB1 Global Software",
+    "title": "Frontend - Frameworks deveriam ser detalhes",
+    "description": "",
+    "start": "Sat Mar 11 2023 14:30:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "5b0bab02-c6ee-464c-8371-8af6771d0e08",
+    "speaker": "Coffee",
+    "photo": "./assets/image/coffee.svg",
+    "role": "",
+    "title": "Retorno às 4:30 PM",
+    "description": "Aumente sua rede de contatos",
+    "start": "Sat Mar 11 2023 15:30:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "d7637642-421f-4348-96c8-1b7f0185fb53",
+    "speaker": "Gi Bordignon",
+    "photo": "./assets/photo/gi-bordignon.webp",
+    "role": "Produtora de conteúdo na Spacecoding e Desenvolvedora Backend",
+    "title": "Como começar sua carreira na programação Back-end",
+    "description": "",
+    "start": "Sat Mar 11 2023 16:30:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "d3482b2f-88ed-4587-83e8-0d8b7803dfca",
+    "speaker": "Laís Lima",
+    "photo": "./assets/photo/lais-lima.webp",
+    "role": "Desenvolvedora na Globo",
+    "title": "Como funciona stream da Globo",
+    "description": "",
+    "start": "Sat Mar 11 2023 17:30:00",
+    "duration": 60,
+    "kind": "talk"
+  },
+  {
+    "id": "3b5efd10-6f4f-43cc-a7a7-513250d8118e",
+    "speaker": "Téo Calvo",
+    "photo": "./assets/photo/teo-calvo.webp",
+    "role": "Data Science & Big Data Specialist. Head de dados na Gamers Club. Professor de SQL, Python e Machine Learning na ASN.Rocks.",
+    "title": "Porque e como construir um Datalake para comunidade?",
+    "description": "",
+    "start": "Sat Mar 11 2023 18:30:00",
+    "duration": 60,
+    "kind": "talk"
+  }
+]

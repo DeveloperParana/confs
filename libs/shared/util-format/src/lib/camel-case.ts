@@ -1,4 +1,4 @@
-import { Options } from './no-case';
+import {Options} from './no-case';
 import {
   pascalCase,
   pascalCaseTransform,

@@ -1,4 +1,4 @@
-import { camelCase } from './camel-case';
+import {camelCase} from './camel-case';
 
 type RecordObject<T> = {
   [P in keyof T]?: T[P];

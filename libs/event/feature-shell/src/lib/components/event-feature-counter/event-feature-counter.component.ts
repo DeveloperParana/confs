@@ -1,10 +1,6 @@
-import {
-  Input,
-  Component,
-  ChangeDetectionStrategy,
-} from '@angular/core';
-import { Observable, interval, map, takeWhile } from 'rxjs';
-import { StateStore } from '@confs/shared/data-access';
+import {Input, Component, ChangeDetectionStrategy} from '@angular/core';
+import {Observable, interval, map, takeWhile} from 'rxjs';
+import {StateStore} from '@confs/shared/data-access';
 
 export interface CounterState {
   loading: boolean;
@@ -69,8 +65,8 @@ export class EventFeatureCounterComponent extends StateStore<CounterState> {
 
   loading$ = this.select((state) => state.loading);
 
-  value$ = this.select(({ day, hour, min, sec }) => {
-    return { day, hour, min, sec };
+  value$ = this.select(({day, hour, min, sec}) => {
+    return {day, hour, min, sec};
   });
 
   constructor() {
@@ -84,7 +80,7 @@ export class EventFeatureCounterComponent extends StateStore<CounterState> {
   }
 
   start(date: Date) {
-    this.setState({ loading: false });
+    this.setState({loading: false});
 
     const end = date.getTime();
     const now = new Date().getTime();

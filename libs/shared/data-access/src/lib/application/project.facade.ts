@@ -1,14 +1,14 @@
-import { map } from 'rxjs';
+import {map} from 'rxjs';
 
 import {
   Project,
   ProjectColumn,
   ProjectColumnCard,
 } from '@confs/shared/api-interfaces';
-import { StateStore } from '../+store/state.store';
+import {StateStore} from '../+store/state.store';
 
-import { ProjectService } from '../infrastructure/project.service';
-import { ProjectMapper } from '../mapper/project.mapper';
+import {ProjectService} from '../infrastructure/project.service';
+import {ProjectMapper} from '../mapper/project.mapper';
 
 interface ProjectState {
   loading: boolean;
@@ -39,56 +39,56 @@ export class ProjectFacade extends StateStore<ProjectState> {
   }
 
   loadProject(projectId: number) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const project$ = this.projectService
       .getProject(projectId)
       .pipe(map(ProjectMapper.normalizeProject));
 
     const $project = project$.subscribe((project) => {
-      this.setState({ loading: false, project });
+      this.setState({loading: false, project});
 
       $project.unsubscribe();
     });
   }
 
   loadProjectColumns(projectId: number) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const project$ = this.projectService
       .getProjectColumns(projectId)
       .pipe(map(ProjectMapper.normalizeColumns));
 
     const $project = project$.subscribe((columns) => {
-      this.setState({ loading: false, columns });
+      this.setState({loading: false, columns});
 
       $project.unsubscribe();
     });
   }
 
   loadProjectColumn(columnId: number) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const column$ = this.projectService
       .getProjectColumn(columnId)
       .pipe(map(ProjectMapper.normalizeColumn));
 
     const $column = column$.subscribe((column) => {
-      this.setState({ loading: false, column });
+      this.setState({loading: false, column});
 
       $column.unsubscribe();
     });
   }
 
   loadProjectColumnCards(columnId: number) {
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     const cards$ = this.projectService
       .getProjectColumnCards(columnId)
       .pipe(map(ProjectMapper.normalizeCards));
 
     const $cards = cards$.subscribe((cards) => {
-      this.setState({ loading: false, cards });
+      this.setState({loading: false, cards});
 
       $cards.unsubscribe();
     });

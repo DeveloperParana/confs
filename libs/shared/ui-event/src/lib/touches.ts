@@ -369,7 +369,7 @@ export class Touches {
     }
   }
 
-  detectPinch({ touches }: any) {
+  detectPinch({touches}: any) {
     // const touches = event.touches;
     return (
       (touches.length === 2 && this.eventType === undefined) ||

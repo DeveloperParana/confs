@@ -5,7 +5,7 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { ButtonNavToggleComponent } from './button-nav-toggle/button-nav-toggle.component';
+import {ButtonNavToggleComponent} from './button-nav-toggle/button-nav-toggle.component';
 
 @Component({
   selector: 'confs-event-feature-nav,nav[confs-event-feature]',

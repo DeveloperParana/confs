@@ -12,14 +12,14 @@ import {
   SimpleChanges,
 } from '@angular/core';
 
-import { Images } from './types';
-import { Touches } from './touches';
-import { Carousel } from './carousel';
-import { Container } from './container';
-import { Cells } from './cells';
-import { Slide } from './slide';
-import { Utils } from './utils';
-import { Properties as CarouselProperties } from './types';
+import {Images} from './types';
+import {Touches} from './touches';
+import {Carousel} from './carousel';
+import {Container} from './container';
+import {Cells} from './cells';
+import {Slide} from './slide';
+import {Utils} from './utils';
+import {Properties as CarouselProperties} from './types';
 
 type ObjectFit = 'contain' | 'cover' | 'none';
 

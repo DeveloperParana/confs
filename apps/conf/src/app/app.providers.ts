@@ -1,10 +1,10 @@
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LOCALE_ID, Provider } from '@angular/core';
+import {HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {LOCALE_ID, Provider} from '@angular/core';
 import ptBR from '@angular/common/locales/extra/br';
-import { registerLocaleData } from '@angular/common';
+import {registerLocaleData} from '@angular/common';
 import pt from '@angular/common/locales/pt';
 
-import { environment } from '../environments/environment';
+import {environment} from '../environments/environment';
 
 import {
   ClientInterceptor,
@@ -12,8 +12,8 @@ import {
   LoaderService,
   ServerService,
 } from '@confs/shared/data-access';
-import { eventFeatureShellProviders } from '@confs/event/feature-shell';
-import { OAuthService } from '@confs/auth/data-access';
+import {eventFeatureShellProviders} from '@confs/event/feature-shell';
+import {OAuthService} from '@confs/auth/data-access';
 
 registerLocaleData(pt, 'pt-BR', ptBR);
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'confs-event-feature-footer,footer[confs-event-feature]',
@@ -8,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class EventFeatureFooterComponent {
   @Input() year?: string;
-  @Input() date = new Date;
+  @Input() date = new Date();
 }

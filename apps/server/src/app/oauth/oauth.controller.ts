@@ -1,6 +1,6 @@
-import { AccessToken } from '@confs/auth/api-interfaces';
-import { Body, Controller, Post } from '@nestjs/common';
-import { OAuthService } from './oauth.service';
+import {AccessToken} from '@confs/auth/api-interfaces';
+import {Body, Controller, Post} from '@nestjs/common';
+import {OAuthService} from './oauth.service';
 
 @Controller('oauth')
 export class OAuthController {

@@ -3,7 +3,7 @@ import {
   GithubProjectColumn,
   GithubProjectColumnCard,
 } from '@confs/shared/api-interfaces';
-import { ServerService } from './server.service';
+import {ServerService} from './server.service';
 
 export class ProjectService {
   constructor(private readonly serverService: ServerService) {}

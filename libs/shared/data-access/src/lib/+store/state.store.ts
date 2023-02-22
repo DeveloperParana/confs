@@ -1,5 +1,5 @@
-import { catchError, distinctUntilChanged, map } from 'rxjs/operators';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {catchError, distinctUntilChanged, map} from 'rxjs/operators';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 interface State {
   loading: boolean;

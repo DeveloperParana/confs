@@ -1,7 +1,7 @@
-import { ServerService } from '../infrastructure/server.service';
-import { StateStore } from '../+store/state.store';
-import { catchError, finalize, Observable, Subscription } from 'rxjs';
-import { HttpErrorResponse } from '@confs/shared/api-interfaces';
+import {ServerService} from '../infrastructure/server.service';
+import {StateStore} from '../+store/state.store';
+import {catchError, finalize, Observable, Subscription} from 'rxjs';
+import {HttpErrorResponse} from '@confs/shared/api-interfaces';
 
 interface SubscribeState {
   loading: boolean;
@@ -24,8 +24,8 @@ export class SubscribeFacade extends StateStore<SubscribeState> {
     });
   }
 
-  subscribe(value: { email: string }) {
-    this.setState({ loading: true });
+  subscribe(value: {email: string}) {
+    this.setState({loading: true});
 
     const sub$ = this.serverService.post('subscribe', value);
 
@@ -36,15 +36,15 @@ export class SubscribeFacade extends StateStore<SubscribeState> {
       )
       .subscribe(() => {
         const message = 'Aguarde nossas novidades';
-        this.setState({ loading: false, subscribed: true, message });
+        this.setState({loading: false, subscribed: true, message});
       });
   }
 
   handleError(defaultMessage = '') {
     return <T>(err: HttpErrorResponse, caught: Observable<T>) => {
       if (err) {
-        const { message = defaultMessage } = err.error;
-        this.setState({ loading: false, message });
+        const {message = defaultMessage} = err.error;
+        this.setState({loading: false, message});
         throw err;
       }
 

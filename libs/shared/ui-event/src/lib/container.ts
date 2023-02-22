@@ -1,6 +1,6 @@
-import { Cells } from './cells';
-import { Properties as CarouselProperties } from './types';
-import { Utils } from './utils';
+import {Cells} from './cells';
+import {Properties as CarouselProperties} from './types';
+import {Utils} from './utils';
 
 export class Container {
   /* The index of the new position relative to

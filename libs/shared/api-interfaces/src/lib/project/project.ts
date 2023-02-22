@@ -1,4 +1,4 @@
-import { ProjectColumn } from './project-column';
+import {ProjectColumn} from './project-column';
 
 export interface Project {
   ownerUrl: string;
