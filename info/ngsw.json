@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676925544005,
+  "timestamp": 1678012564683,
   "index": "info/index.html",
   "assetGroups": [
     {
@@ -57,6 +57,7 @@
         "info/assets/photo/kelly-garcia.webp",
         "info/assets/photo/lais-lima.webp",
         "info/assets/photo/maria-lazaretti.webp",
+        "info/assets/photo/paula-franchini.webp",
         "info/assets/photo/reinaldo-ferraz.webp",
         "info/assets/photo/teo-calvo.webp",
         "info/assets/photo/william-grasel.webp"
@@ -107,6 +108,7 @@
     "info/assets/photo/kelly-garcia.webp": "1cd72caf748344ff5a63ff9b161d8b3255e10f8a",
     "info/assets/photo/lais-lima.webp": "91c86e70d77b82d7e271a8d9ec1626610c75e643",
     "info/assets/photo/maria-lazaretti.webp": "598439632dc68954ea09d87df0ca5d84f620ed2b",
+    "info/assets/photo/paula-franchini.webp": "276991a6680c3aeb5ee0b5ed49ad8765db049c77",
     "info/assets/photo/reinaldo-ferraz.webp": "8056f80ad24ff2a26b96e14c0e0f18b50fe30906",
     "info/assets/photo/teo-calvo.webp": "1e8579f9d9f5ba4605a89da893e474c20c27cb8f",
     "info/assets/photo/william-grasel.webp": "087bdf130d0bcb8c7a41e725928161706d3486af",
