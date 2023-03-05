@@ -95,5 +95,8 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "namedInputs": {
+    "projectSpecificFiles": ["{workspaceRoot}/assets/speakers/*.webp"]
+  }
 }

@@ -180,6 +180,9 @@
   },
   "tags": ["type:app"],
   "namedInputs": {
-    "projectSpecificFiles": ["{workspaceRoot}/assets/media-kit/**/*.*"]
+    "projectSpecificFiles": [
+      "{workspaceRoot}/assets/media-kit/**/*.*",
+      "{workspaceRoot}/assets/speakers/*.webp"
+    ]
   }
 }
